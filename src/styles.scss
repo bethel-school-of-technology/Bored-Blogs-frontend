@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+
+$primary:#00ff00;
+$secondary: #00cc00;
+
+//this is import goes at the bottom it needs have its variables overidden
+@import "~bootstrap/scss/bootstrap";

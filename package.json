@@ -1,0 +1,29 @@
+{
+  "name": "bethel41320-final",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "npm i && ng serve --open",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~8.2.14",
+    "@angular/common": "~8.2.14",
+    "@angular/compiler": "~8.2.14",
+    "@angular/core": "~8.2.14",
+    "@angular/forms": "~8.2.14",
+    "@angular/platform-browser": "~8.2.14",
+    "@angular/platform-browser-dynamic": "~8.2.14",
+    "@angular/router": "~8.2.14",
+    "bootstrap": "^4.4.1",
+    "passport": "^0.4.1",
+    "pg-hstore": "^2.3.3",
+    "rxjs": "~6.4.0",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.9.1"
+  }
+}

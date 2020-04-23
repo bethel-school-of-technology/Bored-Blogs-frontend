@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="">Navbar</a>
+    <button (click)="toggle('main')" class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [ngClass]="{show:this.main}">
+        <ul class="navbar-nav mr-auto" *ngFor="let link of links;">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]=link.path>{{link.title}}</a>
+            </li>
+        </ul>
+
+
+        <a [routerLink]="home">link to home</a>
+
+
+    </div>
+</nav>
