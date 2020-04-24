@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "Bethel41320Final"
+  "defaultProject": "Bethel41320Final",
+  "cli": {
+    "analytics": false
+  }
 }

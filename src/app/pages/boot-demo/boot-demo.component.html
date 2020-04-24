@@ -116,3 +116,79 @@
         <span class="bg-secondary">Secondary color</span>
     </div>
 </div>
+
+
+
+<!--HEADER-->
+<section class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">FORM DEMO</h1>
+        </div>
+    </div>
+</section>
+
+
+
+<form #f="ngForm" (ngSubmit)="submitForm(f)" novalidate>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputName">full name</label>
+            <input #name="ngModel" name="name" id="inputName" type="text" class="form-control" placeholder="name"
+                ngModel required>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input #email="ngModel" name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email"
+                ngModel required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input name="password" ngModel type="password" class="form-control" id="inputPassword4"
+                placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">Address</label>
+        <input name="address" ngModel type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="form-group">
+        <label for="inputAddress2">Address 2</label>
+        <input name="address2" ngModel type="text" class="form-control" id="inputAddress2"
+            placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input name="city" ngModel type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select name="inputState" ngModel id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input name="inputZip" ngModel type="text" class="form-control" id="inputZip">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-check">
+            <input name="gridCheck" ngModel class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+                Check me out
+            </label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+
+<p>First name value: {{ name.value }}</p>
+<p>First name valid: {{ name.valid }}</p>
+<p>email value: {{ email.value }}</p>
+<p>email valid: {{ email.valid }}</p>
+<p>Form value: {{ f.value | json }}</p>
+<p>Form valid: {{ f.valid }}</p>

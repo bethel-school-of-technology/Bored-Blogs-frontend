@@ -5,8 +5,10 @@ import { BootDemoComponent } from './pages/boot-demo/boot-demo.component';
 import { AllPostComponent } from './pages/all-post/all-post.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContributorsComponent } from './pages/contributors/contributors.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
-let make = (url: string, title: String, component: any) => {
+
+const make = (url: string, title: String, component: any) => {
   return {
     path: url,
     title: title,
@@ -16,9 +18,11 @@ let make = (url: string, title: String, component: any) => {
 /*
 I made this class so other components can get a refrence to the routes and page components
 
+
 R = routes
 use R.getRoutes() to get routes
 */
+
 export class R {
   private static outes: Routes = [
     {
@@ -29,8 +33,8 @@ export class R {
     make('all', 'all', AllPostComponent),
     make('home', 'home', HomeComponent),
     make('boot', 'Boot strap demo', BootDemoComponent),
-    
     make('contributor', 'contributor', ContributorsComponent),
+    make('contact-us', 'conact us page', ContactUsComponent)
   ];
 
   static getRoutes(): Routes {
