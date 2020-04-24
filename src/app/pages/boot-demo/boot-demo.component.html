@@ -116,3 +116,54 @@
         <span class="bg-secondary">Secondary color</span>
     </div>
 </div>
+
+
+
+<!--HEADER-->
+<section class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">FORM DEMO</h1>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <!--CONTACT FORM-->
+        <form #f="ngForm" (ngSubmit)="submitForm(f)" novalidate>
+            <!--NAME-->
+            <div class="field">
+                <label class="label">Name</label>
+                <input #first="ngModel" name="first" ngModel required>
+            </div>
+
+            <!--EMAIL-->
+
+            <div class="field">
+                <label class="label">Email</label>
+                <input #email="ngModel" name="email" type="email" class="input" ngModel required>
+            </div>
+
+            <!--MESSAGE-->
+
+            <div class="field">
+                <label class="label">Your Message</label>
+
+                <textarea name="message" class="textarea" ngModel></textarea>
+            </div>
+
+            <!--SUBMIT BUTTON-->
+            <button type="submit" class="button btn-large btn-warning">
+                Send!
+            </button>
+
+        </form>
+
+        <p>First name value: {{ first.value }}</p>
+        <p>First name valid: {{ first.valid }}</p>
+        <p>email value: {{ email.value }}</p>
+        <p>email valid: {{ email.valid }}</p>
+        <p>Form value: {{ f.value | json }}</p>
+        <p>Form valid: {{ f.valid }}</p>

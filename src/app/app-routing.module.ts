@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { BootDemoComponent } from './pages/boot-demo/boot-demo.component';
 import { AllPostComponent } from './pages/all-post/all-post.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 const make = (url: string, title: String, component: any) => {
   return {
@@ -24,6 +25,7 @@ export class R {
     make('home', 'home', HomeComponent),
     make('boot', 'Boot strap demo', BootDemoComponent),
     make('all', 'all', AllPostComponent),
+    make('contact-us', 'conact us page', ContactUsComponent)
   ];
 
   static getRoutes(): Routes {
