@@ -5,7 +5,7 @@ import { BootDemoComponent } from './pages/boot-demo/boot-demo.component';
 import { AllPostComponent } from './pages/all-post/all-post.component';
 import { HomeComponent } from './pages/home/home.component';
 
-let make = (url: string, title: String, component: any) => {
+const make = (url: string, title: String, component: any) => {
   return {
     path: url,
     title: title,
@@ -13,7 +13,7 @@ let make = (url: string, title: String, component: any) => {
   }
 };
 
-//I made this class so other components can get a refrence to the routes and page components
+// I made this class so other components can get a refrence to the routes and page components
 export class R {
   private static outes: Routes = [
     {

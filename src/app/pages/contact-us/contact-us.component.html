@@ -1,1 +1,41 @@
-<p>contact-us works!</p>
+<!--HEADER-->
+<section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">Contact Us!</h1>
+      </div>
+    </div>
+  </section>
+
+    <section class="section">
+    <div class="container">
+
+  <!--CONTACT FORM-->
+  <form (ngSubmit)="submitForm()">
+
+  <!--NAME-->
+  <div class="field">
+    <label class="label">Name</label>
+    <input type="text" name="name" class="input" [(ngModel)]="name">
+  </div>
+
+  <!--EMAIL-->
+
+  <div class="field">
+    <label class="label">Email</label>
+    <input type="email" name="email" class="input" [(ngModel)]="email">
+  </div>
+
+  <!--MESSAGE-->
+
+  <div class="field">
+    <label class="label">Your Message</label>
+    <textarea name="message" class="textarea" [(ngModel)]="message"></textarea>
+  </div>
+
+  <!--SUBMIT BUTTON-->
+  <button type="submit" class="button is-large is-warning">
+    Send!
+  </button>
+
+  </form>
