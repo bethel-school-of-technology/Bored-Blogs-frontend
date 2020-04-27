@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "boot-demo.component.scss"
+    ],
+    "names": [],
+    "file": "boot-demo.component.css"
+}
