@@ -5,15 +5,6 @@ import { NgForm } from '@angular/forms';
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.scss']
 })
-export class ContactUsComponent implements OnInit {
-  constructor() { }
-
-  ngOnInit() {
-  }
-  submitForm(f: NgForm) {
-    const message = `My name is ${f.value.first}. My email is ${f.value.email}.
-    My message is ${f.value.message}.`;
-    console.log(message);
-  }
-
+export class ContactUsComponent {
+  log(x) { console.log(x); }
 }
