@@ -25,7 +25,7 @@ export class R {
     make('home', 'home', HomeComponent),
     make('boot', 'Boot strap demo', BootDemoComponent),
     make('all', 'all', AllPostComponent),
-    make('contact-us', 'conact us page', ContactUsComponent)
+    make('contact-us', 'contact us page', ContactUsComponent)
   ];
 
   static getRoutes(): Routes {

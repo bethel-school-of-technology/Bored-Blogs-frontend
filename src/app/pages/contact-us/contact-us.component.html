@@ -2,7 +2,7 @@
 <section class="hero">
   <div class="hero-body">
     <div class="container">
-      <h1 class="title">Contact Us!</h1>
+      <h3 class="title">Contact Us!</h3>
     </div>
   </div>
 </section>
@@ -13,36 +13,38 @@
     <!--CONTACT FORM-->
     <form #f="ngForm" (ngSubmit)="submitForm(f)" novalidate>
       <!--NAME-->
+
       <div class="field">
-        <label class="label">Name</label>
-        <input #first="ngModel" name="first" ngModel required>
+        <label class="label">Name:</label>
+        <input #first="ngModel" name="first" class="input d-flex justify-content-center" placeholder="First Name" ngModel required>
       </div>
 
       <!--EMAIL-->
 
       <div class="field">
-        <label class="label">Email</label>
-        <input #email="ngModel" name="email" type="email" class="input" ngModel required>
+        <label class="label">Email:</label>
+        <input #email="ngModel" name="email" placeholder="Email address" type="email" class="input d-flex justify-content-center" ngModel required>
       </div>
 
       <!--MESSAGE-->
 
       <div class="field">
-        <label class="label">Your Message</label>
-
-        <textarea name="message" class="textarea" ngModel></textarea>
+        <label class="label">Your Message:</label>
+        <textarea name="message" placeholder="Enter text here" class="textarea d-flex justify-content-center" ngModel></textarea>
       </div>
 
       <!--SUBMIT BUTTON-->
+
       <button type="submit" class="button btn-large btn-warning">
         Send!
       </button>
 
     </form>
-
+<!--
     <p>First name value: {{ first.value }}</p>
     <p>First name valid: {{ first.valid }}</p>
     <p>email value: {{ email.value }}</p>
     <p>email valid: {{ email.valid }}</p>
     <p>Form value: {{ f.value | json }}</p>
     <p>Form valid: {{ f.valid }}</p>
+-->
