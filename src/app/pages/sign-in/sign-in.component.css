@@ -17,38 +17,17 @@ body #bg {
   z-index: -1;
 }
 
+@media (min-width: 840px) {
+  body #bg {
+    -webkit-clip-path: polygon(0 0, 75% 0, 55% 100%, 0% 100%);
+            clip-path: polygon(0 0, 75% 0, 55% 100%, 0% 100%);
+  }
+}
+
 body p {
   padding: 15px;
   display: block;
   -webkit-text-decoration: uppercase;
           text-decoration: uppercase;
-}
-
-section#card {
-  background: #fff;
-  padding: 20px;
-  margin: 1em auto;
-  border-radius: 15px;
-  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  width: 80%;
-}
-
-section#card ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-section#card ul li {
-  margin-bottom: 10px;
-}
-
-section#card ul li span {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: #fefef0;
-  border-radius: 50%;
 }
 /*# sourceMappingURL=sign-in.component.css.map */

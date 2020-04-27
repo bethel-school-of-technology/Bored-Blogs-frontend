@@ -5,6 +5,7 @@ import { BootDemoComponent } from './pages/boot-demo/boot-demo.component';
 import { AllPostComponent } from './pages/all-post/all-post.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContributorsComponent } from './pages/contributors/contributors.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
 
 let make = (url: string, title: String, component: any) => {
   return {
@@ -31,6 +32,8 @@ export class R {
     make('boot', 'Boot strap demo', BootDemoComponent),
     
     make('contributor', 'contributor', ContributorsComponent),
+
+    make('sign-in','sign in',SignInComponent)
   ];
 
   static getRoutes(): Routes {
