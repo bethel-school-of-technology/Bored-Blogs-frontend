@@ -1,0 +1,19 @@
+body, html {
+  height: 100%;
+}
+
+body {
+  font-family: 'arial';
+  margin: 0;
+}
+
+body #bg {
+  -webkit-clip-path: polygon(100% 1%, 100% 51%, 61% 100%, 0 100%, 0 0);
+          clip-path: polygon(100% 1%, 100% 51%, 61% 100%, 0 100%, 0 0);
+  background-color: #006eff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+/*# sourceMappingURL=sign-in.component.css.map */
