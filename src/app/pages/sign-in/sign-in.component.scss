@@ -13,7 +13,8 @@ $colors: (
    colorBlue:#006eff,
    colorGreen: #30c230,
    colorYellow: rgb(238, 238, 52),
-   colorYellow-lighten: lighten(rgb(238, 238, 52), 40%),
+   colorYellow-light: lighten(rgb(238, 238, 52), 40%),
+   colorYellow-dark: darken(rgb(238, 238, 52), 60%),
    colorRed: red,
    text: black
 );
@@ -29,6 +30,7 @@ $shadow: 0 10px 30px rgba(0,0,0,.2);
 }
 
 $desktop: 840px;
+$tablet: 540px;
 
 // MIXIN for media queries - can create multiple mixins for multiple viewport query sizes
 @mixin desktop {
