@@ -1,10 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 $theme-colors: (
-  "primary": #00ff00,
-  "secondary": #00ff00,
-  "danger": red,
-  "best-color":#a832a2
+  primary: #006eff,
+  secondary: #30c230,
+  danger: red,
+  best-color:#a832a2
 );
 //this is import goes at the bottom it needs have its variables overidden
 @import "~bootstrap/scss/bootstrap";

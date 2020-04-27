@@ -6,6 +6,7 @@ import { AllPostComponent } from './pages/all-post/all-post.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContributorsComponent } from './pages/contributors/contributors.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
 
 
 const make = (url: string, title: String, component: any) => {
@@ -31,10 +32,11 @@ export class R {
       pathMatch: 'full'
     },
     make('all', 'all', AllPostComponent),
-    make('home', 'home', HomeComponent),
     make('boot', 'Boot strap demo', BootDemoComponent),
+    make('contact-us', 'conact us page', ContactUsComponent),
     make('contributor', 'contributor', ContributorsComponent),
-    make('contact-us', 'conact us page', ContactUsComponent)
+    make('home', 'home', HomeComponent),
+    make('sign-in', 'sign in', SignInComponent),
   ];
 
   static getRoutes(): Routes {
