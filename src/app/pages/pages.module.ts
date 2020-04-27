@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { AllPostComponent } from './all-post/all-post.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +20,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     BootDemoComponent,
