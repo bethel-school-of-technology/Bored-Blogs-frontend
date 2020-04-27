@@ -3,9 +3,9 @@
     <button (click)="toggle('main')" class="navbar-toggler" type="button">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" [ngClass]="{show:this.main}">
+    <div class="collapse navbar-collapse " [ngClass]="{show:this.main}">
         <ul class="navbar-nav mr-auto" *ngFor="let link of links;">
-            <li class="nav-item">
+            <li class="nav-item text-right">
                 <a class="nav-link" [routerLink]=link.path>{{link.title}}</a>
             </li>
         </ul>

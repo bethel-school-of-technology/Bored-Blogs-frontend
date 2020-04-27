@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { BootDemoComponent } from './pages/boot-demo/boot-demo.component';
 import { AllPostComponent } from './pages/all-post/all-post.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ContributorsComponent } from './pages/contributors/contributors.component';
 
 let make = (url: string, title: String, component: any) => {
   return {
@@ -12,8 +13,12 @@ let make = (url: string, title: String, component: any) => {
     component: component,
   }
 };
+/*
+I made this class so other components can get a refrence to the routes and page components
 
-//I made this class so other components can get a refrence to the routes and page components
+R = routes
+use R.getRoutes() to get routes
+*/
 export class R {
   private static outes: Routes = [
     {
@@ -21,9 +26,11 @@ export class R {
       redirectTo: '/home',
       pathMatch: 'full'
     },
+    make('all', 'all', AllPostComponent),
     make('home', 'home', HomeComponent),
     make('boot', 'Boot strap demo', BootDemoComponent),
-    make('all', 'all', AllPostComponent),
+    
+    make('contributor', 'contributor', ContributorsComponent),
   ];
 
   static getRoutes(): Routes {

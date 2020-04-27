@@ -1,16 +1,49 @@
-//Scss Color Map
+// WHAT I LEARNED IN DesignCourse https://www.youtube.com/watch?v=roywYSEPSvc:
+// 1. Integrating Sass within Visual Studio Code
+// 2. Sass Variables
+// 3. Sass Maps
+// 4. Nesting
+// 5. Mixins (Media queries - RESPONSIVE)
+// 6. Functions
+// 7. Sass & Media Queries
+
+
+//Scss Color Map variable
 $colors: (
    colorBlue:#006eff,
    colorGreen: #30c230,
    colorYellow: rgb(238, 238, 52),
+   colorYellow-lighten: lighten(rgb(238, 238, 52), 40%),
    colorRed: red,
    text: black
 );
+
+// Style variables
+$padding: 15px;
+$borders: 15px;
+$shadow: 0 10px 30px rgba(0,0,0,.2);
+
+// color function set so we don't have to use "map-get($colors, colorBlue);" --> color(colorBlue); (see line 27)
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+
+$desktop: 840px;
+
+// MIXIN for media queries - can create multiple mixins for multiple viewport query sizes
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+
 
 body, html {
     height: 100%;
 }
 
+// font & margin 
 body {
     font-family: 'arial';
     margin: 0;
@@ -18,10 +51,25 @@ body {
  //nesting background inside body using scss trickery :)   
     #bg {
         clip-path: polygon(100% 1%, 100% 51%, 61% 100%, 0 100%, 0 0);
-        background-color: map-get($colors, colorBlue);
+        background-color: color(colorBlue);
         width: 100%;
         height: 100%;
         position: absolute;
-        z-index: -1;
+        //z-index to keep in background
+        z-index: -1;  
+
+        //nest mixin - what is going to change when viewport hits 840px
+        //use @include desktop in every element where you need to change the layout to desktop
+        @include desktop {
+            clip-path: polygon(0 0, 75% 0, 55% 100%, 0% 100%);
+        }
+    }
+
+    //nest other elements inside body that are in the body element
+    p {
+        padding: $padding;
+        display: block;
+        text-decoration: uppercase;
     }
 }
+
