@@ -1,43 +1,34 @@
 <!--HEADER-->
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <h3 class="title">Contact Us!</h3>
-    </div>
-  </div>
-</section>
+<h1>Contact Us!</h1>
 
-<section class="section">
-  <div class="container">
-
-    <!--CONTACT FORM-->
+<!--CONTACT FORM-->
     <form #f="ngForm" (ngSubmit)="submitForm(f)" novalidate>
       <!--NAME-->
 
-      <div class="field">
-        <label class="label">Name:</label>
-        <input #first="ngModel" name="first" class="input d-flex justify-content-center" placeholder="First Name" ngModel required>
+      <div class="form-group w-50">
+        <label for="name">Name:</label>
+        <input id="name" name="name" #name="ngModel" (change)="log(name)" class="form-control ng-invalid ng-touched" name="first"  placeholder="First Name" ngModel required>
+        <div class="alert alert-danger" *ngIf="name.touched && !name.valid">First Name is required.</div>
       </div>
 
       <!--EMAIL-->
 
-      <div class="field">
-        <label class="label">Email:</label>
-        <input #email="ngModel" name="email" placeholder="Email address" type="email" class="input d-flex justify-content-center" ngModel required>
+      <div class="form-group w-50">
+        <label for="email">Email:</label>
+        <input id="email" (change)="log(email)" #email="ngModel" name="email" placeholder="Email address" type="email" class="form-control ng-invalid ng-touched" ngModel required>
+        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required.</div>
       </div>
 
       <!--MESSAGE-->
 
-      <div class="field">
-        <label class="label">Your Message:</label>
-        <textarea name="message" placeholder="Enter text here" class="textarea d-flex justify-content-center" ngModel></textarea>
+      <div class="form-group w-50">
+        <label for="message">Your Message:</label>
+        <textarea id="message" cols="20" rows="10" placeholder="Enter text here" class="form-control" ngModel></textarea>
       </div>
 
       <!--SUBMIT BUTTON-->
 
-      <button type="submit" class="button btn-large btn-warning">
-        Send!
-      </button>
+      <button class="btn btn-primary btn-lg">Send!</button>
 
     </form>
 <!--

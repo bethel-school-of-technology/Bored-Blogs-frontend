@@ -6,7 +6,7 @@
 
 /*-----HEADER------*/
 
-.hero {
+h1 {
   display: flex;
   justify-content: center;
   color: green;
@@ -15,50 +15,25 @@
 
 /*-----SECTIONS OF FORM------*/
 
-.field {
-  display: flex;
-  justify-content: center;
-  color: blue;
+.form-control.ng-touched.ng-invalid {
+  border: 2px solid red;
 }
 
+
 /*-----TITLE FOR EACH TEXT BOX------*/
-.label {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
-}
+
 
 /*-----INPUT FOR EACH TEXT BOXES------*/
 
-.input {
-  width: 25%;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border-radius: 4px;
-}
 
-.textarea {
-  width: 25%;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border-radius: 4px;
-}
+
+
 /*
 
 
   */
 /*-----BUTTON------*/
 
-/* HELP! -- Having difficulties centering the button with the rest of the form -- HELP! */
-.button {
-  margin: 0;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
 
-.button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
+
