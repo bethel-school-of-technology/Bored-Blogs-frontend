@@ -1,7 +1,39 @@
-/* ----WHAT IS BORED BLOG AND GAME OF THE WEEK----*/
-.flex-grid-container {
-  display: flex;
+//Color Map
+$colors: (
+   colorBlue:#006eff,
+   colorGreen: #30c230,
+   colorYellow: rgb(238, 238, 52),
+   colorYellow-light: lighten(rgb(238, 238, 52), 40%),
+   colorYellow-dark: darken(rgb(238, 238, 52), 60%),
+   colorRed: red,
+   text: black
+);
+
+// Style variables
+$padding: 15px;
+$borders: 15px;
+$shadow: 0 10px 30px rgba(0,0,0,.2);
+
+/* ----TOP HALF OF PAGE----*/
+
+//IMAGE with WHAT IS BORED BLOG
+.game {
+  width: 100%;
+  clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
 }
+
+//CONTAINS IMAGE, WHAT IS BORED BLOG, AND GAME OF WEEK
+.flex-grid-container {
+  background-color: lightyellow;
+  display: flex;
+  padding: $padding;
+}
+
+//IMAGE with GAME OF WEEK
+.game2{
+  width: 30%;
+}
+
 
 p {
   font-size: small;
@@ -12,22 +44,12 @@ h5 {
   text-align: center;
 }
 
-.boredblog{
-  margin: 25px 10px;
-}
-
-.gameofweek{
-  margin: 15px 10px;
-}
-
-.game{
-  max-width: 100%;
-  height: auto;
-}
 
 
-/* ----FEATURED BLOG AND CONTRIBUTORS----*/
 
+/* ----BOTTOM HALF OF PAGE----*/
+
+//CONTRIBUTOR PROFILE PICTURES
 img {
   display: block;
   margin-left: auto;
@@ -35,3 +57,6 @@ img {
   width: 25%;
 }
 
+.blog {
+  margin-right: 25px;
+}
