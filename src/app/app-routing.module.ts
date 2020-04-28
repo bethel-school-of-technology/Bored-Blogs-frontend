@@ -33,8 +33,8 @@ export class R {
     },
     make('all', 'all', AllPostComponent),
     make('boot', 'Boot strap demo', BootDemoComponent),
-    make('contact-us', 'conact us page', ContactUsComponent),
-    make('contributor', 'contributor', ContributorsComponent),
+    make('contact-us', 'contact us', ContactUsComponent),
+    make('contributor', 'contributors', ContributorsComponent),
     make('home', 'home', HomeComponent),
     make('sign-in', 'sign in', SignInComponent),
   ];
