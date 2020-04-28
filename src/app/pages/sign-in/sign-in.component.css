@@ -30,4 +30,8 @@ body p {
   -webkit-text-decoration: uppercase;
           text-decoration: uppercase;
 }
+
+.form-control.ng-touched.ng-invalid {
+  border: 2px solid red;
+}
 /*# sourceMappingURL=sign-in.component.css.map */
