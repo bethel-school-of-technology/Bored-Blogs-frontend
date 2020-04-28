@@ -5,7 +5,7 @@
     <form #f="ngForm" (ngSubmit)="submitForm(f)" novalidate>
       <!--NAME-->
 
-      <div class="form-group">
+      <div class="form-group w-50">
         <label for="name">Name:</label>
         <input id="name" name="name" #name="ngModel" (change)="log(name)" class="form-control ng-invalid ng-touched" name="first"  placeholder="First Name" ngModel required>
         <div class="alert alert-danger" *ngIf="name.touched && !name.valid">First Name is required.</div>
@@ -13,7 +13,7 @@
 
       <!--EMAIL-->
 
-      <div class="form-group">
+      <div class="form-group w-50">
         <label for="email">Email:</label>
         <input id="email" (change)="log(email)" #email="ngModel" name="email" placeholder="Email address" type="email" class="form-control ng-invalid ng-touched" ngModel required>
         <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required.</div>
@@ -21,14 +21,14 @@
 
       <!--MESSAGE-->
 
-      <div class="form-group">
+      <div class="form-group w-50">
         <label for="message">Your Message:</label>
         <textarea id="message" cols="20" rows="10" placeholder="Enter text here" class="form-control" ngModel></textarea>
       </div>
 
       <!--SUBMIT BUTTON-->
 
-      <button class="btn btn-primary">Send!</button>
+      <button class="btn btn-primary btn-lg">Send!</button>
 
     </form>
 <!--
