@@ -31,7 +31,6 @@ export class R {
       redirectTo: '/home',
       pathMatch: 'full'
     },
-<<<<<<< HEAD
     // NAVBAR Titles & Order
     make('home', 'Home', HomeComponent),
     // make('boot', 'Bootstrap Demo', BootDemoComponent),
@@ -39,14 +38,6 @@ export class R {
     make('all', 'View All Posts', AllPostComponent),
     make('sign-in', 'Sign In', SignInComponent),
     make('contact-us', 'Conact Us', ContactUsComponent)
-=======
-    make('all', 'all', AllPostComponent),
-    make('boot', 'Boot strap demo', BootDemoComponent),
-    make('contact-us', 'contact us', ContactUsComponent),
-    make('contributor', 'contributors', ContributorsComponent),
-    make('home', 'home', HomeComponent),
-    make('sign-in', 'sign in', SignInComponent),
->>>>>>> 679ec809b388c6b47edd36e0878e4311dc9e10c4
   ];
 
   static getRoutes(): Routes {
