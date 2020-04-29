@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse " [ngClass]="{show:this.main}">
         <ul class="navbar-nav mr-auto" *ngFor="let link of links;">
             <li class="nav-item text-right">
-                <a class="nav-link" [routerLink]=link.path>{{link.title}}</a>
+                <a class="nav-link text-dark font-weight-normal font-size-sm" [routerLink]=link.path>{{link.title}}</a>
             </li>
         </ul>
 

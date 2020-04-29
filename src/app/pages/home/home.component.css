@@ -1,25 +1,36 @@
-div.flex-grid-container {
+div.background {
   background-image: url(../../../assets/images/board-game-bg-image1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* ----WHAT IS BORED BLOG AND GAME OF THE WEEK----*/
-/* ----TOP HALF OF PAGE----*/
-.game {
-  width: 100%;
-  -webkit-clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
-          clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+div.grid {
+  padding: 2em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% auto;
+      grid-template-columns: 70% auto;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "whatIs gameOfWeek";
 }
 
-.flex-grid-container {
-  background-color: lightyellow;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 15px;
+div.transbox {
+  padding: 2em;
+  background-color: #ffffff;
+  opacity: .4;
 }
 
-.game2 {
-  width: 30%;
+div.transbox h5 {
+  font-weight: bold;
+  color: black;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
 }
 
 p {
@@ -31,15 +42,13 @@ h5 {
   text-align: center;
 }
 
-/* ----BOTTOM HALF OF PAGE----*/
-img {
+.btn {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 25%;
 }
 
-.blog {
-  margin-right: 25px;
-}
+/* ----WHAT IS BORED BLOG AND GAME OF THE WEEK----*/
+/* ----TOP HALF OF PAGE----*/
+/* ----BOTTOM HALF OF PAGE----*/
 /*# sourceMappingURL=home.component.css.map */
