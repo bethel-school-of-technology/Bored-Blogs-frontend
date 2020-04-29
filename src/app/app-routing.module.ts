@@ -31,12 +31,13 @@ export class R {
       redirectTo: '/home',
       pathMatch: 'full'
     },
-    make('all', 'all', AllPostComponent),
-    make('boot', 'Boot strap demo', BootDemoComponent),
-    make('contact-us', 'conact us page', ContactUsComponent),
-    make('contributor', 'contributor', ContributorsComponent),
-    make('home', 'home', HomeComponent),
-    make('sign-in', 'sign in', SignInComponent),
+    // NAVBAR Titles & Order
+    make('home', 'Home', HomeComponent),
+    // make('boot', 'Bootstrap Demo', BootDemoComponent),
+    make('contributor', 'Meet the Contributors', ContributorsComponent),
+    make('all', 'View All Posts', AllPostComponent),
+    make('sign-in', 'Sign In', SignInComponent),
+    make('contact-us', 'Conact Us', ContactUsComponent)
   ];
 
   static getRoutes(): Routes {

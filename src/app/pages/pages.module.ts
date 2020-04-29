@@ -6,22 +6,21 @@ import { HomeComponent } from './home/home.component';
 import { AllPostComponent } from './all-post/all-post.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     BootDemoComponent,
-    ContributorsComponent,
     HomeComponent,
+    ContributorsComponent,
     AllPostComponent,
     SignInComponent,
-    ContactUsComponent,
+    ContactUsComponent
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule
+    FormsModule
   ],
   exports: [
     BootDemoComponent,
@@ -29,7 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     AllPostComponent,
     SignInComponent,
-    ContactUsComponent,
+    ContactUsComponent
   ]
 })
 export class PagesModule { }
