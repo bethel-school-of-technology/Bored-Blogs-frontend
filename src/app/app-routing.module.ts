@@ -37,7 +37,7 @@ export class R {
     make('contributor', 'Meet the Contributors', ContributorsComponent),
     make('all', 'View All Posts', AllPostComponent),
     make('sign-in', 'Sign In', SignInComponent),
-    make('contact-us', 'Conact Us', ContactUsComponent)
+    make('contact-us', 'Contact Us', ContactUsComponent)
   ];
 
   static getRoutes(): Routes {
