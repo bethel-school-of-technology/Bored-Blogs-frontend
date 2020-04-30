@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: lightyellow;
 }
 
 /*-----HEADER------*/
@@ -19,6 +20,10 @@ h1 {
   border: 2px solid red;
 }
 
+.row {
+  display: flex;//d-flex
+  justify-content: center;//j
+}
 
 /*-----TITLE FOR EACH TEXT BOX------*/
 
@@ -33,6 +38,10 @@ h1 {
 
   */
 /*-----BUTTON------*/
+
+.btn{
+  background-color: blue;
+}
 
 
 

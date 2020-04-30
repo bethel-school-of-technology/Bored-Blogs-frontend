@@ -4,32 +4,33 @@
 <!--CONTACT FORM-->
     <form #f="ngForm" (ngSubmit)="submitForm(f)" novalidate>
       <!--NAME-->
-
+    <div class="row">
       <div class="form-group w-50">
         <label for="name">Name:</label>
-        <input id="name" name="name" #name="ngModel" (change)="log(name)" class="form-control ng-invalid ng-touched" name="first"  placeholder="First Name" ngModel required>
+        <input id="name" name="name" #name="ngModel" (change)="log(name)" class="p-0 m-0 form-control ng-invalid ng-touched" name="first"  placeholder="First Name" ngModel required>
         <div class="alert alert-danger" *ngIf="name.touched && !name.valid">First Name is required.</div>
       </div>
-
+    </div>
       <!--EMAIL-->
-
+      <div class="row">
       <div class="form-group w-50">
         <label for="email">Email:</label>
         <input id="email" (change)="log(email)" #email="ngModel" name="email" placeholder="Email address" type="email" class="form-control ng-invalid ng-touched" ngModel required>
         <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required.</div>
       </div>
+      </div>
 
       <!--MESSAGE-->
-
+      <div class="row">
       <div class="form-group w-50">
         <label for="message">Your Message:</label>
         <textarea id="message" cols="20" rows="10" placeholder="Enter text here" class="form-control" ngModel></textarea>
       </div>
-
+      </div>
       <!--SUBMIT BUTTON-->
-
+    <div class="row">
       <button class="btn btn-primary btn-lg">Send!</button>
-
+    </div>
     </form>
 <!--
     <p>First name value: {{ first.value }}</p>
