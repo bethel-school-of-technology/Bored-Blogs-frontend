@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 *
 */
 
-function make(mName,mBio,mColor) {
+function make(mName,mBio, mUrl) {
   return {
     name:mName,
     bio:mBio,
-    color:mColor
+    //color:mColor,
+    url:mUrl
   }
 };
 
@@ -17,17 +18,13 @@ function make(mName,mBio,mColor) {
   styleUrls: ['./contributors.component.scss']
 })
 export class ContributorsComponent implements OnInit {
-  
+
   //TODO: replace hard coded data with services
   contributors = [
-    {//hard coded data
-      name:"Jacob",
-      bio:"Hello my name is Jacob I like to program",
-      //color gets used by the ngstyle directive
-      //TODO: validate data so it that it dosen't kill angular
-      color:{"border":"4px solid blue"}
-    },
-    make("jackie","jackie likes sushi",{"border":"4px solid red "}),
+    make("Jacob", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","https://ca.slack-edge.com/T9P33872P-UMB26EV6E-f1b15a101868-512"),
+    make("Jackie","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","https://ca.slack-edge.com/T9P33872P-UMXPMHEAE-3b5c27f1c336-512"),
+    make("Kayla", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-512"),
+    make("Kamyla", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","https://ca.slack-edge.com/T9P33872P-UNCD1UH6K-6e8e43a4b2fd-512"),
   ];
   constructor() { }
 
