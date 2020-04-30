@@ -1,29 +1,28 @@
-div.background {
-  background-image: url(../../../assets/images/board-game-bg-image1.jpg);
+.container {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(160, 156, 105, 0.62)), to(rgba(124, 181, 214, 0.43))), url("../../../assets/images/board-game-bg-image1.jpg");
+  background-image: linear-gradient(to top, rgba(160, 156, 105, 0.62), rgba(124, 181, 214, 0.43)), url("../../../assets/images/board-game-bg-image1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
-div.grid {
-  padding: 2em;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 70% auto;
-      grid-template-columns: 70% auto;
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-      grid-template-areas: "whatIs gameOfWeek";
-}
-
-div.transbox {
-  padding: 2em;
-  background-color: #ffffff;
-  opacity: .4;
-}
-
-div.transbox h5 {
+whatIs p {
   font-weight: bold;
   color: black;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+
+.btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
 img {
@@ -31,21 +30,15 @@ img {
   margin-left: auto;
   margin-right: auto;
   width: 25%;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
-p {
-  font-size: small;
-  text-align: center;
-}
-
-h5 {
-  text-align: center;
-}
-
-.btn {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.contributors {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 0, 0, 0)), to(yellow));
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0), yellow);
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
 /* ----WHAT IS BORED BLOG AND GAME OF THE WEEK----*/

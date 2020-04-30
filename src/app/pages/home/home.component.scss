@@ -1,66 +1,32 @@
-
-// BACKGROUND IMAGE
-// #bg {
-//   background-image: url(../../../assets/images/board-game-bg-image1.jpg);
-//   width: 100%;
-//   height: 100%;
-//   position: fixed;
-//   z-index: -1;
-// }
-$padding: 2em;
-$font-size: small;
-$text-align: center;
-
-// main {
-  // display: grid;
-  // grid-template-columns: 70% auto;
-  // grid-template-rows: auto;
-  // grid-template-areas: 
-  //     "whatIs gameOfWeek";
-  // background-image: url(../../../assets/images/board-game-bg-image1.jpg);
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // padding: $padding;
- 
-  
-  
-
-  // section#gameOfWeek {
-  //   padding: $padding;
-  //   background-color: white;
-  // }
-  
-// }
-
-div.background {
-
-  background-image: url(../../../assets/images/board-game-bg-image1.jpg);
-    background-repeat: no-repeat;
+.container {
+  //background-image: url(../../../assets/images/board-game-bg-image1.jpg);
+  background-image: linear-gradient(to top, rgba(160, 156, 105, 0.62), rgba(124, 181, 214, 0.43)),url('../../../assets/images/board-game-bg-image1.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
-  // opacity: .7;
-  
-  }
-
-  div.grid {
-    padding: $padding;
-    display: grid;
-    grid-template-columns: 70% auto;
-    grid-template-rows: auto;
-    grid-template-areas: 
-        "whatIs gameOfWeek";
-  }
-
-div.transbox {
-  padding: $padding;
-  background-color: #ffffff;
-  opacity: .4;
-  
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  // z-index: -1;
+  // backdrop-filter: blur(60px);
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
-div.transbox h5 {
-    font-weight: bold;
-    color: black;
-  
+// .whatIs {
+//   background-color: #ffffff;
+//   backdrop-filter: blur(90px);
+//   opacity: .4;
+// }
+whatIs p {
+  font-weight: bold;
+  color: black;
+  backdrop-filter: blur(20px);
+}
+
+.btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
 img {
@@ -68,21 +34,54 @@ img {
   margin-left: auto;
   margin-right: auto;
   width: 25%;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
-p {
-  font-size: small;
-  text-align: $text-align;
+.contributors {
+  background-image: linear-gradient(to right, rgba(255,0,0,0), yellow);
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
-h5 {
-  text-align: $text-align;
-}
- .btn {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
- }
+//   padding: $padding;
+
+// section#gameOfWeek {
+//   padding: $padding;
+//   background-color: white;
+// }
+
+// }
+
+//   div.grid {
+//     padding: $padding;
+//     display: grid;
+//     grid-template-columns: 70% auto;
+//     grid-template-rows: auto;
+//     backdrop-filter: blur(20px);
+//   }
+
+// div.background {
+//   background-image: url(../../../assets/images/board-game-bg-image1.jpg);
+//   background-repeat: no-repeat;
+//   background-size: cover;
+
+//   }
+
+
+
+
+
+
+
+
+// p {
+//   font-size: small;
+//   text-align: $text-align;
+// }
+
+// h5 {
+//   text-align: $text-align;
+// }
+
 
 
 /* ----WHAT IS BORED BLOG AND GAME OF THE WEEK----*/
