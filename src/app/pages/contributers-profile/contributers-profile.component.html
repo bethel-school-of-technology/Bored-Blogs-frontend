@@ -39,11 +39,11 @@
             <div class="post" *ngFor="let Post of Posts">
                 <h2 class="postTitle">{{Post.postTitle}}</h2>
                 <div class="tagsGames">
-                    <img class="tagIcon"src="../../../assets/images/tag.png"/>
+                    <img class="tagIcon" src="../../../assets/images/tag.png" />
                     <p> Tags: {{Post.postTags}}</p>
                     <img class="tagIcon" src="../../../assets/images/dice & pieces.jpg"/>
                     <p class="relGames"> Related Game(s): {{Post.postGames}}</p>
-            </div>
+                </div>
                 <p class="postBody">{{Post.postBody}}</p>
                 <a [routerLink]='["all-post:id"]'>View Full Post</a>
                 <hr>
