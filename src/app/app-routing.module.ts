@@ -35,7 +35,7 @@ export class R {
     // NAVBAR Titles & Order
     make('home', 'Home', HomeComponent),
     make('boot', 'Bootstrap Demo', BootDemoComponent),
-    make('contributor', 'Meet the Contributors', ContributorsComponent),
+    //make('contributor', 'Meet the Contributors', ContributorsComponent),
     make('all', 'View All Posts', AllPostComponent),
     make('sign-in', 'Sign In', SignInComponent),
     make('create-account', 'Create account', CreateAccountComponent),
