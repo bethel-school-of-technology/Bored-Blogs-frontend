@@ -12,15 +12,15 @@
 
     <!-- Tab Links-->
     <!-- TODO: think aboot animations and animating these changes for a butter experince -->
-    <div class="tab">
+    <div class="tab d-flex w-100 justify-content-center">
         <button class="tablinks" (click)="setSelector(1)">About</button>
         <button class="tablinks" (click)="setSelector(2)">Recent Posts</button>
     </div>
 
     <!-- Tab Content (ABOUT)-->
-    <div id="about" [ngClass]="{'d-none':this.selector != 1}" class="tabcontent">
+    <div id="about" [ngClass]="{'d-none':this.selector != 1}" class="tabcontent text-center">
         <p> Birthday: {{contributor.bio.birthday}}</p>
-        <ul>Favorite Games: 
+        <ul>Favorite Games:
             <!--TODO would love to have these as links to blogs on said games-->
             <li>{{contributor.bio.favoriteGames.game1}}</li>
             <li>{{contributor.bio.favoriteGames.game2}}</li>
@@ -35,10 +35,10 @@
             <div class="post" *ngFor="let Post of Posts">
                 <h2 class="postTitle">{{Post.postTitle}}</h2>
                 <div class="tagsGames">
-                    <img class="tagIcon"src="../../../assets/images/tag.png"/>
+                    <img class="tagIcon" src="../../../assets/images/tag.png" />
                     <p> Tags: {{Post.postTags}}</p>
                     <p class="relGames"> Related Game(s): {{Post.postGames}}</p>
-            </div>
+                </div>
                 <p class="postBody">{{Post.postBody}}</p>
                 <a [routerLink]='["all-post:id"]'>View Full Post</a>
                 <hr>

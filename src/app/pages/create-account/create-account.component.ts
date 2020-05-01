@@ -14,16 +14,21 @@ export class CreateAccountComponent implements OnInit {
   password = '';
   user: User;
 
+  //Jacob Stanton:
   //creates an account
   createAccount(signinForm: NgForm) {
     console.log(signinForm);
     console.log(signinForm.value);
 
+    //Jacob Stanton:
     //takes data from form and submits it to the backend
     this.userService
       .register(signinForm.value)
       .subscribe((user: User) => {
-        this.user = user;//does
+        this.user = user;
+        //Jacob Stanton:
+        //TODO: add route to constuctor and naviage and success
+        //this.router.navigateByUrl('/user');
         console.log("you have logged in");
       })
   }
