@@ -9,7 +9,7 @@ import { R } from 'src/app/app-routing.module';
 export class NavbarComponent implements OnInit {
   nestedDrawer: boolean = false;
   main: boolean = false;
-  links: any[] = R.getRoutes();
+  links: any[] = R.getRoutesForNavigation();
 
   constructor() { }
 

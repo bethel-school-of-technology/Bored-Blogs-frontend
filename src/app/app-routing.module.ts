@@ -10,11 +10,12 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
 
 
-const make = (url: string, title: String, component: any) => {
+const make = (url: string, title: String, component: any, isPartOfNav: boolean) => {
   return {
     path: url,
     title: title,
     component: component,
+    isPartOfNav: isPartOfNav
   }
 };
 /*
@@ -33,17 +34,21 @@ export class R {
       pathMatch: 'full'
     },
     // NAVBAR Titles & Order
-    make('home', 'Home', HomeComponent),
-    make('boot', 'Bootstrap Demo', BootDemoComponent),
+    make('home', 'Home', HomeComponent,true),
+    make('boot', 'Bootstrap Demo', BootDemoComponent, true),
     //make('contributor', 'Meet the Contributors', ContributorsComponent),
-    make('all', 'View All Posts', AllPostComponent),
-    make('sign-in', 'Sign In', SignInComponent),
-    make('create-account', 'Create Account', CreateAccountComponent),
-    make('contact-us', 'Conact Us', ContactUsComponent)
+    make('all', 'View All Posts', AllPostComponent, true),
+    make('sign-in', 'Sign In', SignInComponent, true),
+    make('create-account', 'Create Account', CreateAccountComponent, true),
+    make('contact-us', 'Conact Us', ContactUsComponent, true)
   ];
 
   static getRoutes(): Routes {
     return R.outes;
+  }
+
+  static getRoutesForNavigation(): Routes {
+    return R.outes.filter((e: any) => e.isPartOfNav);
   }
 
   static getPaths(): string[] {

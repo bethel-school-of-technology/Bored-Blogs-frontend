@@ -15,9 +15,9 @@ export class BootDemoComponent implements OnInit {
 
   ngOnInit() {
   }
-  test() {    
+  test() {
     this.userService
-      .register(new User(1, 'test3', 'password', 'jake', 'stanton'))
+      .register(new User(1, 'test3', 'password', 'jake', 'stanton', 'snake_jazz'))
       .subscribe((user: User) => {
         this.user = user;
         console.log(this.user)
