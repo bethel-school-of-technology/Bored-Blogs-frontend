@@ -1,6 +1,14 @@
+<body>
+<div class="flex-grid-container">
 <div class="d-flex flex-row">
 <div class="m-2" *ngFor="let contributor of contributors;">
+  <div class="card">
     <h1 [ngStyle]="contributor.color" class="text-best-color border">{{contributor.name}}</h1>
-    <p class="p-2 rounded-pill bg-danger">{{contributor.bio}}</p>
+    <img class="w-25" src="{{contributor.url}}">
+    <p>{{contributor.bio}}</p>
+    <p><button [ngStyle]="contributor.color" class="button btn-primary">Blog Posts by {{contributor.name}}</button></p>
+  </div>
 </div>
 </div>
+</div>
+</body>

@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, NgForm, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { User } from 'src/app/models/user';
+import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss']
+  selector: 'app-create-account',
+  templateUrl: './create-account.component.html',
+  styleUrls: ['./create-account.component.scss']
 })
-
-export class SignInComponent implements OnInit {
+export class CreateAccountComponent implements OnInit {
   userName = '';
-  // email = '';
+  email = '';
   password = '';
   user: User;
 
@@ -24,7 +23,6 @@ export class SignInComponent implements OnInit {
       .subscribe((user: User) => {
         this.user = user;//does
         console.log("you have logged in");
-
       })
   }
 

@@ -1,0 +1,44 @@
+<!--
+
+    NOTES:
+       - Assumed names for table columns
+       - Need to figure out if i'm writing this correctly or if i need to ise ngFor (if ngFor then where would i put them?)
+       - 2 Tabs, About and recent posts
+       - Each tab has it's own content (goal is to just pull in data from table(s) dynamically instead of hardcoded)
+       ngFor for the posts!
+-->
+
+<!-- Header for the page -->
+<section id="header">
+    <!-- Create profile Picture-->
+    <div id="profilePicture">
+        <img src="">
+    </div>
+    <!--Display Name of contributer -->
+    <h3>{{profileId.firstName}} {{profileId.lastName}}</h3>
+    
+</section>
+<section>
+    <!-- Tab Links-->
+    <div class="tab">
+        <button class="tablinks" onclick="">About</button>
+        <button class="tablinks" onclick="">Recent Posts</button>
+    </div>
+    <!-- Tab Content-->
+    <div id="about" class="tabcontent">
+        <h3>About</h3>
+        <p>{{profileId.aboutMe}}</p>
+    </div>
+    <div id="recentPosts" class="tabcontent">
+        <h3>Recent Posts</h3>
+        <!-- Create the recent posts template-->
+
+            <div id="post">
+                {{profileId.profilePicture}} 
+                <h2>{{profileId.postTitle}}</h2>
+                <!-- Need to add a divider line here-->
+                <h2>{{profileId.postBody}}</h2>
+            </div>
+
+    </div>
+</section>

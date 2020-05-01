@@ -1,37 +1,48 @@
-<!--HEADER-->
-<h1>Contact Us!</h1>
+<!-- CONTAINER LAYOUT -->
+<div class="container">
+  <div class="row w-50 h-50 mx-auto">
+    <div class="col">
 
-<!--CONTACT FORM-->
-    <form #f="ngForm" (ngSubmit)="submitForm(f)" novalidate>
-      <!--NAME-->
-    <div class="row">
-      <div class="form-group w-50">
-        <label for="name">Name:</label>
-        <input id="name" name="name" #name="ngModel" (change)="log(name)" class="p-0 m-0 form-control ng-invalid ng-touched" name="first"  placeholder="First Name" ngModel required>
-        <div class="alert alert-danger" *ngIf="name.touched && !name.valid">First Name is required.</div>
-      </div>
-    </div>
-      <!--EMAIL-->
-      <div class="row">
-      <div class="form-group w-50">
-        <label for="email">Email:</label>
-        <input id="email" (change)="log(email)" #email="ngModel" name="email" placeholder="Email address" type="email" class="form-control ng-invalid ng-touched" ngModel required>
-        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required.</div>
-      </div>
-      </div>
+      <!--HEADER-->
+      <h1>Contact Us</h1>
+      <br>
 
-      <!--MESSAGE-->
-      <div class="row">
-      <div class="form-group w-50">
-        <label for="message">Your Message:</label>
-        <textarea id="message" cols="20" rows="10" placeholder="Enter text here" class="form-control" ngModel></textarea>
-      </div>
-      </div>
-      <!--SUBMIT BUTTON-->
-    <div class="row">
-      <button class="btn btn-primary btn-lg">Send!</button>
+      <!--BOOTSTRAP TEMPLATE-DRIVEN CONTACT FORM-->
+      <form #contactUsForm="ngForm" (ngSubmit)="submitForm(contactUsForm)" novalidate>
+
+        <!--NAME-->
+        <div class="form-group">
+          <label for="name">User Name</label>
+          <input id="name" name="name" #name="ngModel" (change)="log(name)"
+            class="p-0 m-0 form-control ng-invalid ng-touched" name="first" ngModel required>
+          <div class="alert alert-danger" *ngIf="name.touched && !name.valid">First Name is required.</div>
+        </div>
+
+        <!--EMAIL-->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" (change)="log(email)" #email="ngModel" name="email" type="email"
+            class="form-control ng-invalid ng-touched" ngModel required>
+          <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required.</div>
+        </div>
+
+        <!--MESSAGE-->
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" cols="20" rows="10" placeholder="Enter text here" class="form-control"
+            ngModel></textarea>
+        </div>
+
+        <!--SUBMIT BUTTON-->
+        <div class="btn-toolbar">
+          <button class="btn btn-primary">Submit</button>  
+        </div>
+
+      </form>
+      
     </div>
-    </form>
+  </div>
+</div>
 <!--
     <p>First name value: {{ first.value }}</p>
     <p>First name valid: {{ first.valid }}</p>

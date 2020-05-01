@@ -1,11 +1,13 @@
+<!-- CONTAINER LAYOUT -->
 <div class="container">
     <div class="row w-50 h-50 mx-auto">
         <div class="col">
 
+            <!--HEADER-->
             <h1 class="signIn">Sign In</h1>
             <br>
 
-            <!-- Bootstrap Form -->
+            <!-- BOOTSTRAP TEMPLATE-DRIVEN SIGN-IN FORM -->
             <form #signinForm="ngForm" (ngSubmit)="signin(signinForm)">
 
                 <!-- USER NAME -->
@@ -21,18 +23,6 @@
                             characters</div>
                     </div>
                 </div>
-
-                <!-- EMAIL -->
-                <!-- <div class="form-group">
-                    <label for="email">Email</label>
-                    <input required email="true" emailPattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel
-                        name="email" #email="ngModel" type="email" id="email" class="form-control">
-                    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
-                        <div *ngIf="email.errors.required">Email is required</div>
-                        <div *ngIf="email.errors.pattern">Valid email is required</div>
-                        <div *ngIf="email.errors?.email">Valid email is required</div>
-                    </div>
-                </div> -->
 
                 <!-- PASSWORD -->
                 <div class="form-group">
@@ -51,8 +41,8 @@
 
                 <!-- BUTTONS -->
                 <div class="btn-toolbar">
-                 <div class="btn btn-primary">Sign In</div>  
-                 <div class="btn btn-primary">Create Account</div> 
+                 <button class="btn btn-primary">Sign In</button>  
+                 <button class="btn btn-primary">Create Account</button> 
                 </div>
                 
 
