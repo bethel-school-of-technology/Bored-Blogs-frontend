@@ -22,10 +22,17 @@ $social-width: 20%;
 //   @include box-sizing(border-box);
 }
 
+.btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 2px 3px 10px 2px rgba(131, 125, 125, 0.8);
+}
+
 footer {
   width: 100%;
   display: inline-block;
-  margin: 2em 0;
+  margin: 0;
   height: 35px;
   background-color: $accent;
   position: fixed;

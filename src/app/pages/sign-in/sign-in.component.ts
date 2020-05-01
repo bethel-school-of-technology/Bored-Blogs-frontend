@@ -9,7 +9,7 @@ import { FormControl, NgForm, FormBuilder, Validators, FormGroup } from '@angula
 
 export class SignInComponent implements OnInit {
   userName = '';
-  email = '';
+  // email = '';
   password = '';
 
   signin(signinForm:NgForm) {
