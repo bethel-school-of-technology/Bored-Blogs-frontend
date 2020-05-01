@@ -19,18 +19,29 @@
 
     <!-- Tab Content (ABOUT)-->
     <div id="about" [ngClass]="{'d-none':this.selector != 1}" class="tabcontent">
-        <h3>About</h3>
-        <p>{{contributor.bio}}</p>
+        <p> Birthday: {{contributor.bio.birthday}}</p>
+        <ul>Favorite Games: 
+            <!--TODO would love to have these as links to blogs on said games-->
+            <li>{{contributor.bio.favoriteGames.game1}}</li>
+            <li>{{contributor.bio.favoriteGames.game2}}</li>
+            <li>{{contributor.bio.favoriteGames.game3}}</li>
+        </ul>
+        {{contributor.bio.other}}
     </div>
     <!-- Tab Content (POSTS)-->
     <div id="recentPosts" [ngClass]="{'d-none':this.selector != 2}" class="tabcontent">
-        <h3>Recent Posts</h3>
         <!-- Create the recent posts template-->
         <div id="postContainer">
             <div class="post" *ngFor="let Post of Posts">
-                <h2>{{Post.postTitle}}</h2>
+                <h2 class="postTitle">{{Post.postTitle}}</h2>
+                <div class="tagsGames">
+                    <img class="tagIcon"src="../../../assets/images/tag.png"/>
+                    <p> Tags: {{Post.postTags}}</p>
+                    <p class="relGames"> Related Game(s): {{Post.postGames}}</p>
+            </div>
+                <p class="postBody">{{Post.postBody}}</p>
+                <a [routerLink]='["all-post:id"]'>View Full Post</a>
                 <hr>
-                <p>{{Post.postBody}}</p>
             </div>
         </div>
     </div>
