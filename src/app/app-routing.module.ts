@@ -1,3 +1,4 @@
+import { ContributersProfileComponent as ContributorsProfileComponent } from './pages/contributers-profile/contributers-profile.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -10,11 +11,12 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
 
 
-const make = (url: string, title: String, component: any) => {
+const make = (url: string, title: String, component: any, isPartOfNav: boolean) => {
   return {
     path: url,
     title: title,
     component: component,
+    isPartOfNav: isPartOfNav
   }
 };
 /*
@@ -33,17 +35,22 @@ export class R {
       pathMatch: 'full'
     },
     // NAVBAR Titles & Order
-    make('home', 'Home', HomeComponent),
-    make('boot', 'Bootstrap Demo', BootDemoComponent),
-    //make('contributor', 'Meet the Contributors', ContributorsComponent),
-    make('all', 'View All Posts', AllPostComponent),
-    make('sign-in', 'Sign In', SignInComponent),
-    make('create-account', 'Create account', CreateAccountComponent),
-    make('contact-us', 'Conact Us', ContactUsComponent)
+    make('home', 'Home', HomeComponent, true),
+    make('boot', 'Bootstrap Demo', BootDemoComponent, true),
+    make('contributor', 'Meet the Contributors', ContributorsComponent, true),
+    make('all', 'View All Posts', AllPostComponent, true),
+    make('sign-in', 'Sign In', SignInComponent, true),
+    make('contact-us', 'Contact Us', ContactUsComponent, true),
+    make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent, true),
+    make('create-account', 'Create account', CreateAccountComponent, true),
   ];
 
   static getRoutes(): Routes {
     return R.outes;
+  }
+
+  static getRoutesForNavigation(): Routes {
+    return R.outes.filter((e: any) => e.isPartOfNav);
   }
 
   static getPaths(): string[] {

@@ -1,14 +1,15 @@
 <body>
-<div class="flex-grid-container">
-<div class="d-flex flex-row">
-<div class="m-2" *ngFor="let contributor of contributors;">
-  <div class="card">
-    <h1 [ngStyle]="contributor.color" class="text-best-color border">{{contributor.name}}</h1>
-    <img class="w-25" src="{{contributor.url}}">
-    <p>{{contributor.bio}}</p>
-    <p><button [ngStyle]="contributor.color" class="button btn-primary">Blog Posts by {{contributor.name}}</button></p>
+  <div class="flex-grid-container">
+    <div class="d-flex flex-row">
+      <div class="m-2" *ngFor="let contributor of contributors;">
+        <div class="card">
+          <h1 [ngStyle]="contributor.color" class="text-best-color border">{{contributor.name}}</h1>
+          <img class="w-25" src="{{contributor.url}}">
+          <p>{{contributor.bio}}</p>
+          <a [routerLink]='["/contributor-profile"]'><button [ngStyle]="contributor.color"
+              class="button btn-primary">Blog Posts by {{contributor.name}}</button></a>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-</div>
 </body>

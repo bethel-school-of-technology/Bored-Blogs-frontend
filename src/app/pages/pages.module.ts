@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './../app-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BootDemoComponent } from './boot-demo/boot-demo.component';
@@ -11,7 +12,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { ContributersProfileComponent } from './contributers-profile/contributers-profile.component';
 
 
-
+//module is self explanatory
 @NgModule({
   declarations: [
     BootDemoComponent,
@@ -25,7 +26,8 @@ import { ContributersProfileComponent } from './contributers-profile/contributer
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   exports: [
     BootDemoComponent,

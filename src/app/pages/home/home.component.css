@@ -1,29 +1,18 @@
-div.background {
-  background-image: url(../../../assets/images/board-game-bg-image1.jpg);
+.container {
+  background-image: url("../../../assets/images/board-game-bg-image1-v2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
-div.grid {
-  padding: 2em;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 70% auto;
-      grid-template-columns: 70% auto;
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-      grid-template-areas: "whatIs gameOfWeek";
-}
-
-div.transbox {
-  padding: 2em;
-  background-color: #ffffff;
-  opacity: .4;
-}
-
-div.transbox h5 {
+whatIs p {
   font-weight: bold;
   color: black;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
 }
 
 img {
@@ -31,24 +20,28 @@ img {
   margin-left: auto;
   margin-right: auto;
   width: 25%;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
-p {
-  font-size: small;
-  text-align: center;
+.contributors {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 0, 0, 0)), to(#f3f3a1));
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #f3f3a1);
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
-h5 {
-  text-align: center;
-}
-
-.btn {
+button.btn {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  -webkit-box-shadow: 4px 5px 10px 2px rgba(66, 64, 64, 0.8);
+          box-shadow: 4px 5px 10px 2px rgba(66, 64, 64, 0.8);
 }
 
-/* ----WHAT IS BORED BLOG AND GAME OF THE WEEK----*/
-/* ----TOP HALF OF PAGE----*/
-/* ----BOTTOM HALF OF PAGE----*/
+.gameImg1 {
+  width: 75%;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+}
 /*# sourceMappingURL=home.component.css.map */

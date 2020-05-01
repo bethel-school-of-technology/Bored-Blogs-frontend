@@ -1,44 +1,48 @@
-<!--
-
-    NOTES:
-       - Assumed names for table columns
-       - Need to figure out if i'm writing this correctly or if i need to ise ngFor (if ngFor then where would i put them?)
-       - 2 Tabs, About and recent posts
-       - Each tab has it's own content (goal is to just pull in data from table(s) dynamically instead of hardcoded)
-       ngFor for the posts!
--->
-
 <!-- Header for the page -->
 <section id="header">
     <!-- Create profile Picture-->
     <div id="profilePicture">
-        <img src="">
+        <img src="https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-48">
     </div>
     <!--Display Name of contributer -->
-    <h3>{{profileId.firstName}} {{profileId.lastName}}</h3>
-    
+    <h3>{{contributor.firstName}} {{contributor.lastName}}</h3>
+
 </section>
 <section>
+
     <!-- Tab Links-->
-    <div class="tab">
-        <button class="tablinks" onclick="">About</button>
-        <button class="tablinks" onclick="">Recent Posts</button>
+    <!-- TODO: think aboot animations and animating these changes for a butter experince -->
+    <div class="tab d-flex w-100 justify-content-center">
+        <button class="tablinks" (click)="setSelector(1)">About</button>
+        <button class="tablinks" (click)="setSelector(2)">Recent Posts</button>
     </div>
-    <!-- Tab Content-->
-    <div id="about" class="tabcontent">
-        <h3>About</h3>
-        <p>{{profileId.aboutMe}}</p>
+
+    <!-- Tab Content (ABOUT)-->
+    <div id="about" [ngClass]="{'d-none':this.selector != 1}" class="tabcontent text-center">
+        <p> Birthday: {{contributor.bio.birthday}}</p>
+        <ul>Favorite Games:
+            <!--TODO would love to have these as links to blogs on said games-->
+            <li>{{contributor.bio.favoriteGames.game1}}</li>
+            <li>{{contributor.bio.favoriteGames.game2}}</li>
+            <li>{{contributor.bio.favoriteGames.game3}}</li>
+        </ul>
+        {{contributor.bio.other}}
     </div>
-    <div id="recentPosts" class="tabcontent">
-        <h3>Recent Posts</h3>
+    <!-- Tab Content (POSTS)-->
+    <div id="recentPosts" [ngClass]="{'d-none':this.selector != 2}" class="tabcontent">
         <!-- Create the recent posts template-->
-
-            <div id="post">
-                {{profileId.profilePicture}} 
-                <h2>{{profileId.postTitle}}</h2>
-                <!-- Need to add a divider line here-->
-                <h2>{{profileId.postBody}}</h2>
+        <div id="postContainer">
+            <div class="post" *ngFor="let Post of Posts">
+                <h2 class="postTitle">{{Post.postTitle}}</h2>
+                <div class="tagsGames">
+                    <img class="tagIcon" src="../../../assets/images/tag.png" />
+                    <p> Tags: {{Post.postTags}}</p>
+                    <p class="relGames"> Related Game(s): {{Post.postGames}}</p>
+                </div>
+                <p class="postBody">{{Post.postBody}}</p>
+                <a [routerLink]='["all-post:id"]'>View Full Post</a>
+                <hr>
             </div>
-
+        </div>
     </div>
 </section>

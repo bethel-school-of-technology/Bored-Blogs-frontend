@@ -1,11 +1,38 @@
 /* Style the tab */
 .tab {
     overflow: hidden;
-    border: 1px solid black;
-    background-color: #f1f1f1;
+    width: 190px;
+    color: red;
 }
 
-/* Style the buttons that are used to open the tab content */
-/* Change background color of buttons on hover */
-/* Create an active/current tablink class */
-/* Style the tab content */
+.tablinks {
+    color: black;
+    background-color: red;
+    border-radius: 20px;
+}
+.tagsGames {
+    float: right;
+}
+.tagIcon {
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+#header {
+    margin: auto;
+    text-align: center;
+    float: center;
+}
+
+.tags .relGames {
+    float: right;
+    padding-left: 5px;
+}
+.postTitle .postBody{
+    float: left;
+    text-align: left;
+}
+
+li {
+    list-style-type: none;
+}

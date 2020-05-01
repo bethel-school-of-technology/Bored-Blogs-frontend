@@ -1,142 +1,55 @@
-
-// BACKGROUND IMAGE
-// #bg {
-//   background-image: url(../../../assets/images/board-game-bg-image1.jpg);
-//   width: 100%;
-//   height: 100%;
-//   position: fixed;
-//   z-index: -1;
-// }
-$padding: 2em;
-$font-size: small;
-$text-align: center;
-
-// main {
-  // display: grid;
-  // grid-template-columns: 70% auto;
-  // grid-template-rows: auto;
-  // grid-template-areas: 
-  //     "whatIs gameOfWeek";
-  // background-image: url(../../../assets/images/board-game-bg-image1.jpg);
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // padding: $padding;
- 
-  
-  
-
-  // section#gameOfWeek {
-  //   padding: $padding;
-  //   background-color: white;
-  // }
-  
-// }
-
-div.background {
-
-  background-image: url(../../../assets/images/board-game-bg-image1.jpg);
-    background-repeat: no-repeat;
+.container {
+  background-image: url('../../../assets/images/board-game-bg-image1-v2.jpg');
+  // background-image: linear-gradient(to top, rgba(160, 156, 105, 0.62), rgba(124, 181, 214, 0.43)),url('../../../assets/images/board-game-bg-image1.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
-  // opacity: .7;
-  
-  }
-
-  div.grid {
-    padding: $padding;
-    display: grid;
-    grid-template-columns: 70% auto;
-    grid-template-rows: auto;
-    grid-template-areas: 
-        "whatIs gameOfWeek";
-  }
-
-div.transbox {
-  padding: $padding;
-  background-color: #ffffff;
-  opacity: .4;
-  
+  width: 100%;
+  height: 100%;
+  // position: absolute;
+  // z-index: -1;
+  // backdrop-filter: blur(60px);
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
-div.transbox h5 {
-    font-weight: bold;
-    color: black;
-  
+// .whatIs {
+//   background-color: #ffffff;
+//   backdrop-filter: blur(90px);
+//   opacity: .4;
+// }
+whatIs p {
+  font-weight: bold;
+  color: black;
+  backdrop-filter: blur(20px);
 }
+
+// .btn {
+//   display: block;
+//   margin-left: auto;
+//   margin-right: auto;
+//   box-shadow: 2px 3px 10px 2px rgba(131, 125, 125, 0.8);
+// }
 
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 25%;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
-p {
-  font-size: small;
-  text-align: $text-align;
+.contributors {
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(243, 243, 161));
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
-h5 {
-  text-align: $text-align;
-}
- .btn {
+button.btn {
   display: block;
   margin-left: auto;
   margin-right: auto;
- }
+  box-shadow: 4px 5px 10px 2px rgba(66, 64, 64, 0.8);
+}
 
-
-/* ----WHAT IS BORED BLOG AND GAME OF THE WEEK----*/
-
-
-// Style variables
-// $padding: 15px;
-// $borders: 15px;
-// $shadow: 0 10px 30px rgba(0,0,0,.2);
-
-/* ----TOP HALF OF PAGE----*/
-
-//IMAGE with WHAT IS BORED BLOG
-// .game {
-//   width: 100%;
-//   clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
-// }
-
-//CONTAINS IMAGE, WHAT IS BORED BLOG, AND GAME OF WEEK
-
-// .flex-grid-container {
-//   background-color: lightyellow;
-//   display: flex;
-//   padding: $padding;
-// }
-
-//IMAGE with GAME OF WEEK
-// .game2{
-//   width: 30%;
-// }
-
-
-// p {
-//   font-size: small;
-//   text-align: center;
-// }
-
-// h5 {
-//   text-align: center;
-// }
-
-
-
-
-/* ----BOTTOM HALF OF PAGE----*/
-
-//CONTRIBUTOR PROFILE PICTURES
-// img {
-//   display: block;
-//   margin-left: auto;
-//   margin-right: auto;
-//   width: 25%;
-// }
-
-// .blog {
-//   margin-right: 25px;
-// }
+.gameImg1 {
+  width: 75%;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+}

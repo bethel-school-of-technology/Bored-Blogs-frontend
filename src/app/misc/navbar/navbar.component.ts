@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { R } from 'src/app/app-routing.module';
-
+/**
+ * Author: Jacob Stanton
+ *
+ * Takes paths from routes to create naviagation
+ * 
+ * @export
+ * @class NavbarComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'navbar',
   templateUrl: './navbar.component.html',
@@ -9,7 +17,7 @@ import { R } from 'src/app/app-routing.module';
 export class NavbarComponent implements OnInit {
   nestedDrawer: boolean = false;
   main: boolean = false;
-  links: any[] = R.getRoutes();
+  links: any[] = R.getRoutesForNavigation();
 
   constructor() { }
 
@@ -17,6 +25,8 @@ export class NavbarComponent implements OnInit {
     console.log(this.links);
   }
 
+  //Jacob Stanton:
+  //toggles the key like main to toggle the visiblity of another guy
   toggle(keyToToggle) {
     try {
       this[keyToToggle] = !this[keyToToggle];

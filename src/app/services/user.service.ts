@@ -18,9 +18,12 @@ export class UserService {
   constructor(private http: HttpClient, private cookieService: CookieService) { }
 
   register(user: User) {
+    //we are using pip share so that we can subscribe twice
     const Observable = this.http.post(`${Config.apiUrl}/users/register`, user).pipe(share())
     Observable.subscribe((user: User) => {
-      this.cookieService.set('token', user.token)
+      //? is it safe to store cookie here?
+      //the only other place i can put it is on the root app instance
+      this.cookieService.set('token', user.token);
     });
     return Observable;
   }

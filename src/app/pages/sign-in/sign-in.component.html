@@ -1,51 +1,52 @@
-<h1>Sign In</h1>
-<br>
+<!-- CONTAINER LAYOUT -->
+<div class="container">
+    <div class="row w-50 h-50 mx-auto">
+        <div class="col">
 
-<!-- Bootstrap Form -->
-<form #signinForm="ngForm" (ngSubmit)="signin(signinForm)">
+            <!--HEADER-->
+            <h1 class="signIn">Sign In</h1>
+            <br>
 
-    <!-- USER NAME -->
-    <div class="form-group">
-        <label for="userName">User Name</label>
-        <input required minlength="3" maxlength="20" pattern="[a-zA-Z]*" ngModel name="userName" #userName="ngModel"
-            id="userName" type="text" class="form-control">
-        <div class="alert alert-danger" *ngIf="userName.touched && !userName.valid">
-            <div *ngIf="userName.errors.required">Username is required</div>
-            <div *ngIf="userName.errors.minlength">Username should be between 3 - 20 characters</div>
-            <div *ngIf="userName.errors.maxlength">Username should be between 3 - 20 characters</div>
-            <div *ngIf="userName.errors.pattern">Username must not contain spaces, numbers or special characters</div>
+            <!-- BOOTSTRAP TEMPLATE-DRIVEN SIGN-IN FORM -->
+            <form #signinForm="ngForm" (ngSubmit)="signin(signinForm)">
+
+                <!-- USER NAME -->
+                <div class="form-group">
+                    <label for="userName">User Name</label>
+                    <input required minlength="3" maxlength="20" pattern="[a-zA-Z]*" ngModel name="userName"
+                        #userName="ngModel" id="userName" type="text" class="form-control">
+                    <div class="alert alert-danger" *ngIf="userName.touched && !userName.valid">
+                        <div *ngIf="userName.errors.required">Username is required</div>
+                        <div *ngIf="userName.errors.minlength">Username should be between 3 - 20 characters</div>
+                        <div *ngIf="userName.errors.maxlength">Username should be between 3 - 20 characters</div>
+                        <div *ngIf="userName.errors.pattern">Username must not contain spaces, numbers or special
+                            characters</div>
+                    </div>
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input required minlength="6" maxlength="20" pattern="^[a-zA-Z0-9]{6,20}$" ngModel name="password"
+                        #password="ngModel" type="text" id="password" class="form-control">
+                    <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+                        <div *ngIf="password.errors.required">Password is required</div>
+                        <div *ngIf="password.errors.minlength">Password must be between 6 - 20 characters</div>
+                        <div *ngIf="password.errors.maxlength">Password must be between 6 - 20 characters</div>
+                        <div *ngIf="password.errors.pattern">Password must not contain any special characters</div>
+                    </div>
+
+                </div>
+               
+
+                <!-- BUTTONS -->
+                <div class="btn-toolbar">
+                 <button class="btn btn-primary">Sign In</button>  
+                 <button class="btn btn-primary">Create Account</button> 
+                </div>
+                
+
+            </form>
         </div>
     </div>
-
-    <!-- EMAIL -->
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input required email="true" emailPattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel name="email"
-            #email="ngModel" type="email" id="email" class="form-control">
-        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
-            <div *ngIf="email.errors.required">Email is required</div>
-            <div *ngIf="email.errors.pattern">Valid email is required</div>
-            <div *ngIf="email.errors?.email">Valid email is required</div>
-        </div>
-    </div>
-
-    <!-- PASSWORD -->
-    <!-- Jackie not sure if this pattern is correct for password to equal pattern validation?? JACKIE CHECK CODE! -->
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input required minlength="6" maxlength="20" pattern="^[a-zA-Z0-9]{6,20}$" ngModel name="password"
-            #password="ngModel" type="password" id="password" class="form-control">
-        <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
-            <div *ngIf="password.errors.required">Password is required</div>
-            <div *ngIf="password.errors.minlength">Password must be between 6 - 20 characters</div>
-            <div *ngIf="password.errors.maxlength">Password must be between 6 - 20 characters</div>
-            <div *ngIf="password.errors.pattern">Password must not contain any special characters</div>
-        </div>
-
-    </div>
-    <br>
-
-    <!-- SIGN IN BUTTON -->
-    <button class="btn btn-primary">Sign In</button>
-
-</form>
+</div>
