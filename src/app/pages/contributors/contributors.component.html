@@ -2,5 +2,8 @@
 <div class="m-2" *ngFor="let contributor of contributors;">
     <h1 [ngStyle]="contributor.color" class="text-best-color border">{{contributor.name}}</h1>
     <p class="p-2 rounded-pill bg-danger">{{contributor.bio}}</p>
+    <a [routerLink]="['/contributor-profile']">
+        <button>See More</button>
+    </a>  
 </div>
 </div>

@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './../app-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BootDemoComponent } from './boot-demo/boot-demo.component';
@@ -8,6 +9,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FormsModule } from '@angular/forms';
 import { ContributersProfileComponent } from './contributers-profile/contributers-profile.component';
+
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { ContributersProfileComponent } from './contributers-profile/contributer
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   exports: [
     BootDemoComponent,
