@@ -14,10 +14,12 @@ export class CreateAccountComponent implements OnInit {
   password = '';
   user: User;
 
-  signin(signinForm: NgForm) {
+  //creates an account
+  createAccount(signinForm: NgForm) {
     console.log(signinForm);
     console.log(signinForm.value);
 
+    //takes data from form and submits it to the backend
     this.userService
       .register(signinForm.value)
       .subscribe((user: User) => {
@@ -26,9 +28,8 @@ export class CreateAccountComponent implements OnInit {
       })
   }
 
-  constructor(private userService: UserService) {
-
-  }
+  //uses the userService to connect to dabase
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }

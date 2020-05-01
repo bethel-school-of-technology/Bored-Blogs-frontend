@@ -1,44 +1,37 @@
-<!--
-
-    NOTES:
-       - Assumed names for table columns
-       - Need to figure out if i'm writing this correctly or if i need to ise ngFor (if ngFor then where would i put them?)
-       - 2 Tabs, About and recent posts
-       - Each tab has it's own content (goal is to just pull in data from table(s) dynamically instead of hardcoded)
-       ngFor for the posts!
--->
-
 <!-- Header for the page -->
 <section id="header">
     <!-- Create profile Picture-->
     <div id="profilePicture">
-        <img src="">
+        <img src="https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-48">
     </div>
     <!--Display Name of contributer -->
-    <h3>{{profileId.firstName}} {{profileId.lastName}}</h3>
-    
+    <h3>{{contributor.firstName}} {{contributor.lastName}}</h3>
+
 </section>
 <section>
+
     <!-- Tab Links-->
+    <!-- TODO: think aboot animations and animating these changes for a butter experince -->
     <div class="tab">
-        <button class="tablinks" onclick="">About</button>
-        <button class="tablinks" onclick="">Recent Posts</button>
+        <button class="tablinks" (click)="setSelector(1)">About</button>
+        <button class="tablinks" (click)="setSelector(2)">Recent Posts</button>
     </div>
-    <!-- Tab Content-->
-    <div id="about" class="tabcontent">
+
+    <!-- Tab Content (ABOUT)-->
+    <div id="about" [ngClass]="{'d-none':this.selector != 1}" class="tabcontent">
         <h3>About</h3>
-        <p>{{profileId.aboutMe}}</p>
+        <p>{{contributor.bio}}</p>
     </div>
-    <div id="recentPosts" class="tabcontent">
+    <!-- Tab Content (POSTS)-->
+    <div id="recentPosts" [ngClass]="{'d-none':this.selector != 2}" class="tabcontent">
         <h3>Recent Posts</h3>
         <!-- Create the recent posts template-->
-
-            <div id="post">
-                {{profileId.profilePicture}} 
-                <h2>{{profileId.postTitle}}</h2>
-                <!-- Need to add a divider line here-->
-                <h2>{{profileId.postBody}}</h2>
+        <div id="postContainer">
+            <div class="post" *ngFor="let Post of Posts">
+                <h2>{{Post.postTitle}}</h2>
+                <hr>
+                <p>{{Post.postBody}}</p>
             </div>
-
+        </div>
     </div>
 </section>

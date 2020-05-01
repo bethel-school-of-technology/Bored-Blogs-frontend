@@ -1,3 +1,4 @@
+import { ContributersProfileComponent as ContributorsProfileComponent } from './pages/contributers-profile/contributers-profile.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -37,10 +38,11 @@ export class R {
     make('home', 'Home', HomeComponent,true),
     make('boot', 'Bootstrap Demo', BootDemoComponent, true),
     //make('contributor', 'Meet the Contributors', ContributorsComponent),
-    make('all', 'View All Posts', AllPostComponent, true),
+    make('all', 'View All Posts', AllPostComponent,true),
     make('sign-in', 'Sign In', SignInComponent, true),
-    make('create-account', 'Create Account', CreateAccountComponent, true),
-    make('contact-us', 'Conact Us', ContactUsComponent, true)
+    make('contact-us', 'Contact Us', ContactUsComponent, true),
+    make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent, true),
+    make('create-account', 'Create account', CreateAccountComponent, true),    
   ];
 
   static getRoutes(): Routes {

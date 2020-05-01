@@ -1,16 +1,21 @@
+import { AppRoutingModule } from './../../app-routing.module';
 import { Component, OnInit } from '@angular/core';
 /*
 
 */
-function styleFromColor(color){
-  return {'background-color':color};
+
+//this style formats the color into a object that ngStyle accepts
+function styleFromColor(color) {
+  return { 'background-color': color };
 }
-function make(mName,mBio, mColor, mUrl) {
+
+//this helps make objects into the same interface and saves some typing and improves readability
+function make(mName, mBio, mColor, mUrl) {
   return {
-    name:mName,
-    bio:mBio,
-    color:mColor,
-    url:mUrl
+    name: mName,
+    bio: mBio,
+    color: mColor,
+    url: mUrl
   }
 };
 
@@ -24,16 +29,20 @@ export class ContributorsComponent implements OnInit {
   //TODO: replace hard coded data with services
   contributors = [
     make(
+      //name
       "Jacob",
+      //bio
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-       styleFromColor('blue'),
-       "https://ca.slack-edge.com/T9P33872P-UMB26EV6E-f1b15a101868-512"
-       ),
+      //color
+      styleFromColor('blue'),
+      //image to use
+      "https://ca.slack-edge.com/T9P33872P-UMB26EV6E-f1b15a101868-512"
+    ),
     make(
       "Jackie",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       styleFromColor('yellow'),
-    "https://ca.slack-edge.com/T9P33872P-UMXPMHEAE-3b5c27f1c336-512"
+      "https://ca.slack-edge.com/T9P33872P-UMXPMHEAE-3b5c27f1c336-512"
     ),
     make(
       "Kayla",
