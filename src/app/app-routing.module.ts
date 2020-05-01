@@ -35,14 +35,14 @@ export class R {
       pathMatch: 'full'
     },
     // NAVBAR Titles & Order
-    make('home', 'Home', HomeComponent,true),
+    make('home', 'Home', HomeComponent, true),
     make('boot', 'Bootstrap Demo', BootDemoComponent, true),
-    //make('contributor', 'Meet the Contributors', ContributorsComponent),
-    make('all', 'View All Posts', AllPostComponent,true),
+    make('contributor', 'Meet the Contributors', ContributorsComponent, true),
+    make('all', 'View All Posts', AllPostComponent, true),
     make('sign-in', 'Sign In', SignInComponent, true),
     make('contact-us', 'Contact Us', ContactUsComponent, true),
     make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent, true),
-    make('create-account', 'Create account', CreateAccountComponent, true),    
+    make('create-account', 'Create account', CreateAccountComponent, true),
   ];
 
   static getRoutes(): Routes {
