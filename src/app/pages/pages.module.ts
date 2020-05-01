@@ -8,6 +8,7 @@ import { AllPostComponent } from './all-post/all-post.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FormsModule } from '@angular/forms';
+import { CreateAccountComponent } from './create-account/create-account.component';
 import { ContributersProfileComponent } from './contributers-profile/contributers-profile.component';
 
 
@@ -20,6 +21,7 @@ import { ContributersProfileComponent } from './contributers-profile/contributer
     AllPostComponent,
     SignInComponent,
     ContactUsComponent,
+    CreateAccountComponent,
     ContributersProfileComponent
   ],
   imports: [

@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContributorsComponent } from './pages/contributors/contributors.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { CreateAccountComponent } from './pages/create-account/create-account.component';
 
 
 const make = (url: string, title: String, component: any) => {
@@ -34,12 +35,13 @@ export class R {
     },
     // NAVBAR Titles & Order
     make('home', 'Home', HomeComponent),
-    // make('boot', 'Bootstrap Demo', BootDemoComponent),
-    make('contributor', 'Meet the Contributors', ContributorsComponent),
+    make('boot', 'Bootstrap Demo', BootDemoComponent),
+    //make('contributor', 'Meet the Contributors', ContributorsComponent),
     make('all', 'View All Posts', AllPostComponent),
     make('sign-in', 'Sign In', SignInComponent),
     make('contact-us', 'Contact Us', ContactUsComponent),
-    make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent)
+    make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent),
+    make('create-account', 'Create account', CreateAccountComponent),    
   ];
 
   static getRoutes(): Routes {
