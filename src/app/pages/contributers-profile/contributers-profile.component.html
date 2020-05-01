@@ -2,7 +2,7 @@
 <section id="header">
     <!-- Create profile Picture-->
     <div id="profilePicture">
-        <img src="https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-48">
+        <img id="profPic"src="https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-48">
     </div>
     <!--Display Name of contributer -->
     <h3>{{contributor.firstName}} {{contributor.lastName}}</h3>
@@ -12,21 +12,25 @@
 
     <!-- Tab Links-->
     <!-- TODO: think aboot animations and animating these changes for a butter experince -->
-    <div class="tab">
-        <button class="tablinks" (click)="setSelector(1)">About</button>
-        <button class="tablinks" (click)="setSelector(2)">Recent Posts</button>
+    <div class="tab d-flex w-100 justify-content-center">
+        <button class="tabOptions" (click)="setSelector(1)">About</button>
+        <button class="tabOptions" (click)="setSelector(2)">Recent Posts</button>
     </div>
 
     <!-- Tab Content (ABOUT)-->
-    <div id="about" [ngClass]="{'d-none':this.selector != 1}" class="tabcontent">
-        <p> Birthday: {{contributor.bio.birthday}}</p>
-        <ul>Favorite Games: 
+    <div id="about" [ngClass]="{'d-none':this.selector != 1}" class="tabcontent text-center">
+        <p> <span>Birthday:</span> {{contributor.bio.birthday}}</p>
+        <ul><span>Favorite Bored Games:</span>
             <!--TODO would love to have these as links to blogs on said games-->
-            <li>{{contributor.bio.favoriteGames.game1}}</li>
-            <li>{{contributor.bio.favoriteGames.game2}}</li>
-            <li>{{contributor.bio.favoriteGames.game3}}</li>
+            <li><a href="">{{contributor.bio.favoriteGames.game1}}</a></li>
+            <li><a href="">{{contributor.bio.favoriteGames.game2}}</a></li>
+            <li><a href="">{{contributor.bio.favoriteGames.game3}}</a></li>
         </ul>
         {{contributor.bio.other}}
+        <p>To see my other works, please use these links: 
+            <a href={{contributor.bio.otherWorks.github}}>Github</a> | 
+            <a href={{contributor.bio.otherWorks.website}}>Personal Website</a> | 
+            <a href={{contributor.bio.otherWorks.linkedIn}}>LinkedIn</a></p>
     </div>
     <!-- Tab Content (POSTS)-->
     <div id="recentPosts" [ngClass]="{'d-none':this.selector != 2}" class="tabcontent">
@@ -37,6 +41,7 @@
                 <div class="tagsGames">
                     <img class="tagIcon"src="../../../assets/images/tag.png"/>
                     <p> Tags: {{Post.postTags}}</p>
+                    <img class="tagIcon" src="../../../assets/images/dice & pieces.jpg"/>
                     <p class="relGames"> Related Game(s): {{Post.postGames}}</p>
             </div>
                 <p class="postBody">{{Post.postBody}}</p>

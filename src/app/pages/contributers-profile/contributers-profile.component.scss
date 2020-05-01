@@ -1,38 +1,51 @@
-/* Style the tab */
+// Add padding on profile picture so it doesn't "scrub" the top
+#profilePicture {
+    padding-top: 5px;
+}
+
+#profPic {
+    border: 2px dotted red;
+}
+// Style the tab
 .tab {
     overflow: hidden;
     width: 190px;
     color: red;
 }
-
-.tablinks {
+// Style the tabs
+.tabOptions {
     color: black;
     background-color: red;
     border-radius: 20px;
 }
+// Style the tags and related games
 .tagsGames {
     float: right;
+    padding-left: 10px;
 }
+
+// Style the icon of a tag
 .tagIcon {
     width: 20px;
     height: 20px;
     float: left;
 }
-#header {
-    margin: auto;
+
+// Style the header
+#header{
     text-align: center;
-    float: center;
 }
 
-.tags .relGames {
-    float: right;
-    padding-left: 5px;
-}
+// Format the title and body of posts
 .postTitle .postBody{
     float: left;
     text-align: left;
 }
 
+// style the favorite games list
 li {
     list-style-type: none;
+}
+span {
+    font-weight: bold;
 }

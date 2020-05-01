@@ -22,6 +22,12 @@ export class ContributersProfileComponent implements OnInit {
           game4: "The Game of Life"
         },
         other:"Hi! My name is Kayla and my favorite animal is a panda. I have a whole collection of stuffed pandas. I am also a full stack web developer. In my spare time, I like to help others at Bethel Tech with their schoolwork and work on various coding projects. I also provide tech support to my friends and family on a case by case basis.",
+        otherWorks: {
+          github: "https://github.com/kayla-d-miller",
+          website: "myWebsite@example.com",
+          linkedIn: "https://https://www.linkedin.com/in/kayla-miller-km/"
+        }
+        
     }
   }
 
