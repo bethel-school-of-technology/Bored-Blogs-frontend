@@ -1,4 +1,82 @@
-<div>all-post works!
-    <div class="{{this.classes}} bg-grey">some text</div>
-    <button (click)="this.toggle()">a button the does stuff</button>
-</div>
+<section>
+    <h3>All Blog Posts</h3>
+    <!--JACOB'S FIRST BLOG POST PREVIEW-->
+
+    <div class="row">
+      <div class="col-sm-12 col-md-6 text-center">
+        <h5>This is {{Contributor.firstName}}'s first Blog post.</h5>
+        <p>{{Post.preview}}</p>
+        <button class="tablinks" (click)="setSelector(1)">Read More</button>
+      </div>
+    </div>
+    <br>
+
+  <!--READ MORE OF JACOB'S FIRST BLOG POST-->
+
+  <div id="readMore" [ngClass]="{'d-none':this.selector != 1}" class="readMore">
+    <div id="postContainer">
+      <div class="Post" *ngFor="let Post of Posts">
+        <h5 class="postTitle">{{Post.Title}}</h5>
+        <p class="postBody">{{Post.Body}}</p>
+      </div>
+    </div>
+  </div>
+
+
+    <!--JACKIE'S FIRST BLOG POST-->
+<!--COME BACK TO THIS
+    <div class="row">
+        <div class="col-sm-12 col-md-6 text-center">
+            <h5 [ngStyle]="contributor.color" class="text-best-color border">This is {{contributor.name}}'s first Blog post.</h5>
+            <p>{{contributor.post}}</p>
+            <button class="tablinks" (click)="setSelector(1)">Read More</button>
+        </div>
+      </div>
+      <br>
+    -->
+      <!--READ MORE OF JACKIE'S FIRST BLOG POST-->
+<!--COME BACK TO THIS
+  <div id="readmore" [ngClass]="{'d-none':this.selector != 1}">
+      <h5>{{contributor.postTitle}}</h5>
+      <p>{{contributor.postContent}}</p>
+    </div>
+
+
+      <!--KAYLA'S FIRST BLOG POST-->
+<!--COME BACK TO THIS
+      <div class="row">
+        <div class="col-sm-12 col-md-6 text-center">
+            <h5 [ngStyle]="contributor.color" class="text-best-color border">This is {{contributor.name}}'s first Blog post.</h5>
+            <p>{{contributor.post}}</p>
+            <button class="tablinks" (click)="setSelector(1)">Read More</button>
+        </div>
+      </div>
+      <br>
+-->
+<!--READ MORE OF KAYLA'S FIRST BLOG POST-->
+<!--COME BACK TO THIS
+<div id="readmore" [ngClass]="{'d-none':this.selector != 1}">
+    <h5>{{contributor.postTitle}}</h5>
+    <p>{{contributor.postContent}}</p>
+  </div>
+
+      <!--KAMYLA'S FIRST BLOG POST-->
+<!--COME BACK TO THIS
+      <div class="row">
+        <div class="col-sm-12 col-md-6 text-center">
+            <h5 [ngStyle]="contributor.color" class="text-best-color border">This is {{contributor.name}}'s first Blog post.</h5>
+            <p>{{contributor.post}}</p>
+            <button class="tablinks" (click)="setSelector(1)">Read More</button>
+        </div>
+      </div>
+
+      <!--READ MORE OF KAMYLA'S FIRST BLOG POST-->
+<!--COME BACK TO THIS
+  <div id="readmore" [ngClass]="{'d-none':this.selector != 1}">
+      <h5>{{contributor.postTitle}}</h5>
+      <p>{{contributor.postContent}}</p>
+    </div>
+
+
+    </section>
+  -->
