@@ -1,10 +1,14 @@
 // Add padding on profile picture so it doesn't "scrub" the top
 #profilePicture {
     padding-top: 5px;
-}
-
-#profPic {
     border: 2px dotted red;
+    border-color: gold;
+    border-image: none;
+    border-radius: 50% 50% 50% 50%;
+    border-style: solid;
+    border-width: 10px;
+    overflow: hidden;
+    width: 100px;
 }
 // Style the tab
 .tab {
