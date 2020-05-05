@@ -9,9 +9,10 @@ import { ContributorsComponent } from './pages/contributors/contributors.compone
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
+import { PostDetailComponent } from './pages/all-post/post-detail/post-detail.component';
 
 
-const make = (url: string, title: String, component: any, isPartOfNav: boolean) => {
+const make = (url: string, title: string, component: any, isPartOfNav: boolean) => {
   return {
     path: url,
     title: title,
@@ -42,6 +43,7 @@ export class R {
     make('sign-in', 'Sign In', SignInComponent, true),
     make('contact-us', 'Contact Us', ContactUsComponent, true),
     make('create-account', 'Create account', CreateAccountComponent, true),
+    make('post-detail', 'Post Detail', PostDetailComponent, false)
   ];
 
   static getRoutes(): Routes {
