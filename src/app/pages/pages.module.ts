@@ -10,7 +10,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FormsModule } from '@angular/forms';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { ContributersProfileComponent } from './contributers-profile/contributers-profile.component';
-import { PostDetailComponent } from './post-detail/post-detail.component';
+import { PostDetailComponent } from './all-post/post-detail/post-detail.component';
 
 
 //module is self explanatory

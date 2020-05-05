@@ -41,7 +41,6 @@ export class R {
     make('all', 'View All Posts', AllPostComponent, true),
     make('sign-in', 'Sign In', SignInComponent, true),
     make('contact-us', 'Contact Us', ContactUsComponent, true),
-    make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent, true),
     make('create-account', 'Create account', CreateAccountComponent, true),
   ];
 
