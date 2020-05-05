@@ -11,12 +11,12 @@ export class PostDetailComponent implements OnInit {
 
   Comments = [
     {
-    firstOne: "This is my favorite post so far!",
-    secondOne: "Interesting opinion. Thanks for sharing."
+    firstOne: 'This is my favorite post so far!',
+    secondOne: 'Interesting opinion. Thanks for sharing.'
   },
   {
-    firstOne: "Very well written. Really enjoyed reading this.",
-    secondOne: "Can't wait to give this a game a try!"
+    firstOne: 'Very well written. Really enjoyed reading this.',
+    secondOne: 'Looking forward to giving this a game a try!'
   }
   ];
 
