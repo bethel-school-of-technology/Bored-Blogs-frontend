@@ -1,1 +1,8 @@
-/* No CSS *//*# sourceMappingURL=create-account.component.css.map */
+.container {
+  background: #f2cc0a;
+  background: linear-gradient(300deg, #f2cc0a 0%, rgba(9, 75, 121, 0.252836) 35%, rgba(255, 0, 0, 0.869083) 100%);
+  padding-bottom: 75px;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+}
+/*# sourceMappingURL=create-account.component.css.map */

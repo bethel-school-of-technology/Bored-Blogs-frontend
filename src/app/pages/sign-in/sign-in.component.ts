@@ -11,7 +11,6 @@ import { UserService } from 'src/app/services/user.service';
 
 export class SignInComponent implements OnInit {
   userName = '';
-  // email = '';
   password = '';
   user: User;
 

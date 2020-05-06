@@ -37,6 +37,11 @@ export class UserService {
     return Observable;
   }
 
+  //TODO: fix spelling and make it work
+  getContributors(){
+    return
+  }
+
   getUserFromLoacl() {
     //TODO: eat the cookie
   }

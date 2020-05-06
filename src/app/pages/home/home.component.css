@@ -8,25 +8,31 @@
           box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
-whatIs p {
-  font-weight: bold;
-  color: black;
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+.title {
+  font-family: 'Indie Flower', cursive;
+  font-size: 5em;
+  background: #30c230;
+  background: -webkit-gradient(linear, left top, right top, from(#30c230), color-stop(50%, rgba(233, 240, 74, 0.958719)), to(#006eff));
+  background: linear-gradient(90deg, #30c230 0%, rgba(233, 240, 74, 0.958719) 50%, #006eff 100%);
 }
 
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 25%;
+  width: 55%;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+}
+
+.gameOfWeek {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(255, 0, 0, 0)), to(#f3f3a1));
+  background-image: linear-gradient(to left, rgba(255, 0, 0, 0), #f3f3a1);
   -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
           box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
 .contributors {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 0, 0, 0)), to(#f3f3a1));
-  background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #f3f3a1);
   -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
           box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
@@ -40,7 +46,7 @@ button.btn {
 }
 
 .gameImg1 {
-  width: 75%;
+  width: 100%;
   -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
           box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }

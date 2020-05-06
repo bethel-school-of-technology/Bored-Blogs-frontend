@@ -1,10 +1,6 @@
-// .container {
-//     background-image: url(../../../assets/images/catan-v2.jpeg);
-//     background-size: cover;
-//     width: 100%;
-//     height: 100%;
-//     position: fixed;
-//     z-index: -1;
-//     box-shadow: 10px 10px 20px 5px rgba(90, 85, 85, 0.8);
-//     // clip-path: polygon(100% 5%, 44% 100%, 100% 100%);
-// }
+.container {
+    background: rgb(242,204,10);
+    background: linear-gradient(300deg, rgba(242,204,10,1) 0%, rgba(9,75,121,0.2528361686471463) 35%, rgba(255,0,0,0.8690826672465861) 100%);
+    padding-bottom: 75px;
+    box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+}
