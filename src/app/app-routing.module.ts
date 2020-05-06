@@ -1,4 +1,4 @@
-import { ContributersProfileComponent as ContributorsProfileComponent } from './pages/contributers-profile/contributers-profile.component';
+import { ContributersProfileComponent as ContributorsProfileComponent, ContributersProfileComponent } from './pages/contributers-profile/contributers-profile.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -39,6 +39,7 @@ export class R {
     make('home', 'Home', HomeComponent, true),
     make('boot', 'Bootstrap Demo', BootDemoComponent, true),
     make('contributor', 'Meet the Contributors', ContributorsComponent, true),
+    make('contributers-profile', 'Contributers Profile', ContributersProfileComponent, false),
     make('all', 'View All Posts', AllPostComponent, true),
     make('sign-in', 'Sign In', SignInComponent, true),
     make('contact-us', 'Contact Us', ContactUsComponent, true),

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -8,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllPostComponent implements OnInit {
 
+  @Output() postDeleted: EventEmitter<number> = new EventEmitter();
+
   constructor() { }
+
+  onClickDelete() {
+   this.postDeleted.emit(this.Posts[id]);
+  }
 
   Contributor = [
     {
