@@ -1,5 +1,7 @@
 // Add padding on profile picture so it doesn't "scrub" the top
 #profilePicture {
+    padding-top: 5px;
+    border: 2px dotted red;
     border-color: gold;
     border-image: none;
     border-radius: 50% 50% 50% 50%;
