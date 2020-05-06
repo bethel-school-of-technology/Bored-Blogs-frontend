@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
-
 @Component({
   selector: 'app-all-post',
   templateUrl: './all-post.component.html',
@@ -8,13 +7,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class AllPostComponent implements OnInit {
 
-  @Output() postDeleted: EventEmitter<number> = new EventEmitter();
+//  @Output() postDeleted: EventEmitter<number> = new EventEmitter();
 
   constructor() { }
 
-  onClickDelete() {
-   this.postDeleted.emit(this.Posts[id]);
-  }
+//  onClickDelete() {
+//   this.postDeleted.emit(this.Posts.id);}
 
   Contributor = [
     {

@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { ContributersProfileComponent } from './contributers-profile/contributers-profile.component';
 import { PostDetailComponent } from './all-post/post-detail/post-detail.component';
+import { PostListComponent } from './all-post/post-list/post-list.component';
 
 
 //module is self explanatory
@@ -37,7 +38,9 @@ import { PostDetailComponent } from './all-post/post-detail/post-detail.componen
     HomeComponent,
     AllPostComponent,
     SignInComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    PostDetailComponent,
+    PostListComponent
   ]
 })
 export class PagesModule { }
