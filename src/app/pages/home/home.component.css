@@ -11,7 +11,6 @@
 .title {
   font-family: 'Indie Flower', cursive;
   font-size: 5em;
-  font-weight: 3em;
   background: #30c230;
   background: -webkit-gradient(linear, left top, right top, from(#30c230), color-stop(50%, rgba(233, 240, 74, 0.958719)), to(#006eff));
   background: linear-gradient(90deg, #30c230 0%, rgba(233, 240, 74, 0.958719) 50%, #006eff 100%);
@@ -47,7 +46,7 @@ button.btn {
 }
 
 .gameImg1 {
-  width: 75%;
+  width: 100%;
   -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
           box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
