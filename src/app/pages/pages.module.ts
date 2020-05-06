@@ -12,6 +12,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { ContributersProfileComponent } from './contributers-profile/contributers-profile.component';
 import { PostDetailComponent } from './all-post/post-detail/post-detail.component';
 import { PostListComponent } from './all-post/post-list/post-list.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 //module is self explanatory
@@ -25,7 +26,9 @@ import { PostListComponent } from './all-post/post-list/post-list.component';
     ContactUsComponent,
     CreateAccountComponent,
     ContributersProfileComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    PostListComponent,
+    AdminDashboardComponent
   ],
   imports: [
     CommonModule,

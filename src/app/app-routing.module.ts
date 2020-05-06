@@ -10,6 +10,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
 import { PostDetailComponent } from './pages/all-post/post-detail/post-detail.component';
+import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 
 
 const make = (url: string, title: string, component: any, isPartOfNav: boolean) => {
@@ -44,7 +45,8 @@ export class R {
     make('sign-in', 'Sign In', SignInComponent, true),
     make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent, false),
     make('create-account', 'Create account', CreateAccountComponent, false),
-    make('post-detail', 'Post Detail', PostDetailComponent, false)
+    make('post-detail', 'Post Detail', PostDetailComponent, false),
+    make('admin', 'Admin', AdminDashboardComponent, false)
   ];
 
   static getRoutes(): Routes {
