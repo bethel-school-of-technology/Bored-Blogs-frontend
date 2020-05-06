@@ -36,12 +36,12 @@ export class R {
     },
     // NAVBAR Titles & Order
     make('home', 'Home', HomeComponent, true),
-    make('boot', 'Bootstrap Demo', BootDemoComponent, true),
+    make('boot', 'Bootstrap Demo', BootDemoComponent, false),
     make('contributor', 'Meet the Contributors', ContributorsComponent, true),
     make('all', 'View All Posts', AllPostComponent, true),
     make('sign-in', 'Sign In', SignInComponent, true),
     make('contact-us', 'Contact Us', ContactUsComponent, true),
-    make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent, true),
+    make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent, false),
     make('create-account', 'Create account', CreateAccountComponent, true),
   ];
 

@@ -11,34 +11,39 @@
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
+.title {
+  font-family: 'Indie Flower', cursive;
+  font-size: 5em;
+  font-weight: 3em;
+  background: rgb(48,194,48);
+  background: linear-gradient(90deg, rgba(48,194,48,1) 0%, rgba(233,240,74,0.9587185215883228) 50%, rgba(0,110,255,1) 100%);
+}
 // .whatIs {
 //   background-color: #ffffff;
 //   backdrop-filter: blur(90px);
 //   opacity: .4;
 // }
-whatIs p {
-  font-weight: bold;
-  color: black;
-  backdrop-filter: blur(20px);
-}
-
-// .btn {
-//   display: block;
-//   margin-left: auto;
-//   margin-right: auto;
-//   box-shadow: 2px 3px 10px 2px rgba(131, 125, 125, 0.8);
+// whatIs p {
+//   font-weight: bold;
+//   color: black;
+//   backdrop-filter: blur(20px);
 // }
 
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 25%;
+  width: 55%;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+}
+
+.gameOfWeek {
+  background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(243, 243, 161));
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
 .contributors {
-  background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(243, 243, 161));
+  // background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(243, 243, 161));
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
