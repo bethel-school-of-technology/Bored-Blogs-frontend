@@ -4,7 +4,11 @@
       "id": 1,
       "title": "Settlers of Catan",
       "body": "Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum."
-
+    },
+    {
+      "id": 2,
+      "title": "Ticket to Ride",
+      "body":"Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum."
     }
   ]
 }

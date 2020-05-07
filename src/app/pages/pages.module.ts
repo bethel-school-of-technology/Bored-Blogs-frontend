@@ -11,11 +11,14 @@ import { FormsModule } from '@angular/forms';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { ContributersProfileComponent } from './contributers-profile/contributers-profile.component';
 import { PostDetailComponent } from './all-post/post-detail/post-detail.component';
-import { PostListComponent } from './all-post/post-list/post-list.component';
+import { PostListComponent } from './admin-dashboard/post-list/post-list.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { PostAddComponent } from './admin-dashboard/post-add/post-add.component';
+import { NavComponent } from './admin-dashboard/nav/nav.component';
+import { PostEditComponent } from './admin-dashboard/post-edit/post-edit.component';
 
 
-//module is self explanatory
+// module is self explanatory
 @NgModule({
   declarations: [
     BootDemoComponent,
@@ -28,7 +31,10 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     ContributersProfileComponent,
     PostDetailComponent,
     PostListComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    PostAddComponent,
+    NavComponent,
+    PostEditComponent
   ],
   imports: [
     CommonModule,
@@ -43,6 +49,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     SignInComponent,
     ContactUsComponent,
     PostDetailComponent,
+    PostEditComponent,
+    PostAddComponent,
     PostListComponent
   ]
 })

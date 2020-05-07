@@ -1,0 +1,10 @@
+<h1>This is the Post List Component</h1>
+<ul>
+  <li *ngFor="let post of posts">
+    {{post.title}}
+    <br>
+    {{post.body}}
+    <button (click)="deletePost(post.id)">Delete</button>
+    <a [routerLink]="['/edit', post.id]"><button>Edit</button></a>
+  </li>
+</ul>

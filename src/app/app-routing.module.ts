@@ -11,6 +11,9 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
 import { PostDetailComponent } from './pages/all-post/post-detail/post-detail.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
+import { PostListComponent } from './pages/admin-dashboard/post-list/post-list.component';
+import { PostAddComponent } from './pages/admin-dashboard/post-add/post-add.component';
+import { PostEditComponent } from './pages/admin-dashboard/post-edit/post-edit.component';
 
 
 const make = (url: string, title: string, component: any, isPartOfNav: boolean) => {
@@ -46,7 +49,10 @@ export class R {
     make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent, false),
     make('create-account', 'Create account', CreateAccountComponent, false),
     make('post-detail', 'Post Detail', PostDetailComponent, false),
-    make('admin', 'Admin', AdminDashboardComponent, false)
+    make('post-list', 'Post List', PostListComponent, false),
+    make('post-add', 'Post Add', PostAddComponent, false),
+    make('post-edit', 'Post Edit', PostEditComponent, false),
+    make('admin', 'Admin', AdminDashboardComponent, true) // need to turn this back to false
   ];
 
   static getRoutes(): Routes {
