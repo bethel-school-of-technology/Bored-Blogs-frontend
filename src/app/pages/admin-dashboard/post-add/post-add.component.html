@@ -1,6 +1,19 @@
-<h3>Post Add Component</h3>
-Title: <input [(ngModel)]="newPost.title">
-<br>
-Text: <input [(ngModel)]="newPost.body">
-<br>
-<button (click)="addPost()">Add Post</button>
+<h3>Create a New Blog Post</h3>
+<div>
+  <form (ngSubmit)="addPost()">
+    <div>
+      <label for="title">
+        Title of New Post
+      </label>
+      <input id="title" type="text" name="title" required [(ngModel)]="newPost.title">
+    </div>
+    <div>
+      <label for="body">
+        Body of New Post
+      </label>
+      <textarea id="body" cols="20" rows="10" type="text" name="body" [(ngModel)]="newPost.body">
+      </textarea>
+    </div>
+    <button (click)="addPost()">Add Post</button>
+  </form>
+

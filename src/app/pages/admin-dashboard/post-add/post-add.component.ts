@@ -4,7 +4,7 @@ import { PostDataService } from '../post-data.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'post-add',
+  selector: 'app-post-add',
   templateUrl: './post-add.component.html',
   styleUrls: ['./post-add.component.scss']
 })
@@ -16,10 +16,10 @@ export class PostAddComponent implements OnInit {
   addPost() {
     this.postDataService
     .addPost(this.newPost)
-    .subscribe(p => this.router.navigate(["post-list"]));
+    .subscribe(p => this.router.navigate(['app-post-list']));
   }
 
-  constructor( private postDataService: PostDataService, private router : Router) { }
+  constructor( private postDataService: PostDataService, private router: Router) { }
 
   ngOnInit() {
   }
