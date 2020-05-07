@@ -1,11 +1,11 @@
 <!-- CONTAINER LAYOUT -->
 <div class="container content">
-    <div class="row w-50 h-50 mx-auto">
-        <div class="col">
+    <div class="row h-100 justify-content-start">
+        <div class="col-md-6">
 
             <!--HEADER-->
             <br>
-            <h1 class="header text-white">Sign In</h1>
+            <h1 class="header text-white text-center">Sign In</h1>
             <br>
 
             <!-- BOOTSTRAP TEMPLATE-DRIVEN SIGN-IN FORM -->
@@ -25,7 +25,7 @@
 
                 <!-- PASSWORD -->
                 <div class="form-group">
-                   <strong><label for="password">Password</label></strong>
+                    <strong><label for="password">Password</label></strong>
                     <input required minlength="6" maxlength="20" pattern="^[a-zA-Z0-9]{6,20}$" ngModel name="password"
                         #password="ngModel" type="text" id="password" class="form-control">
                     <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
@@ -36,15 +36,15 @@
                     </div>
 
                 </div>
-               
-<p>Don't have an account? Create one now.</p>
+
+                <p>Don't have an account? Create one now.</p>
 
                 <!-- BUTTONS -->
                 <div class="btn-toolbar">
-                  <button class="btn btn-primary">Sign In</button>  
-                 <button [routerLink]='["/create-account"]' class="btn btn-primary">Create Account</button> 
+                    <button class="btn btn-primary">Sign In</button>
+                    <button [routerLink]='["/create-account"]' class="btn btn-primary">Create Account</button>
                 </div>
-<br>
+                <br>
                 <div>
                     <h5>Benefits of having a Bored Blog account:</h5>
                     <ul>
@@ -52,7 +52,7 @@
                         <li>Comment on blog posts and other comments</li>
                     </ul>
                 </div>
-                
+
 
             </form>
         </div>
@@ -62,8 +62,8 @@
 
 
 <!-- KEEP FOR NOW IN CASE WE DECIDE TO GO BACK TO REQUIRING A USER NAME -->
-                <!-- USER NAME -->
-                <!-- <div class="form-group">
+<!-- USER NAME -->
+<!-- <div class="form-group">
                     <label for="userName">Email</label>
                     <input required minlength="3" maxlength="20" pattern="[a-zA-Z]*" ngModel name="userName"
                         #userName="ngModel" id="userName" type="text" class="form-control">
