@@ -8,16 +8,11 @@ import { MiscModule } from './misc/misc.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import { PostListComponent } from './pages/admin-dashboard/post-list/post-list.component';
-import { PostAddComponent } from './pages/admin-dashboard/post-add/post-add.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostListComponent,
-    PostAddComponent
-
   ],
   imports: [
     BrowserModule,

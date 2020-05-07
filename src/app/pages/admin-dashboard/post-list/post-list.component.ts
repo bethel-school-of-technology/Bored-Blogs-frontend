@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostDataService } from '../post-data.service';
 import { Post } from '../post';
 @Component({
-  selector: 'app-post-list',
+  selector: 'post-list',
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.scss']
 })
@@ -18,7 +18,7 @@ export class PostListComponent implements OnInit {
     this.postDataService.deletePost(id).subscribe(p => this.getPosts());
   }
 
-  constructor(private postDataService: PostDataService) {}
+  constructor(private postDataService: PostDataService) { }
 
 
 
