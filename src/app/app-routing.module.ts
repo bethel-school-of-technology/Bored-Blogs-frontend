@@ -48,10 +48,10 @@ export class R {
     make('sign-in', 'Sign In', SignInComponent, true),
     make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent, false),
     make('create-account', 'Create account', CreateAccountComponent, false),
-    make('post-detail', 'Post Detail', PostDetailComponent, false),
+    make('post-detail/:id', 'Post Detail', PostDetailComponent, false),
     make('post-list', 'Post List', PostListComponent, false),
     make('post-add', 'Post Add', PostAddComponent, false),
-    make('post-edit', 'Post Edit', PostEditComponent, false),
+    make('post-edit/:id', 'Post Edit', PostEditComponent, false),
     make('admin', 'Admin', AdminDashboardComponent, true) // need to turn this back to false
   ];
 
