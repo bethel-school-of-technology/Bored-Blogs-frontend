@@ -1,4 +1,4 @@
-<a class="btn btn-secondary btn-sm" role="button" (click)="setSelector(i)">See Comments on this Post</a>
+<a class="btn btn-secondary btn-sm" role="button" (click)="setSelector()">See Comments on this Post</a>
 <div class="Comments" *ngFor="let Comment of Comments; index as i">
 <p class="firstOne" [ngClass]="{'collapse':this.selector != i}">
   {{Comment.firstOne}}

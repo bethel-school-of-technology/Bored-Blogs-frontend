@@ -1,1 +1,31 @@
-/* No CSS *//*# sourceMappingURL=contributors.component.css.map */
+body {
+  background-image: url("../../../assets/images/1.jpg");
+  background-size: cover;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+img {
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  text-align: center;
+}
+
+.card {
+  opacity: 0.8;
+  padding-bottom: 25px;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+}
+/*# sourceMappingURL=contributors.component.css.map */
