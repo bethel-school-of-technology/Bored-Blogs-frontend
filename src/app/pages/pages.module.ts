@@ -16,6 +16,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { PostAddComponent } from './admin-dashboard/post-add/post-add.component';
 import { NavComponent } from './admin-dashboard/nav/nav.component';
 import { PostEditComponent } from './admin-dashboard/post-edit/post-edit.component';
+import { BlogDashboardComponent } from './admin-dashboard/blog-dashboard/blog-dashboard.component';
 
 
 // module is self explanatory
@@ -34,7 +35,8 @@ import { PostEditComponent } from './admin-dashboard/post-edit/post-edit.compone
     AdminDashboardComponent,
     PostAddComponent,
     NavComponent,
-    PostEditComponent
+    PostEditComponent,
+    BlogDashboardComponent
   ],
   imports: [
     CommonModule,
