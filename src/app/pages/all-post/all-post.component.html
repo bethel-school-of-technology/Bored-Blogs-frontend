@@ -1,7 +1,7 @@
 <section>
   <h1>All Blog Posts</h1>
-  <div *ngIf="false" class="container">
-    <div class="Posts" *ngFor="let Post of Posts; index as i">
+  <div *ngIf="true" class="container">
+    <div class="Posts" *ngFor="let Post of posts; index as i">
       <h5 class="postTitle">{{Post.Title}}</h5>
       <div class="d-flex justify-content-center">
         <button class="tablinks btn btn-primary btn-md" (click)="setSelector(i)">Read More</button>

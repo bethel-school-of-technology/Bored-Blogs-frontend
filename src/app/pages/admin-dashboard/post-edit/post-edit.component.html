@@ -1,6 +1,17 @@
-<h3>Post Add Component</h3>
-Title: <input [(ngModel)]="editPost.title">
-<br>
-Text: <input [(ngModel)]="editPost.body">
-<br>
-<button (click)="savePost()">Add Post</button>
+<!--THIS COMPONENT IS WHERE ADMINS CAN EDIT A BLOG POST-->
+
+<form #f="ngForm" (ngSubmit)="savePost(f)">
+    <div>
+        <label for="Title">
+            Title
+        </label>
+        <input id="Title" type="text" name="Title" required [(ngModel)]="editPost.Title">
+    </div>
+    <div>
+        <label for="Body">
+            Body
+        </label>
+        <textarea id="Body" type="text" name="Body" [(ngModel)]="editPost.Body">{{editPost.Body}}</textarea>
+    </div>
+    <button class="button" type="submit">Save Changes</button>
+</form>
