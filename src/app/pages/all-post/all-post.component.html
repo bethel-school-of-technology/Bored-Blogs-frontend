@@ -1,22 +1,27 @@
 <section>
   <h1>All Blog Posts</h1>
-
-  <div class="container">
-    <div class="Posts" *ngFor="let Post of Posts; index as i">
+  <div *ngIf="true" class="container">
+    <div class="Posts" *ngFor="let Post of posts; index as i">
       <h5 class="postTitle">{{Post.Title}}</h5>
-      <div class="title d-flex justify-content-center">
+      <div class="d-flex justify-content-center">
         <button class="tablinks btn btn-primary btn-md" (click)="setSelector(i)">Read More</button>
       </div>
       <p class="postBody" [ngClass]="{'collapse':this.selector != i}">
+        <button class="btn btn-primary btn-md close" (click)="setSelector(-1)"><span
+            aria-hidden="true">&times;</span></button>
         <strong>Contributed by: {{Post.Author}}</strong>
         <br>
         {{Post.Body}}
         <br>
-        <br>
-        <button [routerLink]='["/post-detail"]' class='btn btn-large bg-primary text-white'>See comments</button>
+        <button [routerLink]='["/post-detail"]' class='btn-large bg-primary text-white btn'>See comments</button>
         <!--
       <app-post-detail></app-post-detail>
       -->
+
       </p>
     </div>
+
   </div>
+
+
+  <!--<button (click)="onClickDelete()">Delete</button>-->

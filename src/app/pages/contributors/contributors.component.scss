@@ -1,16 +1,27 @@
+
+//BACKGROUND
+
 body {
   background-image: url("../../../assets/images/1.jpg");
   background-size: cover;
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
+//CONTRIBUTOR PROFILE
 
-h1 {
-  color: white;
-  text-align: center;
-  padding: 10px;
+//puts a frame around each contributor's picture & description
+.card {
+  opacity: 0.8;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+//title of page
+h1{
+  text-align: center;//can use text-center
+  padding: 10px;//can use p-1
+}
+
+//individual contributor's profile pictures
 img {
   border-radius: 50%;
   display: block;
@@ -18,6 +29,8 @@ img {
   margin-right: auto;
 }
 
+
+//description for each contributor
 p {
   text-align: center;
 }
