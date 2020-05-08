@@ -19,7 +19,7 @@ export class PostEditComponent implements OnInit {
     console.log(this.editPost);
 
     this.postDataService.editPost(this.editPost).subscribe(
-      p => this.router.navigate(['post-list'])
+      p => this.router.navigate(['blog-dashboard'])
     );
   }
 

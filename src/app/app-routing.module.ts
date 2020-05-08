@@ -14,6 +14,7 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
 import { PostListComponent } from './pages/admin-dashboard/post-list/post-list.component';
 import { PostAddComponent } from './pages/admin-dashboard/post-add/post-add.component';
 import { PostEditComponent } from './pages/admin-dashboard/post-edit/post-edit.component';
+import { BlogDashboardComponent } from './pages/admin-dashboard/blog-dashboard/blog-dashboard.component';
 
 
 const make = (url: string, title: string, component: any, isPartOfNav: boolean) => {
@@ -52,6 +53,7 @@ export class R {
     make('post-list', 'Post List', PostListComponent, false),
     make('post-add', 'Post Add', PostAddComponent, false),
     make('post-edit/:id', 'Post Edit', PostEditComponent, false),
+    make('blog-dashboard', 'Blog Dashboard', BlogDashboardComponent, false),
     make('admin', 'Admin', AdminDashboardComponent, true) // need to turn this back to false
   ];
 
