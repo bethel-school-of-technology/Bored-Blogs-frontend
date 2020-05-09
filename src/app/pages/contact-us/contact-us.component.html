@@ -12,7 +12,7 @@
 
         <!--NAME-->
         <div class="form-group">
-          <label for="name">User Name</label>
+          <label for="name">First Name</label>
           <input id="name" name="name" #name="ngModel" (change)="log(name)"
             class="p-0 m-0 form-control ng-invalid ng-touched" name="first" ngModel required>
           <div class="alert alert-danger" *ngIf="name.touched && !name.valid">First Name is required.</div>
@@ -35,11 +35,11 @@
 
         <!--SUBMIT BUTTON-->
         <div class="btn-toolbar">
-          <button class="btn btn-primary">Submit</button>  
+          <button class="btn btn-primary">Submit</button>
         </div>
 
       </form>
-      
+
     </div>
   </div>
 </div>

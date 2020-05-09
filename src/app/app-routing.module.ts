@@ -1,4 +1,4 @@
-import { ContributersProfileComponent as ContributorsProfileComponent } from './pages/contributers-profile/contributers-profile.component';
+import { ContributersProfileComponent as ContributorsProfileComponent, ContributersProfileComponent } from './pages/contributers-profile/contributers-profile.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -9,9 +9,15 @@ import { ContributorsComponent } from './pages/contributors/contributors.compone
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
+import { PostDetailComponent } from './pages/all-post/post-detail/post-detail.component';
+import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
+import { PostListComponent } from './pages/admin-dashboard/post-list/post-list.component';
+import { PostAddComponent } from './pages/admin-dashboard/post-add/post-add.component';
+import { PostEditComponent } from './pages/admin-dashboard/post-edit/post-edit.component';
+import { BlogDashboardComponent } from './pages/admin-dashboard/blog-dashboard/blog-dashboard.component';
 
 
-const make = (url: string, title: String, component: any, isPartOfNav: boolean) => {
+const make = (url: string, title: string, component: any, isPartOfNav: boolean) => {
   return {
     path: url,
     title: title,
@@ -36,13 +42,19 @@ export class R {
     },
     // NAVBAR Titles & Order
     make('home', 'Home', HomeComponent, true),
-    make('boot', 'Bootstrap Demo', BootDemoComponent, true),
-    make('contributor', 'Meet the Contributors', ContributorsComponent, true),
+    make('boot', 'Bootstrap Demo', BootDemoComponent, false),
     make('all', 'View All Posts', AllPostComponent, true),
-    make('sign-in', 'Sign In', SignInComponent, true),
+    make('contributor', 'Meet the Contributors', ContributorsComponent, true),
     make('contact-us', 'Contact Us', ContactUsComponent, true),
-    make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent, true),
-    make('create-account', 'Create account', CreateAccountComponent, true),
+    make('sign-in', 'Sign In', SignInComponent, true),
+    make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent, false),
+    make('create-account', 'Create account', CreateAccountComponent, false),
+    make('post-detail/:id', 'Post Detail', PostDetailComponent, false),
+    make('post-list', 'Post List', PostListComponent, false),
+    make('post-add', 'Post Add', PostAddComponent, false),
+    make('post-edit/:id', 'Post Edit', PostEditComponent, false),
+    make('blog-dashboard', 'Blog Dashboard', BlogDashboardComponent, false),
+    make('admin', 'Admin', AdminDashboardComponent, true) // need to turn this back to false
   ];
 
   static getRoutes(): Routes {

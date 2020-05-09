@@ -1,8 +1,28 @@
-img {
-  max-width: 80%;
+section {
+  background-image: url("../../../assets/images/1.jpg");
+  background-size: cover;
 }
 
-h3 {
+h1 {
+  color: white;
+  text-decoration: underline;
   text-align: center;
+}
+
+h5 {
+  font-style: italic;
+  color: white;
+}
+
+.postTitle {
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.postBody {
+  background-color: white;
+  opacity: 0.8;
+  padding-top: 15px;
+  padding-bottom: 5px;
 }
 

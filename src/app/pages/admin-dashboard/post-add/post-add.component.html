@@ -1,0 +1,25 @@
+<!--THIS COMPONENT IS WHERE ADMINS CAN ADD A NEW BLOG POST-->
+
+<h3>Create a New Blog Post</h3>
+<div class="form-group">
+  <form (ngSubmit)="addPost()">
+    <div>
+      <label for="title">
+        <strong>
+        Title
+      </strong>
+      </label>
+      <input class="form-control col-4" id="title" type="text" name="title" required [(ngModel)]="newPost.Title">
+    </div>
+    <div>
+      <label for="body">
+        <strong>
+        Body
+      </strong>
+      </label>
+      <textarea class="form-control" id="body" cols="100" rows="10" type="text" name="body" [(ngModel)]="newPost.Body">
+      </textarea>
+    </div>
+    <button type="submit">Add Post</button>
+  </form>
+

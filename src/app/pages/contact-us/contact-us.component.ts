@@ -6,6 +6,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./contact-us.component.scss']
 })
 export class ContactUsComponent {
+ 
   constructor() { }
 
   ngOnInit() {

@@ -8,6 +8,8 @@ import { MiscModule } from './misc/misc.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+
+
 @NgModule({
   declarations: [
     AppComponent,

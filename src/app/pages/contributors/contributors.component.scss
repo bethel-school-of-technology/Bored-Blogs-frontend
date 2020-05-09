@@ -1,13 +1,25 @@
+
+//BACKGROUND
+
 body {
   background-image: url("../../../assets/images/1.jpg");
   background-size: cover;
 }
 
+//CONTRIBUTOR PROFILE
 
+//puts a frame around each contributor's picture & description
+.card {
+  opacity: 0.8;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+//title of page
 h1{
   text-align: center;
 }
 
+//individual contributor's profile pictures
 img {
   border-radius: 50%;
   display: block;
@@ -15,11 +27,12 @@ img {
   margin-right: auto;
 }
 
+
+//description for each contributor
 p {
   text-align: center;
 }
 
-.card {
-  opacity: 0.8;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
+
+//RESPONSIVENESS
+

@@ -1,82 +1,25 @@
 <section>
-    <h3>All Blog Posts</h3>
-    <!--JACOB'S FIRST BLOG POST PREVIEW-->
-
-    <div class="row">
-      <div class="col-sm-12 col-md-6 text-center">
-        <h5>This is {{Contributor.firstName}}'s first Blog post.</h5>
-        <p>{{Post.preview}}</p>
-        <button class="tablinks" (click)="setSelector(1)">Read More</button>
+  <h1>All Blog Posts</h1>
+  <div *ngIf="true" class="container">
+    <div class="Posts" *ngFor="let Post of posts; index as i">
+      <h5 class="postTitle">{{Post.Title}}</h5>
+      <div class="d-flex justify-content-center">
+        <button class="tablinks btn btn-primary btn-md" (click)="setSelector(i)">Read More</button>
       </div>
-    </div>
-    <br>
+      <p class="postBody" [ngClass]="{'collapse':this.selector != i}">
+        <strong>Contributed by: {{Post.Author}}</strong>
+        <br>
+        {{Post.Body}}
+        <br>
+        <button [routerLink]='["/post-detail"]' class='btn-large bg-primary text-white btn'>See comments</button>
+        <!--
+      <app-post-detail></app-post-detail>
+      -->
 
-  <!--READ MORE OF JACOB'S FIRST BLOG POST-->
-
-  <div id="readMore" [ngClass]="{'d-none':this.selector != 1}" class="readMore">
-    <div id="postContainer">
-      <div class="Post" *ngFor="let Post of Posts">
-        <h5 class="postTitle">{{Post.Title}}</h5>
-        <p class="postBody">{{Post.Body}}</p>
-      </div>
+      </p>
     </div>
+
   </div>
 
 
-    <!--JACKIE'S FIRST BLOG POST-->
-<!--COME BACK TO THIS
-    <div class="row">
-        <div class="col-sm-12 col-md-6 text-center">
-            <h5 [ngStyle]="contributor.color" class="text-best-color border">This is {{contributor.name}}'s first Blog post.</h5>
-            <p>{{contributor.post}}</p>
-            <button class="tablinks" (click)="setSelector(1)">Read More</button>
-        </div>
-      </div>
-      <br>
-    -->
-      <!--READ MORE OF JACKIE'S FIRST BLOG POST-->
-<!--COME BACK TO THIS
-  <div id="readmore" [ngClass]="{'d-none':this.selector != 1}">
-      <h5>{{contributor.postTitle}}</h5>
-      <p>{{contributor.postContent}}</p>
-    </div>
-
-
-      <!--KAYLA'S FIRST BLOG POST-->
-<!--COME BACK TO THIS
-      <div class="row">
-        <div class="col-sm-12 col-md-6 text-center">
-            <h5 [ngStyle]="contributor.color" class="text-best-color border">This is {{contributor.name}}'s first Blog post.</h5>
-            <p>{{contributor.post}}</p>
-            <button class="tablinks" (click)="setSelector(1)">Read More</button>
-        </div>
-      </div>
-      <br>
--->
-<!--READ MORE OF KAYLA'S FIRST BLOG POST-->
-<!--COME BACK TO THIS
-<div id="readmore" [ngClass]="{'d-none':this.selector != 1}">
-    <h5>{{contributor.postTitle}}</h5>
-    <p>{{contributor.postContent}}</p>
-  </div>
-
-      <!--KAMYLA'S FIRST BLOG POST-->
-<!--COME BACK TO THIS
-      <div class="row">
-        <div class="col-sm-12 col-md-6 text-center">
-            <h5 [ngStyle]="contributor.color" class="text-best-color border">This is {{contributor.name}}'s first Blog post.</h5>
-            <p>{{contributor.post}}</p>
-            <button class="tablinks" (click)="setSelector(1)">Read More</button>
-        </div>
-      </div>
-
-      <!--READ MORE OF KAMYLA'S FIRST BLOG POST-->
-<!--COME BACK TO THIS
-  <div id="readmore" [ngClass]="{'d-none':this.selector != 1}">
-      <h5>{{contributor.postTitle}}</h5>
-      <p>{{contributor.postContent}}</p>
-    </div>
-
-
-    </section>
-  -->
+  <!--<button (click)="onClickDelete()">Delete</button>-->

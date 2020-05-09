@@ -1,0 +1,17 @@
+<!--THIS COMPONENT HOLDS ALL OF THE CREATED BLOG POSTS-->
+
+<h3>Blog Post Dashboard</h3>
+
+<ul>
+  <li *ngFor="let post of posts">
+    <strong>
+    {{post.Title}}
+    </strong>
+    <br>
+    {{post.Body}}
+    <br>
+    <button class="btn-danger" (click)="deletePost(post.id)">Delete</button>
+    <a [routerLink]="['/post-edit', post.id]"><button>Edit</button></a> <!--TODO change color to match theme-->
+  </li>
+</ul>
+

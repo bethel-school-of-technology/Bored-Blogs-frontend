@@ -1,13 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
 //bootstrap themeing
-$theme-colors: (primary: #006eff,
+$theme-colors: (
+  primary: #006eff,
   secondary: #30c230,
   danger: red,
   accent:yellow);
   
 $enable-shadows:true;
-
 //end boot theming
 
 
@@ -20,13 +20,8 @@ $enable-shadows:true;
 
 body {
   padding-top: 55px;
-  padding-bottom: 75px;
+  padding-bottom: 75px;//right here
 }
-
-// JACOB SAYS APP ROUTE NEEDS BOTTOM MARGIN SO THE FOOTER DOES NOT COVER THE BUTTONS AT THE BOTTOM OF THE PAGE - NEED CORRECT CODING!
-// app-route {  //??????? Cannot find app route  
-//   margin-bottom: 20px;
-// }
 
 button.btn {
   display: block;
@@ -118,13 +113,3 @@ footer {
 //Jacob Stanton:
 //this is import goes at the bottom it needs have its variables overidden
 @import "~bootstrap/scss/bootstrap";
-
-
-// WHAT I LEARNED IN DesignCourse https://www.youtube.com/watch?v=roywYSEPSvc:
-// 1. Integrating Sass within Visual Studio Code
-// 2. Sass Variables
-// 3. Sass Maps
-// 4. Nesting
-// 5. Mixins (Media queries - RESPONSIVE)
-// 6. Functions
-// 7. Sass & Media Queries
