@@ -1,24 +1,18 @@
-.container {
-    justify-content: center;
-}
-.one {
-    border-right: solid 2px grey;
-    border-bottom: solid 2px grey;
-}
+:host {
+    @mixin border {
+        border-width: 6px;
+    }
 
-.two {
-    border-bottom: solid 2px grey;
-}
+    .row div:nth-child(2) {
+        @include border();
+        border-left-style: solid;
+        border-right-style: solid;
+    }
 
-.three {
-    border-bottom: solid 2px grey;
-    border-left: solid 2px grey;
-}
-
-.four {
-    border-right: solid 2px grey;
-}
-
-.five {
-    border-right: solid 2px grey;
+    .row:nth-child(3) {
+        //idk why its 3 instead of 2
+        @include border();
+        border-top-style: solid;
+        border-bottom-style: solid;
+    }
 }
