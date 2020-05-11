@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row w-50 h-50 mx-auto">
         <div class="col">
-
-            <h1 class="">Create Account</h1>
+            <br>
+            <h1 class="header text-white">Create Account</h1>
             <br>
 
             <!-- Bootstrap Template-Driven Form -->
@@ -10,7 +10,7 @@
 
                 <!-- FIRST NAME -->
                 <div class="form-group">
-                    <label for="firstName">First Name</label>
+                    <strong><label for="firstName">First Name</label></strong>
                     <input required minlength="2" maxlength="20" pattern="[a-zA-Z]*" ngModel name="firstName"
                         #firstName="ngModel" id="firstName" type="text" class="form-control">
                     <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
@@ -23,7 +23,7 @@
                 </div>
                 <!-- LAST NAME -->
                 <div class="form-group">
-                    <label for="lastName">Last Name</label>
+                    <strong><label for="lastName">Last Name</label></strong>
                     <input required minlength="2" maxlength="20" pattern="[a-zA-Z]*" ngModel name="lastName"
                         #lastName="ngModel" id="lastName" type="text" class="form-control">
                     <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
@@ -37,7 +37,7 @@
 
                 <!-- EMAIL -->
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <strong><label for="email">Email</label></strong>
                     <input required email="true" emailPattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel
                         name="email" #email="ngModel" type="email" id="email" class="form-control">
                     <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
@@ -48,9 +48,8 @@
                 </div>
 
                 <!-- PASSWORD -->
-                <!-- Jackie not sure if this pattern is correct for password to equal pattern validation?? JACKIE CHECK CODE! -->
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <strong><label for="password">Password</label></strong>
                     <input required minlength="6" maxlength="20" pattern="^[a-zA-Z0-9]{6,20}$" ngModel name="password"
                         #password="ngModel" type="password" id="password" class="form-control">
                     <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
@@ -59,11 +58,22 @@
                         <div *ngIf="password.errors.maxlength">Password must be between 6 - 20 characters</div>
                         <div *ngIf="password.errors.pattern">Password must not contain any special characters</div>
                     </div>
+                </div>
 
+                 <!-- PASSWORD CONFIRM -->
+                 <!-- NEED HELP ON THIS VALIDATION CODING FOR PASSWORD MATCH -->
+                <div class="form-group">
+                    <strong><label>Confirm Password</label></strong>
+                    <input required ngModel name="passwordConfirm"
+                        #passwordConfirm="ngModel" type="passwordConfirm" id="passwordConfirm" class="form-control">
+                    <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+                        <div *ngIf="passwordConfirm.errors.required">Password confirm is required</div>
+                        <div *ngIf="passwordConfirm.errors.notSame">Passwords do not match</div>
+                    </div>
                 </div>
                 <br>
 
-                <!-- SIGN IN BUTTON -->
+                <!-- CREATE ACCOUNT BUTTON -->
                 <button class="btn btn-primary">Create Account</button>
 
             </form>

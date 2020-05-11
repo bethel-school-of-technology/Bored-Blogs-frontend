@@ -1,8 +1,15 @@
 .container {
-  background: #f2cc0a;
-  background: linear-gradient(300deg, #f2cc0a 0%, rgba(9, 75, 121, 0.252836) 35%, rgba(255, 0, 0, 0.869083) 100%);
-  padding-bottom: 75px;
+  background-image: url("../../../assets/images/stacked games.webp");
+  padding-bottom: 100px;
   -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
           box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+  background-size: cover;
+}
+
+form {
+  background-color: whitesmoke;
+  opacity: 0.75;
+  border-radius: 10px 70px;
+  padding: 50px;
 }
 /*# sourceMappingURL=create-account.component.css.map */

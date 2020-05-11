@@ -1,15 +1,17 @@
 .container {
-    background: rgb(48,194,48);
-    background: linear-gradient(90deg, rgba(48,194,48,1) 0%, rgba(233,240,74,0.9587185215883228) 50%, rgba(0,110,255,1) 100%);
+    background-image: url('../../../assets/images/dice\ &\ pieces.jpg');
+    // background-image: linear-gradient(to bottom right, white, white, yellow, #30c230,#006eff);
+    // background: rgb(48,194,48);
+    // background: linear-gradient(90deg, rgba(48,194,48,1) 0%, rgba(233,240,74,0.9587185215883228) 50%, rgba(0,110,255,1) 100%);
     padding-bottom: 100px;
     box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
-//     background-image: url(../../../assets/images/linedupwithdice-cropped.jpg);
-//     background-size: cover;
-//     width: 100%;
-//     height: 100%;
-//     position: fixed;
-//     z-index: -1;
-//     box-shadow: 10px 10px 20px 5px rgba(90, 85, 85, 0.8);
+    background-size: cover;
 }
 
+form {
+    background-color: whitesmoke;
+    opacity: 0.75;
+    border-radius: 10px 70px;
+    padding: 50px;
+  }
 

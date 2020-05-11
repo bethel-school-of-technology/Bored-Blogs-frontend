@@ -10,8 +10,8 @@
     <br>
     {{post.Body}}
     <br>
-    <button class="btn-danger" (click)="deletePost(post.id)">Delete</button>
-    <a [routerLink]="['/post-edit', post.id]"><button>Edit</button></a> <!--TODO change color to match theme-->
+    <button class="btn-danger" (click)="deletePost(post.id)">Delete</button> <!--DELETES POST IMMEDIATELY-->
+    <a [routerLink]="['/post-edit', post.id]"><button>Edit</button></a>
   </li>
 </ul>
 
