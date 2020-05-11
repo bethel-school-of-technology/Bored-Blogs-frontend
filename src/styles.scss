@@ -5,19 +5,20 @@ $theme-colors: (
   primary: #006eff,
   secondary: #30c230,
   danger: red,
-  accent:yellow);
-  
-$enable-shadows:true;
+  accent: yellow,
+);
+
+$enable-shadows: true;
 //end boot theming
 
 // color function set so we don't have to use "map-get($colors, primary);" --> instead use "color(primary)"
 @function color($color-name) {
-  @return map-get($theme-colors, $color-name)
+  @return map-get($theme-colors, $color-name);
 }
 
 body {
   padding-top: 55px;
-  padding-bottom: 50px;//bottom of home page
+  padding-bottom: 50px; //bottom of home page
 }
 
 button.btn {
@@ -118,3 +119,5 @@ footer {
 //Jacob Stanton:
 //this is import goes at the bottom it needs have its variables overidden
 @import "~bootstrap/scss/bootstrap";
+
+

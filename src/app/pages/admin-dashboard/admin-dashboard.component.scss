@@ -1,18 +1,18 @@
-:host {
-    @mixin border {
-        border-width: 6px;
-    }
+@media (min-width: 992px) {
+  @mixin border {
+    border-width: 6px;
+  }
 
-    .row div:nth-child(2) {
-        @include border();
-        border-left-style: solid;
-        border-right-style: solid;
-    }
+  .row div:nth-child(2) {
+    @include border();
+    border-left-style: solid;
+    border-right-style: solid;
+  }
 
-    .row:nth-child(3) {
-        //idk why its 3 instead of 2
-        @include border();
-        border-top-style: solid;
-        border-bottom-style: solid;
-    }
+  .row:nth-child(3) {
+    //idk why its 3 instead of 2
+    @include border();
+    border-top-style: solid;
+    border-bottom-style: solid;
+  }
 }
