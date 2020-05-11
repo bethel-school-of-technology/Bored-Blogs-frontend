@@ -7,6 +7,8 @@
         <button class="tablinks btn btn-primary btn-md" (click)="setSelector(i)">Read More</button>
       </div>
       <p class="postBody" [ngClass]="{'collapse':this.selector != i}">
+        <button class="btn btn-primary btn-md close" (click)="setSelector(-1)"><span
+            aria-hidden="true">&times;</span></button>
         <strong>Contributed by: {{Post.Author}}</strong>
         <br>
         {{Post.Body}}

@@ -10,9 +10,6 @@ $theme-colors: (
 $enable-shadows:true;
 //end boot theming
 
-
-
-
 // color function set so we don't have to use "map-get($colors, primary);" --> instead use "color(primary)"
 @function color($color-name) {
   @return map-get($theme-colors, $color-name)
@@ -20,7 +17,7 @@ $enable-shadows:true;
 
 body {
   padding-top: 55px;
-  padding-bottom: 75px;//right here
+  padding-bottom: 50px;//bottom of home page
 }
 
 button.btn {
@@ -49,13 +46,15 @@ footer {
     // @media (max-width: 600px) {
     //   width: 100%;
     // }
-    h3 {
+    .submit {
       padding-left: 10%;
       color: black;
-      font-size: 0.7em;
+      font-size: 0.8em;
+      font-weight: bold;
       line-height: 35px;
       text-transform: capitalize;
       letter-spacing: 1px;
+      // text-decoration: none;
       //   @media (max-width: 600px) {
       //     text-align: center;
       //     padding: 0;
@@ -96,6 +95,12 @@ footer {
   background-color: color(danger);
   font-size: 1.2em;
   width: 20%;
+  height: 50%;
+}
+
+.socialImg {
+  width: 30%;
+  height: 30%;
 }
 
 .tweet {

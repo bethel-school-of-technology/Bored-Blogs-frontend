@@ -8,15 +8,16 @@
 <!-- FOOTER -->
   <footer class="fixed-bottom w-100">
     <div class="footer">
-      <h3>Bored Blog</h3>
+      <a [routerLink]='"/contact-us"' class="submit">Submit a Blog Request</a>
     </div>
 
     <div class="social">
       <!-- recal inside directive string is ts so we string in a string -->
       <a [routerLink]='"/contact-us"' class="support">Contact Us</a>
-      <a href="#" class="face">f</a>
-      <a href="#" class="tweet">t</a>
-      <a href="#" class="linked">in</a>
+      <!-- <a href="#" class="face">f</a> -->
+      <a class="face" href="#"><img class="socialImg" src="../assets/images/fb.png"></a>
+      <a class="tweet" href="#"><img class="socialImg" src="../assets/images/twitter.png"></a>
+      <a class="linked" href="#"><img class="socialImg" src="../assets/images/insta.png"></a>
     </div>
   </footer>
 </div>

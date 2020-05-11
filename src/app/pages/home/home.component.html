@@ -2,7 +2,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 
 <!-- PRIMARY CONTAINER -->
-<div class="container py-2">
+<div class="container">
 
 <!-- BORED BLOG TITLE -->
   <div class="title text-center w-100">
@@ -10,7 +10,7 @@
   </div>
 
 <!-- WHAT IS BORED BLOG SECTION -->
-  <div class="row p-10 h-100 justify-content-around">
+  <div class="row h-100 justify-content-around">
     <div class="col-7 whatIs">
       <h3 class="text-center">What is Bored Blog?</h3>
       <p class="text-center">"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -31,7 +31,7 @@
         <br>
         <h5 class="font-italic">The Royal Game of Ur</h5>
         <div>
-          <img class="gameImg1 p-3" src="assets/images/gameOfUr.jpg">
+          <img class="gameImg2" src="assets/images/gameOfUr.jpg">
         </div>
         <p class="pt-4">Discovered to be the oldest game of all time!</p>
 
@@ -45,7 +45,7 @@
 
 <!-- FEATURED BLOG SECTION -->
     <div class="col-7">
-      <h3 class="text-center pb-2 currentBlog">Most Current Blog Title & Date</h3>
+      <h3 class="text-center currentBlog">Most Current Blog Title & Date</h3>
       <p class="text-center">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
         accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
         quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -95,8 +95,8 @@
         aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
         eos qui ratione voluptatem sequi nesciunt."</p>
       <div class="d-flex pb-4">
-        <button class="btn btn-primary">More posts by this Contributor</button>
-        <button class="btn btn-primary">All Past Blog Posts</button>
+        <button [routerLink]='["/contributor-profile"]' class="btn btn-primary">More posts by this Contributor</button>
+        <button [routerLink]='["/all"]' class="btn btn-primary">All Past Blog Posts</button>
       </div>
     </div>
 
