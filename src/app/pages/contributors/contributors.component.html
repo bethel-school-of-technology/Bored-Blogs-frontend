@@ -1,6 +1,6 @@
 <body>
   <div class="flex-grid-container">
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-sm-column flex-xs-column flex-md-row meet-contributors-container">
       <div class="m-2" *ngFor="let contributor of contributors;">
         <div class="card">
           <h1 [ngStyle]="contributor.color" class="text-best-color">{{contributor.name}}</h1>

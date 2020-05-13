@@ -11,9 +11,15 @@ import { FormsModule } from '@angular/forms';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { ContributersProfileComponent } from './contributers-profile/contributers-profile.component';
 import { PostDetailComponent } from './all-post/post-detail/post-detail.component';
+import { PostListComponent } from './admin-dashboard/post-list/post-list.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { PostAddComponent } from './admin-dashboard/post-add/post-add.component';
+import { NavComponent } from './admin-dashboard/nav/nav.component';
+import { PostEditComponent } from './admin-dashboard/post-edit/post-edit.component';
+import { BlogDashboardComponent } from './admin-dashboard/blog-dashboard/blog-dashboard.component';
 
 
-//module is self explanatory
+// module is self explanatory
 @NgModule({
   declarations: [
     BootDemoComponent,
@@ -24,7 +30,13 @@ import { PostDetailComponent } from './all-post/post-detail/post-detail.componen
     ContactUsComponent,
     CreateAccountComponent,
     ContributersProfileComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    PostListComponent,
+    AdminDashboardComponent,
+    PostAddComponent,
+    NavComponent,
+    PostEditComponent,
+    BlogDashboardComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +49,11 @@ import { PostDetailComponent } from './all-post/post-detail/post-detail.componen
     HomeComponent,
     AllPostComponent,
     SignInComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    PostDetailComponent,
+    PostEditComponent,
+    PostAddComponent,
+    PostListComponent
   ]
 })
 export class PagesModule { }
