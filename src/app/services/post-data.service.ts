@@ -55,7 +55,7 @@ import { Post } from '../models/post';
 })
 export class PostDataService {
 
-  url: string = 'http://localhost:3100';
+  url: string = 'http://localhost:3001';
 
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.url + 'posts');
