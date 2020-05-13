@@ -1,0 +1,13 @@
+<!--this allows users to add comments to blog posts-->
+
+<p><strong>Add a Comment</strong></p>
+<div class="form-group">
+  <form (ngSubmit)="addComment()">
+    <div>
+      <input class="form-control col-4" id="comment" type="text" name="comment" required [(ngModel)]="newComment">
+    </div>
+    <div>
+    <button class="btn-secondary" type="submit">Add Comment</button>
+    </div>
+  </form>
+

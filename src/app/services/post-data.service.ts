@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Post } from '../models/post';
-var posts: Post[] = [
+
+ var posts: Post[] /*= [
   {
     id: 0,
     Author: "Jacob Stanton",
@@ -47,6 +48,8 @@ var posts: Post[] = [
   },
 ];;
 
+*/
+
 @Injectable({
   providedIn: 'root'
 })
@@ -55,52 +58,40 @@ export class PostDataService {
   url: string = 'http://localhost:3100';
 
   getPosts(): Observable<Post[]> {
-    //return this.http.get<Post[]>(this.url + '');
-    return new Observable((observer => {
-      var copy = [...posts];
-      observer.next(copy);
-    }));
+    return this.http.get<Post[]>(this.url + 'posts');
+   // return new Observable((observer => { var copy = [...posts]; observer.next(copy); }));
   }
 
   getPost(id: number): Observable<Post> {
-    //return this.http.get<Post>(this.url + '/' + id);
-    return new Observable((observer => {
-      observer.next({ ...posts.find(p => p.id == id) });
-    }));
+    return this.http.get<Post>(this.url + '/posts/read' + id);
+ //  return new Observable((observer => { observer.next({ ...posts.find(p => p.id == id) }); }));
   }
 
   addPost(post: Post): Observable<Post[]> {
-    //return this.http.post<Post>(this.url, post);
-    return new Observable((observer => {
-      posts.push(post);
-      var copy = [...posts];
-      observer.next(copy);
-    }));
+    return this.http.post<Post[]>(this.url + 'posts', post);
+   // return new Observable((observer => { posts.push(post); var copy = [...posts]; observer.next(copy); }));
   }
 
   deletePost(id: number): Observable<Post[]> {
-    //return this.http.delete<Post>(this.url + '/' + id);
-    return new Observable((observer => {
-      posts = posts.filter(p => p.id != id)
-      var copy = [...posts];
-      observer.next(copy);
-    }));
+    return this.http.delete<Post[]>(this.url + 'posts/delete' + id);
+   // return new Observable((observer => { posts = posts.filter(p => p.id != id) var copy = [...posts]; observer.next(copy); }));
   }
 
   editPost(post: Post): Observable<Post[]> {
-    //return this.http.put<null>(this.url + '/' + post.id, post);
-    return new Observable((observer => {
-      for (var i = 0; i < posts.length; i++) {
+    return this.http.put<null>(this.url + '/posts/update' + post.id, post);
+ //   return new Observable((observer => {
+  //   for (var i = 0; i < posts.length; i++) {
         //look through the array and replace the item
-        if (post.id == i) {
-          posts[i] = post;
-          i = posts.length;//we found what we wanted we can stop
+  //      if (post.id == i) {
+  //        posts[i] = post;
+  //        i = posts.length;//we found what we wanted we can stop
         }
-      }
-      var copy = [...posts];
-      observer.next(copy);
-    }));
-  }
+ //     }
+ //     var copy = [...posts];
+ //     observer.next(copy);
+ //   }));
+
 
   constructor(private http: HttpClient) { }
+
 }
