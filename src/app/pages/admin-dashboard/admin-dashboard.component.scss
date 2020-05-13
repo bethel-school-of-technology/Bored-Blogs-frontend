@@ -1,4 +1,5 @@
-@media (min-width: 992px) {
+/*
+@media (min-width: 1px) {
   @mixin border {
     border-width: 6px;
   }
@@ -15,4 +16,18 @@
     border-top-style: solid;
     border-bottom-style: solid;
   }
+}
+*/
+.wrapper {
+  background-image: url("../../../assets/images/board-game-bg-image1-v2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+}
+.row > div > div {
+  border: 5px solid black;
+  box-shadow: 4px 6px rgba(0, 0, 0, 0.3);
+  background-color: white;
 }
