@@ -19,7 +19,7 @@ export class SignInComponent implements OnInit {
     console.log(signinForm.value);
 
     this.userService
-      .register(signinForm.value)
+    .register(signinForm.value)
       .subscribe((user: User) => {
         this.user = user;//does
         console.log("you have logged in");
