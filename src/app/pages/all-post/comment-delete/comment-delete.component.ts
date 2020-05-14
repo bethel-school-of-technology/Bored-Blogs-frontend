@@ -1,0 +1,28 @@
+import { Component, OnInit } from '@angular/core';
+import { PostCommentService } from '../../../services/post-comment.service';
+import { Comment } from '../../../models/comment';
+
+@Component({
+  selector: 'app-comment-delete',
+  templateUrl: './comment-delete.component.html',
+  styleUrls: ['./comment-delete.component.scss']
+})
+export class CommentDeleteComponent implements OnInit {
+
+  isAdmin = false;
+
+  comment:Comment;
+
+  deleteComment(id: number): void {
+    var me = this;
+    this.commentDataService.deleteComment(id).subscribe((p) => {
+      (me.comment = p[id]);
+    });
+  }
+
+  constructor(private commentDataService: PostCommentService) { }
+
+  ngOnInit() {
+  }
+
+}

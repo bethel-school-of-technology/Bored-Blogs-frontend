@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Post } from '../models/post';
+import { Config } from '../config/config';
 
- var posts: Post[] /*= [
+ var posts: Post[] = [
   {
     id: 0,
     Author: "Jacob Stanton",
@@ -45,11 +46,11 @@ import { Post } from '../models/post';
     Title: "Werewolf",
     Preview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
     Body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
-];;
+  }
+];
 
-*/
 
+const weAreUsingCloud = Config.weAreUsingCloud;
 @Injectable({
   providedIn: 'root'
 })
@@ -58,18 +59,22 @@ export class PostDataService {
   url: string = 'http://localhost:3001';
 
   getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.url + 'posts');
-   // return new Observable((observer => { var copy = [...posts]; observer.next(copy); }));
+    if(weAreUsingCloud) return this.http.get<Post[]>(this.url + 'posts');
+   else return new Observable((observer => { var copy = [...posts]; observer.next(copy); }));
   }
 
   getPost(id: number): Observable<Post> {
-    return this.http.get<Post>(this.url + '/posts/read' + id);
- //  return new Observable((observer => { observer.next({ ...posts.find(p => p.id == id) }); }));
+    if(weAreUsingCloud) {
+      return this.http.get<Post>(this.url + '/posts/read' + id);
+    }
+ else  {
+   return new Observable((observer => { observer.next({ ...posts.find(p => p.id == id) }); }));
+  }
   }
 
   addPost(post: Post): Observable<Post[]> {
-    return this.http.post<Post[]>(this.url + 'posts', post);
-   // return new Observable((observer => { posts.push(post); var copy = [...posts]; observer.next(copy); }));
+    if(weAreUsingCloud)  return this.http.post<Post[]>(this.url + 'posts', post);
+   else return new Observable((observer => { posts.push(post); var copy = [...posts]; observer.next(copy); }));
   }
 
   deletePost(id: number): Observable<Post[]> {

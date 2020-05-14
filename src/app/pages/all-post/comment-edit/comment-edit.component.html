@@ -1,0 +1,10 @@
+<!--this allows users/admins to edit comments to blog posts-->
+<div>
+  <form #f="ngForm" (ngSubmit)="saveComment(f)">
+    <div>
+      <input class="form-control col-4" id="comment" type="text" name="comment" required [(ngModel)]="newComment">
+    </div>
+    <div>
+    <button class="btn-secondary" type="submit">Save Comment</button>
+    </div>
+  </form>

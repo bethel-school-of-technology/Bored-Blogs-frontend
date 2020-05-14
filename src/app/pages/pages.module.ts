@@ -18,6 +18,8 @@ import { NavComponent } from './admin-dashboard/nav/nav.component';
 import { PostEditComponent } from './admin-dashboard/post-edit/post-edit.component';
 import { BlogDashboardComponent } from './admin-dashboard/blog-dashboard/blog-dashboard.component';
 import { PostCommentComponent } from './all-post/post-comment/post-comment.component';
+import { CommentDeleteComponent } from './all-post/comment-delete/comment-delete.component';
+import { CommentEditComponent } from './all-post/comment-edit/comment-edit.component';
 
 
 // module is self explanatory
@@ -38,7 +40,9 @@ import { PostCommentComponent } from './all-post/post-comment/post-comment.compo
     NavComponent,
     PostEditComponent,
     BlogDashboardComponent,
-    PostCommentComponent
+    PostCommentComponent,
+    CommentDeleteComponent,
+    CommentEditComponent
   ],
   imports: [
     CommonModule,

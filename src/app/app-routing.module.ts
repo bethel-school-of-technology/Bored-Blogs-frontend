@@ -16,6 +16,9 @@ import { PostAddComponent } from './pages/admin-dashboard/post-add/post-add.comp
 import { PostEditComponent } from './pages/admin-dashboard/post-edit/post-edit.component';
 import { BlogDashboardComponent } from './pages/admin-dashboard/blog-dashboard/blog-dashboard.component';
 import { PostCommentComponent } from './pages/all-post/post-comment/post-comment.component';
+import { CommentDeleteComponent } from './pages/all-post/comment-delete/comment-delete.component';
+import { CommentEditComponent } from './pages/all-post/comment-edit/comment-edit.component';
+
 
 
 const make = (url: string, title: string, component: any, isPartOfNav: boolean) => {
@@ -56,6 +59,8 @@ export class R {
     make('post-edit/:id', 'Post Edit', PostEditComponent, false),
     make('blog-dashboard', 'Blog Dashboard', BlogDashboardComponent, false),
     make('post-comment', 'Post Comment', PostCommentComponent, false),
+    make('comment-delete', 'Comment Delete', CommentDeleteComponent, false),
+    make('comment-edit', 'Comment Edit', CommentEditComponent, false),
     make('admin', 'Admin', AdminDashboardComponent, true) // need to turn this back to false once admins have ability to sign in
   ];
 

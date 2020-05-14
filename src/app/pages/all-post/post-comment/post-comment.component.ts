@@ -8,16 +8,18 @@ import { PostCommentService } from '../../../services/post-comment.service';
   templateUrl: './post-comment.component.html',
   styleUrls: ['./post-comment.component.scss']
 })
+
 export class PostCommentComponent implements OnInit {
 
   newComment: Comment;
-  PostCommentService: any;
+  isAdmin = false;
 
   addComment() {
-    this.PostCommentService
+    this.commentDataService
     .addComment(this.newComment)
     .subscribe(p => this.router.navigate(['/post-detail']));
   }
+
 
   constructor(private commentDataService: PostCommentService, private router: Router) { }
 
