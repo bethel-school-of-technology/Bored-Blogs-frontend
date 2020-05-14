@@ -2,7 +2,7 @@
 <section id="header" class="d-flex justify-content-center">
     <!-- Create profile Picture-->
     <div id="profilePicture">
-        <img id="profPic"src="https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-48">
+        <img id="profPic" class="rounded-circle" src="https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-48">
     </div>
     <!--Display Name of contributer -->
     <h3>{{contributor.firstName}} {{contributor.lastName}}</h3>
@@ -12,7 +12,7 @@
 
     <!-- Tab Links-->
     <!-- TODO: think aboot animations and animating these changes for a butter experince -->
-    <div class="tab d-flex w-100 justify-content-center">
+    <div class="tab d-flex w-100 justify-content-center text-danger">
         <button class="tabOptions" (click)="setSelector(1)">About</button>
         <button class="tabOptions" (click)="setSelector(2)">Recent Posts</button>
     </div>

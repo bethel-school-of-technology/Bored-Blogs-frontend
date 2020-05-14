@@ -11,6 +11,7 @@ export class ContactUsComponent {
 
   ngOnInit() {
   }
+  //TODO: connect this to a service
   submitForm(f: NgForm) {
     const message = `My name is ${f.value.first}. My email is ${f.value.email}.
     My message is ${f.value.message}.`;

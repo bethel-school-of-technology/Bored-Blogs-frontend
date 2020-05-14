@@ -1,32 +1,31 @@
 <!-- CONTAINER LAYOUT -->
-<div class="container">
-    <div class="row w-50 h-50 mx-auto">
-        <div class="col">
+<div class="container content">
+    <div class="row h-100 justify-content-start">
+        <div class="col-md-6">
 
             <!--HEADER-->
-            <h1 class="signIn">Sign In</h1>
+            <br>
+            <h1 class="header text-white text-center">Sign In</h1>
             <br>
 
             <!-- BOOTSTRAP TEMPLATE-DRIVEN SIGN-IN FORM -->
             <form #signinForm="ngForm" (ngSubmit)="signin(signinForm)">
 
-                <!-- USER NAME -->
+                <!-- EMAIL -->
                 <div class="form-group">
-                    <label for="userName">User Name</label>
-                    <input required minlength="3" maxlength="20" pattern="[a-zA-Z]*" ngModel name="userName"
-                        #userName="ngModel" id="userName" type="text" class="form-control">
-                    <div class="alert alert-danger" *ngIf="userName.touched && !userName.valid">
-                        <div *ngIf="userName.errors.required">Username is required</div>
-                        <div *ngIf="userName.errors.minlength">Username should be between 3 - 20 characters</div>
-                        <div *ngIf="userName.errors.maxlength">Username should be between 3 - 20 characters</div>
-                        <div *ngIf="userName.errors.pattern">Username must not contain spaces, numbers or special
-                            characters</div>
+                    <strong><label for="email">Email</label></strong>
+                    <input required email="true" emailPattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel
+                        name="email" #email="ngModel" type="email" id="email" class="form-control">
+                    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                        <div *ngIf="email.errors.required">Email is required</div>
+                        <div *ngIf="email.errors.pattern">Valid email is required</div>
+                        <div *ngIf="email.errors?.email">Valid email is required</div>
                     </div>
                 </div>
 
                 <!-- PASSWORD -->
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <strong><label for="password">Password</label></strong>
                     <input required minlength="6" maxlength="20" pattern="^[a-zA-Z0-9]{6,20}$" ngModel name="password"
                         #password="ngModel" type="text" id="password" class="form-control">
                     <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
@@ -37,17 +36,42 @@
                     </div>
 
                 </div>
-               
-<p>Don't have an account? Create one now!</p>
-<p>What are the benfits of having an account ............. Jackie to finish</p>
+
+                <p>Don't have an account? Create one now.</p>
+
                 <!-- BUTTONS -->
                 <div class="btn-toolbar">
-                  <button class="btn btn-primary">Sign In</button>  
-                 <button [routerLink]='["/create-account"]' class="btn btn-primary">Create Account</button> 
+                    <button class="btn btn-primary">Sign In</button>
+                    <button [routerLink]='["/create-account"]' class="btn btn-primary">Create Account</button>
                 </div>
-                
+                <br>
+                <div>
+                    <h5>Benefits of having a Bored Blog account:</h5>
+                    <ul>
+                        <li>Submit a blog topic request on the Contact Us page</li>
+                        <li>Comment on blog posts and other comments</li>
+                    </ul>
+                </div>
+
 
             </form>
         </div>
     </div>
 </div>
+
+
+
+<!-- KEEP FOR NOW IN CASE WE DECIDE TO GO BACK TO REQUIRING A USER NAME -->
+<!-- USER NAME -->
+<!-- <div class="form-group">
+                    <label for="userName">Email</label>
+                    <input required minlength="3" maxlength="20" pattern="[a-zA-Z]*" ngModel name="userName"
+                        #userName="ngModel" id="userName" type="text" class="form-control">
+                    <div class="alert alert-danger" *ngIf="userName.touched && !userName.valid">
+                        <div *ngIf="userName.errors.required">Username is required</div>
+                        <div *ngIf="userName.errors.minlength">Username should be between 3 - 20 characters</div>
+                        <div *ngIf="userName.errors.maxlength">Username should be between 3 - 20 characters</div>
+                        <div *ngIf="userName.errors.pattern">Username must not contain spaces, numbers or special
+                            characters</div>
+                    </div>
+                </div> -->

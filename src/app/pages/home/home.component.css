@@ -50,4 +50,16 @@ button.btn {
   -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
           box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
+
+.gameImg2 {
+  width: 75%;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+}
+
+.currentBlog {
+  padding-top: 40px;
+  padding-bottom: 15px;
+}
 /*# sourceMappingURL=home.component.css.map */

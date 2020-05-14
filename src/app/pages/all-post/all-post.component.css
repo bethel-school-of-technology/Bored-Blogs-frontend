@@ -1,1 +1,33 @@
-/* No CSS *//*# sourceMappingURL=all-post.component.css.map */
+section {
+  background-image: url("../../../assets/images/1.jpg");
+  background-size: cover;
+  padding-bottom: 100px;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+h5 {
+  font-style: italic;
+  color: white;
+}
+
+.postTitle {
+  text-align: center;
+}
+
+.title {
+  padding-bottom: 20px;
+}
+
+.postBody {
+  background-color: white;
+  opacity: 0.8;
+  padding: 20px;
+}
+/*# sourceMappingURL=all-post.component.css.map */

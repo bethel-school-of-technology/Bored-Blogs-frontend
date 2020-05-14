@@ -4,7 +4,8 @@
     <div class="col">
 
       <!--HEADER-->
-      <h1>Contact Us</h1>
+      <br>
+      <h1 class="header text-white">Contact Us / <span><br>Submit A Blog Request</span></h1>
       <br>
 
       <!--BOOTSTRAP TEMPLATE-DRIVEN CONTACT FORM-->
@@ -12,7 +13,7 @@
 
         <!--NAME-->
         <div class="form-group">
-          <label for="name">First Name</label>
+          <strong><label for="name">User Name</label></strong>
           <input id="name" name="name" #name="ngModel" (change)="log(name)"
             class="p-0 m-0 form-control ng-invalid ng-touched" name="first" ngModel required>
           <div class="alert alert-danger" *ngIf="name.touched && !name.valid">First Name is required.</div>
@@ -20,7 +21,7 @@
 
         <!--EMAIL-->
         <div class="form-group">
-          <label for="email">Email</label>
+          <strong><label for="email">Email</label></strong>
           <input id="email" (change)="log(email)" #email="ngModel" name="email" type="email"
             class="form-control ng-invalid ng-touched" ngModel required>
           <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required.</div>
@@ -28,7 +29,7 @@
 
         <!--MESSAGE-->
         <div class="form-group">
-          <label for="message">Your Message</label>
+          <strong><label for="message">Your Message</label></strong>
           <textarea id="message" cols="20" rows="10" placeholder="Enter text here" class="form-control"
             ngModel></textarea>
         </div>

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ContributersProfileComponent implements OnInit {
 
   constructor() { }
-
+  //TODO: create a contributor service and move this to there
   contributor =
     {
       firstName: "Kayla",

@@ -4,6 +4,7 @@
 body {
   background-image: url("../../../assets/images/1.jpg");
   background-size: cover;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
 //CONTRIBUTOR PROFILE
@@ -16,7 +17,8 @@ body {
 
 //title of page
 h1{
-  text-align: center;
+  text-align: center;//can use text-center
+  padding: 10px;//can use p-1
 }
 
 //individual contributor's profile pictures
@@ -33,6 +35,9 @@ p {
   text-align: center;
 }
 
-
 //RESPONSIVENESS
 
+.card {
+  padding-bottom: 25px;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+}
