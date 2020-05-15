@@ -2,22 +2,6 @@
 <!--TODO fix anchor tag to route to blog dashboard and then...-->
 <!--TODO ...remove blog dashboard component-->
 <!--? Add other admin functions on this page? Edit individual contributor profiles, edit/delete user profiles, etc. -->
-<<<<<<< HEAD
-<header class="d-flex justify-content-center">
-  <h2>Welcome [Insert Name Here]!</h2>
-</header>
-<div class="row">
-  <div class="col-lg-4">
-    <div class="my-2">
-      <h6>Blog Post Settings</h6>
-      <button [routerLink]="['/all']" class="btn btn-primary">View All Blog Posts</button>
-      <button [routerLink]="['/post-list']" class="btn">
-        Update or Delete a Blog Post
-      </button>
-      <button [routerLink]="['/post-add']" class="btn">
-        Create a Blog Post
-      </button>
-=======
 <div class="wrapper vh-100">
   <header class="d-flex justify-content-center">
     <h2>Welcome [needs to have UserService with template junk user.firstName + user.lastName]!</h2>
@@ -26,7 +10,7 @@
     <div class="col-lg-4">
       <div class="my-2">
         <h6>Blog Post Settings</h6>
-        <button [routerLink]="['/all']" class="btn m-2">
+        <button [routerLink]="['/all']" class="btn m-2 primary">
           View All Blog Posts
         </button>
         <button [routerLink]="['/post-list']" class="btn m-2">
@@ -36,7 +20,6 @@
           Create a Blog Post
         </button>
       </div>
->>>>>>> ead69bb92259d87efa6595bb27f10f0aee5f2ba8
     </div>
     <div class="col-lg-4">
       <div class="my-2">
