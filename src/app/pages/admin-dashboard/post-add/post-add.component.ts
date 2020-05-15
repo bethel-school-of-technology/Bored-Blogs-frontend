@@ -16,7 +16,8 @@ export class PostAddComponent implements OnInit {
   addPost() {
     this.postDataService
     .addPost(this.newPost)
-    .subscribe(p => this.router.navigate(['app-post-list']));
+    // .subscribe(p => this.router.navigate(['app-post-list']));
+    .subscribe(p => this.router.navigate(['post-list']));
   }
 
   constructor( private postDataService: PostDataService, private router: Router) { }

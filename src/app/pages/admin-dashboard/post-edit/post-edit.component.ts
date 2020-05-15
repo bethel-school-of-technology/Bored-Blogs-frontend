@@ -28,8 +28,7 @@ export class PostEditComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(param => {
       this.postDataService.getPost(+param['id'])
-        .subscribe(p => {
-          this.editPost = p;
+        .subscribe(p => {this.editPost = p;
           console.log(p)
         });
     });
