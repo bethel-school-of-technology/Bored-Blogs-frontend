@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-:host {
-    @mixin border {
-        border-width: 1px;
-    }
-=======
 /*
 @media (min-width: 1px) {
   @mixin border {
     border-width: 6px;
   }
->>>>>>> ead69bb92259d87efa6595bb27f10f0aee5f2ba8
 
   .row div:nth-child(2) {
     @include border();
