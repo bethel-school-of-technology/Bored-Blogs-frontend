@@ -15,7 +15,7 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.contributorService
-      .getContributor(1)//todo update with admin id
+      .getContributor(2)//todo update with admin id
       .subscribe((c) => (this.contributor = c));
   }
 

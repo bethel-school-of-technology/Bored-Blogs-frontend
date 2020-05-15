@@ -6,8 +6,11 @@ import { Config } from "../config/config";
 import { Contributor } from "../models/contributor";
 
 //this style formats the color into a object that ngStyle accepts
-function styleFromColor(color: String): any {
-  return { "background-color": color };
+function styleFromColor(backGroundColor: String, textColor: String): any {
+  return {
+    "background-color": backGroundColor,
+    color: textColor,
+  };
 }
 
 var contributors = [
@@ -18,7 +21,7 @@ var contributors = [
     //bio
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     //color
-    styleFromColor("#006eff"),
+    styleFromColor("#006eff", "white"),
     //image to use
     "https://ca.slack-edge.com/T9P33872P-UMB26EV6E-f1b15a101868-512"
   ),
@@ -26,21 +29,21 @@ var contributors = [
     2,
     "Jackie",
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    styleFromColor("yellow"),
+    styleFromColor("yellow", "black"),
     "https://ca.slack-edge.com/T9P33872P-UMXPMHEAE-3b5c27f1c336-512"
   ),
   new Contributor(
     3,
     "Kayla",
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    styleFromColor("red"),
+    styleFromColor("red", "white"),
     "https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-512"
   ),
   new Contributor(
     4,
     "Kamyla",
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    styleFromColor("#30c230"),
+    styleFromColor("#30c230", "white"),
     "https://ca.slack-edge.com/T9P33872P-UNCD1UH6K-6e8e43a4b2fd-512"
   ),
 ];
