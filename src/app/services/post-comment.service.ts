@@ -40,8 +40,13 @@ export class PostCommentService {
   }
 
   deleteComment(id: number): Observable<Comment[]> {
-    return this.http.delete<Comment[]>(this.url + 'post-detail' + id);
+  //  return this.http.delete<Comment[]>(this.url + 'post-detail' + id);
+  this.postDataService.deletePost(id).subscribe((p) => {
+    (this.comments = p)
+  });
   }
+
+  
 
   constructor(private http: HttpClient) { }
 }

@@ -10,7 +10,7 @@ import { PostCommentService } from '../../../services/post-comment.service';
 })
 
 export class PostCommentComponent implements OnInit {
-
+@Input()
   newComment: Comment;
   isAdmin = false;
 
