@@ -6,15 +6,19 @@
     border-image: none;
     border-radius: 50% 50% 50% 50%;
     border-style: solid;
-    border-width: 10px;
+    border-width: 5px;
     overflow: hidden;
-    width: 100px;
+    img {
+        width: 50px;
+        height: 50px;
+}
 }
 // Style the tab
 .tab {
     overflow: hidden;
     width: 190px;
-    color: red;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
 }
 // Style the tabs
 .tabOptions {

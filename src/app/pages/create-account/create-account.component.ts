@@ -18,14 +18,12 @@ export class CreateAccountComponent implements OnInit {
   //Jacob Stanton:
   //creates an account
   createAccount(createAccountForm: NgForm) {
-    let blog = e=>console.log(e)
+    let blog = (e) => console.log(e);
     console.log(createAccountForm);
     console.log(createAccountForm.value);
     let a = createAccountForm.value.password;
-    let b = createAccountForm.value.confirmPassword
-    let check =
-      a ==
-      b;
+    let b = createAccountForm.value.confirmPassword;
+    let check = a == b;
     console.log(check);
     //Jacob Stanton:
     //takes data from form and submits it to the backend

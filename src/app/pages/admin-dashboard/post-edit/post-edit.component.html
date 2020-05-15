@@ -3,15 +3,27 @@
 <form #f="ngForm" (ngSubmit)="savePost(f)">
     <div>
         <label for="Title">
+          <strong>
             Title
+          </strong>
         </label>
-        <input id="Title" type="text" name="Title" required [(ngModel)]="editPost.Title">
+        <input class="form-control col-4" id="Title" type="text" name="Title" required [(ngModel)]="editPost.title">
     </div>
     <div>
+      <label for="Author">
+        <strong>
+          Author
+        </strong>
+      </label>
+      <input class="form-control col-4" id="Author" type="text" name="Author" required [(ngModel)]="editPost.author">
+  </div>
+    <div>
         <label for="Body">
+          <strong>
             Body
+          </strong>
         </label>
-        <textarea id="Body" type="text" name="Body" [(ngModel)]="editPost.Body">{{editPost.Body}}</textarea>
+        <textarea class="form-control" cols="100" rows="10" id="Body" type="text" name="Body" [(ngModel)]="editPost.body">{{editPost.body}}</textarea>
     </div>
-    <button class="button" type="submit">Save Changes</button>
+    <button class="button btn-secondary" type="submit">Save Changes</button>
 </form>

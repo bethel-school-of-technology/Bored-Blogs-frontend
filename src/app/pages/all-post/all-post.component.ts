@@ -1,50 +1,50 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { PostDataService } from 'src/app/services/post-data.service';
-import { Post } from 'src/app/models/post';
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { PostDataService } from "src/app/services/post-data.service";
+import { Post } from "src/app/models/post";
 
 @Component({
-  selector: 'app-all-post',
-  templateUrl: './all-post.component.html',
-  styleUrls: ['./all-post.component.scss']
+  selector: "app-all-post",
+  templateUrl: "./all-post.component.html",
+  styleUrls: ["./all-post.component.scss"],
 })
 export class AllPostComponent implements OnInit {
-
   //  @Output() postDeleted: EventEmitter<number> = new EventEmitter();
 
-  constructor(private postDataService: PostDataService) { }
+  constructor(private postDataService: PostDataService) {}
 
   //  onClickDelete() {
   //   this.postDeleted.emit(this.Posts.id);}
-
+  //TODO: connect this to the contributour service which at this time does not exist
   Contributor = [
     {
       firstName: "Jacob",
-      lastName: "Stanton"
+      lastName: "Stanton",
     },
     {
       firstName: "Jackie",
-      lastName: "Roberts"
+      lastName: "Roberts",
     },
     {
       firstName: "Kayla",
-      lastName: "Miller"
+      lastName: "Miller",
     },
     {
       firstName: "Kamyla",
-      lastName: "Andrlik"
-    }
+      lastName: "Andrlik",
+    },
   ];
 
-  posts: Post[]
-
-
+  posts: Post[];
 
   ngOnInit() {
     this.getPosts();
   }
 
   getPosts(): void {
-    this.postDataService.getPosts().subscribe(p => (this.posts = p));
+    this.postDataService.getPosts().subscribe((p) => {
+      console.log(p);
+      this.posts = p;
+    });
   }
 
   selector = -1;

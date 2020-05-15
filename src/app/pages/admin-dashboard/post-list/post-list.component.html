@@ -5,10 +5,10 @@
 <ul>
   <li *ngFor="let post of posts">
     <strong>
-    {{post.Title}}
+    {{post.title}}
     </strong>
     <br>
-    {{post.Body}}
+    {{post.body}}
     <br>
     <button class="btn-danger" (click)="deletePost(post.id)">Delete</button> <!--DELETES POST IMMEDIATELY-->
     <a [routerLink]="['/post-edit', post.id]"><button>Edit</button></a>

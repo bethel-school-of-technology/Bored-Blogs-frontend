@@ -2,7 +2,48 @@
 <!--TODO fix anchor tag to route to blog dashboard and then...-->
 <!--TODO ...remove blog dashboard component-->
 <!--? Add other admin functions on this page? Edit individual contributor profiles, edit/delete user profiles, etc. -->
-
-<a [routerLink]="['/blog-dashboard']"><button>Go to Blog Dashboard</button></a>
-
-<blog-dashboard></blog-dashboard>
+<div class="wrapper vh-100">
+  <header class="d-flex justify-content-center">
+    <h2>Welcome [needs to have UserService with template junk user.firstName + user.lastName]!</h2>
+  </header>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="my-2">
+        <h6>Blog Post Settings</h6>
+        <button [routerLink]="['/all']" class="btn m-2">
+          View All Blog Posts
+        </button>
+        <button [routerLink]="['/post-list']" class="btn m-2">
+          Update or Delete a Blog Post
+        </button>
+        <button [routerLink]="['/post-add']" class="btn m-2">
+          Create a Blog Post
+        </button>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="my-2">
+        <!--TODO These need to be fixed-->
+        <h6>Contributor Profile Settings</h6>
+        <button [routerLink]="['/contributers-profile']" class="btn m-2">
+          View Contributor Profile
+        </button>
+        <button [routerLink]="['/contributers-profile']" class="btn m-2">
+          Update Contributor Profile
+        </button>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="my-2">
+        <!-- TODO These need to be fixed-->
+        <h6>User Profile Settings</h6>
+        <button [routerLink]="['/blog-dashboard']" class="btn m-2">
+          Go to Blog Dashboard
+        </button>
+        <button [routerLink]="['/blog-dashboard']" class="btn m-2">
+          Go to Blog Dashboard
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
