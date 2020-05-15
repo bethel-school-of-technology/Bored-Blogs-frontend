@@ -1,0 +1,19 @@
+<section>
+    <h1>Users List</h1>
+    <div *ngIf="true" class="container">
+        <div class="Users" *ngFor="let User of Users; index as i">
+          <h5 class="user">{{ User.firstName }} {{ User.lastName }}</h5>
+          <div class="d-flex justify-content-center">
+            <p class="email"> Email: {{ User.email }} </p>
+            <br/>
+            <p class="lastActive"> Last Active: {{ User.lastActive }}</p>
+          </div>
+          <div>
+              <button> Edit </button>
+              <button> Delete</button>
+          </div>
+
+         
+        </div>
+        </div>
+</section>
