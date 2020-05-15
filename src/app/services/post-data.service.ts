@@ -60,6 +60,7 @@ var posts: Post[] = [
   },
 ];
 
+const weAreUsingCloud = Config.weAreUsingCloud;
 @Injectable({
   providedIn: "root",
 })
@@ -67,51 +68,66 @@ export class PostDataService {
   url: string = Config.apiUrl;
 
   getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.url + "posts");
-    return new Observable((observer) => {
-      var copy = [...posts];
-      observer.next(copy);
-    });
+    if (Config.weAreUsingCloud) {
+      return this.http.get<Post[]>(this.url + "posts");
+    } else {
+      return new Observable((observer) => {
+        var copy = [...posts];
+        observer.next(copy);
+      });
+    }
   }
 
   getPost(id: number): Observable<Post> {
-    //return this.http.get<Post>(this.url + '/' + id);
-    return new Observable((observer) => {
-      observer.next({ ...posts.find((p) => p.id == id) });
-    });
+    if (Config.weAreUsingCloud) {
+      return this.http.get<Post>(this.url + "/posts/read" + id);
+    } else {
+      return new Observable((observer) => {
+        observer.next({ ...posts.find((p) => p.id == id) });
+      });
+    }
   }
 
   addPost(post: Post): Observable<Post[]> {
-    //return this.http.post<Post>(this.url, post);
-    return new Observable((observer) => {
-      posts.push(post);
-      var copy = [...posts];
-      observer.next(copy);
-    });
+    if (Config.weAreUsingCloud) {
+      return this.http.post<Post[]>(this.url + "posts", post);
+    } else {
+      return new Observable((observer) => {
+        posts.push(post);
+        var copy = [...posts];
+        observer.next(copy);
+      });
+    }
   }
 
   deletePost(id: number): Observable<Post[]> {
-    //return this.http.delete<Post>(this.url + '/' + id);
-    return new Observable((observer) => {
-      posts = posts.filter((p) => p.id != id);
-      var copy = [...posts];
-      observer.next(copy);
-    });
+    if (Config.weAreUsingCloud) {
+      return this.http.delete<Post[]>(this.url + "posts/delete" + id);
+    } else {
+      return new Observable((observer) => {
+        posts = posts.filter((p) => p.id != id);
+        var copy = [...posts];
+        observer.next(copy);
+      });
+    }
   }
 
   editPost(post: Post): Observable<Post[]> {
-    //return this.http.put<null>(this.url + '/' + post.id, post);
-    return new Observable((observer) => {
-      for (var i = 0; i < posts.length; i++) {
-        //look through the array and replace the item
-        if (post.id == i) {
-          posts[i] = post;
-          i = posts.length; //we found what we wanted we can stop
+    if (Config.weAreUsingCloud) {
+      return this.http.put<null>(this.url + "/posts/update" + post.id, post);
+    } else {
+      return new Observable((observer) => {
+        for (var i = 0; i < posts.length; i++) {
+          //look through the array and replace the item
+          if (post.id == i) {
+            posts[i] = post;
+            i = posts.length; //we found what we wanted we can stop}
+          }
         }
-      }
-      var copy = [...posts];
-      observer.next(copy);
-    });
+        var copy = [...posts];
+        observer.next(copy);
+      });
+    }
   }
 
   constructor(private http: HttpClient) {}
