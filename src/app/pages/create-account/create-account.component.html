@@ -36,27 +36,27 @@
                 </div>
 
                 <!-- EMAIL -->
+                <!-- EMAIL PATTERN IS WORKING CORRECTLY -->
                 <div class="form-group">
                     <strong><label for="email">Email</label></strong>
-                    <input required email="true" emailPattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel
+                    <input required email="true" email pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel
                         name="email" #email="ngModel" type="email" id="email" class="form-control">
                     <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
                         <div *ngIf="email.errors.required">Email is required</div>
                         <div *ngIf="email.errors.pattern">Valid email is required</div>
-                        <div *ngIf="email.errors?.email">Valid email is required</div>
                     </div>
                 </div>
 
                 <!-- PASSWORD -->
                 <div class="form-group">
                     <strong><label for="password">Password</label></strong>
-                    <input required minlength="6" maxlength="20" pattern="^[a-zA-Z0-9]{6,20}$" ngModel name="password"
+                    <input required minlength="6" maxlength="20" ngModel name="password"
                         #password="ngModel" type="password" id="password" class="form-control">
                     <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
                         <div *ngIf="password.errors.required">Password is required</div>
                         <div *ngIf="password.errors.minlength">Password must be between 6 - 20 characters</div>
                         <div *ngIf="password.errors.maxlength">Password must be between 6 - 20 characters</div>
-                        <div *ngIf="password.errors.pattern">Password must not contain any special characters</div>
+                        <!-- <div *ngIf="password.errors.pattern">Password must not contain any special characters</div> -->
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@
                 <div class="form-group">
                     <strong><label>Confirm Password</label></strong>
                     <input required ngModel name="passwordConfirm"
-                        #passwordConfirm="ngModel" type="passwordConfirm" id="passwordConfirm" class="form-control">
+                        #passwordConfirm="ngModel" type="password" id="passwordConfirm" class="form-control">
                     <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
                         <div *ngIf="passwordConfirm.errors.required">Password confirm is required</div>
                         <div *ngIf="passwordConfirm.errors.notSame">Passwords do not match</div>

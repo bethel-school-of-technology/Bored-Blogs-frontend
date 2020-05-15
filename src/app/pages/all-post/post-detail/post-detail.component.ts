@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostDataService } from '../../../services/post-data.service';
+import {Post} from '../../../models/Post';//TODO: fix import
 
 @Component({
   selector: 'app-post-detail',
@@ -7,12 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostDetailComponent implements OnInit {
 
-  constructor() { }
+  post: Post;
+
+  selector = -1;
+  setSelector(value: number) {
+    this.selector = value;
+  }
+
+
+  constructor(postservice: PostDataService) { }
 
 
 
   ngOnInit() {
   }
+
 
 
 }

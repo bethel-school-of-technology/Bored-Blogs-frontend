@@ -17,9 +17,9 @@ export class SignInComponent implements OnInit {
   signin(signinForm: NgForm) {
     console.log(signinForm);
     console.log(signinForm.value);
-
+    
     this.userService
-      .register(signinForm.value)
+    .register(signinForm.value)
       .subscribe((user: User) => {
         this.user = user;//does
         console.log("you have logged in");
