@@ -1,8 +1,7 @@
-/*
-@media (min-width: 1px) {
-  @mixin border {
-    border-width: 6px;
-  }
+/* :host {
+    @mixin border {
+        border-width: 1px;
+    }
 
   .row div:nth-child(2) {
     @include border();
@@ -16,8 +15,8 @@
     border-top-style: solid;
     border-bottom-style: solid;
   }
-}
-*/
+} */
+
 .wrapper {
   background-image: url("../../../assets/images/board-game-bg-image1-v2.jpg");
   background-repeat: no-repeat;
@@ -27,7 +26,12 @@
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 .row > div > div {
-  border: 5px solid black;
-  box-shadow: 4px 6px rgba(0, 0, 0, 0.3);
-  background-color: white;
+  background-color: whitesmoke;
+  opacity: 0.75;
+  border-radius: 10px 70px;
+  padding: 50px;
+}
+
+button {
+  color:(primary);
 }
