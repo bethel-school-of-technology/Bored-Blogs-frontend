@@ -68,7 +68,7 @@
                         #passwordConfirm="ngModel" type="password" id="passwordConfirm" class="form-control">
                     <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
                         <div *ngIf="passwordConfirm.errors.required">Password confirm is required</div>
-                        <div *ngIf="passwordConfirm.errors.notSame">Passwords do not match</div>
+                        <div *ngIf="!this.passwordsMatch">Passwords do not match</div>
                     </div>
                 </div>
                 <br>

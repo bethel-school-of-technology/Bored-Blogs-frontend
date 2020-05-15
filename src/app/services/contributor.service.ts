@@ -22,7 +22,7 @@ var contributors = [
     //bio
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     //color
-    styleFromColor("#006eff", "white"),
+    styleFromColor("pink", "black"),
     //image to use
     "https://ca.slack-edge.com/T9P33872P-UMB26EV6E-f1b15a101868-512"
   ),
