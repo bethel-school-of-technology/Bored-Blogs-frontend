@@ -1,18 +1,40 @@
+<<<<<<< HEAD
 :host {
     @mixin border {
         border-width: 1px;
     }
+=======
+/*
+@media (min-width: 1px) {
+  @mixin border {
+    border-width: 6px;
+  }
+>>>>>>> ead69bb92259d87efa6595bb27f10f0aee5f2ba8
 
-    .row div:nth-child(2) {
-        @include border();
-        border-left-style: solid;
-        border-right-style: solid;
-    }
+  .row div:nth-child(2) {
+    @include border();
+    border-left-style: solid;
+    border-right-style: solid;
+  }
 
-    .row:nth-child(3) {
-        //idk why its 3 instead of 2
-        @include border();
-        border-top-style: solid;
-        border-bottom-style: solid;
-    }
+  .row:nth-child(3) {
+    //idk why its 3 instead of 2
+    @include border();
+    border-top-style: solid;
+    border-bottom-style: solid;
+  }
+}
+*/
+.wrapper {
+  background-image: url("../../../assets/images/board-game-bg-image1-v2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+}
+.row > div > div {
+  border: 5px solid black;
+  box-shadow: 4px 6px rgba(0, 0, 0, 0.3);
+  background-color: white;
 }

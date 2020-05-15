@@ -1,8 +1,8 @@
 export class Post {
   id: number;
-  Author: string;
-  Title: string;
-  Preview: string;
-  Body: string;
+  author: string;
+  title: string;
+  preview: string;
+  body: string;
 }
 

@@ -2,6 +2,7 @@
 <!--TODO fix anchor tag to route to blog dashboard and then...-->
 <!--TODO ...remove blog dashboard component-->
 <!--? Add other admin functions on this page? Edit individual contributor profiles, edit/delete user profiles, etc. -->
+<<<<<<< HEAD
 <header class="d-flex justify-content-center">
   <h2>Welcome [Insert Name Here]!</h2>
 </header>
@@ -16,44 +17,50 @@
       <button [routerLink]="['/post-add']" class="btn">
         Create a Blog Post
       </button>
+=======
+<div class="wrapper vh-100">
+  <header class="d-flex justify-content-center">
+    <h2>Welcome [needs to have UserService with template junk user.firstName + user.lastName]!</h2>
+  </header>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="my-2">
+        <h6>Blog Post Settings</h6>
+        <button [routerLink]="['/all']" class="btn m-2">
+          View All Blog Posts
+        </button>
+        <button [routerLink]="['/post-list']" class="btn m-2">
+          Update or Delete a Blog Post
+        </button>
+        <button [routerLink]="['/post-add']" class="btn m-2">
+          Create a Blog Post
+        </button>
+      </div>
+>>>>>>> ead69bb92259d87efa6595bb27f10f0aee5f2ba8
     </div>
-  </div>
-  <div class="col-lg-4">
-    <div class="my-2">
-      <!--TODO These need to be fixed-->
-      <h6>Contributor Profile Settings</h6>
-      <button [routerLink]="['/contributers-profile']" class="btn">
-        View Contributor Profile
-      </button>
-      <button [routerLink]="['/contributers-profile']" class="btn">
-        Update Contributor Profile
-      </button>
+    <div class="col-lg-4">
+      <div class="my-2">
+        <!--TODO These need to be fixed-->
+        <h6>Contributor Profile Settings</h6>
+        <button [routerLink]="['/contributers-profile']" class="btn m-2">
+          View Contributor Profile
+        </button>
+        <button [routerLink]="['/contributers-profile']" class="btn m-2">
+          Update Contributor Profile
+        </button>
+      </div>
     </div>
-  </div>
-  <div class="col-lg-4">
-    <div class="my-2">
-      <!-- TODO These need to be fixed-->
-      <h6>User Profile Settings</h6>
-      <button [routerLink]="['/blog-dashboard']" class="btn">
-        Go to Blog Dashboard
-      </button>
-      <button [routerLink]="['/blog-dashboard']" class="btn">
-        Go to Blog Dashboard
-      </button>
+    <div class="col-lg-4">
+      <div class="my-2">
+        <!-- TODO These need to be fixed-->
+        <h6>User Profile Settings</h6>
+        <button [routerLink]="['/blog-dashboard']" class="btn m-2">
+          Go to Blog Dashboard
+        </button>
+        <button [routerLink]="['/blog-dashboard']" class="btn m-2">
+          Go to Blog Dashboard
+        </button>
+      </div>
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-lg-4 four">
-    <button class="btn">Example</button>
-    <button class="btn">Example</button>
-  </div>
-  <div class="col-lg-4 five">
-    <button class="btn">Example</button>
-    <button class="btn">Example</button>
-  </div>
-  <div class="col-lg-4 six">
-    <button class="btn">Example</button>
-    <button class="btn">Example</button>
   </div>
 </div>
