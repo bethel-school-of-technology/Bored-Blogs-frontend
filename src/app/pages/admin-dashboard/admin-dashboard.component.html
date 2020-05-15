@@ -4,15 +4,16 @@
 <!--? Add other admin functions on this page? Edit individual contributor profiles, edit/delete user profiles, etc. -->
 <div class="wrapper vh-100">
   <header class="d-flex justify-content-center">
-    <h2>
-      Welcome [needs to have UserService with template junk user.firstName +
-      user.lastName]!
-    </h2>
+    <h2>Welcome {{ this.contributor.name }}!</h2>
+    <form #cheatForm="ngForm" (ngSubmit)="cheatInAdminId(cheatForm)">
+      <input type="number" ngModel name="id" />
+      <button type="submit">go!</button>
+    </form>
   </header>
   <div class="row">
     <div class="col-lg-4">
       <div class="my-2">
-        <h6>Blog Post Settings</h6>
+        <h6 class="text-">Blog Post Settings</h6>
         <button
           [ngStyle]="contributor.color"
           [routerLink]="['/all']"
