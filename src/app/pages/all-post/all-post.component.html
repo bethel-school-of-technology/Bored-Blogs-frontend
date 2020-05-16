@@ -8,7 +8,7 @@
           class="tablinks btn btn-primary btn-md"
           (click)="setSelector(i)"
         >
-          Read More
+          Read
         </button>
       </div>
       <p class="postBody" [ngClass]="{ collapse: this.selector != i }">
@@ -20,18 +20,14 @@
         {{ Post.body }}
         <br />
         <button
-          [routerLink]="['/post-detail']"
+          [routerLink]="['/post-detail/:id']"
           class="btn-large bg-primary text-white btn"
         >
-          See comments
+          See More
         </button>
         <!--
       <app-post-detail></app-post-detail>
       --></p>
     </div>
   </div>
-
-  <post-comment></post-comment>
-<!-- Jacob says the button probably doesnt need to be here but i didnt comment it -->
-  <!--<button (click)="onClickDelete()">Delete</button>-->
 </section>
