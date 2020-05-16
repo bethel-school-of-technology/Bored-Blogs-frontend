@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PostCommentService } from '../../../services/post-comment.service';
 import { Comment } from '../../../models/comment';
 
@@ -11,7 +11,7 @@ export class CommentDeleteComponent implements OnInit {
 
   isAdmin = false;
 
-  comment:Comment;
+  @Input() comment: Comment;
 
   deleteComment(id: number): void {
     var me = this;

@@ -18,6 +18,7 @@ import { PostEditComponent } from './admin-dashboard/post-edit/post-edit.compone
 import { PostCommentComponent } from './all-post/post-comment/post-comment.component';
 import { CommentDeleteComponent } from './all-post/comment-delete/comment-delete.component';
 import { CommentEditComponent } from './all-post/comment-edit/comment-edit.component';
+import { UsersListComponent } from './users-list/users-list.component';
 
 
 // module is self explanatory
@@ -38,7 +39,8 @@ import { CommentEditComponent } from './all-post/comment-edit/comment-edit.compo
     PostEditComponent,
     PostCommentComponent,
     CommentDeleteComponent,
-    CommentEditComponent
+    CommentEditComponent,
+    UsersListComponent
   ],
   imports: [
     CommonModule,

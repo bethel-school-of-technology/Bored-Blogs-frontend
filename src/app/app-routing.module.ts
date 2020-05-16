@@ -1,3 +1,4 @@
+import { UsersListComponent } from './pages/users-list/users-list.component';
 import { ContributersProfileComponent as ContributorsProfileComponent, ContributersProfileComponent } from './pages/contributers-profile/contributers-profile.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -59,7 +60,8 @@ export class R {
     make('post-comment', 'Post Comment', PostCommentComponent, false),
     make('comment-delete', 'Comment Delete', CommentDeleteComponent, false),
     make('comment-edit', 'Comment Edit', CommentEditComponent, false),
-    make('admin', 'Admin', AdminDashboardComponent, true) // need to turn this back to false once admins have ability to sign in
+    make('admin', 'Admin', AdminDashboardComponent, true), // need to turn this back to false once admins have ability to sign in
+    make('users-list', 'users-list', UsersListComponent, false)
   ];
 
   static getRoutes(): Routes {
