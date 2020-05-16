@@ -3,40 +3,46 @@ import { HttpClient } from "@angular/common/http";
 import { Message } from "../models/message";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { AlertsComponent } from "../misc/alerts/alerts.component";
+function makeMessage(input: String): Message {
+  return { body: input };
+}
+var messages: Message[] = [
+  makeMessage("hello user"),
+  makeMessage("hello user2"),
+];
 
 /**
  * this service allows differenet components to
  * talk to the user regardless where the user is
  */
-
 @Injectable({
   providedIn: "root",
 })
 export class MessageService {
-  eyeOfBeholder: Observable<Message[]>;
-
-  getMessages(): Observable<Message[]> {
-    return this.eyeOfBeholder;
+  //calls back to the component to let it know the things have updated
+  myOneAlert: AlertsComponent;
+  setAlert(pointer: AlertsComponent) {
+    this.myOneAlert = pointer;
   }
 
-  addMessage(message: Message): void {
-    console.log(message);
-    this.eyeOfBeholder.pipe(map((messageList) => messageList.push(message)));
+  getMessages(): Message[] {
+    return messages;
   }
 
-  deleteMessage(id: number): void {
-    this.eyeOfBeholder.pipe(
-      map((messages) => (messages = messages.splice(id, 1)))
-    );
+  addMessage(incomingMessage: Message): Message[] {
+    console.log("messages is being added");
+    messages.push(incomingMessage);
+    this.myOneAlert.updateMySelf(messages);
+    return messages;
   }
 
-  constructor(private http: HttpClient) {
-    this.eyeOfBeholder = new Observable((observer) => {
-      observer.next([
-        {
-          body: "hello user ",
-        },
-      ]);
-    });
+  deleteMessage(id: number): Message[] {
+    var temp = [];
+    for (var i = 0; i < messages.length; i++)
+      if (i != id) temp.push(messages[i]);
+    messages = temp;
+    this.myOneAlert.updateMySelf(messages);
+    return messages;
   }
 }
