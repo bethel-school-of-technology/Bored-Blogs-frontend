@@ -14,12 +14,11 @@ import { PostDetailComponent } from './all-post/post-detail/post-detail.componen
 import { PostListComponent } from './admin-dashboard/post-list/post-list.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { PostAddComponent } from './admin-dashboard/post-add/post-add.component';
-import { NavComponent } from './admin-dashboard/nav/nav.component';
 import { PostEditComponent } from './admin-dashboard/post-edit/post-edit.component';
-import { BlogDashboardComponent } from './admin-dashboard/blog-dashboard/blog-dashboard.component';
 import { PostCommentComponent } from './all-post/post-comment/post-comment.component';
 import { CommentDeleteComponent } from './all-post/comment-delete/comment-delete.component';
 import { CommentEditComponent } from './all-post/comment-edit/comment-edit.component';
+import { UsersListComponent } from './users-list/users-list.component';
 
 
 // module is self explanatory
@@ -37,12 +36,11 @@ import { CommentEditComponent } from './all-post/comment-edit/comment-edit.compo
     PostListComponent,
     AdminDashboardComponent,
     PostAddComponent,
-    NavComponent,
     PostEditComponent,
-    BlogDashboardComponent,
     PostCommentComponent,
     CommentDeleteComponent,
-    CommentEditComponent
+    CommentEditComponent,
+    UsersListComponent
   ],
   imports: [
     CommonModule,

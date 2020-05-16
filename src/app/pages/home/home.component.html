@@ -4,12 +4,12 @@
 <!-- PRIMARY CONTAINER -->
 <div class="container">
 
-<!-- BORED BLOG TITLE -->
+  <!-- BORED BLOG TITLE -->
   <div class="title text-center w-100">
     <p>Bored Blog</p>
   </div>
 
-<!-- WHAT IS BORED BLOG SECTION -->
+  <!-- WHAT IS BORED BLOG SECTION -->
   <div class="row h-100 justify-content-around">
     <div class="col-7 whatIs">
       <h3 class="text-center">What is Bored Blog?</h3>
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-<!-- GAME OF THE WEEK SECTION -->
+    <!-- GAME OF THE WEEK SECTION -->
     <div class="col-3 p-3 gameOfWeek">
       <h1 class="text-center pt-4">Game of the Week</h1>
       <div class="text-center">
@@ -43,10 +43,25 @@
   <br>
   <div class="row h-100 justify-content-around align-content-center">
 
-<!-- FEATURED BLOG SECTION -->
+
+    <!-- FEATURED BLOG SECTION -->
     <div class="col-7">
-      <h3 class="text-center currentBlog">Most Current Blog Title & Date</h3>
-      <p class="text-center">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+
+      <div class="text-center currentBlog" *ngFor="let Post of posts">
+
+        <!-- Display the most current Blog Post by id (SELECTED BY createdDate) -->
+        <h1 class="blogTitle font-italic"><strong>{{ Post.title }}</strong></h1>
+      
+        <strong>Contributed by: {{ Post.author }} </strong>
+        <br>
+        <!-- <strong>Post Date: {{Post.createdAt }}</strong> HOW CAN WE ADD THIS TIMESTAMP TO SHOW WITH THE POSTS?? -->
+        <br>
+        <p class="text-center">{{ Post.body }}</p>
+      </div>
+
+      <!-- THIS HARD-CODED TEXT WILL BE REMOVED AFTER THE ngFor LOOP IS WORKING FOR THE {{Post.body}} -->
+      
+      <!-- <p class="text-center">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
         accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
         quae ab illo inventore veritatis et quasi architecto beatae vitae
         dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
@@ -62,62 +77,25 @@
         aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
         qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
         illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-        <br>
-        <br>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-        quae ab illo inventore veritatis et quasi architecto beatae vitae
-        dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-        aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-        eos qui ratione voluptatem sequi nesciunt.
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-        quae ab illo inventore veritatis et quasi architecto beatae vitae
-        dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-        aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-        eos qui ratione voluptatem sequi nesciunt.
-        <br>
-        <br>
-        Neque porro quisquam est,
-        qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-        sed quia non numquam eius modi tempora incidunt ut labore et dolore
-        magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-        nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-        aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
-        qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
-        illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-        <br>
-        <br>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-        quae ab illo inventore veritatis et quasi architecto beatae vitae
-        dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-        aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-        eos qui ratione voluptatem sequi nesciunt."</p>
+        <br></p> -->
+
       <div class="d-flex pb-4">
         <button [routerLink]='["/contributor-profile"]' class="btn btn-primary">More posts by this Contributor</button>
         <button [routerLink]='["/all"]' class="btn btn-primary">All Past Blog Posts</button>
       </div>
     </div>
 
-<!-- CONTRIBUTORS SECTION -->
-    <!-- TODO:make this a for loop-->
+    <!-- CONTRIBUTORS SECTION -->
+    <!-- JACKIE:make this a for loop ----- DONE!!! -->
     <div class="col-3 contributors p-5">
       <h3 class="text-center pb-4">Meet the Contributors</h3>
-      <img src="https://ca.slack-edge.com/T9P33872P-UMB26EV6E-f1b15a101868-72" class="rounded-circle">
-      <h6 class="text-center p-2">Jacob Stanton</h6>
-      <br>
-      <img src="https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-512" class="rounded-circle">
-      <h6 class="text-center p-2">Kayla Miller</h6>
-      <br>
-      <img src="https://ca.slack-edge.com/T9P33872P-UMXPMHEAE-3b5c27f1c336-512" class="rounded-circle">
-      <h6 class="text-center p-2">Jackie Roberts</h6>
-      <br>
-      <img src="https://ca.slack-edge.com/T9P33872P-UNCD1UH6K-6e8e43a4b2fd-512" class="rounded-circle">
-      <h6 class="text-center p-4">Kamyla Andrlik</h6>
+      <div *ngFor="let contributor of contributors;">
+        <img src="{{contributor.url}}" class="rounded-circle">
+        <h6 class="text-center p-2">{{contributor.name}}</h6>
+        <br>
+      </div>
       <button [routerLink]='["/contributor"]' class="btn btn-primary">Meet the Contributors</button>
     </div>
   </div>
-
 <!-- END OF PRIMARY CONTAINER -->
 </div>

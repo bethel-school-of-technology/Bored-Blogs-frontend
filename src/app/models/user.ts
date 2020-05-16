@@ -4,6 +4,7 @@ export class User {
     password: string;
     firstName: string;
     lastName: string;
+     //We can remove this userName since we decided not to have usernames? (Jackie)
     userName: string;
     //when u login u get a token
     token: string;
@@ -13,6 +14,7 @@ export class User {
         this.password = password;
         this.firstName = firstNam;
         this.lastName = lastName;
+        //We can remove this userName since we decided not to have usernames? (Jackie)
         this.userName = userName;
     }
 }
