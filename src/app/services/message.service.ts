@@ -29,7 +29,7 @@ export class MessageService {
       map((messages) => (messages = messages.splice(id, 1)))
     );
   }
-
+  
   constructor(private http: HttpClient) {
     this.eyeOfBeholder = new Observable((observer) => {
       observer.next([

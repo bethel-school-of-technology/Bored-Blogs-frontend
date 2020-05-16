@@ -1,4 +1,3 @@
-
 //BACKGROUND
 
 body {
@@ -16,22 +15,24 @@ body {
 }
 
 //title of page
-h1{
+h2{
   text-align: center;//can use text-center
   padding: 10px;//can use p-1
 }
 
 //individual contributor's profile pictures
 img {
-  border-radius: 50%;
   display: block;
+  border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
+  width: 55%;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
-
 
 //description for each contributor
 p {
+  padding-top: 10px;
   text-align: center;
 }
 
