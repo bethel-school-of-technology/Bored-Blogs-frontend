@@ -1,6 +1,4 @@
-<!--TODO NEED TO CHANGE COLOR OF BUTTON TO THEME COLOR-->
-<!--TODO fix anchor tag to route to blog dashboard and then...-->
-<!--TODO ...remove blog dashboard component-->
+
 <!--? Add other admin functions on this page? Edit individual contributor profiles, edit/delete user profiles, etc. -->
 <div class="wrapper vh-100">
   <header class="d-flex justify-content-center">
@@ -59,21 +57,13 @@
     </div>
     <div class="col-lg-4">
       <div class="my-2">
-        <!-- TODO These need to be fixed-->
-        <h6>User Profile Settings</h6>
+        <h6>View and Manage Users</h6>
         <button
           [ngStyle]="contributor.color"
-          [routerLink]="['/blog-dashboard']"
+          [routerLink]="['/users-list']"
           class="btn m-2"
         >
-          Go to Blog Dashboard
-        </button>
-        <button
-          [ngStyle]="contributor.color"
-          [routerLink]="['/blog-dashboard']"
-          class="btn m-2"
-        >
-          Go to Blog Dashboard
+          View and Manage Users
         </button>
       </div>
     </div>
