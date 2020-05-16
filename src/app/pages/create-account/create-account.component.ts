@@ -70,4 +70,7 @@ export class CreateAccountComponent implements OnInit {
     private router: Router
   ) {}
 
+  ngOnInit() {
+  }
+  
 }
