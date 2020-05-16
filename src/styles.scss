@@ -121,3 +121,11 @@ footer {
 @import "~bootstrap/scss/bootstrap";
 
 
+
+#alert-container {
+  position: fixed;
+  top:80px;
+  z-index: 999999999999;
+}
+
+

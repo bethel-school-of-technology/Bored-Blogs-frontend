@@ -1,23 +1,29 @@
 <!-- NAV BAR -->
 <navbar></navbar>
-
+<alerts></alerts>
 <!-- ROUTER-OUTLET -->
 <div class="container">
   <router-outlet></router-outlet>
 
-<!-- FOOTER -->
+  <!-- FOOTER -->
   <footer class="fixed-bottom w-100">
     <div class="footer">
-      <a [routerLink]='"/contact-us"' class="submit">Submit a Blog Request</a>
+      <a [routerLink]="'/contact-us'" class="submit">Submit a Blog Request</a>
     </div>
 
     <div class="social">
       <!-- recal inside directive string is ts so we string in a string -->
-      <a [routerLink]='"/contact-us"' class="support">Contact Us</a>
+      <a [routerLink]="'/contact-us'" class="support">Contact Us</a>
       <!-- <a href="#" class="face">f</a> -->
-      <a class="face" href="#"><img class="socialImg" src="../assets/images/fb.png"></a>
-      <a class="tweet" href="#"><img class="socialImg" src="../assets/images/twitter.png"></a>
-      <a class="linked" href="#"><img class="socialImg" src="../assets/images/insta.png"></a>
+      <a class="face" href="#"
+        ><img class="socialImg" src="../assets/images/fb.png"
+      /></a>
+      <a class="tweet" href="#"
+        ><img class="socialImg" src="../assets/images/twitter.png"
+      /></a>
+      <a class="linked" href="#"
+        ><img class="socialImg" src="../assets/images/insta.png"
+      /></a>
     </div>
   </footer>
 </div>
