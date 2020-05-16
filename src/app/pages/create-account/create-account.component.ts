@@ -7,26 +7,22 @@ import { HttpErrorResponse } from "@angular/common/http";
 import { MessageService } from "src/app/services/message.service";
 
 @Component({
-  selector: "app-create-account",
-  templateUrl: "./create-account.component.html",
-  styleUrls: ["./create-account.component.scss"],
+  selector: 'app-create-account',
+  templateUrl: './create-account.component.html',
+  styleUrls: ['./create-account.component.scss']
 })
 export class CreateAccountComponent implements OnInit {
-  userName = "";
-  email = "";
-  password = "";
+  userName = '';
+  email = '';
+  password = '';
   user: User;
   passwordsMatch: boolean = true;
   //Jacob Stanton:
   //creates an account
   createAccount(createAccountForm: NgForm) {
-    let blog = (e) => console.log(e);
     console.log(createAccountForm);
     console.log(createAccountForm.value);
-    let a = createAccountForm.value.password;
-    let b = createAccountForm.value.confirmPassword;
-    let check = a == b;
-    console.log(check);
+
     //Jacob Stanton:
     //takes data from form and submits it to the backend
     this.passwordsMatch =
@@ -74,5 +70,4 @@ export class CreateAccountComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {}
 }

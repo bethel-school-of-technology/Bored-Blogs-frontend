@@ -65,7 +65,7 @@
                 <div class="form-group">
                     <strong><label>Confirm Password</label></strong>
                     <input required ngModel name="passwordConfirm"
-                        #passwordConfirm="ngModel" type="password" id="passwordConfirm" class="form-control">
+                        #passwordConfirm="ngModel" type="passwordConfirm" id="passwordConfirm" class="form-control">
                     <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
                         <div *ngIf="passwordConfirm.errors.required">Password confirm is required</div>
                         <div *ngIf="!this.passwordsMatch">Passwords do not match</div>
