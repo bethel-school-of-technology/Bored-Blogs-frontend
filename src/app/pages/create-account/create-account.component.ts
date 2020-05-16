@@ -12,7 +12,6 @@ import { MessageService } from "src/app/services/message.service";
   styleUrls: ['./create-account.component.scss']
 })
 export class CreateAccountComponent implements OnInit {
-  userName = '';
   email = '';
   password = '';
   user: User;
