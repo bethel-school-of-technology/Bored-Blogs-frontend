@@ -38,27 +38,27 @@ export class CreateAccountComponent implements OnInit {
             this.router.navigateByUrl("/");
             console.log("you have created an account");
             this.messageService.addMessage({
-              body: "hurray you have created an account!!",
+              body: "You have successfully created an account",
             });
           },
           (error: HttpErrorResponse) => {
             console.log("an error has occured");
             console.log(error);
             this.messageService.addMessage({
-              body: "there was a problem",
+              body: "There was a problem",
             });
           }
         );
       } else {
         console.log("form is invalid");
         this.messageService.addMessage({
-          body: "there was a problem",
+          body: "Form is invalid",
         });
       }
     } else {
       console.log("passwords dont match");
       this.messageService.addMessage({
-        body: "there was a problem",
+        body: "Passwords do not match",
       });
     }
   }
@@ -69,5 +69,8 @@ export class CreateAccountComponent implements OnInit {
     private messageService: MessageService,
     private router: Router
   ) {}
+
+  ngOnInit() {
+  }
 
 }
