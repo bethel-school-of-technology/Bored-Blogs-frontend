@@ -17,7 +17,7 @@ export class PostListComponent implements OnInit {
   deletePost(id: number): void {
     // this.postDataService.deletePost(id).subscribe((p) => {(this.posts = p)});
        this.postDataService.deletePost(id).subscribe(p => this.getPosts());
-  };
+  }
 
   constructor(private postDataService: PostDataService) { }
 
