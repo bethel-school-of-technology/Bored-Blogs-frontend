@@ -30,7 +30,7 @@ const make = (url: string, title: string, component: any, isPartOfNav: boolean) 
   }
 };
 /*
-I made this class so other components can get a refrence to the routes and page components
+I made this class so other components can get a reference to the routes and page components
 
 
 R = routes

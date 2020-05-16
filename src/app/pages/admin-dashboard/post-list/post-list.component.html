@@ -1,6 +1,6 @@
 <!--THIS COMPONENT HOLDS ALL OF THE CREATED BLOG POSTS-->
-
-<h3>Blog Post Dashboard</h3>
+<div class="container">
+<h3>Edit or Delete a Blog Post</h3>
 
 <ul>
   <li *ngFor="let post of posts">
@@ -11,7 +11,8 @@
     {{post.body}}
     <br>
     <button class="btn-danger" (click)="deletePost(post.id)">Delete</button> <!--DELETES POST IMMEDIATELY-->
-    <a [routerLink]="['/post-edit', post.id]"><button>Edit</button></a>
+    <a [routerLink]="['/post-edit', post.id]"><button class="btn-secondary">Edit</button></a>
   </li>
 </ul>
-
+<button [routerLink]="['/admin']" class="btn btn-accent">Return to Admin Dashboard</button>
+</div>
