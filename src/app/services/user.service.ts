@@ -9,11 +9,12 @@ import { share } from "rxjs/operators";
  * This will comunicate to the backend
  * signing component uses this to talk to backend
  */
-var currentUser:any
+
 @Injectable({
   providedIn: "root",
 })
 export class UserService {
+  private currentUser: any;
   constructor(private http: HttpClient, private cookieService: CookieService) {}
 
   //this registers an account
@@ -28,6 +29,7 @@ export class UserService {
       .post(`${Config.apiUrl}/users/register`, user)
       .pipe(share());
     Observable.subscribe((user: User) => {
+      this.currentUser = user;
       //? is it safe to store cookie here?
       //the only other place i can put it is on the root app instance
       this.cookieService.set("token", user.token);
@@ -40,7 +42,7 @@ export class UserService {
       .post(`${Config.apiUrl}/users/login`, user)
       .pipe(share());
     Observable.subscribe((user: User) => {
-      console.log(user);
+      this.currentUser = user;
       this.cookieService.set("token", user.token);
     });
     return Observable;
@@ -55,11 +57,11 @@ export class UserService {
     //TODO: eat the cookie
   }
 
-  isLoggedIn(){
-    return currentUser != null;
+  isLoggedIn(): boolean {
+    return this.currentUser != null;
   }
 
-  isAdmin(){
-
+  isAdmin() {
+    //TODO: run the is admin endpoint perhaps
   }
 }
