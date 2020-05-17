@@ -34,7 +34,7 @@ export class CreateAccountComponent implements OnInit {
             this.user = user;
             //Jacob Stanton:
             //TODO: add route to constuctor and naviage and success
-            this.router.navigateByUrl("/");
+            this.router.navigateByUrl("/home");
             console.log("successfully created an account");
             this.messageService.addMessage({
               body: "You have successfully created an account",

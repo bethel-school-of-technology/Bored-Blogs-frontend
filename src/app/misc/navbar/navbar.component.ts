@@ -23,7 +23,9 @@ export class NavbarComponent implements OnInit {
   //jquery is bad idea to use in angular
   main: boolean = false;
 
-  dropDown1: boolean = false;
+  dropDown1: boolean;
+  dropDown2: boolean;
+  dropDown3: boolean;
 
   links: any[] = R.getRoutesForNavigation();
   contribs: Contributor[];
@@ -41,7 +43,8 @@ export class NavbarComponent implements OnInit {
 
   //Jacob Stanton:
   //toggles the key like main to toggle the visiblity of another guy
-  toggle(keyToToggle) {
+  toggle(keyToToggle: string | number) {
+    console.log(keyToToggle)
     try {
       this[keyToToggle] = !this[keyToToggle];
     } catch (e) {
