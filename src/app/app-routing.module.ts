@@ -49,10 +49,10 @@ export class R {
     // NAVBAR Titles & Order
     make('home', 'Home', HomeComponent, true),
     make('boot', 'Bootstrap Demo', BootDemoComponent, false),
-    make('all', 'View All Posts', AllPostComponent, true),
-    make('contributor', 'Meet the Contributors', ContributorsComponent, true),
-    make('contact-us', 'Contact Us', ContactUsComponent, true),
-    make('sign-in', 'Log In', SignInComponent, true), //JACKIE: In nav "Users" dropdown list
+    make('all', 'View All Posts', AllPostComponent, false), //JACKIE: In nav "View All Posts" dropdown list
+    make('contributor', 'Meet the Contributors', ContributorsComponent, false), //JACKIE: In nav "Contributors" dropdown list
+    make('contact-us', 'Contact Us', ContactUsComponent, false), //JACKIE: In nav "Contributors" dropdown list
+    make('sign-in', 'Log In', SignInComponent, false), //JACKIE: In nav "Users" dropdown list
     make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent, false),
     make('create-account', 'Create account', CreateAccountComponent, false), //JACKIE: In nav "Users" dropdown list
     make('post-detail/:id', 'Post Detail', PostDetailComponent, false),
@@ -62,7 +62,8 @@ export class R {
     make('post-comment', 'Post Comment', PostCommentComponent, false),
     make('comment-delete', 'Comment Delete', CommentDeleteComponent, false),
     make('comment-edit', 'Comment Edit', CommentEditComponent, false),
-    make('admin', 'Admin', AdminDashboardComponent, true), // need to turn this back to false once admins have ability to sign in
+     //JACKIE: In nav "Contributors" dropdown list
+    make('admin', 'Admin', AdminDashboardComponent, false), // need to turn this back to false once admins have ability to sign in
     make('users-list', 'users-list', UsersListComponent, false), 
     make('user-profile', 'User Profile', UserProfileComponent, false), //also for Change password //JACKIE: In nav "Users" dropdown list
     make('sign-out', 'Log Out', SignOutComponent, false) //JACKIE: In nav "Users" dropdown list

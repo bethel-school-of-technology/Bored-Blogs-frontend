@@ -21,9 +21,45 @@
         </ul>
     </div>
 
+    <!-- DROP DOWN NAV LIST FOR "POSTS" -->
+    <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle btn" data-toggle="dropdown" id="navbarDropdown"
+            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Posts
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]='["/all"]'>Read All Posts</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]='["/contributor-profile/Jacob"]'>Posts by Jacob</a>
+            <a class="dropdown-item" [routerLink]='["/contributor-profile/Jackie"]'>Posts by Jackie</a>
+            <a class="dropdown-item" [routerLink]='["/contributor-profile/"]'>Posts by Kayla</a>
+            <a class="dropdown-item" [routerLink]='["/contributor-profile/Kamyla"]'>Posts by Kamyla</a>
+        </div>
+    </div>
+
+        <!-- DROP DOWN NAV LIST FOR "CONTRIBUTORS" -->
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle btn" data-toggle="dropdown" id="navbarDropdown"
+                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Contributors
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" [routerLink]='["/contributor"]'>Meet the Contributors</a>
+                <a class="dropdown-item" [routerLink]='["/contributor-profile/Jacob"]'>Meet Jacob</a>
+                <a class="dropdown-item" [routerLink]='["/contributor-profile/Jackie"]'>Meet Jackie</a>
+                <a class="dropdown-item" [routerLink]='["/contributor-profile/"]'>Meet Kayla</a>
+                <a class="dropdown-item" [routerLink]='["/contributor-profile/Kamyla"]'>Meet Kamyla</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" [routerLink]='["/contact-us"]'>Submit A Blog Request</a>
+                <a class="dropdown-item" [routerLink]='["/contact-us"]'>Contact Us</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" [routerLink]='["/admin"]'>Admin Only</a>
+            </div>
+        </div>
+
     <!-- DROP DOWN NAV LIST FOR "USERS" -->
     <div class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle btn" id="navbarDropdown"
+        <a class="nav-link dropdown-toggle btn" data-toggle="dropdown" id="navbarDropdown"
             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Users
         </a>
@@ -31,6 +67,7 @@
             <a class="dropdown-item" [routerLink]='["/sign-in"]'>Log In</a>
             <a class="dropdown-item" [routerLink]='["/create-account"]'>Create Account</a>
             <a class="dropdown-item" [routerLink]='["/user-profile"]'>User Profile</a>
+            <a class="dropdown-item" [routerLink]='["/user-profile"]'>Reset Password</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" [routerLink]='["/sign-out"]'>Log Out</a>
         </div>
