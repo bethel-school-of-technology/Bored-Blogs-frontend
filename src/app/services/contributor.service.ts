@@ -4,9 +4,9 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Config } from "../config/config";
 import { Contributor } from "../models/contributor";
-import { linksIguess } from '../models/linksIgues';
-import { Bio } from '../models/bio';
-import { Games } from '../models/games';
+import { linksIguess } from "../models/linksIgues";
+import { Bio } from "../models/bio";
+import { Games } from "../models/games";
 
 //this style formats the color into a object that ngStyle accepts
 function styleFromColor(backGroundColor: String, textColor: String): any {
@@ -25,17 +25,11 @@ var contributors = [
     "Stanton",
     //bio
     new Bio(
-      new Games([
-        'game 1',
-        'game 2',
-      ]),
-      '12/09/1995',
-      'othello',
-      new linksIguess(
-        '#',
-        '#',
-        '#',
-      )
+      new Games(["game 1", "game 2"]),
+      "12/09/1995",
+      "othello",
+      new linksIguess("#", "#", "#"),
+      "lorem ipsum"
     ),
     //color
     styleFromColor("#006eff", "white"),
@@ -47,17 +41,11 @@ var contributors = [
     "Jackie",
     "Roberts",
     new Bio(
-      new Games([
-        'game 1',
-        'game 2',
-      ]),
-      '12/09/1995',
-      'othello',
-      new linksIguess(
-        '#',
-        '#',
-        '#',
-      )
+      new Games(["game 1", "game 2"]),
+      "12/09/1995",
+      "othello",
+      new linksIguess("#", "#", "#"),
+      "lorem ipsum"
     ),
     styleFromColor("yellow", "black"),
     "https://ca.slack-edge.com/T9P33872P-UMXPMHEAE-3b5c27f1c336-512"
@@ -67,17 +55,11 @@ var contributors = [
     "Kayla",
     "Miller",
     new Bio(
-      new Games([
-        'game 1',
-        'game 2',
-      ]),
-      '12/09/1995',
-      'othello',
-      new linksIguess(
-        '#',
-        '#',
-        '#',
-      )
+      new Games(["game 1", "game 2"]),
+      "12/09/1995",
+      "othello",
+      new linksIguess("#", "#", "#"),
+      "lorem ipsum"
     ),
     styleFromColor("red", "white"),
     "https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-512"
@@ -87,17 +69,11 @@ var contributors = [
     "Kamyla",
     "Andrlik",
     new Bio(
-      new Games([
-        'game 1',
-        'game 2',
-      ]),
-      '12/09/1995',
-      'othello',
-      new linksIguess(
-        '#',
-        '#',
-        '#',
-      )
+      new Games(["game 1", "game 2"]),
+      "12/09/1995",
+      "othello",
+      new linksIguess("#", "#", "#"),
+      "lorem ipsum"
     ),
     styleFromColor("#30c230", "white"),
     "https://ca.slack-edge.com/T9P33872P-UNCD1UH6K-6e8e43a4b2fd-512"

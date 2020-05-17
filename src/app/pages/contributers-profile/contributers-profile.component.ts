@@ -3,7 +3,7 @@ import { Post } from "src/app/models/post";
 import { Contributor } from "src/app/models/contributor";
 import { ContributorService } from "src/app/services/contributor.service";
 import { PostDataService } from "src/app/services/post-data.service";
-import { ActivatedRoute } from "@angular/router";
+import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 
 @Component({
   selector: "app-contributers-profile",
@@ -17,12 +17,13 @@ export class ContributersProfileComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
   //TODO: create a contributor service and move this to there
-  contributor: Contributor;
+  contributor: Contributor = null;
 
-  posts: Post[];
+  posts: Post[] = [];
   ngOnInit() {
-    this.route.queryParams.subscribe((params) => {
+    this.route.params.subscribe((params) => {
       var id = params["id"];
+      console.log(id)
       this.getContrib(id);
       this.getPostByAuthorID(id);
     });
@@ -38,6 +39,7 @@ export class ContributersProfileComponent implements OnInit {
   getPostByAuthorID(authorId: number) {
     this.postService.getPosts().subscribe((allPosts) => {
       this.posts = allPosts.filter((p) => p.authorId == authorId);
+      console.log(this.posts);
     });
   }
 
