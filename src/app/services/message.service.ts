@@ -9,8 +9,8 @@ function makeMessage(input: String): Message {
   return { body: input };
 }
 var messages: Message[] = [
-  makeMessage("hello user"),
-  makeMessage("hello user2"),
+  //makeMessage("hello user"),
+  //makeMessage("hello user2"),
 ];
 
 /**
