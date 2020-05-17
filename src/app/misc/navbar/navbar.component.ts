@@ -46,8 +46,4 @@ export class NavbarComponent implements OnInit {
       console.log(e);
     }
   }
-  hack(id: number) {
-    console.log("initiate the hack");
-    this.router.navigate(["/contributor-profile/", { id: id }]);
-  }
 }
