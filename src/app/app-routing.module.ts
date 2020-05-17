@@ -53,7 +53,7 @@ export class R {
     make('contributor', 'Meet the Contributors', ContributorsComponent, false), //JACKIE: In nav "Contributors" dropdown list
     make('contact-us', 'Contact Us', ContactUsComponent, false), //JACKIE: In nav "Contributors" dropdown list
     make('sign-in', 'Log In', SignInComponent, false), //JACKIE: In nav "Users" dropdown list
-    make('contributor-profile:id', 'Contributor Profile', ContributorsProfileComponent, false),
+    make('contributor-profile/:id', 'Contributor Profile', ContributorsProfileComponent, false),
     make('create-account', 'Create account', CreateAccountComponent, true),
     make('post-detail/:id', 'Post Detail', PostDetailComponent, false),
     make('post-list', 'Post List', PostListComponent, false),
