@@ -19,7 +19,12 @@ import { Router } from "@angular/router";
 })
 export class NavbarComponent implements OnInit {
   nestedDrawer: boolean = false;
+  //jacobs code to replace jquery
+  //jquery is bad idea to use in angular
   main: boolean = false;
+
+  dropDown1: boolean = false;
+
   links: any[] = R.getRoutesForNavigation();
   contribs: Contributor[];
   constructor(

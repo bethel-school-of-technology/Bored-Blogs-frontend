@@ -23,7 +23,7 @@ export class ContactUsService {
   }
 
   
-  constructor() { }
+  constructor(private http: HttpClient) { }
 }
 
 
