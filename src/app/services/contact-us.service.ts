@@ -12,6 +12,10 @@ export class ContactUsService {
 
   url: string = Config.apiUrl;
 
+  submitContactForm(){
+
+  };
+
   getContactSubmissions(): Observable<ContactUs[]> {
     if (Config.weAreUsingCloud) {
       return this.http.get<ContactUs[]>(this.url + "fixme");

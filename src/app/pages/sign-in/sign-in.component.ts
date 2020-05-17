@@ -26,7 +26,8 @@ export class SignInComponent implements OnInit {
     console.log(signinForm);
     console.log(signinForm.value);
     //JackieRoberts:
-    //Determine if sign in email & password = success       //JACOB THIS IS NOT CHECKING FOR VALID LOGIN :(
+    //Determine if sign in email & password = success       
+    //TODO:JACOB THIS IS NOT CHECKING FOR VALID LOGIN :(
     if (signinForm.status == "VALID") {
       this.userService.login(signinForm.value).subscribe(
         (user: User) => {

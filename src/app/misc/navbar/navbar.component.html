@@ -33,35 +33,53 @@
         </div>
     </div>
 
-    <!-- DROP DOWN NAV LIST FOR "CONTRIBUTORS" -->
+  <!-- DROP DOWN NAV LIST FOR "CONTRIBUTORS" -->
+  <div (mouseleave)="this.dropDown2 = false">
     <div class="nav-item dropdown">
-        <button class="nav-link dropdown-toggle btn" (click)="toggle('dropDown2')">
-            Contributors
-        </button>
-        <div class="dropdown-menu" [ngClass]="{ show: this.dropDown2 }">
-            <a class="dropdown-item" [routerLink]="['/contributor']">Meet the Contributors</a>
-            <a *ngFor="let contrib of contribs" class="dropdown-item"
-                [routerLink]="['/contributor-profile', contrib.id]">Meet {{ contrib.name }}</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" [routerLink]="['/contact-us']">Contact Us / Submit A Blog Request</a>
+      <button
+        class="nav-link dropdown-toggle btn"
+        (click)="toggle('dropDown2')"
+      >
+        Contributors
+      </button>
+      <div class="dropdown-menu" [ngClass]="{ show: this.dropDown2 }">
+        <a class="dropdown-item" [routerLink]="['/contributor']"
+          >Meet the Contributors</a
+        >
+        <a
+          *ngFor="let contrib of contribs"
+          class="dropdown-item"
+          [routerLink]="['/contributor-profile', contrib.id]"
+          >Meet {{ contrib.name }}</a
+        >
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" [routerLink]="['/contact-us']"
+          >Contact Us / Submit A Blog Request</a
+        >
 
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" [routerLink]="['/admin']">Admin Only</a>
-        </div>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" [routerLink]="['/admin']">Admin Only</a>
+      </div>
     </div>
-
-    <!-- DROP DOWN NAV LIST FOR "USERS" -->
+  </div>
+  <!-- DROP DOWN NAV LIST FOR "USERS" -->
+  <div (mouseleave)="this.dropDown3 = false">
     <div class="nav-item dropdown">
-        <button class="nav-link dropdown-toggle btn" (click)="toggle('dropDown3')">
-            Users
-        </button>
-        <div class="dropdown-menu" [ngClass]="{ show: this.dropDown3 }">
-            <a class="dropdown-item" [routerLink]="['/sign-in']">Log In</a>
-            <!-- <a class="dropdown-item" [routerLink]='["/create-account"]'>Create Account</a> -->
-            <a class="dropdown-item" [routerLink]="['/user-profile']">User Profile / Reset Password</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" [routerLink]="['/sign-out']">Log Out</a>
-        </div>
+      <button
+        class="nav-link dropdown-toggle btn"
+        (click)="toggle('dropDown3')"
+      >
+        Users
+      </button>
+      <div class="dropdown-menu" [ngClass]="{ show: this.dropDown3 }">
+        <a class="dropdown-item" [routerLink]="['/sign-in']">Log In</a>
+        <!-- <a class="dropdown-item" [routerLink]='["/create-account"]'>Create Account</a> -->
+        <a class="dropdown-item" [routerLink]="['/user-profile']"
+          >User Profile / Reset Password</a
+        >
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" [routerLink]="['/sign-out']">Log Out</a>
+      </div>
     </div>
 
     <!-- SEARCH KEYWORD form -->
