@@ -4,12 +4,13 @@ import { Message } from "../models/message";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { AlertsComponent } from "../misc/alerts/alerts.component";
+
 function makeMessage(input: String): Message {
   return { body: input };
 }
 var messages: Message[] = [
-  makeMessage("hello user"),
-  makeMessage("hello user2"),
+//  makeMessage("hello user"),
+//  makeMessage("hello user2"),
 ];
 
 /**

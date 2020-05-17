@@ -33,6 +33,7 @@
                     </div>
                 </div>
 
+                <!-- INVITATION TO CREATE ACCOUNT -->
                 <p>Don't have an account? Create one now.</p>
 
                 <!-- BUTTONS -->
@@ -40,19 +41,20 @@
 
                     <!-- THIS ROUTER LINK MUST ONLY ACTIVATE IF SIGN IN IS CORRECT EMAIL & PASSWORD -->
                     <button class="btn btn-primary">Log In</button>
-                    <!-- <button [routerLink]='["/home"]' class="btn btn-primary">Sign In</button>  -->
 
+                    <!-- ROUTER LINKS TO CREATE ACCOUNT PAGE -->
                     <button [routerLink]='["/create-account"]' class="btn btn-primary">Create Account</button>
 
-
+                    <!-- ROUTER LINKS TO USER PROFILE -->
                     <button [routerLink]='["/user-profile"]' class="btn btn-primary">Forgot Password?</button>
                 </div>
                 <br>
                 <div>
                     <h5>Benefits of having a Bored Blog account:</h5>
                     <ul>
-                        <li>Submit a blog topic request on the Contact Us page</li>
-                        <li>Comment on blog posts and other comments</li>
+                        <li>Submit a blog request</li>
+                        <li>Comment on blog posts</li>
+                        <li>Message other users</li>
                     </ul>
                 </div>
 
@@ -61,20 +63,3 @@
         </div>
     </div>
 </div>
-
-
-
-<!-- KEEP FOR NOW IN CASE WE DECIDE TO GO BACK TO REQUIRING A USER NAME -->
-<!-- USER NAME -->
-<!-- <div class="form-group">
-                    <label for="userName">Email</label>
-                    <input required minlength="3" maxlength="20" pattern="[a-zA-Z]*" ngModel name="userName"
-                        #userName="ngModel" id="userName" type="text" class="form-control">
-                    <div class="alert alert-danger" *ngIf="userName.touched && !userName.valid">
-                        <div *ngIf="userName.errors.required">Username is required</div>
-                        <div *ngIf="userName.errors.minlength">Username should be between 3 - 20 characters</div>
-                        <div *ngIf="userName.errors.maxlength">Username should be between 3 - 20 characters</div>
-                        <div *ngIf="userName.errors.pattern">Username must not contain spaces, numbers or special
-                            characters</div>
-                    </div>
-                </div> -->

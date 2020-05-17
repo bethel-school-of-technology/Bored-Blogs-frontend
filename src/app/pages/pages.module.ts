@@ -19,6 +19,8 @@ import { PostCommentComponent } from './all-post/post-comment/post-comment.compo
 import { CommentDeleteComponent } from './all-post/comment-delete/comment-delete.component';
 import { CommentEditComponent } from './all-post/comment-edit/comment-edit.component';
 import { UsersListComponent } from './users-list/users-list.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SignOutComponent } from './sign-out/sign-out.component';
 
 
 // module is self explanatory
@@ -40,7 +42,9 @@ import { UsersListComponent } from './users-list/users-list.component';
     PostCommentComponent,
     CommentDeleteComponent,
     CommentEditComponent,
-    UsersListComponent
+    UsersListComponent,
+    UserProfileComponent,
+    SignOutComponent
   ],
   imports: [
     CommonModule,
@@ -57,7 +61,8 @@ import { UsersListComponent } from './users-list/users-list.component';
     PostDetailComponent,
     PostEditComponent,
     PostAddComponent,
-    PostListComponent
+    PostListComponent,
+    UserProfileComponent
   ]
 })
 export class PagesModule { }

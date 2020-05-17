@@ -1,4 +1,6 @@
 <body>
+  <h1 class="header text-white text-center">Your Contributors</h1>
+  <br>
   <div class="flex-grid-container">
     <div class="d-flex flex-sm-column flex-xs-column flex-md-row meet-contributors-container">
       <div class="m-2" *ngFor="let contributor of contributors;">
@@ -7,7 +9,7 @@
           <img class="w-25" src="{{contributor.url}}">
           <p>{{contributor.bio}}</p>
           <a [routerLink]='["/contributor-profile"]'><button [ngStyle]="contributor.color"
-              class="btn btn-primary d-block mx-auto">Blog Posts by {{contributor.firstName}}</button></a>
+              class="btn btn-primary d-block mx-auto">More about {{contributor.firstName}}</button></a>
         </div>
       </div>
     </div>
