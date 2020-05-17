@@ -1,12 +1,12 @@
 #alert-container {
   position: fixed;
   top: 80px;
-  z-index: -10000;//this was stealing the clicks
+  z-index: -1; //this was stealing the clicks
   height: 25vh;
   width: 100vw;
   overflow-y: auto;
 }
 
 #alert-container > div {
-  z-index: 9001
+  z-index: 9001;
 }
