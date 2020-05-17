@@ -4,13 +4,14 @@ import { Message } from "../models/message";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { AlertsComponent } from "../misc/alerts/alerts.component";
+
 function makeMessage(input: String): Message {
   return { body: input };
 }
-// var messages: Message[] = [
-//   makeMessage("hello user"),
-//   makeMessage("hello user2"),
-// ];
+var messages: Message[] = [
+  makeMessage("hello user"),
+  makeMessage("hello user2"),
+];
 
 /**
  * this service allows differenet components to
