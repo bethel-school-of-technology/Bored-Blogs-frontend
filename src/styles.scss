@@ -28,6 +28,12 @@ button.btn {
   box-shadow: 2px 3px 10px 2px rgba(128, 122, 122, 0.8);
 }
 
+#navbarDropdown {
+  display: block;
+  margin-left: 0;
+  margin-right: 15px;
+}
+
 .form-control.ng-touched.ng-invalid {
   border: 2px solid red;
 }

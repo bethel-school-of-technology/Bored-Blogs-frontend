@@ -1,20 +1,45 @@
+<!-- NAV BAR -->
 <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-primary">
-    <!-- <a class="navbar-brand" href="">NavBar</a> -->
-    <button (click)="toggle('main')" class="navbar-toggler" type="button">
+
+    <!-- NAV BAR PROPERTIES -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse " [ngClass]="{show:this.main}">
+
+    <!-- <div class="collapse navbar-collapse"> -->
+    <!-- <button (click)="toggle('main')" class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+    <!-- NAV BAR ngFor LINKS -->
+    <div class="collapse navbar-collapse" [ngClass]="{show:this.main}">
         <ul class="navbar-nav mr-auto" *ngFor="let link of links;">
             <li class="nav-item text-right">
                 <a class="nav-link text-dark font-weight-normal font-size-sm" [routerLink]=link.path>{{link.title}}</a>
             </li>
         </ul>
-
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search Keyword" aria-label="Search">
-            <button class="btn btn-outline-accent my-2 my-sm-0" type="submit">Search</button>
-        </form>
-
-        <!-- <a [routerLink]="home">link to home</a> -->
     </div>
+
+    <!-- DROP DOWN NAV LIST FOR "USERS" -->
+    <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle btn" id="navbarDropdown"
+            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Users
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]='["/sign-in"]'>Log In</a>
+            <a class="dropdown-item" [routerLink]='["/create-account"]'>Create Account</a>
+            <a class="dropdown-item" [routerLink]='["/user-profile"]'>User Profile</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]='["/sign-out"]'>Log Out</a>
+        </div>
+    </div>
+
+    <!-- SEARCH KEYWORD form -->
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Keyword" aria-label="Search">
+        <button class="btn btn-outline-accent my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
 </nav>
