@@ -35,16 +35,16 @@ export class CreateAccountComponent implements OnInit {
             //Jacob Stanton:
             //TODO: add route to constuctor and naviage and success
             this.router.navigateByUrl("/");
-            console.log("you have created an account");
+            console.log("successfully created an account");
             this.messageService.addMessage({
               body: "You have successfully created an account",
             });
           },
           (error: HttpErrorResponse) => {
-            console.log("an error has occured");
+            console.log("problem creating an account");
             console.log(error);
             this.messageService.addMessage({
-              body: "There was a problem",
+              body: "There was a problem creating an account",
             });
           }
         );

@@ -1,3 +1,4 @@
+//Background styling
 .container {
   background: rgb(48,194,48);
   background: linear-gradient(90deg, rgba(48,194,48,1) 0%, rgba(233,240,74,0.9587185215883228) 50%, rgba(0,110,255,1) 100%);
@@ -5,6 +6,7 @@
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
+// Cancel changes button
 .btn-danger {
   display: block;
   margin-left: auto;
