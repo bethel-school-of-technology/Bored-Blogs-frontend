@@ -1,82 +1,136 @@
 <!-- NAV BAR -->
 <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-primary">
+  <!-- NAV BAR PROPERTIES -->
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <!-- NAV BAR PROPERTIES -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- <div class="collapse navbar-collapse"> -->
-    <!-- <button (click)="toggle('main')" class="navbar-toggler" type="button">
+  <!-- <div class="collapse navbar-collapse"> -->
+  <!-- <button (click)="toggle('main')" class="navbar-toggler" type="button">
             <span class="navbar-toggler-icon"></span>
         </button> -->
 
-    <!-- NAV BAR ngFor LINKS -->
-    <div class="collapse navbar-collapse" [ngClass]="{show:this.main}">
-        <ul class="navbar-nav mr-auto" *ngFor="let link of links;">
-            <li class="nav-item text-right">
-                <a class="nav-link text-dark font-weight-normal font-size-sm" [routerLink]=link.path>{{link.title}}</a>
-            </li>
-        </ul>
+  <!-- NAV BAR ngFor LINKS -->
+  <div class="collapse navbar-collapse" [ngClass]="{ show: this.main }">
+    <ul class="navbar-nav mr-auto" *ngFor="let link of links">
+      <li class="nav-item text-right">
+        <a
+          class="nav-link text-dark font-weight-normal font-size-sm"
+          [routerLink]="link.path"
+          >{{ link.title }}</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <!-- DROP DOWN NAV LIST FOR "POSTS" -->
+  <div class="nav-item dropdown">
+    <a
+      class="nav-link dropdown-toggle btn"
+      data-toggle="dropdown"
+      id="navbarDropdown"
+      role="button"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Posts
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" [routerLink]="['/all']">Read All Posts</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" [routerLink]="['/contributor-profile/Jacob']"
+        >Posts by Jacob</a
+      >
+      <a class="dropdown-item" [routerLink]="['/contributor-profile/Jackie']"
+        >Posts by Jackie</a
+      >
+      <a class="dropdown-item" [routerLink]="['/contributor-profile/']"
+        >Posts by Kayla</a
+      >
+      <a class="dropdown-item" [routerLink]="['/contributor-profile/Kamyla']"
+        >Posts by Kamyla</a
+      >
     </div>
+  </div>
 
-    <!-- DROP DOWN NAV LIST FOR "POSTS" -->
-    <div class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle btn" data-toggle="dropdown" id="navbarDropdown"
-            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Posts
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]='["/all"]'>Read All Posts</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" [routerLink]='["/contributor-profile/Jacob"]'>Posts by Jacob</a>
-            <a class="dropdown-item" [routerLink]='["/contributor-profile/Jackie"]'>Posts by Jackie</a>
-            <a class="dropdown-item" [routerLink]='["/contributor-profile/"]'>Posts by Kayla</a>
-            <a class="dropdown-item" [routerLink]='["/contributor-profile/Kamyla"]'>Posts by Kamyla</a>
-        </div>
+  <!-- DROP DOWN NAV LIST FOR "CONTRIBUTORS" -->
+  <div class="nav-item dropdown">
+    <a
+      class="nav-link dropdown-toggle btn"
+      data-toggle="dropdown"
+      id="navbarDropdown"
+      role="button"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Contributors
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" [routerLink]="['/contributor']"
+        >Meet the Contributors</a
+      >
+      <a
+        *ngFor="let contrib of contribs"
+        class="dropdown-item"
+        [routerLink]="['/contributor-profile', { id: contrib.id }]"
+        >Meet {{ contrib.name }}{{ contrib.id }}</a
+      >
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" [routerLink]="['/contact-us']"
+        >Submit A Blog Request</a
+      >
+      <a class="dropdown-item" [routerLink]="['/contact-us']">Contact Us</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" [routerLink]="['/admin']">Admin Only</a>
     </div>
+  </div>
 
-        <!-- DROP DOWN NAV LIST FOR "CONTRIBUTORS" -->
-        <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle btn" data-toggle="dropdown" id="navbarDropdown"
-                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Contributors
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" [routerLink]='["/contributor"]'>Meet the Contributors</a>
-                <a class="dropdown-item" [routerLink]='["/contributor-profile/Jacob"]'>Meet Jacob</a>
-                <a class="dropdown-item" [routerLink]='["/contributor-profile/Jackie"]'>Meet Jackie</a>
-                <a class="dropdown-item" [routerLink]='["/contributor-profile/"]'>Meet Kayla</a>
-                <a class="dropdown-item" [routerLink]='["/contributor-profile/Kamyla"]'>Meet Kamyla</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" [routerLink]='["/contact-us"]'>Submit A Blog Request</a>
-                <a class="dropdown-item" [routerLink]='["/contact-us"]'>Contact Us</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" [routerLink]='["/admin"]'>Admin Only</a>
-            </div>
-        </div>
-
-    <!-- DROP DOWN NAV LIST FOR "USERS" -->
-    <div class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle btn" data-toggle="dropdown" id="navbarDropdown"
-            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Users
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]='["/sign-in"]'>Log In</a>
-            <!-- <a class="dropdown-item" [routerLink]='["/create-account"]'>Create Account</a> -->
-            <a class="dropdown-item" [routerLink]='["/user-profile"]'>User Profile</a>
-            <a class="dropdown-item" [routerLink]='["/user-profile"]'>Reset Password</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" [routerLink]='["/sign-out"]'>Log Out</a>
-        </div>
+  <!-- DROP DOWN NAV LIST FOR "USERS" -->
+  <div class="nav-item dropdown">
+    <a
+      class="nav-link dropdown-toggle btn"
+      data-toggle="dropdown"
+      id="navbarDropdown"
+      role="button"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Users
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" [routerLink]="['/sign-in']">Log In</a>
+      <!-- <a class="dropdown-item" [routerLink]='["/create-account"]'>Create Account</a> -->
+      <a class="dropdown-item" [routerLink]="['/user-profile']">User Profile</a>
+      <a class="dropdown-item" [routerLink]="['/user-profile']"
+        >Reset Password</a
+      >
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" [routerLink]="['/sign-out']">Log Out</a>
     </div>
+  </div>
 
-    <!-- SEARCH KEYWORD form -->
-    <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search Keyword" aria-label="Search">
-        <button class="btn btn-outline-accent my-2 my-sm-0" type="submit">Search</button>
-    </form>
-
+  <!-- SEARCH KEYWORD form -->
+  <form class="form-inline my-2 my-lg-0">
+    <input
+      class="form-control mr-sm-2"
+      type="search"
+      placeholder="Search Keyword"
+      aria-label="Search"
+    />
+    <button class="btn btn-outline-accent my-2 my-sm-0" type="submit">
+      Search
+    </button>
+  </form>
 </nav>

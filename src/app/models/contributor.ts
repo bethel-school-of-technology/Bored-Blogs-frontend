@@ -1,16 +1,19 @@
+import { Games } from './games';
+import { Bio } from './bio';
+
 export class Contributor {
   id: number;
   firstName: String;
   lastName: String;
   name: String;
-  bio: String;
+  bio: Bio;  
   color: any; //TODO: correct the type
   url: String;
   constructor(
     id: number, //
     fName: String,
     lName: String,
-    bio: String,
+    bio: Bio,
     color: String,
     url: String
   ) {
