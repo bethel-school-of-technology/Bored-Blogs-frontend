@@ -1,0 +1,11 @@
+<div id="alert-container" class="w-100">
+  <div
+    class="alert-primary my-1 p-3"
+    *ngFor="let message of messages; index as i"
+  >
+    {{ message.body }}
+    <button class="btn btn-primary btn-md close" (click)="deleteMe(i)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>

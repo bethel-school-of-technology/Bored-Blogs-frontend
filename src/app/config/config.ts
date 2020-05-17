@@ -10,5 +10,5 @@ export class Config {
   //ec2-52-91-103-255.compute-1.amazonaws.com  
   static STORAGE_KEY = "storage_key";    
   static weAreUsingCloud = false;//set to true if you want to use the cloud affects services
-  static apiUrl = Config.weAreUsingCloud ? 'ec2-52-91-103-255.compute-1.amazonaws.com':"http://localhost:3001/";
+  static apiUrl = Config.weAreUsingCloud ? 'ec2-52-91-103-255.compute-1.amazonaws.com':"http://localhost:3001";
 }

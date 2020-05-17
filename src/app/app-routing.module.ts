@@ -15,7 +15,6 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
 import { PostListComponent } from './pages/admin-dashboard/post-list/post-list.component';
 import { PostAddComponent } from './pages/admin-dashboard/post-add/post-add.component';
 import { PostEditComponent } from './pages/admin-dashboard/post-edit/post-edit.component';
-import { BlogDashboardComponent } from './pages/admin-dashboard/blog-dashboard/blog-dashboard.component';
 import { PostCommentComponent } from './pages/all-post/post-comment/post-comment.component';
 import { CommentDeleteComponent } from './pages/all-post/comment-delete/comment-delete.component';
 import { CommentEditComponent } from './pages/all-post/comment-edit/comment-edit.component';
@@ -31,7 +30,7 @@ const make = (url: string, title: string, component: any, isPartOfNav: boolean) 
   }
 };
 /*
-I made this class so other components can get a refrence to the routes and page components
+I made this class so other components can get a reference to the routes and page components
 
 
 R = routes
@@ -58,7 +57,6 @@ export class R {
     make('post-list', 'Post List', PostListComponent, false),
     make('post-add', 'Post Add', PostAddComponent, false),
     make('post-edit/:id', 'Post Edit', PostEditComponent, false),
-    make('blog-dashboard', 'Blog Dashboard', BlogDashboardComponent, false),
     make('post-comment', 'Post Comment', PostCommentComponent, false),
     make('comment-delete', 'Comment Delete', CommentDeleteComponent, false),
     make('comment-edit', 'Comment Edit', CommentEditComponent, false),

@@ -3,11 +3,16 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { Post } from "../models/post";
 import { Config } from "../config/config";
+
+
+// POSTS SHOULD BE SORTED BY CREATED AT DATE -- NEWEST FIRST (Jackie)
 var posts: Post[] = [
   {
     id: 0,
     author: "Jacob Stanton",
     title: "Settlers of Catan",
+    // DO WE NEED TO ADD "createdAt" DATE FROM TABLE to = createdDate (Jackie)
+    // createdDate: "05/05/2020",
     preview:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
     body:
