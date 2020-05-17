@@ -8,7 +8,7 @@ section {
   }
   
   h1 {
-    color: white;
+    color: black;
     // text-decoration: underline;
     text-align: center;
     padding-bottom: 20px;
@@ -16,10 +16,15 @@ section {
   
   h5 {
     font-style: italic;
-    color: white;
+    color: black;
     padding-top: 20px;
   }
-  
+  .Users {
+    background-color: whitesmoke;
+    opacity: 0.75;
+    border-radius: 10px 70px;
+    padding: 50px;
+  }
   .user {
     text-align: center;
   }
