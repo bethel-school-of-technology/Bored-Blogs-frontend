@@ -4,11 +4,11 @@ import { Observable, of } from "rxjs";
 import { Post } from "../models/post";
 import { Config } from "../config/config";
 
-
 // POSTS SHOULD BE SORTED BY CREATED AT DATE -- NEWEST FIRST (Jackie)
 var posts: Post[] = [
   {
     id: 0,
+    authorId: 1,
     author: "Jacob Stanton",
     title: "Settlers of Catan",
     // DO WE NEED TO ADD "createdAt" DATE FROM TABLE to = createdDate (Jackie)
@@ -20,6 +20,7 @@ var posts: Post[] = [
   },
   {
     id: 1,
+    authorId: 2,
     author: "Jackie Roberts",
     title: "Ticket to Ride",
     preview:
@@ -29,6 +30,7 @@ var posts: Post[] = [
   },
   {
     id: 2,
+    authorId: 3,
     author: "Kayla Miller",
     title: "Dixit",
     preview:
@@ -38,6 +40,7 @@ var posts: Post[] = [
   },
   {
     id: 3,
+    authorId: 4,
     author: "Kamyla Andrlik",
     title: "Jungle Speed",
     preview:
@@ -47,6 +50,7 @@ var posts: Post[] = [
   },
   {
     id: 4,
+    authorId: 5,
     author: "Jacob Stanton",
     title: "Spot It",
     preview:
@@ -56,6 +60,7 @@ var posts: Post[] = [
   },
   {
     id: 5,
+    authorId: 6,
     author: "Jackie Roberts",
     title: "Werewolf",
     preview:
@@ -71,7 +76,6 @@ const weAreUsingCloud = Config.weAreUsingCloud;
   providedIn: "root",
 })
 export class PostDataService {
-
   url: string = Config.apiUrl;
   // url: string = "http://localhost:3000/"; JACKIE WANTS TO USE THIS TO TEST!!!
 
@@ -85,6 +89,7 @@ export class PostDataService {
       });
     }
   }
+  //todo make getPostByauthor :for jackie :)
 
   getPost(id: number): Observable<Post> {
     if (Config.weAreUsingCloud) {

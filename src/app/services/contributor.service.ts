@@ -4,6 +4,9 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Config } from "../config/config";
 import { Contributor } from "../models/contributor";
+import { linksIguess } from '../models/linksIgues';
+import { Bio } from '../models/bio';
+import { Games } from '../models/games';
 
 //this style formats the color into a object that ngStyle accepts
 function styleFromColor(backGroundColor: String, textColor: String): any {
@@ -21,7 +24,19 @@ var contributors = [
     //lastName
     "Stanton",
     //bio
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    new Bio(
+      new Games([
+        'game 1',
+        'game 2',
+      ]),
+      '12/09/1995',
+      'othello',
+      new linksIguess(
+        '#',
+        '#',
+        '#',
+      )
+    ),
     //color
     styleFromColor("#006eff", "white"),
     //image to use
@@ -31,7 +46,19 @@ var contributors = [
     2,
     "Jackie",
     "Roberts",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    new Bio(
+      new Games([
+        'game 1',
+        'game 2',
+      ]),
+      '12/09/1995',
+      'othello',
+      new linksIguess(
+        '#',
+        '#',
+        '#',
+      )
+    ),
     styleFromColor("yellow", "black"),
     "https://ca.slack-edge.com/T9P33872P-UMXPMHEAE-3b5c27f1c336-512"
   ),
@@ -39,7 +66,19 @@ var contributors = [
     3,
     "Kayla",
     "Miller",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    new Bio(
+      new Games([
+        'game 1',
+        'game 2',
+      ]),
+      '12/09/1995',
+      'othello',
+      new linksIguess(
+        '#',
+        '#',
+        '#',
+      )
+    ),
     styleFromColor("red", "white"),
     "https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-512"
   ),
@@ -47,7 +86,19 @@ var contributors = [
     4,
     "Kamyla",
     "Andrlik",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    new Bio(
+      new Games([
+        'game 1',
+        'game 2',
+      ]),
+      '12/09/1995',
+      'othello',
+      new linksIguess(
+        '#',
+        '#',
+        '#',
+      )
+    ),
     styleFromColor("#30c230", "white"),
     "https://ca.slack-edge.com/T9P33872P-UNCD1UH6K-6e8e43a4b2fd-512"
   ),

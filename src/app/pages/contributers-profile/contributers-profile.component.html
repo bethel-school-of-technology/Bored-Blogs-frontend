@@ -21,10 +21,10 @@
     <div id="about" [ngClass]="{'d-none':this.selector != 1}" class="tabcontent text-center">
         <p> <span>Birthday:</span> {{contributor.bio.birthday}}</p>
         <ul><span>Favorite Bored Games:</span>
-            <!--TODO would love to have these as links to blogs on said games-->
-            <li><a href="">{{contributor.bio.favoriteGames.game1}}</a></li>
-            <li><a href="">{{contributor.bio.favoriteGames.game2}}</a></li>
-            <li><a href="">{{contributor.bio.favoriteGames.game3}}</a></li>
+            <!--TODO would love to have these as links to blogs on said games-->            
+            <li *ngFor='let game of contributor.bio.favoriteGames'><a href="">{{contributor.bio.favoriteGames}}</a></li>
+            <li><a href="">{{contributor.bio.favoriteGames}}</a></li>
+            <li><a href="">{{contributor.bio.favoriteGames}}</a></li>
         </ul>
         {{contributor.bio.other}}
         <p>To see my other works, please use these links: 
@@ -36,15 +36,15 @@
     <div id="recentPosts" [ngClass]="{'d-none':this.selector != 2}" class="tabcontent">
         <!-- Create the recent posts template-->
         <div id="postContainer">
-            <div class="post" *ngFor="let Post of Posts">
-                <h2 class="postTitle">{{Post.postTitle}}</h2>
+            <div class="post" *ngFor="let Post of posts">
+                <h2 class="postTitle">{{Post.title}}</h2>
                 <div class="tagsGames">
                     <img class="tagIcon" src="../../../assets/images/tag.png" />
-                    <p> Tags: {{Post.postTags}}</p>
+                    <p> Tags: {{Post.tags}}</p>
                     <img class="tagIcon" src="../../../assets/images/dice & pieces.jpg"/>
-                    <p class="relGames"> Related Game(s): {{Post.postGames}}</p>
+                    <p class="relGames"> Related Game(s): {{Post.games}}</p>
                 </div>
-                <p class="postBody">{{Post.postBody}}</p>
+                <p class="postBody">{{Post.body}}</p>
                 <a [routerLink]='["all-post:id"]'>View Full Post</a>
                 <hr>
             </div>

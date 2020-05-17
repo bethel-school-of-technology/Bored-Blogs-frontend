@@ -1,28 +1,37 @@
-import { Component, OnInit } from '@angular/core';
-import { R } from 'src/app/app-routing.module';
+import { Component, OnInit } from "@angular/core";
+import { R } from "src/app/app-routing.module";
+import { ContributorService } from "src/app/services/contributor.service";
+import { Contributor } from "src/app/models/contributor";
+import { Router } from "@angular/router";
 /**
  * Author: Jacob Stanton
  *
  * Takes paths from routes to create naviagation
- * 
+ *
  * @export
  * @class NavbarComponent
  * @implements {OnInit}
  */
 @Component({
-  selector: 'navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  selector: "navbar",
+  templateUrl: "./navbar.component.html",
+  styleUrls: ["./navbar.component.scss"],
 })
 export class NavbarComponent implements OnInit {
   nestedDrawer: boolean = false;
   main: boolean = false;
   links: any[] = R.getRoutesForNavigation();
-
-  constructor() { }
+  contribs: Contributor[];
+  constructor(
+    private contribService: ContributorService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    console.log(this.links);
+    //console.log(this.links);
+    this.contribService.getContributors().subscribe((contribs) => {
+      this.contribs = contribs;
+    });
   }
 
   //Jacob Stanton:
@@ -31,8 +40,14 @@ export class NavbarComponent implements OnInit {
     try {
       this[keyToToggle] = !this[keyToToggle];
     } catch (e) {
-      console.log("this toggle was used improperly. the parameter must be a boolean variable");
+      console.log(
+        "this toggle was used improperly. the parameter must be a boolean variable"
+      );
       console.log(e);
     }
+  }
+  hack(id: number) {
+    console.log("initiate the hack");
+    this.router.navigate(["/contributor-profile/", { id: id }]);
   }
 }
