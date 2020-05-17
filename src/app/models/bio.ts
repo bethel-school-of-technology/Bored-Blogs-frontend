@@ -6,11 +6,13 @@ export class Bio {
   birthday: String;
   other: String;
   otherWorks: linksIguess;
+  body:String;
   constructor(
     favGame: Games,
     birthday: String,
     other: String,
-    otherWorks: linksIguess
+    otherWorks: linksIguess,
+    body:String
   ) {
     this.favoriteGames = favGame;
     this.birthday = birthday;
