@@ -18,6 +18,8 @@ import { PostEditComponent } from './pages/admin-dashboard/post-edit/post-edit.c
 import { PostCommentComponent } from './pages/all-post/post-comment/post-comment.component';
 import { CommentDeleteComponent } from './pages/all-post/comment-delete/comment-delete.component';
 import { CommentEditComponent } from './pages/all-post/comment-edit/comment-edit.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { SignOutComponent } from './pages/sign-out/sign-out.component';
 
 
 
@@ -47,12 +49,12 @@ export class R {
     // NAVBAR Titles & Order
     make('home', 'Home', HomeComponent, true),
     make('boot', 'Bootstrap Demo', BootDemoComponent, false),
-    make('all', 'View All Posts', AllPostComponent, true),
-    make('contributor', 'Meet the Contributors', ContributorsComponent, true),
-    make('contact-us', 'Contact Us', ContactUsComponent, true),
-    make('sign-in', 'Sign In', SignInComponent, true),
+    make('all', 'View All Posts', AllPostComponent, false), //JACKIE: In nav "View All Posts" dropdown list
+    make('contributor', 'Meet the Contributors', ContributorsComponent, false), //JACKIE: In nav "Contributors" dropdown list
+    make('contact-us', 'Contact Us', ContactUsComponent, false), //JACKIE: In nav "Contributors" dropdown list
+    make('sign-in', 'Log In', SignInComponent, false), //JACKIE: In nav "Users" dropdown list
     make('contributor-profile', 'Contributor Profile', ContributorsProfileComponent, false),
-    make('create-account', 'Create account', CreateAccountComponent, false),
+    make('create-account', 'Create account', CreateAccountComponent, true),
     make('post-detail/:id', 'Post Detail', PostDetailComponent, false),
     make('post-list', 'Post List', PostListComponent, false),
     make('post-add', 'Post Add', PostAddComponent, false),
@@ -60,8 +62,11 @@ export class R {
     make('post-comment', 'Post Comment', PostCommentComponent, false),
     make('comment-delete', 'Comment Delete', CommentDeleteComponent, false),
     make('comment-edit', 'Comment Edit', CommentEditComponent, false),
-    make('admin', 'Admin', AdminDashboardComponent, true), // need to turn this back to false once admins have ability to sign in
-    make('users-list', 'users-list', UsersListComponent, false)
+     //JACKIE: In nav "Contributors" dropdown list
+    make('admin', 'Admin', AdminDashboardComponent, false), // need to turn this back to false once admins have ability to sign in
+    make('users-list', 'users-list', UsersListComponent, false), 
+    make('user-profile', 'User Profile', UserProfileComponent, false), //also for Change password //JACKIE: In nav "Users" dropdown list
+    make('sign-out', 'Log Out', SignOutComponent, false) //JACKIE: In nav "Users" dropdown list
   ];
 
   static getRoutes(): Routes {

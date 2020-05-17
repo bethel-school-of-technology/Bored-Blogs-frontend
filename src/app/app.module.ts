@@ -14,7 +14,7 @@ import { SamePasswordValidatorDirective } from './validators/same-password-valid
 @NgModule({
   declarations: [
     AppComponent,
-    SamePasswordValidatorDirective,
+    SamePasswordValidatorDirective
   ],
   imports: [
     BrowserModule,
