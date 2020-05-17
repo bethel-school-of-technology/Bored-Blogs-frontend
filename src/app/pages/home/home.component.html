@@ -37,7 +37,7 @@
 
       </div>
       <button class="btn btn-primary"
-        onclick="window.location.href = 'https://en.wikipedia.org/wiki/Royal_Game_of_Ur';" target="_blank">Find Out More</button>
+        onclick="window.open('https://en.wikipedia.org/wiki/Royal_Game_of_Ur', '_blank')">Find Out More</button>
     </div>
   </div>
   <br>
@@ -51,7 +51,7 @@
 
         <!-- Display the most current Blog Post by id (SELECTED BY createdDate) -->
         <h1 class="blogTitle font-italic"><strong>{{ Post.title }}</strong></h1>
-      
+
         <strong>Contributed by: {{ Post.author }} </strong>
         <br>
         <!-- <strong>Post Date: {{Post.createdAt }}</strong> HOW CAN WE ADD THIS TIMESTAMP TO SHOW WITH THE POSTS?? -->
@@ -60,7 +60,7 @@
       </div>
 
       <!-- THIS HARD-CODED TEXT WILL BE REMOVED AFTER THE ngFor LOOP IS WORKING FOR THE {{Post.body}} -->
-      
+
       <!-- <p class="text-center">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
         accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
         quae ab illo inventore veritatis et quasi architecto beatae vitae
