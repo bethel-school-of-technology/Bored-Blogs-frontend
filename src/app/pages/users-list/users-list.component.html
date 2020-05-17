@@ -4,16 +4,14 @@
         <div class="Users" *ngFor="let User of Users; index as i">
           <h5 class="user">{{ User.firstName }} {{ User.lastName }}</h5>
           <div class="d-flex justify-content-center">
-            <p class="email"> Email: {{ User.email }} </p>
-            <br/>
-            <p class="lastActive"> Last Active: {{ User.lastActive }}</p>
+            <p class="email"><strong> Email: </strong>{{ User.email }} </p>
+          </div>
+          <div class="d-flex justify-content-center">
+            <p class="lastActive"><strong> Last Active: </strong>{{ User.lastActive }}</p>
           </div>
           <div>
-              <button> Edit </button>
-              <button> Delete</button>
+              <button (click)="deleteUser(User.id)"class="btn btn-danger"> Delete</button>
           </div>
-
-         
         </div>
-        </div>
+    </div>
 </section>
