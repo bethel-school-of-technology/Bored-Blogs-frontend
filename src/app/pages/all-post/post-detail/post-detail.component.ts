@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PostDataService } from '../../../services/post-data.service';
-import {Post} from '../../../models/Post';//TODO: fix import
+import { Post } from '../../../models/post';
 
 @Component({
   selector: 'app-post-detail',
@@ -9,7 +9,8 @@ import {Post} from '../../../models/Post';//TODO: fix import
 })
 export class PostDetailComponent implements OnInit {
 
-  post: Post;
+  @Input() post: Post;
+
 
   selector = -1;
   setSelector(value: number) {

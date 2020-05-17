@@ -7,26 +7,21 @@ import { HttpErrorResponse } from "@angular/common/http";
 import { MessageService } from "src/app/services/message.service";
 
 @Component({
-  selector: "app-create-account",
-  templateUrl: "./create-account.component.html",
-  styleUrls: ["./create-account.component.scss"],
+  selector: 'app-create-account',
+  templateUrl: './create-account.component.html',
+  styleUrls: ['./create-account.component.scss']
 })
 export class CreateAccountComponent implements OnInit {
-  userName = "";
-  email = "";
-  password = "";
+  email = '';
+  password = '';
   user: User;
   passwordsMatch: boolean = true;
   //Jacob Stanton:
   //creates an account
   createAccount(createAccountForm: NgForm) {
-    let blog = (e) => console.log(e);
     console.log(createAccountForm);
     console.log(createAccountForm.value);
-    let a = createAccountForm.value.password;
-    let b = createAccountForm.value.confirmPassword;
-    let check = a == b;
-    console.log(check);
+
     //Jacob Stanton:
     //takes data from form and submits it to the backend
     this.passwordsMatch =
@@ -42,27 +37,27 @@ export class CreateAccountComponent implements OnInit {
             this.router.navigateByUrl("/");
             console.log("you have created an account");
             this.messageService.addMessage({
-              body: "hurray you have created an account!!",
+              body: "You have successfully created an account",
             });
           },
           (error: HttpErrorResponse) => {
             console.log("an error has occured");
             console.log(error);
             this.messageService.addMessage({
-              body: "there was a problem",
+              body: "There was a problem",
             });
           }
         );
       } else {
         console.log("form is invalid");
         this.messageService.addMessage({
-          body: "there was a problem",
+          body: "Form is invalid",
         });
       }
     } else {
       console.log("passwords dont match");
       this.messageService.addMessage({
-        body: "there was a problem",
+        body: "Passwords do not match",
       });
     }
   }
@@ -74,5 +69,6 @@ export class CreateAccountComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 }

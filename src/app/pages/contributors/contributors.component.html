@@ -3,11 +3,11 @@
     <div class="d-flex flex-sm-column flex-xs-column flex-md-row meet-contributors-container">
       <div class="m-2" *ngFor="let contributor of contributors;">
         <div class="card">
-          <h1 [ngStyle]="contributor.color" class="text-best-color">{{contributor.name}}</h1>
+          <h2 [ngStyle]="contributor.color" class="text-best-color">{{contributor.name}}</h2>
           <img class="w-25" src="{{contributor.url}}">
           <p>{{contributor.bio}}</p>
           <a [routerLink]='["/contributor-profile"]'><button [ngStyle]="contributor.color"
-              class="btn btn-primary d-block mx-auto">Blog Posts by {{contributor.name}}</button></a>
+              class="btn btn-primary d-block mx-auto">Blog Posts by {{contributor.firstName}}</button></a>
         </div>
       </div>
     </div>

@@ -56,17 +56,17 @@
                         <div *ngIf="password.errors.required">Password is required</div>
                         <div *ngIf="password.errors.minlength">Password must be between 6 - 20 characters</div>
                         <div *ngIf="password.errors.maxlength">Password must be between 6 - 20 characters</div>
+                        <!-- TODO: NEED TO CODE THIS VALIDATOR!!! -->
                         <!-- <div *ngIf="password.errors.pattern">Password must not contain any special characters</div> -->
                     </div>
                 </div>
 
                  <!-- PASSWORD CONFIRM -->
-                 <!-- NEED HELP ON THIS VALIDATION CODING FOR PASSWORD MATCH -->
                 <div class="form-group">
                     <strong><label>Confirm Password</label></strong>
                     <input required ngModel name="passwordConfirm"
                         #passwordConfirm="ngModel" type="password" id="passwordConfirm" class="form-control">
-                    <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+                    <div class="alert alert-danger" *ngIf="passwordConfirm.touched && !passwordConfirm.valid">
                         <div *ngIf="passwordConfirm.errors.required">Password confirm is required</div>
                         <div *ngIf="!this.passwordsMatch">Passwords do not match</div>
                     </div>
