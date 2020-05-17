@@ -26,12 +26,11 @@
                 <!-- PASSWORD -->
                 <div class="form-group">
                     <strong><label for="password">Password</label></strong>
-                    <input required ngModel name="password"
-                        #password="ngModel" type="password" id="password" class="form-control">
+                    <input required ngModel name="password" #password="ngModel" type="password" id="password"
+                        class="form-control">
                     <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
-                        <div *ngIf="password.errors.required">Password is required</div>
+                        <div *ngIf="password.errors.required">Enter your password</div>
                     </div>
-
                 </div>
 
                 <!-- INVITATION TO CREATE ACCOUNT -->
@@ -42,6 +41,7 @@
 
                     <!-- THIS ROUTER LINK MUST ONLY ACTIVATE IF SIGN IN IS CORRECT EMAIL & PASSWORD -->
                     <button class="btn btn-primary">Log In</button>
+                    <!-- <button [routerLink]='["/home"]' class="btn btn-primary">Sign In</button>  -->
 
                     <!-- ROUTER LINKS TO CREATE ACCOUNT PAGE -->
                     <button [routerLink]='["/create-account"]' class="btn btn-primary">Create Account</button>
