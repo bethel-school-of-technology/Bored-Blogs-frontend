@@ -1,9 +1,11 @@
+//Title of page
 h3 {
   text-align: center;
   text-decoration: underline;
   padding-bottom: 15px;
 }
 
+//Background styling
 .container {
   background: rgb(48,194,48);
   background: linear-gradient(90deg, rgba(48,194,48,1) 0%, rgba(233,240,74,0.9587185215883228) 50%, rgba(0,110,255,1) 100%);
@@ -11,11 +13,10 @@ h3 {
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
+//Button to return to admin dashboard
 .btn-accent {
   display: block;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 4px 5px 10px 2px rgba(66, 64, 64, 0.8);
 }
-
-//TODO Need to change button color to match themed colors

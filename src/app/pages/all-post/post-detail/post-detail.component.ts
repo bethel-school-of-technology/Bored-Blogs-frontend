@@ -1,15 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PostDataService } from '../../../services/post-data.service';
-import { Post } from '../../../models/post';
+import { PostDataService } from 'src/app/services/post-data.service';
+import { Post } from 'src/app/models/post';
 
 @Component({
-  selector: 'app-post-detail',
+  selector: 'post-detail',
   templateUrl: './post-detail.component.html',
   styleUrls: ['./post-detail.component.scss']
 })
 export class PostDetailComponent implements OnInit {
 
-  @Input() post: Post;
+  constructor(private postDataService: PostDataService) { }
+
+  @Input() post: Post[];
 
 
   selector = -1;
@@ -17,14 +19,15 @@ export class PostDetailComponent implements OnInit {
     this.selector = value;
   }
 
-
-  constructor(postservice: PostDataService) { }
-
-
-
   ngOnInit() {
+    this.getPost();
   }
 
-
+  getPost(): void {
+    this.postDataService.getPosts().subscribe((p) => {
+      console.log(p);
+      this.post = p;
+    });
+  }
 
 }
