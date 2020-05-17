@@ -40,6 +40,8 @@
                 <h2 class="postTitle">{{Post.title}}</h2>
                 <div class="tagsGames">
                     <img class="tagIcon" src="../../../assets/images/tag.png" />
+                    <!-- THIS IS WHAT IS CAUSING "object object" TO SHOW IN THE CONTRIBUTOR PROFILE PAGES -->
+                    <!-- Post.tags & Post.games -> need to be fixed in services -->
                     <p> Tags: {{Post.tags}}</p>
                     <img class="tagIcon" src="../../../assets/images/dice & pieces.jpg"/>
                     <p class="relGames"> Related Game(s): {{Post.games}}</p>

@@ -1,95 +1,74 @@
 <!-- NAV BAR -->
 <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-primary">
-  <!-- NAV BAR PROPERTIES -->
+    <!-- NAV BAR PROPERTIES -->
 
-  <!-- <div class="collapse navbar-collapse"> -->
-  <button (click)="toggle('main')" class="navbar-toggler" type="button">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <!-- <div class="collapse navbar-collapse"> -->
+    <button (click)="toggle('main')" class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <!-- NAV BAR ngFor LINKS -->
-  <div class="collapse navbar-collapse" [ngClass]="{ show: this.main }">
-    <ul class="navbar-nav mr-auto" *ngFor="let link of links">
-      <li class="nav-item text-right">
-        <a
-          class="nav-link text-dark font-weight-normal font-size-sm"
-          [routerLink]="link.path"
-          >{{ link.title }}</a
-        >
-      </li>
-    </ul>
-  </div>
+    <!-- NAV BAR ngFor LINKS -->
+    <div class="collapse navbar-collapse" [ngClass]="{ show: this.main }">
+        <ul class="navbar-nav mr-auto" *ngFor="let link of links">
+            <li class="nav-item text-right">
+                <a class="nav-link text-dark font-weight-normal font-size-sm"
+                    [routerLink]="link.path">{{ link.title }}</a>
+            </li>
+        </ul>
+    </div>
 
-  <!-- DROP DOWN NAV LIST FOR "POSTS" -->
-  <!-- -->
-  <div (mouseleave)="this.dropDown1 = false">
-    <div class="nav-item dropdown">
-      <button
-        class="nav-link dropdown-toggle btn"
-        (click)="toggle('dropDown1')"
-      >
-        Posts
-      </button>
-      <div class="dropdown-menu" [ngClass]="{ show: this.dropDown1 }">
-        <a class="dropdown-item" [routerLink]="['/all']">Read All Posts</a>
-        <!--
+    <!-- DROP DOWN NAV LIST FOR "POSTS" -->
+    <!-- -->
+    <div (mouseleave)="this.dropDown1 = false">
+        <div class="nav-item dropdown">
+            <button class="nav-link dropdown-toggle btn" (click)="toggle('dropDown1')">
+                Posts
+            </button>
+            <div class="dropdown-menu" [ngClass]="{ show: this.dropDown1 }">
+                <a class="dropdown-item" [routerLink]="['/all']">Read All Posts</a>
+                <!--
         <div class="dropdown-divider"></div>
        what would go here?-->
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- DROP DOWN NAV LIST FOR "CONTRIBUTORS" -->
-  <div class="nav-item dropdown">
-    <button class="nav-link dropdown-toggle btn" (click)="toggle('dropDown2')">
-      Contributors
-    </button>
-    <div class="dropdown-menu" [ngClass]="{ show: this.dropDown2 }">
-      <a class="dropdown-item" [routerLink]="['/contributor']"
-        >Meet the Contributors</a
-      >
-      <a
-        *ngFor="let contrib of contribs"
-        class="dropdown-item"
-        [routerLink]="['/contributor-profile', contrib.id]"
-        >Meet {{ contrib.name }}</a
-      >
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" [routerLink]="['/contact-us']"
-        >Contact Us / Submit A Blog Request</a
-      >
+    <!-- DROP DOWN NAV LIST FOR "CONTRIBUTORS" -->
+    <div class="nav-item dropdown">
+        <button class="nav-link dropdown-toggle btn" (click)="toggle('dropDown2')">
+            Contributors
+        </button>
+        <div class="dropdown-menu" [ngClass]="{ show: this.dropDown2 }">
+            <a class="dropdown-item" [routerLink]="['/contributor']">Meet the Contributors</a>
+            <a *ngFor="let contrib of contribs" class="dropdown-item"
+                [routerLink]="['/contributor-profile', contrib.id]">Meet {{ contrib.name }}</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/contact-us']">Contact Us / Submit A Blog Request</a>
 
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" [routerLink]="['/admin']">Admin Only</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/admin']">Admin Only</a>
+        </div>
     </div>
-  </div>
 
-  <!-- DROP DOWN NAV LIST FOR "USERS" -->
-  <div class="nav-item dropdown">
-    <button class="nav-link dropdown-toggle btn" (click)="toggle('dropDown3')">
-      Users
-    </button>
-    <div class="dropdown-menu" [ngClass]="{ show: this.dropDown3 }">
-      <a class="dropdown-item" [routerLink]="['/sign-in']">Log In</a>
-      <!-- <a class="dropdown-item" [routerLink]='["/create-account"]'>Create Account</a> -->
-      <a class="dropdown-item" [routerLink]="['/user-profile']"
-        >User Profile / Reset Password</a
-      >
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" [routerLink]="['/sign-out']">Log Out</a>
+    <!-- DROP DOWN NAV LIST FOR "USERS" -->
+    <div class="nav-item dropdown">
+        <button class="nav-link dropdown-toggle btn" (click)="toggle('dropDown3')">
+            Users
+        </button>
+        <div class="dropdown-menu" [ngClass]="{ show: this.dropDown3 }">
+            <a class="dropdown-item" [routerLink]="['/sign-in']">Log In</a>
+            <!-- <a class="dropdown-item" [routerLink]='["/create-account"]'>Create Account</a> -->
+            <a class="dropdown-item" [routerLink]="['/user-profile']">User Profile / Reset Password</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/sign-out']">Log Out</a>
+        </div>
     </div>
-  </div>
 
-  <!-- SEARCH KEYWORD form -->
-  <form class="form-inline my-2 my-lg-0">
-    <input
-      class="form-control mr-sm-2"
-      type="search"
-      placeholder="Search Keyword"
-      aria-label="Search"
-    />
-    <button class="btn btn-outline-accent my-2 my-sm-0" type="submit">
-      Search
-    </button>
-  </form>
+    <!-- SEARCH KEYWORD form -->
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Keyword" aria-label="Search" />
+        <button class="btn btn-outline-accent my-2 my-sm-0" type="submit">
+            Search
+        </button>
+    </form>
 </nav>
