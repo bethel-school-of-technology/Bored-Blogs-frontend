@@ -7,7 +7,6 @@ export class Contributor {
   lastName: String;
   name: String;
   bio: Bio;
-  game: Games;
   color: any; //TODO: correct the type
   url: String;
   constructor(

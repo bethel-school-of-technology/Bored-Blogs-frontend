@@ -70,7 +70,7 @@ var contributors = [
     "Kamyla",
     "Andrlik",
     new Bio(
-      new Games(["Dixit", "Ticket to Ride"]),
+      new Games(["game1", "game2"]),
       "09/17/1991",
       "Hawaii has my heart but Kentucky has my stomach.",
       new linksIguess("https://github.com/kamylaandrlik", "https://en.wikipedia.org/wiki/Anna_(Frozen)", "https://www.linkedin.com/in/kamyla-andrlik-6811bb6b/"),
