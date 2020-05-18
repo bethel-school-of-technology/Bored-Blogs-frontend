@@ -29,10 +29,10 @@
             <!--BOOTSTRAP TEMPLATE-DRIVEN FORM-->
             <!-- FORM FOR USER TO CHANGE PASSWORD -->
 
-            <form #changePasswordForm="ngForm" (ngSubmit)="userProfile(changePasswordForm)">
+            <!-- <form #changePasswordForm="ngForm" (ngSubmit)="userProfile(changePasswordForm)"> -->
 
                 <!-- CURRENT PASSWORD -->
-                <div class="form-group text-white">
+                <!-- <div class="form-group text-white">
                     <strong><label for="currentPassword">Current Password</label></strong>
                     <input required ngModel name="currentPassword" #currentPassword="ngModel" id="currentPassword"
                         type="password" class="form-control">
@@ -40,38 +40,38 @@
                         <div *ngIf="currentPassword.errors.required">Current Password is required</div>
                         <div *ngIf="currentPassword.errors.pattern">Incorrect Password</div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- NEW PASSWORD -->
-                <div class="form-group text-white">
+                <!-- <div class="form-group text-white">
                     <strong><label for="password">New Password</label></strong>
                     <input required minlength="6" maxlength="20" ngModel name="password" #password="ngModel"
                         type="password" id="password" class="form-control">
                     <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
                         <div *ngIf="password.errors.required">Password is required</div>
                         <div *ngIf="password.errors.minlength">Password must be between 6 - 20 characters</div>
-                        <div *ngIf="password.errors.maxlength">Password must be between 6 - 20 characters</div>
+                        <div *ngIf="password.errors.maxlength">Password must be between 6 - 20 characters</div> -->
                         <!-- <div *ngIf="password.errors.pattern">Password must not contain any spaces</div> -->
-                    </div>
-                </div>
+                    <!-- </div>
+                </div> -->
 
                 <!-- NEW PASSWORD CONFIRM -->
-                <div class="form-group text-white">
+                <!-- <div class="form-group text-white">
                     <strong><label>Confirm New Password</label></strong>
                     <input required ngModel name="passwordConfirm" #passwordConfirm="ngModel" type="password"
                         id="passwordConfirm" class="form-control">
                     <div class="alert alert-danger" *ngIf="passwordConfirm.touched && !passwordConfirm.valid">
-                        <div *ngIf="passwordConfirm.errors.required">Password confirm is required</div>
+                        <div *ngIf="passwordConfirm.errors.required">Password confirm is required</div> -->
                         <!-- <div *ngIf="!this.passwordsMatch">Passwords do not match</div> -->
-                    </div>
-                </div>
+                    <!-- </div>
+                </div> -->
 
                 <!--SUBMIT BUTTON-->
-                <div class="btn-toolbar">
+                <!-- <div class="btn-toolbar">
                     <button class="btn btn-primary">Submit</button>
-                </div>
+                </div> -->
 
-            </form>
+            <!-- </form> -->
 
         </div>
     </div>
