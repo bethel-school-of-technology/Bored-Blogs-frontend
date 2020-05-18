@@ -6,7 +6,7 @@ import { Config } from "../config/config";
 import { Contributor } from "../models/contributor";
 import { linksIguess } from "../models/linksIgues";
 import { Bio } from "../models/bio";
-import { Games } from "../models/games";
+import { Games, Game } from "../models/games";
 
 //this style formats the color into a object that ngStyle accepts
 function styleFromColor(backGroundColor: String, textColor: String): any {
@@ -25,7 +25,7 @@ var contributors = [
     "Stanton",
     //bio
     new Bio(
-      new Games(["game 1", "game 2"]),
+      [new Game("game1"), new Game("game2")],
       "12/09/1995",
       "othello",
       new linksIguess("#", "#", "#"),
@@ -41,7 +41,7 @@ var contributors = [
     "Jackie",
     "Roberts",
     new Bio(
-      new Games(["game 1", "game 2"]),
+      [new Game("game1"), new Game("game2")],
       "12/09/1995",
       "othello",
       new linksIguess("#", "#", "#"),
@@ -55,7 +55,7 @@ var contributors = [
     "Kayla",
     "Miller",
     new Bio(
-      new Games(["game 1", "game 2"]),
+      [new Game("game1"), new Game("game2")],
       "12/09/1995",
       "othello",
       new linksIguess("#", "#", "#"),
@@ -69,7 +69,7 @@ var contributors = [
     "Kamyla",
     "Andrlik",
     new Bio(
-      new Games(["game 1", "game 2"]),
+      [new Game("game1"), new Game("game2")],
       "12/09/1995",
       "othello",
       new linksIguess("#", "#", "#"),

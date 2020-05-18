@@ -26,10 +26,10 @@
     class="tabcontent text-center"
   >
     <p><span>Birthday:</span> {{ contributor.bio.birthday }}</p>
-    <ul *ngIf="contributor != null">
+    <ul>
       <span>Favorite Bored Games:</span>
       <!--TODO would love to have these as links to blogs on said games-->
-      <li *ngFor="let game of contributor.bio.favoriteGames">
+      <li *ngFor="let game of games">
         <a href="#">{{ game.title }}</a>
       </li>
     </ul>

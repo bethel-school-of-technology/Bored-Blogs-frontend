@@ -4,6 +4,7 @@ import { Contributor } from "src/app/models/contributor";
 import { ContributorService } from "src/app/services/contributor.service";
 import { PostDataService } from "src/app/services/post-data.service";
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
+import { Game, Games } from 'src/app/models/games';
 
 @Component({
   selector: "app-contributers-profile",
@@ -17,8 +18,11 @@ export class ContributersProfileComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
   //TODO: create a contributor service and move this to there
-  contributor: Contributor = null;
-
+  contributor: Contributor;
+  games:Game[] = [
+    new Game('game1'),
+    new Game('game2'),
+  ];
   posts: Post[] = [];
   ngOnInit() {
     this.route.params.subscribe((params) => {
@@ -32,6 +36,7 @@ export class ContributersProfileComponent implements OnInit {
   getContrib(authorId: number) {
     this.contribtorService.getContributor(authorId).subscribe((contributor) => {
       this.contributor = contributor;
+      //this.games = contributor.bio.favoriteGames
       console.log(this.contributor);
     });
   }
