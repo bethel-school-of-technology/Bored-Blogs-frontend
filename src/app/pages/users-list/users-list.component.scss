@@ -6,14 +6,14 @@ section {
   height: 100%;
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
   }
-  
+
   h1 {
     color: black;
     // text-decoration: underline;
     text-align: center;
     padding-bottom: 20px;
   }
-  
+
   h5 {
     font-style: italic;
     color: black;
@@ -24,11 +24,9 @@ section {
     opacity: 0.75;
     border-radius: 10px 70px;
     padding: 50px;
+    margin: 5px;
   }
   .user {
     text-align: center;
   }
-  button {
-      //float: center;
-  }
-  
+

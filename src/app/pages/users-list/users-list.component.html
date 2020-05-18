@@ -1,6 +1,6 @@
 <section>
     <h1>Users List</h1>
-    <div *ngIf="true" class="container">
+    <div *ngIf="true" class="container row h-100 justify-content-center">
         <div class="Users" *ngFor="let User of Users; index as i">
           <h5 class="user">{{ User.firstName }} {{ User.lastName }}</h5>
           <div class="d-flex justify-content-center">
