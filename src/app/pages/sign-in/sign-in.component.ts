@@ -32,7 +32,7 @@ export class SignInComponent implements OnInit {
       this.userService.login(signinForm.value).subscribe(
         (user: User) => {
           this.user = user;
-
+          console.log(user);
           console.log("you have logged in");
           //JackieRoberts:
           //If successful, navigate to home page

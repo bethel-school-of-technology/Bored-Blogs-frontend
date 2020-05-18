@@ -22,13 +22,18 @@
   </div>
 <br />
   <!-- Tab Content (ABOUT)-->
-  <div id="about" [ngClass]="{'d-none':this.selector != 1}" class="tabcontent text-center">
-    <p> <span>Birthday:</span> {{contributor.bio.birthday}}</p>
-    <ul><span>Favorite Bored Games:</span>
+  <div
+    id="about"
+    [ngClass]="{ 'd-none': this.selector != 1 }"
+    class="tabcontent text-center"
+  >
+    <p><span>Birthday:</span> {{ contributor.bio.birthday }}</p>
+    <ul>
+      <span>Favorite Bored Games:</span>
       <!--TODO would love to have these as links to blogs on said games-->
-      <li *ngFor='let game of contributor.bio.favoriteGames'><a href="">{{contributor.bio.favoriteGames}}</a></li>
-      <li><a href="">{{contributor.bio.favoriteGames}}</a></li>
-      <li><a href="">{{contributor.bio.favoriteGames}}</a></li>
+      <li *ngFor="let game of games">
+        <a href="#">{{ game.title }}</a>
+      </li>
     </ul>
     <p><strong>Fun Fact about Me: </strong>{{contributor.bio.other}} </p>
     <p>To see my other work, please use these links:
@@ -40,7 +45,11 @@
 
   <br />
   <!-- Tab Content (POSTS)-->
-  <div id="recentPosts" [ngClass]="{'d-none':this.selector != 2}" class="tabcontent">
+  <div
+    id="recentPosts"
+    [ngClass]="{ 'd-none': this.selector != 2 }"
+    class="tabcontent"
+  >
     <!-- Create the recent posts template-->
     <div id="postContainer">
       <div class="post" *ngFor="let Post of posts">
@@ -53,6 +62,5 @@
     </div>
   </div>
 </section>
-
 </body>
 <!-- TODO: need contributor:id route for front and backend -->
