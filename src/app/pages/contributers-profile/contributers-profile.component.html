@@ -1,53 +1,65 @@
 <!-- Header for the page -->
 <section id="header" class="d-flex justify-content-center">
-    <!-- Create profile Picture-->
-    <div id="profilePicture">
-        <img id="profPic" class="rounded-circle" src="https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-48">
-    </div>
-    <!--Display Name of contributer -->
-    <h3>{{contributor.firstName}} {{contributor.lastName}}</h3>
-
+  <!-- Create profile Picture-->
+  <div id="profilePicture">
+    <img id="profPic" class="rounded-circle" src="https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-48" />
+  </div>
+  <!--Display Name of contributer -->
+  <h3>{{ contributor.firstName }} {{ contributor.lastName }}</h3>
 </section>
+
 <section>
+  <!-- Tab Links-->
+  <!-- TODO: think aboot animations and animating these changes for a butter experince -->
+  <div class="tab d-flex w-100 justify-content-center text-danger">
+    <button class="tabOptions" (click)="setSelector(1)">About</button>
+    <button class="tabOptions" (click)="setSelector(2)">Recent Posts</button>
+  </div>
 
-    <!-- Tab Links-->
-    <!-- TODO: think aboot animations and animating these changes for a butter experince -->
-    <div class="tab d-flex w-100 justify-content-center text-danger">
-        <button class="tabOptions" (click)="setSelector(1)">About</button>
-        <button class="tabOptions" (click)="setSelector(2)">Recent Posts</button>
-    </div>
+  <!-- Tab Links-->
+  <!-- TODO: think aboot animations and animating these changes for a butter experince -->
+  <div class="tab d-flex w-100 justify-content-center text-danger">
+    <button class="tabOptions" (click)="setSelector(1)">About</button>
+    <button class="tabOptions" (click)="setSelector(2)">Recent Posts</button>
+  </div>
 
-    <!-- Tab Content (ABOUT)-->
-    <div id="about" [ngClass]="{'d-none':this.selector != 1}" class="tabcontent text-center">
-        <p> <span>Birthday:</span> {{contributor.bio.birthday}}</p>
-        <ul><span>Favorite Bored Games:</span>
-            <!--TODO would love to have these as links to blogs on said games-->
-            <li><a href="">{{contributor.bio.favoriteGames.game1}}</a></li>
-            <li><a href="">{{contributor.bio.favoriteGames.game2}}</a></li>
-            <li><a href="">{{contributor.bio.favoriteGames.game3}}</a></li>
-        </ul>
-        {{contributor.bio.other}}
-        <p>To see my other works, please use these links: 
-            <a href={{contributor.bio.otherWorks.github}}>Github</a> | 
-            <a href={{contributor.bio.otherWorks.website}}>Personal Website</a> | 
-            <a href={{contributor.bio.otherWorks.linkedIn}}>LinkedIn</a></p>
-    </div>
-    <!-- Tab Content (POSTS)-->
-    <div id="recentPosts" [ngClass]="{'d-none':this.selector != 2}" class="tabcontent">
-        <!-- Create the recent posts template-->
-        <div id="postContainer">
-            <div class="post" *ngFor="let Post of Posts">
-                <h2 class="postTitle">{{Post.postTitle}}</h2>
-                <div class="tagsGames">
-                    <img class="tagIcon" src="../../../assets/images/tag.png" />
-                    <p> Tags: {{Post.postTags}}</p>
-                    <img class="tagIcon" src="../../../assets/images/dice & pieces.jpg"/>
-                    <p class="relGames"> Related Game(s): {{Post.postGames}}</p>
-                </div>
-                <p class="postBody">{{Post.postBody}}</p>
-                <a [routerLink]='["all-post:id"]'>View Full Post</a>
-                <hr>
-            </div>
+  <!-- Tab Content (ABOUT)-->
+  <div id="about" [ngClass]="{'d-none':this.selector != 1}" class="tabcontent text-center">
+    <p> <span>Birthday:</span> {{contributor.bio.birthday}}</p>
+    <ul><span>Favorite Bored Games:</span>
+      <!--TODO would love to have these as links to blogs on said games-->
+      <li *ngFor='let game of contributor.bio.favoriteGames'><a href="">{{contributor.bio.favoriteGames}}</a></li>
+      <li><a href="">{{contributor.bio.favoriteGames}}</a></li>
+      <li><a href="">{{contributor.bio.favoriteGames}}</a></li>
+    </ul>
+    {{contributor.bio.other}}
+    <p>To see my other works, please use these links:
+      <a href={{contributor.bio.otherWorks.github}}>Github</a> |
+      <a href={{contributor.bio.otherWorks.website}}>Personal Website</a> |
+      <a href={{contributor.bio.otherWorks.linkedIn}}>LinkedIn</a></p>
+  </div>
+
+
+  <!-- Tab Content (POSTS)-->
+  <div id="recentPosts" [ngClass]="{'d-none':this.selector != 2}" class="tabcontent">
+    <!-- Create the recent posts template-->
+    <div id="postContainer">
+      <div class="post" *ngFor="let Post of posts">
+        <h2 class="postTitle">{{Post.title}}</h2>
+        <div class="tagsGames">
+          <img class="tagIcon" src="../../../assets/images/tag.png" />
+          <!-- THIS IS WHAT IS CAUSING "object object" TO SHOW IN THE CONTRIBUTOR PROFILE PAGES -->
+          <!-- Post.tags & Post.games -> need to be fixed in services -->
+          <p> Tags: {{Post.tags}}</p>
+          <img class="tagIcon" src="../../../assets/images/dice & pieces.jpg" />
+          <p class="relGames"> Related Game(s): {{Post.games}}</p>
         </div>
+        <p class="postBody">{{Post.body}}</p>
+        <a [routerLink]='["all-post:id"]'>View Full Post</a>
+        <hr>
+      </div>
     </div>
+  </div>
 </section>
+
+<!-- TODO: need contributor:id route for front and backend -->

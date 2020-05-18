@@ -11,7 +11,7 @@
             <!-- BOOTSTRAP TEMPLATE-DRIVEN SIGN-IN FORM -->
             <form #signinForm="ngForm" (ngSubmit)="signin(signinForm)">
 
-                <!-- EMAIL -->
+                <!-- ENTER USER EMAIL -->
                 <div class="form-group">
                     <strong><label for="email">Email</label></strong>
                     <input required email="true" emailPattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel
@@ -23,13 +23,16 @@
                     </div>
                 </div>
 
-                <!-- PASSWORD -->
+                <!-- ENTER USER PASSWORD -->
                 <div class="form-group">
                     <strong><label for="password">Password</label></strong>
-                    <input required ngModel name="password" #password="ngModel" type="password" id="password"
-                        class="form-control">
+                    <input required minlength="6" maxlength="20" pattern="^\S*$" ngModel name="password"
+                        #password="ngModel" type="password" id="password" class="form-control">
                     <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
-                        <div *ngIf="password.errors.required">Enter your password</div>
+                        <div *ngIf="password.errors.required">Password is required</div>
+                        <div *ngIf="password.errors.minlength">Reminder your password is 6 - 20 characters</div>
+                        <div *ngIf="password.errors.maxlength">Reminder your password is 6 - 20 characters</div>
+                        <div *ngIf="password.errors.pattern">Your password should not contain spaces</div>
                     </div>
                 </div>
 
@@ -46,7 +49,7 @@
                     <button [routerLink]='["/create-account"]' class="btn btn-primary">Create Account</button>
 
                     <!-- ROUTER LINKS TO USER PROFILE -->
-                    <button [routerLink]='["/user-profile"]' class="btn btn-primary">Forgot Password?</button>
+                    <!-- <button [routerLink]='["/user-profile"]' class="btn btn-primary">Forgot Password?</button> -->
                 </div>
                 <br>
                 <div>
@@ -59,8 +62,6 @@
                         <li>And Much, Much More!</li>
                     </ul>
                 </div>
-
-
             </form>
         </div>
     </div>
