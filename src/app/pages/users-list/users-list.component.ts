@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminUserService } from 'src/app/services/admin-user.service';
 
 @Component({
   selector: 'users-list',
@@ -7,34 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersListComponent implements OnInit {
 
-  
 
-  
-  constructor() { }
 
-    Users = 
-      [
-        {
-          firstName: "John",
-          lastName: "Smith",
-          email: "jsmith@example.com",
-          lastActive: "2 Hours Ago"
-        },
-        {
-          firstName: "Jane",
-          lastName: "Doe",
-          email: "jdoe@example.com",
-          lastActive: "1 Hour Ago"
-        },
-        {
-          firstName: "Luke",
-          lastName: "Skywalker",
-          email: "thedarkside@example.com",
-          lastActive: "10 Minutes Ago"
-        }
-      ];
+
+  constructor(private adminUserService: AdminUserService) { }
+
+    Users
 
   ngOnInit() {
+    this.adminUserService.getUsers().subscribe(u=>this.Users=u)
+  }
+
+
+  deleteUser(id: number): void {
+    // this.postDataService.deletePost(id).subscribe((p) => {(this.posts = p)});
+       this.adminUserService.deleteUser(id).subscribe(u => this.Users = u);
   }
 
 }

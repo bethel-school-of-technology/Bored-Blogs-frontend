@@ -2,16 +2,20 @@
 <section id="header" class="d-flex justify-content-center">
   <!-- Create profile Picture-->
   <div id="profilePicture">
-    <img
-      id="profPic"
-      class="rounded-circle"
-      src="https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-48"
-    />
+    <img id="profPic" class="rounded-circle" src="{{ contributor.url }}" />
   </div>
   <!--Display Name of contributer -->
   <h3>{{ contributor.firstName }} {{ contributor.lastName }}</h3>
 </section>
+
 <section>
+  <!-- Tab Links-->
+  <!-- TODO: think aboot animations and animating these changes for a butter experince -->
+  <div class="tab d-flex w-100 justify-content-center text-danger">
+    <button class="tabOptions" (click)="setSelector(1)">About</button>
+    <button class="tabOptions" (click)="setSelector(2)">Recent Posts</button>
+  </div>
+
   <!-- Tab Links-->
   <!-- TODO: think aboot animations and animating these changes for a butter experince -->
   <div class="tab d-flex w-100 justify-content-center text-danger">
@@ -41,6 +45,7 @@
       <a href="{{ contributor.bio.otherWorks.linkedIn }}">LinkedIn</a>
     </p>
   </div>
+
   <!-- Tab Content (POSTS)-->
   <div
     id="recentPosts"
@@ -53,9 +58,11 @@
         <h2 class="postTitle">{{ Post.title }}</h2>
         <div class="tagsGames">
           <img class="tagIcon" src="../../../assets/images/tag.png" />
-          <p>Tags: {{ Post }}</p>
+          <!-- THIS IS WHAT IS CAUSING "object object" TO SHOW IN THE CONTRIBUTOR PROFILE PAGES -->
+          <!-- Post.tags & Post.games -> need to be fixed in services -->
+          <p>Tags: {{ Post.tags }}</p>
           <img class="tagIcon" src="../../../assets/images/dice & pieces.jpg" />
-          <p class="relGames">Related Game(s): {{ Post }}</p>
+          <p class="relGames">Related Game(s): {{ Post.relatedGames }}</p>
         </div>
         <p class="postBody">{{ Post.body }}</p>
         <a [routerLink]="['all-post:id']">View Full Post</a>

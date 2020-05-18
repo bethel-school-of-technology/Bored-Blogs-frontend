@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PostDataService } from 'src/app/services/post-data.service';
 import { Post } from 'src/app/models/post';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'post-detail',
@@ -9,7 +10,7 @@ import { Post } from 'src/app/models/post';
 })
 export class PostDetailComponent implements OnInit {
 
-  constructor(private postDataService: PostDataService) { }
+  constructor(private postDataService: PostDataService, private router: Router) { }
 
   @Input() post: Post[];
 
@@ -23,6 +24,16 @@ export class PostDetailComponent implements OnInit {
     this.getPost();
   }
 
+  //?Kamyla's code - trying to figure out how to only pull one blog post by id instead of all of them
+/*  ngOnInit() {
+    this.route.params.subscribe(param => {
+      this.postDataService.getPost(+param['id'])
+        .subscribe(p => {this.post = p;
+          console.log(p)
+        });
+    });
+  }
+*/
   getPost(): void {
     this.postDataService.getPosts().subscribe((p) => {
       console.log(p);
