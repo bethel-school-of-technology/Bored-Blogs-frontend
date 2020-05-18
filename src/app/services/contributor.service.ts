@@ -27,8 +27,8 @@ var contributors = [
     new Bio(
       new Games(["game 1", "game 2"]),
       "12/09/1995",
-      "othello",
-      new linksIguess("#", "#", "#"),
+      "I like the sound of roosters crowing at 4am.",
+      new linksIguess("https://github.com/zed0x5f", "https://www.starwars.com/databank/yoda", "https://www.linkedin.com/in/jacob-stanton-10221972/"),
       "lorem ipsum"
     ),
     //color
@@ -42,9 +42,10 @@ var contributors = [
     "Roberts",
     new Bio(
       new Games(["game 1", "game 2"]),
-      "12/09/1995",
-      "othello",
-      new linksIguess("#", "#", "#"),
+      "7/24/1970",
+      "I have angelic singing voice that rivals Jenn Johnson.",
+      //TODO find Jackie's LinkedIn profile
+      new linksIguess("https://github.com/Jackie-Roberts", "https://en.wikipedia.org/wiki/Wonder_Woman", "https://www.linkedin.com/feed/"),
       "lorem ipsum"
     ),
     styleFromColor("yellow", "black"),
@@ -56,9 +57,9 @@ var contributors = [
     "Miller",
     new Bio(
       new Games(["game 1", "game 2"]),
-      "12/09/1995",
-      "othello",
-      new linksIguess("#", "#", "#"),
+      "6/15/1995",
+      "I like running around Kroger in my spare time.",
+      new linksIguess("https://github.com/Kayla-D-Miller", "https://en.wikipedia.org/wiki/Princess_Leia", "https://www.linkedin.com/in/kayla-miller-km/"),
       "lorem ipsum"
     ),
     styleFromColor("red", "white"),
@@ -69,10 +70,10 @@ var contributors = [
     "Kamyla",
     "Andrlik",
     new Bio(
-      new Games(["game 1", "game 2"]),
-      "12/09/1995",
-      "othello",
-      new linksIguess("#", "#", "#"),
+      new Games(["Dixit", "Ticket to Ride"]),
+      "09/17/1991",
+      "Hawaii has my heart but Kentucky has my stomach.",
+      new linksIguess("https://github.com/kamylaandrlik", "https://en.wikipedia.org/wiki/Anna_(Frozen)", "https://www.linkedin.com/in/kamyla-andrlik-6811bb6b/"),
       "lorem ipsum"
     ),
     styleFromColor("#30c230", "white"),

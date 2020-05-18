@@ -1,28 +1,26 @@
+<body>
 <!-- Header for the page -->
+<section id="header" class="d-flex justify-content-center">
+  <!--Display Name of contributor -->
+  <div class="contribName">
+      <p class="contribHeader" [ngStyle]="contributor.color">Hi! I'm {{ contributor.firstName }} {{ contributor.lastName }}!</p>
+  </div>
+</section>
 <section id="header" class="d-flex justify-content-center">
   <!-- Create profile Picture-->
   <div id="profilePicture">
-    <img id="profPic" class="rounded-circle" src="https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-48" />
+    <img id="profPic" class="rounded-circle" src="{{contributor.url}}" />
   </div>
-  <!--Display Name of contributer -->
-  <h3>{{ contributor.firstName }} {{ contributor.lastName }}</h3>
 </section>
 
-<section>
+<section id="body">
   <!-- Tab Links-->
-  <!-- TODO: think aboot animations and animating these changes for a butter experince -->
+  <!-- TODO: think about animations and animating these changes for a better experience -->
   <div class="tab d-flex w-100 justify-content-center text-danger">
-    <button class="tabOptions" (click)="setSelector(1)">About</button>
-    <button class="tabOptions" (click)="setSelector(2)">Recent Posts</button>
+    <button [ngStyle]="contributor.color" class="tabOptions" (click)="setSelector(1)">My Bio</button>
+    <button [ngStyle]="contributor.color" class="tabOptions" (click)="setSelector(2)">My Recent Posts</button>
   </div>
-
-  <!-- Tab Links-->
-  <!-- TODO: think aboot animations and animating these changes for a butter experince -->
-  <div class="tab d-flex w-100 justify-content-center text-danger">
-    <button class="tabOptions" (click)="setSelector(1)">About</button>
-    <button class="tabOptions" (click)="setSelector(2)">Recent Posts</button>
-  </div>
-
+<br />
   <!-- Tab Content (ABOUT)-->
   <div id="about" [ngClass]="{'d-none':this.selector != 1}" class="tabcontent text-center">
     <p> <span>Birthday:</span> {{contributor.bio.birthday}}</p>
@@ -32,34 +30,29 @@
       <li><a href="">{{contributor.bio.favoriteGames}}</a></li>
       <li><a href="">{{contributor.bio.favoriteGames}}</a></li>
     </ul>
-    {{contributor.bio.other}}
-    <p>To see my other works, please use these links:
-      <a href={{contributor.bio.otherWorks.github}}>Github</a> |
-      <a href={{contributor.bio.otherWorks.website}}>Personal Website</a> |
-      <a href={{contributor.bio.otherWorks.linkedIn}}>LinkedIn</a></p>
+    <p><strong>Fun Fact about Me: </strong>{{contributor.bio.other}} </p>
+    <p>To see my other work, please use these links:
+      <br />
+      <a href={{contributor.bio.otherWorks.github}} target="blank">Github</a> |
+      <a href={{contributor.bio.otherWorks.website}} target="blank">Personal Website</a> |
+      <a href={{contributor.bio.otherWorks.linkedIn}} target="blank">LinkedIn</a></p>
   </div>
 
-
+  <br />
   <!-- Tab Content (POSTS)-->
   <div id="recentPosts" [ngClass]="{'d-none':this.selector != 2}" class="tabcontent">
     <!-- Create the recent posts template-->
     <div id="postContainer">
       <div class="post" *ngFor="let Post of posts">
-        <h2 class="postTitle">{{Post.title}}</h2>
-        <div class="tagsGames">
-          <img class="tagIcon" src="../../../assets/images/tag.png" />
-          <!-- THIS IS WHAT IS CAUSING "object object" TO SHOW IN THE CONTRIBUTOR PROFILE PAGES -->
-          <!-- Post.tags & Post.games -> need to be fixed in services -->
-          <p> Tags: {{Post.tags}}</p>
-          <img class="tagIcon" src="../../../assets/images/dice & pieces.jpg" />
-          <p class="relGames"> Related Game(s): {{Post.games}}</p>
-        </div>
-        <p class="postBody">{{Post.body}}</p>
-        <a [routerLink]='["all-post:id"]'>View Full Post</a>
+        <h4 class="postTitle">{{Post.title}}</h4>
+        <p class="postBody">{{Post.preview}}</p>
+        <!--TODO Get this routerLink to work-->
+        <a [routerLink]='["post-detail/:id", Post.id]'>View Full Post</a>
         <hr>
       </div>
     </div>
   </div>
 </section>
 
+</body>
 <!-- TODO: need contributor:id route for front and backend -->
