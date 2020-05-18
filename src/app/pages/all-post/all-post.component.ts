@@ -14,7 +14,7 @@ export class AllPostComponent implements OnInit {
 
   //  onClickDelete() {
   //   this.postDeleted.emit(this.Posts.id);}
-  //TODO: connect this to the contributour service which at this time does not exist
+  //TODO: connect this to the contributor service which at this time does not exist
   Contributor = [
     {
       firstName: "Jacob",

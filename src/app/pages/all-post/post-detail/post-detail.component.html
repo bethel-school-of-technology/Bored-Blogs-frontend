@@ -1,13 +1,33 @@
+<section>
+    <div *ngIf="true" class="container">
+      <div class="Post" *ngFor="let Post of post">
+        <h3 class="postTitle">{{ this.Post.title }}</h3>
+        <p class="postBody">
+          <strong>Contributed by: {{ this.Post.author }}</strong>
+          <br />
+          <br />
+          {{ this.Post.body }}
+        </p>
+      </div>
+    </div>
+    <button [routerLink]="['/all']" class="btn btn-accent">Return to All Blog Posts</button>
+  </section>
 
-    {{this.post.title}}
+
+
+
+ <!-- ? Kamyla - trying to only pull one blog post at a time instead of all of them
+ {{this.post.title}}
     {{this.post.author}}
     {{this.post.body}}
+-->
+
 
 <!-- we need the emitter stuff -->
 
 
-<!--I want the "Add a Comment" button to be collapsible, and
+<!--TODO I want the "Add a Comment" button to be collapsible, and
   when clicked to show all comments already made on that post, and
   to show the post-comment component so the user can add a new comment -->
 
-  <button [routerLink]="['/all']" class="btn btn-accent">Return to All Blog Posts</button>
+
