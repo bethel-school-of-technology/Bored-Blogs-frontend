@@ -92,10 +92,12 @@
 
       <!-- CAN THE contributor.name & contributor.img BE ANCHOR LINKS TO EA CONTRIBUTOR PROFILE PG??? -->
       <div *ngFor="let contributor of contributors;">
-        <a [routerLink]="['/contributor-profile']">
-        <img src="{{contributor.url}}" class="rounded-circle" >
+        <a [routerLink]='["/contributor-profile"]'>
+          <img src="{{contributor.url}}" class="rounded-circle" href="http://localhost:4200/contributor-profile">
         </a>
-        <h6 class="text-center p-4">{{contributor.name}}</h6>
+        <a [routerLink]='["/contributor-profile"]'>
+          <h6 class="text-center p-4">{{contributor.name}}</h6>
+        </a>
         <br>
       </div>
       <button [routerLink]='["/contributor"]' class="btn btn-primary">Meet the Contributors</button>
