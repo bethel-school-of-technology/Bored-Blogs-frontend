@@ -31,7 +31,9 @@
         <br>
         <h5 class="font-italic">The Royal Game of Ur</h5>
         <div>
+          <a href="https://en.wikipedia.org/wiki/Royal_Game_of_Ur" target="_blank">
           <img class="gameImg2" src="assets/images/gameOfUr.jpg">
+        </a>
         </div>
         <p class="pt-4">Discovered to be the oldest game of all time!</p>
 
@@ -92,10 +94,10 @@
 
       <!-- CAN THE contributor.name & contributor.img BE ANCHOR LINKS TO EA CONTRIBUTOR PROFILE PG??? -->
       <div *ngFor="let contributor of contributors;">
-        <a [routerLink]='["/contributor-profile"]'>
+        <a [routerLink]='["/contributor-profile/:id"]'>
           <img src="{{contributor.url}}" class="rounded-circle" href="http://localhost:4200/contributor-profile">
         </a>
-        <a [routerLink]='["/contributor-profile"]'>
+        <a [routerLink]='["/contributor-profile/:id"]'>
           <h6 class="text-center p-4">{{contributor.name}}</h6>
         </a>
         <br>

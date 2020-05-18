@@ -1,5 +1,27 @@
+//Background of page
+section {
+  background-image: url("../../../../assets/images/1.jpg");
+  background-size: cover;
+  padding-bottom: 100px;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+}
+
+//Background of blog title, author, and body
+.Post {
+  background-color: white;
+  opacity: 0.8;
+  padding: 20px;
+}
+
+//Title of blog post
+h3 {
+  text-align: center;
+}
+
+//Return to all blog posts button
 .btn-accent {
   display: block;
+  margin-top: 35px;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 4px 5px 10px 2px rgba(66, 64, 64, 0.8);
