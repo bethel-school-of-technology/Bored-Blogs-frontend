@@ -51,7 +51,7 @@
 
         <!-- Display the most current Blog Post by id (SELECTED BY createdDate) -->
         <h1 class="blogTitle font-italic"><strong>{{ Post.title }}</strong></h1>
-      
+
         <strong>Contributed by: {{ Post.author }} </strong>
         <br>
         <!-- <strong>Post Date: {{Post.createdAt }}</strong> HOW CAN WE ADD THIS TIMESTAMP TO SHOW WITH THE POSTS?? -->
@@ -60,7 +60,7 @@
       </div>
 
       <!-- THIS HARD-CODED TEXT WILL BE REMOVED AFTER THE ngFor LOOP IS WORKING FOR THE {{Post.body}} -->
-      
+
       <!-- <p class="text-center">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
         accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
         quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -92,8 +92,12 @@
 
       <!-- CAN THE contributor.name & contributor.img BE ANCHOR LINKS TO EA CONTRIBUTOR??? -->
       <div *ngFor="let contributor of contributors;">
-        <img src="{{contributor.url}}" class="rounded-circle" href="http://localhost:4200/contributor-profile">
-        <h6 class="text-center p-4">{{contributor.name}}</h6>
+        <a [routerLink]='["/contributor-profile"]'>
+          <img src="{{contributor.url}}" class="rounded-circle" href="http://localhost:4200/contributor-profile">
+        </a>
+        <a [routerLink]='["/contributor-profile"]'>
+          <h6 class="text-center p-4">{{contributor.name}}</h6>
+        </a>
         <br>
       </div>
       <button [routerLink]='["/contributor"]' class="btn btn-primary">Meet the Contributors</button>
