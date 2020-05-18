@@ -34,7 +34,7 @@ export class CreateAccountComponent implements OnInit {
             this.user = user;
             //Jacob Stanton:
             //TODO: add route to constuctor and naviage and success
-            this.router.navigateByUrl("/");
+            this.router.navigateByUrl("/home");
             console.log("successfully created an account");
             this.messageService.addMessage({
               body: "You have successfully created an account",
@@ -44,14 +44,14 @@ export class CreateAccountComponent implements OnInit {
             console.log("problem creating an account");
             console.log(error);
             this.messageService.addMessage({
-              body: "There was a problem creating an account",
+              body: "An account with this email already exists",
             });
           }
         );
       } else {
         console.log("form is invalid");
         this.messageService.addMessage({
-          body: "Form is invalid",
+          body: "Form is invalid. Complete all fields as required.",
         });
       }
     } else {

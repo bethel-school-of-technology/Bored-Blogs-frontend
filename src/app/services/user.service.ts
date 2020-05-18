@@ -37,6 +37,11 @@ export class UserService {
     return Observable;
   }
 
+  logout(){
+    //the user is logged out
+    this.currentUser = null;
+  }
+
   login(user: User) {
     const Observable = this.http
       .post(`${Config.apiUrl}/users/login`, user)

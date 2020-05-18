@@ -6,5 +6,6 @@ export class Post {
   title: string;
   preview: string;
   body: string;
+  authorId:number;
 }
 

@@ -1,4 +1,4 @@
-<div id="alert-container" class="w-100">
+<div id="alert-container" class="w-100" [ngClass]="{'d-none':this.messages.length==0}">
   <div
     class="alert-primary my-1 p-3"
     *ngFor="let message of messages; index as i"
