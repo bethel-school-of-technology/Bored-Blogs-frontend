@@ -17,8 +17,8 @@
   <!-- Tab Links-->
   <!-- TODO: think about animations and animating these changes for a better experience -->
   <div class="tab d-flex w-100 justify-content-center text-danger">
-    <button [ngStyle]="contributor.color" class="tabOptions" (click)="setSelector(1)">My Bio</button>
-    <button [ngStyle]="contributor.color" class="tabOptions" (click)="setSelector(2)">My Recent Posts</button>
+    <button [ngStyle]="contributor.color" class="tabOptions" (click)="setSelector(1)">{{contributor.firstName}}'s Bio</button>
+    <button [ngStyle]="contributor.color" class="tabOptions" (click)="setSelector(2)">{{contributor.firstName}}'s Recent Posts</button>
   </div>
 <br />
   <!-- Tab Content (ABOUT)-->
@@ -27,17 +27,17 @@
     [ngClass]="{ 'd-none': this.selector != 1 }"
     class="tabcontent text-center"
   >
-    <p><span>My Birthday:</span> {{ contributor.bio.birthday }}</p>
+    <p><span>Birthday:</span> {{ contributor.bio.birthday }}</p>
     <ul>
-      <span>My Favorite Bored Games:</span>
+      <span>Favorite Bored Games:</span>
       <!--TODO would love to have these as links to blogs on said games-->
       <li *ngFor="let game of games">
-        <a href="#">{{ game.title }}</a>
+        <a href="#">{{ contributor.bio.favoriteGames }}</a>
       </li>
     </ul>
     <p><strong>Fun Fact about Me: </strong>{{contributor.bio.other}} </p>
     <br>
-    <p>To see my other work, please use these links:
+    <p>To see {{contributor.firstName}}'s other work, please use these links:
       <br />
       <a href={{contributor.bio.otherWorks.github}} target="blank">Github</a> |
       <a href={{contributor.bio.otherWorks.website}} target="blank">Personal Website</a> |
