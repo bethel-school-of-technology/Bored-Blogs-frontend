@@ -50,8 +50,8 @@ var contributors = [
     "Roberts",
     new Bio(
       [
-        new Game("game1"),
-        new Game("game2")
+        new Game("Settlers of Catan"),
+        new Game("Settlers of Catan")
       ],
       "7/24/1970",
       "I have angelic singing voice that rivals Jenn Johnson.",
@@ -68,8 +68,8 @@ var contributors = [
     "Miller",
     new Bio(
       [
-        new Game("game1"),
-        new Game("game2")
+        new Game("Settlers of Catan"),
+        new Game("Settlers of Catan")
       ],
       "6/15/1995",
       "I like running around Kroger in my spare time.",
@@ -85,8 +85,8 @@ var contributors = [
     "Andrlik",
     new Bio(
       [
-        new Game("game1"),
-        new Game("game2")
+        new Game("Settlers of Catan"),
+        new Game("Settlers of Catan")
       ],
       "09/17/1991",
       "Hawaii has my heart but Kentucky has my stomach.",

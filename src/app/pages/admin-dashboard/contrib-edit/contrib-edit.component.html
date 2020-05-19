@@ -1,7 +1,9 @@
-<!--THIS COMPONENT IS WHERE ADMINS CAN EDIT THEIR PROFILE-->
+<!--THIS COMPONENT IS WHERE ADMINS CAN EDIT THEIR PERSONAL PROFILE-->
+<!--TODO change input form ngModels to match contrib ts file once ts file has been completed-->
 <div class="container">
   <h3>Update My Profile</h3>
-  <form #f="ngForm" (ngSubmit)="saveAdmin(f)">
+  <form #f="ngForm" (ngSubmit)="saveContrib(f)">
+
     <!--FIRST NAME-->
     <div>
       <label for="firstName">
@@ -9,8 +11,9 @@
           First Name
         </strong>
       </label>
-      <input class="form-control col-4" id="Title" type="text" name="Title" required [(ngModel)]="editPost.title">
+      <input class="form-control col-md-4 col-sm-12" id="firstName" type="text" name="firstName" required [(ngModel)]="editPost.title">
     </div>
+
     <!--LAST NAME-->
     <div>
       <div>
@@ -19,8 +22,31 @@
             Last Name
           </strong>
         </label>
-        <input class="form-control col-4" id="Title" type="text" name="Title" required [(ngModel)]="editPost.title">
+        <input class="form-control col-md-4 col-sm-12" id="lastName" type="text" name="lastName" required [(ngModel)]="editPost.title">
       </div>
+
+      <!--FAVORITE GAMES-->
+    <div>
+      <div>
+        <label for="favoriteGames">
+          <strong>
+            Favorite Games
+          </strong>
+        </label>
+        <input class="form-control col-md-4 col-sm-12" id="favoriteGames" type="text" name="favoriteGames" required [(ngModel)]="editPost.title">
+      </div>
+
+      <!--BIRTHDAY-->
+    <div>
+      <div>
+        <label for="birthday">
+          <strong>
+            Birthday
+          </strong>
+        </label>
+        <input class="form-control col-md-4 col-sm-12" id="birthday" type="text" name="birthday" required [(ngModel)]="editPost.title">
+      </div>
+
       <!--BIO-->
       <div>
         <label for="bio">
@@ -28,9 +54,28 @@
             Bio
           </strong>
         </label>
-        <textarea class="form-control" cols="20" rows="5" id="bio" type="text" name="bio"
+        <textarea class="form-control col-md-4 col-sm-12" cols="20" rows="5" id="bio" type="text" name="bio"
           [(ngModel)]="editPost.body">{{editPost.body}}</textarea>
       </div>
+<br>
+      <!--UPLOAD PROFILE PICTURE-->
+    <div>
+        <label for="profileImage">
+            <strong>
+              Profile Picture
+            </strong>
+          </label>
+      <form action="/action_page.php">
+        <label for="img">Select image:</label>
+        <input type="file" id="img" name="img" accept="image/*">
+        <!-- TODO SEE IF THIS CAN BE CONNECTED TO BACKEND -->
+        <input type="submit">
+      </form>
+    </div>
+    <br>
+
+    <!--SAVE OR CANCEL CHANGES BUTTONS-->
       <button class="button btn-primary" type="submit">Save Changes</button>
       <button [routerLink]="['/admin']" class="btn btn-danger">Cancel Changes</button>
+
     </div>
