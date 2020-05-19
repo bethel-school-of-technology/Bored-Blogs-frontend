@@ -35,21 +35,20 @@
     </div>
     <div class="col-lg-4">
       <div class="my-2">
-        <!--TODO These need to be fixed-->
         <h6>Contributor Profile Settings</h6>
         <button
           [ngStyle]="contributor.color"
-          [routerLink]="['/contributers-profile']"
+          [routerLink]="['/contributor-profile', contributor.id]"
           class="btn m-2"
         >
-          View Contributor Profile
+          View My Profile
         </button>
         <button
           [ngStyle]="contributor.color"
-          [routerLink]="['/contributers-profile']"
+          [routerLink]="['/contrib-edit']"
           class="btn m-2"
         >
-          Update Contributor Profile
+          Update My Profile
         </button>
       </div>
     </div>

@@ -25,11 +25,19 @@ var contributors = [
     "Stanton",
     //bio
     new Bio(
-      [new Game("game1"), new Game("game2")],
+      [
+        new Game("Settlers of Catan"),
+        new Game("Ticket to Ride")
+      ],
       "12/09/1995",
       "I like the sound of roosters crowing at 4am.",
-      new linksIguess("https://github.com/zed0x5f", "https://www.starwars.com/databank/yoda", "https://www.linkedin.com/in/jacob-stanton-10221972/"),
-      "lorem ipsum"
+      new linksIguess
+      (
+      "https://github.com/zed0x5f",
+      "https://www.starwars.com/databank/yoda",
+      "https://www.linkedin.com/in/jacob-stanton-10221972/"
+      ),
+      "Greetings, I'm Jacob, and I live in Florida"
     ),
     //color
     styleFromColor("#006eff", "white"),
@@ -41,12 +49,15 @@ var contributors = [
     "Jackie",
     "Roberts",
     new Bio(
-      new Games(["game 1", "game 2"]),
+      [
+        new Game("game1"),
+        new Game("game2")
+      ],
       "7/24/1970",
       "I have angelic singing voice that rivals Jenn Johnson.",
       //TODO find Jackie's LinkedIn profile
       new linksIguess("https://github.com/Jackie-Roberts", "https://en.wikipedia.org/wiki/Wonder_Woman", "https://www.linkedin.com/feed/"),
-      "lorem ipsum"
+      "Hi, I'm Jackie, and I live in Oklahoma"
     ),
     styleFromColor("yellow", "black"),
     "https://ca.slack-edge.com/T9P33872P-UMXPMHEAE-3b5c27f1c336-512"
@@ -56,11 +67,14 @@ var contributors = [
     "Kayla",
     "Miller",
     new Bio(
-      new Games(["game 1", "game 2"]),
+      [
+        new Game("game1"),
+        new Game("game2")
+      ],
       "6/15/1995",
       "I like running around Kroger in my spare time.",
       new linksIguess("https://github.com/Kayla-D-Miller", "https://en.wikipedia.org/wiki/Princess_Leia", "https://www.linkedin.com/in/kayla-miller-km/"),
-      "lorem ipsum"
+      "Hey there, I'm Kayla, and I live in Georgia."
     ),
     styleFromColor("red", "white"),
     "https://ca.slack-edge.com/T9P33872P-UKW98R0NL-9b2d325d0d90-512"
@@ -70,11 +84,14 @@ var contributors = [
     "Kamyla",
     "Andrlik",
     new Bio(
-      new Games(["game1", "game2"]),
+      [
+        new Game("game1"),
+        new Game("game2")
+      ],
       "09/17/1991",
       "Hawaii has my heart but Kentucky has my stomach.",
       new linksIguess("https://github.com/kamylaandrlik", "https://en.wikipedia.org/wiki/Anna_(Frozen)", "https://www.linkedin.com/in/kamyla-andrlik-6811bb6b/"),
-      "lorem ipsum"
+      "Aloha, I'm Kamyla and I live in Hawaii."
     ),
     styleFromColor("#30c230", "white"),
     "https://ca.slack-edge.com/T9P33872P-UNCD1UH6K-6e8e43a4b2fd-512"

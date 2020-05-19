@@ -20,6 +20,7 @@ import { CommentDeleteComponent } from './pages/all-post/comment-delete/comment-
 import { CommentEditComponent } from './pages/all-post/comment-edit/comment-edit.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { SignOutComponent } from './pages/sign-out/sign-out.component';
+import { ContribEditComponent } from './pages/admin-dashboard/contrib-edit/contrib-edit.component';
 
 
 
@@ -62,9 +63,10 @@ export class R {
     make('post-comment', 'Post Comment', PostCommentComponent, false),
     make('comment-delete', 'Comment Delete', CommentDeleteComponent, false),
     make('comment-edit', 'Comment Edit', CommentEditComponent, false),
+    make('contrib-edit', 'Contrib Edit', ContribEditComponent, false),
      //JACKIE: In nav "Contributors" dropdown list
     make('admin', 'Admin', AdminDashboardComponent, false), // need to turn this back to false once admins have ability to sign in
-    make('users-list', 'users-list', UsersListComponent, false), 
+    make('users-list', 'users-list', UsersListComponent, false),
     make('user-profile', 'User Profile', UserProfileComponent, false), //also for Change password //JACKIE: In nav "Users" dropdown list
     make('sign-out', 'Log Out', SignOutComponent, false) //JACKIE: In nav "Users" dropdown list
   ];

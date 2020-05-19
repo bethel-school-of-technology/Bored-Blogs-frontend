@@ -21,6 +21,7 @@ import { CommentEditComponent } from './all-post/comment-edit/comment-edit.compo
 import { UsersListComponent } from './users-list/users-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignOutComponent } from './sign-out/sign-out.component';
+import { ContribEditComponent } from './admin-dashboard/contrib-edit/contrib-edit.component';
 
 
 // module is self explanatory
@@ -44,7 +45,8 @@ import { SignOutComponent } from './sign-out/sign-out.component';
     CommentEditComponent,
     UsersListComponent,
     UserProfileComponent,
-    SignOutComponent
+    SignOutComponent,
+    ContribEditComponent,
   ],
   imports: [
     CommonModule,
