@@ -93,7 +93,7 @@ export class PostDataService {
 
   getPosts(): Observable<Post[]> {
     if (Config.weAreUsingCloud) {
-      return this.http.get<Post[]>(this.url + "posts");
+      return this.http.get<Post[]>(this.url + "/posts");
     } else {
       return new Observable((observer) => {
         var copy = [...posts];
