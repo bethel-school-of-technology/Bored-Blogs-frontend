@@ -4,16 +4,53 @@ import { User } from "../models/user";
 import { Config } from "../config/config";
 import { CookieService } from "ngx-cookie-service";
 import { share } from "rxjs/operators";
+import { Observable } from 'rxjs';
 
-/**
- * This will comunicate to the backend
- * signing component uses this to talk to backend
- */
+var users: User[] = [
+  {
+    id: 0,
+    email: "penny@dollar.com",
+    firstName: "Penny",
+    lastName: "Coin",
+    createdAt: "02/02/19",
+    lastLoggedIn: "05/12/20",
+    password: "123456",
+    token: "test",
+    isAdmin: false
+  },
+  {
+    id: 1,
+    email: "springer123@show.com",
+    firstName: "Jerry",
+    lastName: "Springer",
+    createdAt: "04/30/19",
+    lastLoggedIn: "02/12/20",
+    password: "123456",
+    token: "test",
+    isAdmin: false
+},
+{
+    id: 2,
+    email: "kblack_67@email.com",
+    firstName: "Karen",
+    lastName: "Black",
+    createdAt: "04/01/19",
+    lastLoggedIn: "05/18/20",
+    password: "123456",
+    token: "test",
+    isAdmin: false
+    }
+];
+
+const weAreUsingCloud = Config.weAreUsingCloud;
 
 @Injectable({
   providedIn: "root",
 })
 export class UserService {
+
+  url: string = Config.apiUrl;
+
   private currentUser: any;
   constructor(private http: HttpClient, private cookieService: CookieService) {}
 
@@ -37,11 +74,7 @@ export class UserService {
     return Observable;
   }
 
-  logout(){
-    //the user is logged out
-    this.currentUser = null;
-  }
-
+  // Login in user
   login(user: User) {
     const Observable = this.http
       .post(`${Config.apiUrl}/users/login`, user)
@@ -51,6 +84,18 @@ export class UserService {
       this.cookieService.set("token", user.token);
     });
     return Observable;
+  }
+  
+  isLoggedIn(): boolean {
+    return this.currentUser != null;
+  }
+
+  isAdmin() {
+    //TODO: run the is admin endpoint perhaps
+  }
+  // Log out user
+  logout(){
+    this.currentUser = null;
   }
 
   //TODO: fix spelling and make it work
@@ -62,11 +107,15 @@ export class UserService {
     //TODO: eat the cookie
   }
 
-  isLoggedIn(): boolean {
-    return this.currentUser != null;
+  // Get user by id to display on User Profile page
+  getUser(id: number): Observable<User> {
+    if (Config.weAreUsingCloud) {
+      return this.http.get<User>(Config.apiUrl + "/users/profile/" + id);
+    } else {
+      return new Observable((observer) => {
+        observer.next({ ...users.find((u) => u.id == id) });
+      });
+    }
   }
 
-  isAdmin() {
-    //TODO: run the is admin endpoint perhaps
-  }
 }

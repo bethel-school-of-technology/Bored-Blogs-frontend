@@ -1,33 +1,47 @@
+<!-- Display the selected post -->
 <section>
-    <div *ngIf="true" class="container">
-      <div class="Post" *ngFor="let Post of post">
-        <h3 class="postTitle">{{ this.Post.title }}</h3>
-        <p class="postBody">
-          <strong>Contributed by: {{ this.Post.author }}</strong>
-          <br />
-          <br />
-          {{ this.Post.body }}
-        </p>
-      </div>
+  <div *ngIf="true" class="container">
+    <div class="Post">
+      <h3 class="title">{{ this.post.title }}</h3>
+      <p class="postBody">
+        <strong>Contributed by: {{ this.post.author }}
+          <br>
+          Published on: {{ this.post.published }}</strong>
+        <br />
+        <br />
+        {{ this.post.body }}
+      </p>
     </div>
-    <button [routerLink]="['/all']" class="btn btn-accent">Return to All Blog Posts</button>
-  </section>
+  </div>
+
+  <!-- DISPLAY ALL THE COMMENTS ON THIS POST -->
+  <div *ngIf="true" class="container">
+    <div class="comments" *ngFor="let comment of comments; index as i">
+      {{comment}}
+      <post-comment [newComment]="comment"></post-comment>
+  </div>
+  </div>
 
 
 
+  <!-- Textarea to enter a comment at the bottom of a specific post -->
 
- <!-- ? Kamyla - trying to only pull one blog post at a time instead of all of them
- {{this.post.title}}
-    {{this.post.author}}
-    {{this.post.body}}
--->
+  <div class="form-group">
+    <form (ngSubmit)="addComment()" >
+
+      <div>
+        <label class="text-white" for="body"><strong>Add Comment</strong></label>
+        <textarea class="form-control" id="body" cols="100" rows="2" type="text" name="body"
+          [(ngModel)]="newComment.body">
+        </textarea>
+      </div>
+      <br>
+
+      <button class="btn btn-primary" (click)="addComment()">Submit</button>
+      <button [routerLink]="['/all']" class="btn btn-primary">Return to All Blog Posts</button>
+
+    </form>
+  </div>
 
 
-<!-- we need the emitter stuff -->
-
-
-<!--TODO I want the "Add a Comment" button to be collapsible, and
-  when clicked to show all comments already made on that post, and
-  to show the post-comment component so the user can add a new comment -->
-
-
+</section>

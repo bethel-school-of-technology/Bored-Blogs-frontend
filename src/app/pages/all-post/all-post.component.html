@@ -3,10 +3,9 @@
   <div *ngIf="true" class="container">
     <div class="Posts" *ngFor="let Post of posts; index as i">
       <h3 class="postTitle">{{ Post.title }}</h3>
+      <p class="text-center text-white">{{ Post.author}} {{Post.published}} </p>
       <div class="d-flex justify-content-center">
-        <button
-          class="tablinks btn btn-primary btn-md"
-          (click)="setSelector(i)">
+        <button class="tablinks btn btn-primary btn-sm" (click)="setSelector(i)">
           See Post Preview
         </button>
       </div>
@@ -15,17 +14,12 @@
           <span aria-hidden="true">&times;</span>
         </button>
 
-        <strong>Contributed by: {{ Post.author }}
-          <!-- JACKIE ADDED THIS AS AN OPTION TO ADD THE POST CREATE DATE -->
-          <!-- Q for Jacob: how can this tie into the createdAt timestamp in the post table??? -->
-          <!-- on {{Post.createdDate}} -->
-        </strong>
-        <br />
+        <strong>{{Post.title }}</strong>
+        <br>
         {{ Post.preview }}
-        <br />
-        <button
-        [routerLink]="['/post-detail/:id']"
-        class="btn-large bg-primary text-white btn">See Full Blog Post</button>
+        
+        <button [routerLink]="['/post-detail', Post.id]" class="btn-sm bg-primary text-white btn">Read Full Blog Post
+           &  Comments</button>
 
         <!--<app-post-detail></app-post-detail>-->
 

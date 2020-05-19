@@ -11,8 +11,7 @@ var posts: Post[] = [
     authorId: 1,
     author: "Jacob Stanton",
     title: "Settlers of Catan",
-    // DO WE NEED TO ADD "createdAt" DATE FROM TABLE to = createdDate (Jackie)
-    // createdDate: "05/05/2020",
+    published: "04/01/2020",
     preview:
       "Test PREVIEW. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
     body:
@@ -25,6 +24,7 @@ var posts: Post[] = [
     authorId: 2,
     author: "Jackie Roberts",
     title: "Ticket to Ride",
+    published: "03/28/2020",
     preview:
       "PREVIEW. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
     body:
@@ -37,6 +37,7 @@ var posts: Post[] = [
     authorId: 3,
     author: "Kayla Miller",
     title: "Dixit",
+    published: "01/19/2020",
     preview:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
     body:
@@ -49,6 +50,7 @@ var posts: Post[] = [
     authorId: 4,
     author: "Kamyla Andrlik",
     title: "Jungle Speed",
+    published: "05/01/2020",
     preview:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
     body:
@@ -61,6 +63,7 @@ var posts: Post[] = [
     authorId: 5,
     author: "Jacob Stanton",
     title: "Spot It",
+    published: "94/01/2020",
     preview:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
     body:
@@ -73,6 +76,7 @@ var posts: Post[] = [
     authorId: 6,
     author: "Jackie Roberts",
     title: "Werewolf",
+    published: "02/11/2020",
     preview:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
     body:
@@ -89,11 +93,10 @@ const weAreUsingCloud = Config.weAreUsingCloud;
 })
 export class PostDataService {
   url: string = Config.apiUrl;
-  // url: string = "http://localhost:3000/"; JACKIE WANTS TO USE THIS TO TEST!!!
 
   getPosts(): Observable<Post[]> {
     if (Config.weAreUsingCloud) {
-      return this.http.get<Post[]>(this.url + "posts");
+      return this.http.get<Post[]>(this.url + "/posts");
     } else {
       return new Observable((observer) => {
         var copy = [...posts];
@@ -102,6 +105,16 @@ export class PostDataService {
     }
   }
   //todo make getPostByauthor :for jackie :)
+  getPostby(authorId: number): Observable<Post> {
+    if (Config.weAreUsingCloud) {
+      return this.http.get<Post>(this.url + "/posts/read" + authorId);
+    } else {
+      return new Observable((observer) => {
+        observer.next({ ...posts.find((p) => p.authorId == authorId) });
+      });
+    }
+  }
+
 
   getPost(id: number): Observable<Post> {
     if (Config.weAreUsingCloud) {
