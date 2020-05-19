@@ -1,14 +1,14 @@
-import { Games } from "./games";
+import { Games, Game } from "./games";
 import { linksIguess } from "./linksIgues";
 
 export class Bio {
-  favoriteGames: Games;
+  favoriteGames: Game[];
   birthday: String;
   other: String;
   otherWorks: linksIguess;
   body: String;
   constructor(
-    favGame: Games,
+    favGame: Game[],
     birthday: String,
     other: String,
     otherWorks: linksIguess,

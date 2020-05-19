@@ -1,4 +1,5 @@
 import { Timestamp } from 'rxjs/internal/operators/timestamp';
+import { Game } from './games';
 
 export class Post {
   id: number;
@@ -6,7 +7,8 @@ export class Post {
   title: string;
   preview: string;
   body: string;
-  authorId: number;
-  published: string;
+  authorId:number;
+  relatedGames:Game[];
+  tags:string[];
 }
 
