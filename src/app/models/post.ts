@@ -10,5 +10,6 @@ export class Post {
   authorId:number;
   relatedGames:Game[];
   tags:string[];
+  published:string;
 }
 
