@@ -11,7 +11,7 @@
             {{ contributor.name }}
           </h2>
           <img class="w-25" src="{{ contributor.url }}" />
-          <p>{{ contributor.bio }}</p>
+          <p>{{ contributor.bio.body }}</p>
           <a [routerLink]="['/contributor-profile', contributor.id]"
             ><button
               [ngStyle]="contributor.color"
