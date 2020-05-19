@@ -1,21 +1,21 @@
 export class ContactUs {
     id: number;
-    fName: string;
-    lName: string;
+    firstName: string;
+    lastName: string;
     email: string;
     subject: string;
     body: string;
-    constructor(
+    constructor (
         id: number,
-    fName: string,
-    lName: string,
+    firstName: string,
+    lastName: string,
     email: string,
     subject: string,
     body: string
     ) {
         this.id = id;
-        this.fName = fName;
-        this.lName = lName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.subject = subject;
         this.body = body;
