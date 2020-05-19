@@ -33,17 +33,22 @@ export class SignInComponent implements OnInit {
         (user: User) => {
           this.user = user;
 
-          console.log("you have logged in");
-          //JackieRoberts:
-          //If successful, navigate to home page
-          this.router.navigateByUrl("/");
-          console.log("successfully logged in");
+          //if user is Admin, route to Admin page upon Login
+          if (user.isAdmin) {
+            this.router.navigateByUrl("/admin");
+          } else {
+            console.log("you have logged in");
+            //JackieRoberts:
+            //If successful, navigate to home page
+            this.router.navigateByUrl("/");
+            console.log("successfully logged in");
 
-          //JackieRoberts:
-          //If successful, create login message
-          this.messageService.addMessage({
-            body: "You have logged in",
-          });
+            //JackieRoberts:
+            //If successful, create login message
+            this.messageService.addMessage({
+              body: "You have logged in",
+            });
+          }
         },
         //JackieRoberts:
         //If NOT successful, create error message
@@ -63,7 +68,7 @@ export class SignInComponent implements OnInit {
     private userService: UserService,
     private messageService: MessageService,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

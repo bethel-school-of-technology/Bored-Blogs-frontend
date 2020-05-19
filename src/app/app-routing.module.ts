@@ -59,13 +59,12 @@ export class R {
     make('post-list', 'Post List', PostListComponent, false),
     make('post-add', 'Post Add', PostAddComponent, false),
     make('post-edit/:id', 'Post Edit', PostEditComponent, false),
-    make('post-comment', 'Post Comment', PostCommentComponent, false),
-    make('comment-delete', 'Comment Delete', CommentDeleteComponent, false),
-    make('comment-edit', 'Comment Edit', CommentEditComponent, false),
-     //JACKIE: In nav "Contributors" dropdown list
+    make('post-comment/:id', 'Post Comment', PostCommentComponent, false),
+    make('comment-delete/:id', 'Comment Delete', CommentDeleteComponent, false),
+    make('comment-edit/:id', 'Comment Edit', CommentEditComponent, false),//JACKIE: In nav "Contributors" dropdown list
     make('admin', 'Admin', AdminDashboardComponent, false), // need to turn this back to false once admins have ability to sign in
     make('users-list', 'users-list', UsersListComponent, false), 
-    make('user-profile', 'User Profile', UserProfileComponent, false), //also for Change password //JACKIE: In nav "Users" dropdown list
+    make('user-profile/:id', 'User Profile', UserProfileComponent, false), //also for Change password //JACKIE: In nav "Users" dropdown list
     make('sign-out', 'Log Out', SignOutComponent, false) //JACKIE: In nav "Users" dropdown list
   ];
 

@@ -43,6 +43,8 @@ export class AllPostComponent implements OnInit {
   getPosts(): void {
     this.postDataService.getPosts().subscribe((p) => {
       console.log(p);
+      // to filter and sort the posts by published date we need to add code below && Jacob needs to convert something
+      // this.posts = p.filter ....
       this.posts = p;
     });
   }

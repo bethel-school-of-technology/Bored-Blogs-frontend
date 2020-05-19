@@ -23,7 +23,7 @@ export class BootDemoComponent implements OnInit {
   test() {
     this.userService
       .register(
-        new User(1, "test3", "password", "jake", "stanton", "snake_jazz")
+        new User(1, "test3", "password", "jake", "stanton")
       )
       .subscribe((user: User) => {
         this.user = user;
