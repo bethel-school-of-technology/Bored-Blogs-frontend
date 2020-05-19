@@ -9,7 +9,7 @@
       <br>
 
       <!--BOOTSTRAP TEMPLATE-DRIVEN CONTACT FORM-->
-      <form #contactUsForm="ngForm" (ngSubmit)="submitForm(contactUsForm)" novalidate>
+      <form #contactUsForm="ngForm" (ngSubmit)="submitContactForm(contactForm)" name="contact-us" novalidate>
 
         <!-- FIRST NAME -->
         <div class="form-group">
@@ -64,7 +64,7 @@
 
         <!--SUBMIT BUTTON-->
         <div class="btn-toolbar">
-          <button class="btn btn-primary" onclick="submitContactForm()">Submit</button>
+          <button class="btn btn-primary" type="submit">Submit</button>
         </div>
 
       </form>
