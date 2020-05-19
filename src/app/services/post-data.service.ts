@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { Post } from "../models/post";
 import { Config } from "../config/config";
+import { UserService } from './user.service';
 
 // POSTS SHOULD BE SORTED BY CREATED AT DATE -- NEWEST FIRST (Jackie)
 var posts: Post[] = [
@@ -128,7 +129,7 @@ export class PostDataService {
 
   addPost(post: Post): Observable<Post[]> {
     if (Config.weAreUsingCloud) {
-      return this.http.post<Post[]>(this.url + "posts", post);
+      return this.http.post<Post[]>(this.url + "/posts", post);
     } else {
       return new Observable((observer) => {
         posts.push(post);
@@ -168,5 +169,5 @@ export class PostDataService {
     }
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private user:UserService) {}
 }
