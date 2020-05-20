@@ -1,15 +1,14 @@
 export class ContactUs {
     id: number;
-    fName: string; // in backend this is "firstName"
-    lName: string; // in backend this is "lastName"
+    firstName: string;
+    lastName: string;
     email: string;
     subject: string;
     body: string;
-
-    constructor(
+    constructor (
         id: number,
-    fName: string,
-    lName: string,
+    firstName: string,
+    lastName: string,
     email: string,
     subject: string,
     body: string
@@ -17,8 +16,8 @@ export class ContactUs {
     
     {
         this.id = id;
-        this.fName = fName;
-        this.lName = lName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.subject = subject;
         this.body = body;

@@ -64,7 +64,8 @@ import { ContribEditComponent } from './admin-dashboard/contrib-edit/contrib-edi
     PostEditComponent,
     PostAddComponent,
     PostListComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ContribEditComponent
   ]
 })
 export class PagesModule { }
