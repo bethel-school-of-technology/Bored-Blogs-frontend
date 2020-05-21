@@ -11,37 +11,64 @@
         <br />
         {{ this.post.body }}
       </p>
+      <h4 class="commentHeader">Comments</h4>
     </div>
-  </div>
+    <!-- </div> -->
 
-  <!-- DISPLAY ALL THE COMMENTS ON THIS POST -->
-  <div *ngIf="true" class="container">
-    <div class="comments" *ngFor="let comment of comments; index as i">
-      {{comment}}
-      <post-comment [newComment]="comment"></post-comment>
-  </div>
-  </div>
+    <!-- DISPLAY ALL THE COMMENTS ON THIS POST -->
+    <!-- <div *ngIf="true" class="container"> -->
+
+    <div class="comments" *ngFor="let comment of comments">
+
+      <strong>{{comment.user}}</strong>
+      {{comment.createdAt}}
+      <br>
+      {{comment.body}}
+
+<!-- NOT SURE WHAT THIS IS FOR????? -->
+      <!-- <post-comment [newComment]="comment"></post-comment>  -->
+      
+    </div>
+    <div>
+      <br>
+      <button class="tablinks btn btn-primary btn-sm" data-toggle="collapse" data-target="#commentInput"
+      ng-click="isOpen=!isOpen">
+        Add Comment
+      </button>
+      <button [routerLink]="['/all']" class="btn btn-primary btn-sm">Return to All Blog Posts</button>
+    </div>
+    <!-- buttons -->
+
+    <div class="form-group">
+      <div id="commentInput" class="collapse in">
+        <form (ngSubmit)="addComment()">
+          <div>
+            <label class="text-white" for="body"><strong>Add A Comment</strong></label>
+            <textarea class="form-control" id="commentBody" cols="100" rows="2" type="text" name="body"
+              [(ngModel)]="this.newComment.body">
+             
+          </textarea><button class="btn btn-primary btn-sm submit" data-toggle="collapse" data-target="#commentInput"
+          ng-click="isOpen=!isOpen" (click)="addComment()">Submit</button>
+          </div>
+        </form>
+       
+      </div>
+    </div></div>
+</section>
 
 
-
-  <!-- Textarea to enter a comment at the bottom of a specific post -->
-
-  <div class="form-group">
+<!-- Textarea to enter a comment at the bottom of a specific post -->
+<!-- <div class="form-group">
     <form (ngSubmit)="addComment()" >
-
       <div>
         <label class="text-white" for="body"><strong>Add Comment</strong></label>
         <textarea class="form-control" id="body" cols="100" rows="2" type="text" name="body"
-          [(ngModel)]="newComment.body">
+          [(ngModel)]="this.newComment.body">
         </textarea>
       </div>
       <br>
-
-      <button class="btn btn-primary" (click)="addComment()">Submit</button>
-      <button [routerLink]="['/all']" class="btn btn-primary">Return to All Blog Posts</button>
-
-    </form>
-  </div>
-
-
-</section>
+      <!-- buttons -->
+<!-- <button class="btn btn-primary" (click)="addComment()">Submit</button>
+      <button [routerLink]="['/all']" class="btn btn-primary">Return to All Blog Posts</button> -->
+<!-- </form>
+  </div> -->

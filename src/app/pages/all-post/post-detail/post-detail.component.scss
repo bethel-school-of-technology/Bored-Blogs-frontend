@@ -21,8 +21,6 @@ h3 {
 //Return to all blog posts button
 .btn-primary {
   display: inline-block;
-  // margin-top: 10px;
-  // margin-left: 20px;
   margin-right: 10px;
   box-shadow: 4px 5px 10px 2px rgba(66, 64, 64, 0.8);
 }
@@ -36,5 +34,10 @@ h3 {
 .comments {
   background-color: whitesmoke;
   opacity: 0.8;
-  padding: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.submit {
+  margin-top: 7px;
 }

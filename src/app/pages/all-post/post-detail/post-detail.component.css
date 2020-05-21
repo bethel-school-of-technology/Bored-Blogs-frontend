@@ -32,6 +32,11 @@ h3 {
 .comments {
   background-color: whitesmoke;
   opacity: 0.8;
-  padding: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.submit {
+  margin-top: 7px;
 }
 /*# sourceMappingURL=post-detail.component.css.map */

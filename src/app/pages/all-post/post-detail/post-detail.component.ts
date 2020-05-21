@@ -22,20 +22,26 @@ export class PostDetailComponent implements OnInit {
 
   // Jackie 
   // to get one post to show on /post-detail/:id
+  
   post: Post;
-
-  selector = -1;
-  setSelector(value: number) {
-    this.selector = value;
-  }
-
   isAdmin = false;
 
-  newComment: Comment;
+  newComment: Comment = new Comment();
+  // newComment: Comment;
 
   // Jackie 
   // to add a comment to a post in post-detail/:id
   comments: Comment[];
+
+  //Jackie
+  // Gets the list of comments at bottom of post
+// TODO: NEED TO FILTER COMMENTS BY POST ID !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  getComments(): void {
+    this.postCommentService.getComments().subscribe((c) => {
+      console.log(c);
+      this.comments = c;
+    });
+  }
 
   addComment() {
     this.postCommentService
@@ -53,5 +59,7 @@ export class PostDetailComponent implements OnInit {
           this.post = p;
         });
     });
+    
+    this.getComments();
   }
 }

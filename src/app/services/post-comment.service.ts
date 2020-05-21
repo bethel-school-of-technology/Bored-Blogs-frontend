@@ -28,25 +28,25 @@ var comments: Comment[] = [
     parentPostId: 2,
     CommentId: 1,
     authorId: 1
-    },
-    {
-      id: 26,
-      user: "Bob Jones",
-      body: "comment 3 hardcoded in post-comment service",
-      createdAt: "01/28/2020",
-      parentPostId: 3,
-      CommentId: 3,
-      authorId: 1
-      },
-      {
-        id: 26,
-        user: "Bob Jones",
-        body: "comment 4 hardcoded in post-comment service",
-        createdAt: "05/10/2020",
-        parentPostId: 4,
-        CommentId: 2,
-        authorId: 1
-        }
+  },
+  {
+    id: 26,
+    user: "Bob Jones",
+    body: "comment 3 hardcoded in post-comment service",
+    createdAt: "01/28/2020",
+    parentPostId: 3,
+    CommentId: 3,
+    authorId: 1
+  },
+  {
+    id: 26,
+    user: "Bob Jones",
+    body: "comment 4 hardcoded in post-comment service",
+    createdAt: "05/10/2020",
+    parentPostId: 4,
+    CommentId: 2,
+    authorId: 1
+  }
 ];
 
 const weAreUsingCloud = Config.weAreUsingCloud;
@@ -56,11 +56,11 @@ const weAreUsingCloud = Config.weAreUsingCloud;
 })
 export class PostCommentService {
   url: string = Config.apiUrl;
-  
-    getComments(): Observable<Comment[]> {
+
+  getComments(): Observable<Comment[]> {
     if (Config.weAreUsingCloud) {
       return this.http.get<Comment[]>(this.url + "comments"); //TODO:FIXME  the url needs to be updated and we need to add token to headers
-         } else {
+    } else {
       return new Observable((observer) => {
         var copy = [...comments];
         observer.next(copy);
@@ -71,7 +71,7 @@ export class PostCommentService {
   // Get comment by id to display on the associated post-detail page
   getComment(id: number): Observable<Comment> {
     if (Config.weAreUsingCloud) {
-      return this.http.get<Comment>(this.url + "/comments/read/" + id); 
+      return this.http.get<Comment>(this.url + "/comments/read/" + id);
     } else {
       return new Observable((observer) => {
         observer.next({ ...comments.find((c) => c.id == id) });
@@ -123,5 +123,6 @@ export class PostCommentService {
       });
     }
   }
+  
   constructor(private http: HttpClient, userService: UserService) { }
 }
