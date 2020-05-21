@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 // Jackie imported Contributor & ContributorService
 import { ContributorService } from "src/app/services/contributor.service";
 import { Contributor } from "src/app/models/contributor";
@@ -7,9 +7,9 @@ import { PostDataService } from "src/app/services/post-data.service";
 import { Post } from "src/app/models/post";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
   //JACKIE:
@@ -20,24 +20,22 @@ export class HomeComponent implements OnInit {
   constructor(
     private contributorService: ContributorService,
     private postDataService: PostDataService
-  ) { }
-
+  ) {}
 
   ngOnInit() {
-    this.contributorService
-      .getContributors()
-      .subscribe((c) => (this.contributors = c));
+    this.contributorService.getContributors().subscribe((c) => {
+      console.log(c);
+      this.contributors = c;
+    });
 
-  //JACKIE:
-  //Get the current blog post by ID or createdAt date --> FILTER TO JUST ONE POST!!!
-      this.postDataService
-      .getPosts()
-      .subscribe((p) => (this.posts = p)); 
+    //JACKIE:
+    //Get the current blog post by ID or createdAt date --> FILTER TO JUST ONE POST!!!
+    this.postDataService.getPosts().subscribe((p) => (this.posts = p));
 
-  //   this.params.subscribe(param => {
-  //     this.postDataService
-  //     .getPost(+param["id"])
-  //     .subscribe((p) => (this.Post = p));
-  // });
+    //   this.params.subscribe(param => {
+    //     this.postDataService
+    //     .getPost(+param["id"])
+    //     .subscribe((p) => (this.Post = p));
+    // });
   }
 }

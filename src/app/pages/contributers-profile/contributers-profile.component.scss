@@ -8,6 +8,7 @@ body {
 }
 
 //Contributor's name
+$midsection:40%;
 .contribHeader{
   clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 64% 100%, 50% 75%, 0% 75%);
   padding-bottom: 25px;
@@ -15,6 +16,9 @@ body {
   font-size: 50px;
   color: white;
   font-family: 'Indie Flower', cursive;
+  p {
+    height:2em;
+  }
 	}
 
 //Contributor name and profile image

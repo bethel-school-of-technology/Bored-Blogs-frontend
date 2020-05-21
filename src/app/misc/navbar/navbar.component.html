@@ -38,7 +38,7 @@
     <div class="dropdown-menu" [ngClass]="{ show: this.dropDown2 }" (mouseleave)="this.dropDown2 = false">
       <a class="dropdown-item" [routerLink]="['/contributor']">Meet the Contributors</a>
       <a *ngFor="let contrib of contribs" class="dropdown-item" [routerLink]="['/contributor-profile', contrib.id]">Meet
-        {{ contrib.name }}</a>
+        {{ contrib.firstName }}</a>
       <div class="dropdown-divider"></div>
       
 

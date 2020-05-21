@@ -4,7 +4,7 @@ import { User } from "../models/user";
 import { Config } from "../config/config";
 import { CookieService } from "ngx-cookie-service";
 import { share } from "rxjs/operators";
-import { Observable } from 'rxjs';
+import { Observable } from "rxjs";
 
 var users: User[] = [
   {
@@ -16,7 +16,7 @@ var users: User[] = [
     lastLoggedIn: "05/12/20",
     password: "123456",
     token: "test",
-    isAdmin: false
+    isAdmin: false,
   },
   {
     id: 1,
@@ -27,9 +27,9 @@ var users: User[] = [
     lastLoggedIn: "02/12/20",
     password: "123456",
     token: "test",
-    isAdmin: false
-},
-{
+    isAdmin: false,
+  },
+  {
     id: 2,
     email: "kblack_67@email.com",
     firstName: "Karen",
@@ -38,8 +38,8 @@ var users: User[] = [
     lastLoggedIn: "05/18/20",
     password: "123456",
     token: "test",
-    isAdmin: false
-    }
+    isAdmin: false,
+  },
 ];
 
 const weAreUsingCloud = Config.weAreUsingCloud;
@@ -48,7 +48,6 @@ const weAreUsingCloud = Config.weAreUsingCloud;
   providedIn: "root",
 })
 export class UserService {
-
   url: string = Config.apiUrl;
 
   private currentUser: any;
@@ -85,7 +84,7 @@ export class UserService {
     });
     return Observable;
   }
-  
+
   isLoggedIn(): boolean {
     return this.currentUser != null;
   }
@@ -94,7 +93,7 @@ export class UserService {
     //TODO: run the is admin endpoint perhaps
   }
   // Log out user
-  logout(){
+  logout() {
     this.currentUser = null;
   }
 
@@ -117,5 +116,8 @@ export class UserService {
       });
     }
   }
-
+  getCurrentUser() {
+    //idk if this is secure or not
+    return this.currentUser;
+  }
 }

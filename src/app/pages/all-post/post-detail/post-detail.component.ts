@@ -25,6 +25,7 @@ export class PostDetailComponent implements OnInit {
   post: Post;
 
   selector = -1;
+  //does stuff
   setSelector(value: number) {
     this.selector = value;
   }
@@ -45,7 +46,7 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(param => {
-      console.log(param)
+      console.log(param);
       this.postDataService
         .getPost(+param['id'])
         .subscribe(p => {

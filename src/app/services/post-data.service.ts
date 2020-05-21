@@ -3,10 +3,12 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { Post } from "../models/post";
 import { Config } from "../config/config";
-import { UserService } from './user.service';
+import { UserService } from "./user.service";
+import { map } from "rxjs/operators";
 
 // POSTS SHOULD BE SORTED BY CREATED AT DATE -- NEWEST FIRST (Jackie)
 var posts: Post[] = [
+  /*
   {
     id: 0,
     authorId: 1,
@@ -85,6 +87,7 @@ var posts: Post[] = [
     relatedGames: [],
     tags: [],
   },
+  */
 ];
 
 const weAreUsingCloud = Config.weAreUsingCloud;
@@ -97,7 +100,16 @@ export class PostDataService {
 
   getPosts(): Observable<Post[]> {
     if (Config.weAreUsingCloud) {
-      return this.http.get<Post[]>(this.url + "/posts");
+      return this.http.get<Post[]>(this.url + "/posts").pipe(
+        map((foo) => {
+          foo = foo.map((f) => {
+            f.preview = f.body.substr(0, 2000) + "...";//creates a preview
+            //console.log(foo);
+            return f;
+          });
+          return foo;
+        })
+      );
     } else {
       return new Observable((observer) => {
         var copy = [...posts];
@@ -116,10 +128,11 @@ export class PostDataService {
     }
   }
 
-
   getPost(id: number): Observable<Post> {
     if (Config.weAreUsingCloud) {
-      return this.http.get<Post>(this.url + "/posts/read" + id);
+      var earl = this.url + "/posts/read" + id;
+      console.log(earl);
+      return this.http.get<Post>(earl);
     } else {
       return new Observable((observer) => {
         observer.next({ ...posts.find((p) => p.id == id) });
@@ -169,5 +182,5 @@ export class PostDataService {
     }
   }
 
-  constructor(private http: HttpClient, private user:UserService) {}
+  constructor(private http: HttpClient, private user: UserService) {}
 }

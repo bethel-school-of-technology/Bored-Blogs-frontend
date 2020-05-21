@@ -1,15 +1,17 @@
 <!-- Display the selected post -->
 <section>
-  <div *ngIf="true" class="container">
+  <div *ngIf="post != null" class="container">
     <div class="Post">
       <h3 class="title">{{ this.post.title }}</h3>
       <p class="postBody">
-        <strong>Contributed by: {{ this.post.author }}
-          <br>
-          Published on: {{ this.post.published }}</strong>
+        <strong
+          >Contributed by: {{ post.author.firstName }} {{ post.author.lastName }}
+          <br />
+          Published on: {{ post.published }}</strong
+        >
         <br />
         <br />
-        {{ this.post.body }}
+        {{ post.body }}
       </p>
     </div>
   </div>
@@ -17,31 +19,36 @@
   <!-- DISPLAY ALL THE COMMENTS ON THIS POST -->
   <div *ngIf="true" class="container">
     <div class="comments" *ngFor="let comment of comments; index as i">
-      {{comment}}
-      <post-comment [newComment]="comment"></post-comment>
+      {{ comment }}
+      <!--post-comment [newComment]="comment"></post-comment-->
+    </div>
   </div>
-  </div>
-
-
 
   <!-- Textarea to enter a comment at the bottom of a specific post -->
 
-  <div class="form-group">
-    <form (ngSubmit)="addComment()" >
-
+  <!--div class="form-group">
+    <form (ngSubmit)="addComment()">
       <div>
-        <label class="text-white" for="body"><strong>Add Comment</strong></label>
-        <textarea class="form-control" id="body" cols="100" rows="2" type="text" name="body"
-          [(ngModel)]="newComment.body">
+        <label class="text-white" for="body"
+          ><strong>Add Comment</strong></label
+        >
+        <textarea
+          class="form-control"
+          id="body"
+          cols="100"
+          rows="2"
+          type="text"
+          name="body"
+          [(ngModel)]="newComment.body"
+        >
         </textarea>
       </div>
-      <br>
+      <br />
 
       <button class="btn btn-primary" (click)="addComment()">Submit</button>
-      <button [routerLink]="['/all']" class="btn btn-primary">Return to All Blog Posts</button>
-
+      <button [routerLink]="['/all']" class="btn btn-primary">
+        Return to All Blog Posts
+      </button>
     </form>
   </div>
-
-
-</section>
+</section-->
