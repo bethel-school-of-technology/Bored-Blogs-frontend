@@ -1,94 +1,173 @@
 <div class="container">
-    <div class="row w-50 h-50 mx-auto">
-        <div class="col">
-            <br>
-            <h1 class="header text-white">Create Account</h1>
-            <br>
+  <div class="row w-50 h-50 mx-auto">
+    <div class="col">
+      <br />
+      <h1 class="header text-white">Create Account</h1>
+      <br />
 
-            <!-- Bootstrap Template-Driven Form -->
-            <form #createAccountForm="ngForm" (ngSubmit)="createAccount(createAccountForm)">
-
-                <!-- FIRST NAME -->
-                <div class="form-group">
-                    <strong><label for="firstName">First Name</label></strong>
-                    <input required minlength="2" maxlength="20" pattern="[a-zA-Z]*" ngModel name="firstName"
-                        #firstName="ngModel" id="firstName" type="text" class="form-control">
-                    <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
-                        <div *ngIf="firstName.errors.required">First Name is required</div>
-                        <div *ngIf="firstName.errors.minlength">First Name should be between 2 - 20 characters</div>
-                        <div *ngIf="firstName.errors.maxlength">First Name should be between 2 - 20 characters</div>
-                        <div *ngIf="firstName.errors.pattern">First Name must not contain spaces, numbers or special
-                            characters</div>
-                    </div>
-                </div>
-                <!-- LAST NAME -->
-                <div class="form-group">
-                    <strong><label for="lastName">Last Name</label></strong>
-                    <input required minlength="2" maxlength="20" pattern="[a-zA-Z]*" ngModel name="lastName"
-                        #lastName="ngModel" id="lastName" type="text" class="form-control">
-                    <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
-                        <div *ngIf="lastName.errors.required">Last Name is required</div>
-                        <div *ngIf="lastName.errors.minlength">Last Name should be between 2 - 20 characters</div>
-                        <div *ngIf="lastName.errors.maxlength">Last Name should be between 2 - 20 characters</div>
-                        <div *ngIf="lastName.errors.pattern">Last Name must not contain spaces, numbers or special
-                            characters</div>
-                    </div>
-                </div>
-
-                <!-- EMAIL -->
-                <!-- EMAIL PATTERN IS WORKING CORRECTLY -->
-                <div class="form-group">
-                    <strong><label for="email">Email</label></strong>
-                    <input required email="true" email pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel
-                        name="email" #email="ngModel" type="email" id="email" class="form-control">
-                    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
-                        <div *ngIf="email.errors.required">Email is required</div>
-                        <div *ngIf="email.errors.pattern">Valid email is required</div>
-                    </div>
-                </div>
-
-                <!-- PASSWORD -->
-                <div class="form-group">
-                    <strong><label for="password">Password</label></strong>
-                    <!-- PASSWORD CAN CONTAIN ANY CHARACTER(S) EXCEPT WHITE SPACES -->
-                    <input required minlength="6" maxlength="20" pattern="^\S*$" ngModel name="password"
-                        #password="ngModel" type="password" id="password" class="form-control">
-                    <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
-                        <div *ngIf="password.errors.required">Password is required</div>
-                        <div *ngIf="password.errors.minlength">Password must be between 6 - 20 characters</div>
-                        <div *ngIf="password.errors.maxlength">Password must be between 6 - 20 characters</div>
-                        <div *ngIf="password.errors.pattern">Password must not contain any spaces</div>
-                    </div>
-                </div>
-
-                 <!-- PASSWORD CONFIRM -->
-                <div class="form-group">
-                    <strong><label>Confirm Password</label></strong>
-                    <input required ngModel name="passwordConfirm"
-                        #passwordConfirm="ngModel" type="password" id="passwordConfirm" class="form-control">
-                    <div class="alert alert-danger" *ngIf="passwordConfirm.touched && !passwordConfirm.valid">
-                        <div *ngIf="passwordConfirm.errors.required">Password confirm is required</div>
-                        <div *ngIf="!this.passwordsMatch">Passwords do not match</div>
-                    </div>
-                </div>
-                <br>
-
-                <!-- CREATE ACCOUNT BUTTON -->
-                <button class="btn btn-primary">Create Account</button>
-<br>
-                <div>
-                    <h5>Benefits of having a Bored Blog account:</h5>
-                    <ul>
-                        <li>Monthly newsletter</li>
-                        <li>Discounts on select board games from your favorite retailers</li>
-                        <li>VIP Meet & Greet at Live Events</li>
-                        <li>Monthly Webinar with Contributors</li>
-                        <li>And Much, Much More!</li>
-                    </ul>
-                </div>
-            </form>
-
-
+      <!-- Bootstrap Template-Driven Form -->
+      <form
+        #createAccountForm="ngForm"
+        (ngSubmit)="createAccount(createAccountForm)"
+      >
+        <!-- FIRST NAME -->
+        <div class="form-group">
+          <strong><label for="firstName">First Name</label></strong>
+          <input
+            required
+            minlength="2"
+            maxlength="20"
+            pattern="[a-zA-Z]*"
+            ngModel
+            name="firstName"
+            #firstName="ngModel"
+            id="firstName"
+            type="text"
+            class="form-control"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="firstName.touched && !firstName.valid"
+          >
+            <div *ngIf="firstName.errors.required">First Name is required</div>
+            <div *ngIf="firstName.errors.minlength">
+              First Name should be between 2 - 20 characters
+            </div>
+            <div *ngIf="firstName.errors.maxlength">
+              First Name should be between 2 - 20 characters
+            </div>
+            <div *ngIf="firstName.errors.pattern">
+              First Name must not contain spaces, numbers or special characters
+            </div>
+          </div>
         </div>
+        <!-- LAST NAME -->
+        <div class="form-group">
+          <strong><label for="lastName">Last Name</label></strong>
+          <input
+            required
+            minlength="2"
+            maxlength="20"
+            pattern="[a-zA-Z]*"
+            ngModel
+            name="lastName"
+            #lastName="ngModel"
+            id="lastName"
+            type="text"
+            class="form-control"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="lastName.touched && !lastName.valid"
+          >
+            <div *ngIf="lastName.errors.required">Last Name is required</div>
+            <div *ngIf="lastName.errors.minlength">
+              Last Name should be between 2 - 20 characters
+            </div>
+            <div *ngIf="lastName.errors.maxlength">
+              Last Name should be between 2 - 20 characters
+            </div>
+            <div *ngIf="lastName.errors.pattern">
+              Last Name must not contain spaces, numbers or special characters
+            </div>
+          </div>
+        </div>
+
+        <!-- EMAIL -->
+        <!-- EMAIL PATTERN IS WORKING CORRECTLY -->
+        <div class="form-group">
+          <strong><label for="email">Email</label></strong>
+          <input
+            required
+            email="true"
+            email
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            ngModel
+            name="email"
+            #email="ngModel"
+            type="email"
+            id="email"
+            class="form-control"
+          />
+          <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.pattern">Valid email is required</div>
+          </div>
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="form-group">
+          <strong><label for="password">Password</label></strong>
+          <!-- PASSWORD CAN CONTAIN ANY CHARACTER(S) EXCEPT WHITE SPACES -->
+          <input
+            required
+            minlength="6"
+            maxlength="20"
+            pattern="^\S*$"
+            ngModel
+            name="password"
+            #password="ngModel"
+            type="password"
+            id="password"
+            class="form-control"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="password.touched && !password.valid"
+          >
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">
+              Password must be between 6 - 20 characters
+            </div>
+            <div *ngIf="password.errors.maxlength">
+              Password must be between 6 - 20 characters
+            </div>
+            <div *ngIf="password.errors.pattern">
+              Password must not contain any spaces
+            </div>
+          </div>
+        </div>
+
+        <!-- PASSWORD CONFIRM -->
+        <div class="form-group">
+          <strong><label>Confirm Password</label></strong>
+          <input
+            required
+            ngModel
+            name="passwordConfirm"
+            #passwordConfirm="ngModel"
+            type="password"
+            id="passwordConfirm"
+            class="form-control"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="passwordConfirm.touched && !passwordConfirm.valid"
+          >
+            <div *ngIf="passwordConfirm.errors.required">
+              Password confirm is required
+            </div>
+            <div *ngIf="!this.passwordsMatch">Passwords do not match</div>
+          </div>
+        </div>
+        <br />
+
+        <!-- CREATE ACCOUNT BUTTON -->
+        <button class="btn btn-primary">Create Account</button>
+        <br />
+        <div>
+          <h5>Benefits of having a Bored Blog account:</h5>
+          <ul>
+            <li>Monthly newsletter</li>
+            <li>
+              Discounts on select board games from your favorite retailers
+            </li>
+            <li>VIP Meet & Greet at Live Events</li>
+            <li>Monthly Webinar with Contributors</li>
+            <li>And Much, Much More!</li>
+          </ul>
+        </div>
+      </form>
     </div>
+  </div>
 </div>

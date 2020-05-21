@@ -2,81 +2,58 @@
 <div class="container">
   <div class="row w-50 h-50 mx-auto">
     <div class="col">
-
       <!--HEADER-->
-      <br>
-      <h1 class="header text-white">Contact Us / <span><br>Submit A Blog Request</span></h1>
-      <br>
+      <br />
+      <h1 class="header text-white">
+        Contact Us / <span><br />Submit A Blog Request</span>
+      </h1>
+      <br />
 
       <!--BOOTSTRAP TEMPLATE-DRIVEN CONTACT FORM-->
-      <form #contactUsForm="ngForm" (ngSubmit)="submitContactForm(contactForm)" name="contact-us" novalidate>
-
-        <!-- FIRST NAME -->
-        <!-- <div class="form-group">
-          <strong><label for="firstName">First Name</label></strong>
-          <input required minlength="2" maxlength="20" pattern="[a-zA-Z]*" ngModel name="firstName" #firstName="ngModel"
-            id="firstName" type="text" class="form-control">
-          <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
-            <div *ngIf="firstName.errors.required">First Name is required</div>
-            <div *ngIf="firstName.errors.minlength">First Name should be between 2 - 20 characters</div>
-            <div *ngIf="firstName.errors.maxlength">First Name should be between 2 - 20 characters</div>
-            <div *ngIf="firstName.errors.pattern">First Name must not contain spaces, numbers or special
-              characters</div>
-          </div>
-        </div> -->
-        <!-- LAST NAME -->
-        <!-- <div class="form-group">
-          <strong><label for="lastName">Last Name</label></strong>
-          <input required minlength="2" maxlength="20" pattern="[a-zA-Z]*" ngModel name="lastName" #lastName="ngModel"
-            id="lastName" type="text" class="form-control">
-          <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
-            <div *ngIf="lastName.errors.required">Last Name is required</div>
-            <div *ngIf="lastName.errors.minlength">Last Name should be between 2 - 20 characters</div>
-            <div *ngIf="lastName.errors.maxlength">Last Name should be between 2 - 20 characters</div>
-            <div *ngIf="lastName.errors.pattern">Last Name must not contain spaces, numbers or special
-              characters</div>
-          </div>
-        </div> -->
-
-        <!--EMAIL-->
-        <!-- <div class="form-group">
-          <strong><label for="email">Email</label></strong>
-          <input id="email" (change)="log(email)" #email="ngModel" name="email" type="email" 
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
-            class="form-control ng-invalid ng-touched" ngModel required>
-          <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required.</div>
-        </div> -->
-
+      <form
+        #contactUsForm="ngForm"
+        (ngSubmit)="submitContactForm(contactUsForm)"
+      >
         <!--SUBJECT-->
         <div class="form-group">
           <strong><label for="subject">Subject</label></strong>
-          <input id="subject" (change)="log(subject)" #subject="ngModel" name="subject" type="subject"
-            class="form-control ng-invalid ng-touched" ngModel required>
-          <div class="alert alert-danger" *ngIf="subject.touched && !subject.valid">Subject is required.</div>
+          <input
+            id="subject"
+            name="subject"
+            type="text"
+            class="form-control ng-invalid ng-touched"
+            #subject="ngModel"
+            ngModel
+            required
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="subject.touched && !subject.valid"
+          >
+            Subject is required.
+          </div>
         </div>
 
         <!--MESSAGE-->
         <div class="form-group">
           <strong><label for="message">Your Message</label></strong>
-          <textarea id="message" cols="20" rows="10" placeholder="Enter text here" class="form-control"
-            ngModel></textarea>
+          <input
+            id="message"
+            cols="20"
+            rows="10"
+            placeholder="Enter text here"
+            class="form-control"
+            #message="ngModel"
+            name="message"
+            ngModel
+          />
         </div>
 
         <!--SUBMIT BUTTON-->
         <div class="btn-toolbar">
           <button class="btn btn-primary" type="submit">Submit</button>
         </div>
-
       </form>
-
     </div>
   </div>
 </div>
-<!--
-    <p>First name value: {{ first.value }}</p>
-    <p>First name valid: {{ first.valid }}</p>
-    <p>email value: {{ email.value }}</p>
-    <p>email valid: {{ email.valid }}</p>
-    <p>Form value: {{ f.value | json }}</p>
-    <p>Form valid: {{ f.valid }}</p>
--->
