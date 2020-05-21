@@ -27,7 +27,7 @@
 
 <!-- NOT SURE WHAT THIS IS FOR????? -->
       <!-- <post-comment [newComment]="comment"></post-comment>  -->
-      
+
     </div>
     <div>
       <br>
@@ -46,8 +46,7 @@
             <label class="text-white" for="body"><strong>Add A Comment</strong></label>
             <textarea class="form-control" id="commentBody" cols="100" rows="2" type="text" name="body"
               [(ngModel)]="this.newComment.body">
-             
-          </textarea><button class="btn btn-primary btn-sm submit" data-toggle="collapse" data-target="#commentInput"
+            </textarea><button class="btn btn-primary btn-sm submit" data-toggle="collapse" data-target="#commentInput"
           ng-click="isOpen=!isOpen" (click)="addComment()">Submit</button>
           </div>
         </form>
@@ -55,6 +54,8 @@
       </div>
     </div></div>
 </section>
+
+<!-- <post-comment></post-comment> -->
 
 
 <!-- Textarea to enter a comment at the bottom of a specific post -->

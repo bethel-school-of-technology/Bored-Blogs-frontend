@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { Comment } from "../../../models/comment";
 import { PostCommentService } from "../../../services/post-comment.service";
 import { UserService } from 'src/app/services/user.service';
+import { PostDataService } from 'src/app/services/post-data.service';
 
 @Component({
   selector: "post-comment",
@@ -10,21 +11,20 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ["./post-comment.component.scss"],
 })
 export class PostCommentComponent implements OnInit {
-  @Input() newComment: Comment;
+  // @Input() newComment: Comment;
 
-  // isAdmin = false;
 
-  // newComment: Comment = new Comment();
+  constructor( 
+    private postDataService: PostDataService,
+    private postCommentService: PostCommentService, 
+    private userService: UserService, 
+    private router: Router,
+    private route: ActivatedRoute) { }
 
-  // addComment():void {
-  //   this.postCommentService
-  //     .addComment(this.newComment)
-  //     .subscribe((c) => this.router.navigate(["/post-detail/ + id"])); // is this route correct to refresh pg + see comments
-  // }
-
-  constructor( private postCommentService: PostCommentService, userService: UserService, private router: Router) { }
+    
 
   ngOnInit() {
+    
   }
 
 }

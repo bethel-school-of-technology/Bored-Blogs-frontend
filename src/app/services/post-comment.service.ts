@@ -14,16 +14,16 @@ var comments: Comment[] = [
   {
     id: 25,
     user: "Peppy Longstocking",
-    body: "test comment 123 hardcoded in post-comment service",
+    body: "test comment 1 I love ticket to Ride",
     createdAt: "05/19/2020",
     parentPostId: 1,
-    CommentId: 1,
+    CommentId: 0,
     authorId: 7
   },
   {
     id: 26,
     user: "Bob Jones",
-    body: "comment 2 hardcoded in post-comment service",
+    body: "comment 2  I love Dixit",
     createdAt: "03/02/2020",
     parentPostId: 2,
     CommentId: 1,
@@ -32,20 +32,20 @@ var comments: Comment[] = [
   {
     id: 26,
     user: "Bob Jones",
-    body: "comment 3 hardcoded in post-comment service",
+    body: "comment 3  I love Jungle Speed",
     createdAt: "01/28/2020",
     parentPostId: 3,
-    CommentId: 3,
+    CommentId: 2,
     authorId: 1
   },
   {
     id: 26,
     user: "Bob Jones",
-    body: "comment 4 hardcoded in post-comment service",
+    body: "comment 4  I love ticket to Ride",
     createdAt: "05/10/2020",
-    parentPostId: 4,
-    CommentId: 2,
-    authorId: 1
+    parentPostId: 1,
+    CommentId: 3,
+    authorId: 7
   }
 ];
 
@@ -57,7 +57,7 @@ const weAreUsingCloud = Config.weAreUsingCloud;
 export class PostCommentService {
   url: string = Config.apiUrl;
 
-  getComments(): Observable<Comment[]> {
+  getComments(parentPostId: number): Observable<Comment[]> {
     if (Config.weAreUsingCloud) {
       return this.http.get<Comment[]>(this.url + "comments"); //TODO:FIXME  the url needs to be updated and we need to add token to headers
     } else {
