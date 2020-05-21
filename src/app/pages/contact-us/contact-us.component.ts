@@ -1,4 +1,4 @@
-import { ContactUs } from './../../models/contact-us.model';
+import { ContactUs } from '../../models/contact-us';
 import { ContactUsService } from './../../services/contact-us.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.scss']
 })
-export class ContactUsComponent {
+export class ContactUsComponent implements OnInit {
   contactUs: ContactUs[];
   dataService: ContactUsService;
   ContactUsService: any;
@@ -22,8 +22,9 @@ export class ContactUsComponent {
   }
   //TODO: connect this to a service
   submitContactForm(f: NgForm) {
-    const message = `My name is ${f.value.first}. My email is ${f.value.email}.
-    My message is ${f.value.message}.`;
+    const message = `My name is ${f.value.first}. My email is ${f.value.email}. 
+    The subject is ${f.value.subject}, and
+    my message is ${f.value.message}.`;
     console.log(message);
   }
 

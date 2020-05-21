@@ -1,5 +1,5 @@
 import { ContactUsComponent } from './../pages/contact-us/contact-us.component';
-import { ContactUs } from './../models/contact-us.model';
+import { ContactUs } from '../models/contact-us';
 import { Injectable } from '@angular/core';
 import { Config } from "../config/config";
 import { Observable, of } from "rxjs";
