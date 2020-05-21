@@ -2,18 +2,16 @@ import { User } from './user';
 
 export class Comment {
   id: number;
-  
+  parentPostId: number;
   body: string;
   createdAt: string; // Needs to be converted to date 
-  //TODO: jacob do the stuff with this
-  //children:Comment[];
-  parentPostId: number;
+  //TODO: jacob do the stuff with this if jacob has time
+  //children:Comment[];  
   CommentId: number;
-
   authorId: number;
   user: User;
 
-  constructor(id: number, user: User, body: string, createdAt: string, parentPostId: number, authorId: number, CommentId: number) {
+  constructor(id: number, user: User, body: string, createdAt: string, parentPostId: number, unNeededParam: number, CommentId: number) {
     this.id = id;
     this.user = user;
     this.body = body;

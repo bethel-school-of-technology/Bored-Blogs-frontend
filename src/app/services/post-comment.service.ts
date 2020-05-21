@@ -10,7 +10,7 @@ import { UserService } from './user.service';
 
 
 // hardcode comment json data (until database running in cloud)
-var comments: Comment[] = [
+var comments: Comment[] = [/*
   {
     id: 25,
     user: "Peppy Longstocking",
@@ -46,7 +46,7 @@ var comments: Comment[] = [
     parentPostId: 1,
     CommentId: 3,
     authorId: 7
-  }
+  }*/
 ];
 
 const weAreUsingCloud = Config.weAreUsingCloud;
