@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { R } from "src/app/app-routing.module";
 import { ContributorService } from "src/app/services/contributor.service";
 import { Contributor } from "src/app/models/contributor";
-import { Router } from "@angular/router";
+import { Router, NavigationEnd } from "@angular/router";
 /**
  * Author: Jacob Stanton
  *
@@ -39,12 +39,24 @@ export class NavbarComponent implements OnInit {
     this.contribService.getContributors().subscribe((contribs) => {
       this.contribs = contribs;
     });
+    this.router.events.subscribe((event) => {
+      //checks to see if this the correct event
+      if (event instanceof NavigationEnd) {
+        console.log()
+        //close all open drawers and dropdowns
+        this.nestedDrawer = false;
+        this.main = false;
+        this.dropDown1 = false;
+        this.dropDown2 = false;
+        this.dropDown3 = false;
+      }
+    });
   }
 
   //Jacob Stanton:
   //toggles the key like main to toggle the visiblity of another guy
   toggle(keyToToggle: string | number) {
-    console.log(keyToToggle)
+    console.log(keyToToggle);
     try {
       this[keyToToggle] = !this[keyToToggle];
     } catch (e) {
