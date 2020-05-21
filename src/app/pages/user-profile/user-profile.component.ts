@@ -4,7 +4,7 @@ import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 import { Router, ActivatedRoute } from "@angular/router";
 import { HttpErrorResponse } from "@angular/common/http";
-import { MessageService } from "src/app/services/message.service";
+import { AlertService } from "src/app/services/alert.service";
 
 @Component({
   selector: 'user-profile',

@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { UserService } from "../../services/user.service";
 import { User } from "src/app/models/user";
-import { MessageService } from "src/app/services/message.service";
+import { AlertService } from "src/app/services/alert.service";
 
 @Component({
   selector: "app-boot-demo",
@@ -16,7 +16,7 @@ export class BootDemoComponent implements OnInit {
   }
   constructor(
     private userService: UserService,
-    private messageService: MessageService
+    private messageService: AlertService
   ) {}
 
   ngOnInit() {}

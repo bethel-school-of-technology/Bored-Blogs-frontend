@@ -4,7 +4,7 @@
     *ngFor="let message of messages; index as i"
   >
     {{ message.body }}
-    <button class="btn btn-primary btn-md close" (click)="deleteMe(i)">
+    <button class="btn btn-primary btn-md close" (click)="deleteAlert(i)">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>

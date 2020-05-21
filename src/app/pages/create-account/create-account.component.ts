@@ -4,7 +4,7 @@ import { NgForm } from "@angular/forms";
 import { UserService } from "src/app/services/user.service";
 import { Router } from "@angular/router";
 import { HttpErrorResponse } from "@angular/common/http";
-import { MessageService } from "src/app/services/message.service";
+import { AlertService } from "src/app/services/alert.service";
 
 @Component({
   selector: 'app-create-account',
@@ -65,7 +65,7 @@ export class CreateAccountComponent implements OnInit {
   //uses the userService to connect to dabase
   constructor(
     private userService: UserService,
-    private messageService: MessageService,
+    private messageService: AlertService,
     private router: Router
   ) {}
 

@@ -2,10 +2,14 @@
 <section>
   <div *ngIf="post != null" class="container">
     <div class="Post">
-      <h3 class="title">{{ this.post.title }}</h3>
+      <h3 class="title">
+        {{ this.post.title }} also hello user
+        {{ user != null ? user.firstName : "not logged in" }}
+      </h3>
       <p class="postBody">
         <strong
-          >Contributed by: {{ post.author.firstName }} {{ post.author.lastName }}
+          >Contributed by: {{ post.author.firstName }}
+          {{ post.author.lastName }}
           <br />
           Published on: {{ post.published }}</strong
         >
@@ -21,44 +25,57 @@
     <!-- <div *ngIf="true" class="container"> -->
 
     <div class="comments" *ngFor="let comment of comments">
+      <strong>{{ comment.user }}</strong>
+      {{ comment.createdAt }}
+      <br />
+      {{ comment.body }}
 
-      <strong>{{comment.user}}</strong>
-      {{comment.createdAt}}
-      <br>
-      {{comment.body}}
-
-<!-- NOT SURE WHAT THIS IS FOR????? -->
+      <!-- NOT SURE WHAT THIS IS FOR????? -->
       <!-- <post-comment [newComment]="comment"></post-comment>  -->
-
     </div>
     <div>
-      <br>
-      <button class="tablinks btn btn-primary btn-sm" data-toggle="collapse" data-target="#commentInput"
-      ng-click="isOpen=!isOpen">
+      <br />
+      <button
+        class="tablinks btn btn-primary btn-sm"
+        (click)="isOpen = !isOpen"
+      >
         Add Comment
       </button>
-      <button [routerLink]="['/all']" class="btn btn-primary btn-sm">Return to All Blog Posts</button>
+      <button [routerLink]="['/all']" class="btn btn-primary btn-sm">
+        Return to All Blog Posts
+      </button>
     </div>
     <!-- buttons -->
 
     <div class="form-group">
-      <div id="commentInput" class="collapse in">
-        <form (ngSubmit)="addComment()">
+      <div id="commentInput" class="collapse" [ngClass]="{ show: isOpen }">
+        <form #f="ngForm" (ngSubmit)="addComment(f)">
           <div>
-            <label class="text-white" for="body"><strong>Add A Comment</strong></label>
-            <textarea class="form-control" id="commentBody" cols="100" rows="2" type="text" name="body"
-              [(ngModel)]="this.newComment.body">
-            </textarea><button class="btn btn-primary btn-sm submit" data-toggle="collapse" data-target="#commentInput"
-          ng-click="isOpen=!isOpen" (click)="addComment()">Submit</button>
+            <label class="text-white" for="body"
+              ><strong>Add A Comment</strong></label
+            >
+            <textarea
+              class="form-control"
+              id="commentBody"
+              cols="100"
+              rows="2"
+              type="text"
+              name="body"
+              #body="ngModel"
+              ngModel
+            >
+            </textarea
+            ><button class="btn btn-primary btn-sm submit" type="submit">
+              Submit
+            </button>
           </div>
         </form>
-       
       </div>
-    </div></div>
+    </div>
+  </div>
 </section>
 
 <!-- <post-comment></post-comment> -->
-
 
 <!-- Textarea to enter a comment at the bottom of a specific post -->
 <!-- <div class="form-group">

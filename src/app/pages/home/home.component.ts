@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.contributorService.getContributors().subscribe((c) => {
-      console.log(c);
+      //console.log(c);
       this.contributors = c;
     });
 
