@@ -43,8 +43,8 @@ export class PostDetailComponent implements OnInit {
   //Jackie
   // Gets the list of comments at bottom of post
 // TODO: NEED TO FILTER COMMENTS BY POST ID !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  getComments(): void {
-    this.postCommentService.getComments().subscribe((c) => {
+  getComments(parentPostId: number): void {
+    this.postCommentService.getComments(parentPostId).subscribe((c) => {
       console.log(c);
       this.comments = c;
     });
