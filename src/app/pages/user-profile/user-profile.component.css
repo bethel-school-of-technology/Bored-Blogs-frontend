@@ -1,0 +1,15 @@
+.container {
+  background-image: url("../../../assets/images/1.jpg");
+  padding-bottom: 100px;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+  background-size: cover;
+}
+
+.profile {
+  background-color: whitesmoke;
+  opacity: 0.75;
+  border-radius: 10px 70px;
+  padding: 50px;
+}
+/*# sourceMappingURL=user-profile.component.css.map */

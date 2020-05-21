@@ -5,25 +5,33 @@ body {
           box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
-h1 {
-  color: white;
+.card {
+  opacity: 0.8;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+h2 {
   text-align: center;
   padding: 10px;
 }
 
 img {
-  border-radius: 50%;
   display: block;
+  border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
+  width: 55%;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
 p {
+  padding-top: 10px;
   text-align: center;
 }
 
 .card {
-  opacity: 0.8;
   padding-bottom: 25px;
   -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
           box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);

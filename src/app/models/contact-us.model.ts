@@ -12,7 +12,9 @@ export class ContactUs {
     email: string,
     subject: string,
     body: string
-    ) {
+    ) 
+    
+    {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

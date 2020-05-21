@@ -15,6 +15,7 @@
           See Post Preview
         </button>
       </div>
+      
       <p class="postBody" [ngClass]="{ collapse: this.selector != i }">
         <button class="btn btn-primary btn-md close" (click)="setSelector(-1)">
           <span aria-hidden="true">&times;</span>
@@ -23,6 +24,7 @@
         <strong>{{ Post.title }}</strong>
         <br />
         {{ Post.preview }}
+<<<<<<< HEAD
 
         <button
           [routerLink]="['/post-detail', Post.id]"
@@ -32,7 +34,13 @@
         </button>
 
         <!--<app-post-detail></app-post-detail>-->
+=======
+
+        <button [routerLink]="['/post-detail', Post.id]" class="btn-sm bg-primary text-white btn show">Read Post
+          & Comments</button>
+>>>>>>> e9681b070e9cfcd1645f95e4e61f35f270925176
       </p>
+      <!--<post-detail></post-detail>-->
     </div>
   </div>
 </section>

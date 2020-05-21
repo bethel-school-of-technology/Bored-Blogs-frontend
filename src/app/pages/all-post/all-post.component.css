@@ -9,12 +9,13 @@ section {
 h1 {
   color: white;
   text-align: center;
-  padding-bottom: 20px;
+  padding: 10px;
 }
 
-h5 {
+h3 {
   font-style: italic;
   color: white;
+  padding-top: 15px;
 }
 
 .postTitle {
@@ -29,5 +30,9 @@ h5 {
   background-color: white;
   opacity: 0.8;
   padding: 20px;
+}
+
+.show {
+  margin-top: 7px;
 }
 /*# sourceMappingURL=all-post.component.css.map */
