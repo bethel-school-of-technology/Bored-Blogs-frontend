@@ -1,1 +1,7 @@
-/* No CSS *//*# sourceMappingURL=navbar.component.css.map */
+.createAccount {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: primary;
+}
+/*# sourceMappingURL=navbar.component.css.map */
