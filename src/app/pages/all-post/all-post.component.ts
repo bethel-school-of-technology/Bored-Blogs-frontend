@@ -43,6 +43,38 @@ export class AllPostComponent implements OnInit {
   getPosts(): void {
     this.postDataService.getPosts().subscribe((p) => {
       console.log(p);
+      // to filter and sort the posts by published date we need to add code below && Jacob needs to convert something
+      // this.posts = p.filter ....
+      for(var i = 0; i < p.length; i++) {
+        var tempDate = new Date(p[i].published)
+        var day = '';
+        var month = '';        
+        switch (tempDate.getDay()){//if u want to get the day of the week
+          case 0:
+            day = 'sunday';
+            break;
+          case 1:
+            day = 'monday';
+            break;
+          case 2:
+            day = 'tuesday';
+            break;
+          case 3:
+            day = 'wednesday';
+            break;
+          case 4:
+            day = 'thursday';
+            break;
+          case 5:
+            day = 'friday';
+            break;
+          case 6:
+            day = 'saturday';
+            break;
+        }
+
+        p[i].published = `${tempDate.getFullYear()}/${tempDate.getMonth()+1}/${tempDate.getDate()} `;
+      }
       this.posts = p;
     });
   }

@@ -11,7 +11,11 @@
   <div class="collapse navbar-collapse" [ngClass]="{ show: this.main }">
     <ul class="navbar-nav mr-auto" *ngFor="let link of links">
       <li class="nav-item text-right">
-        <a class="nav-link text-dark font-weight-normal font-size-sm" [routerLink]="link.path">{{ link.title }}</a>
+        <a
+          class="nav-link text-dark font-weight-normal font-size-sm"
+          [routerLink]="link.path"
+          >{{ link.title }}</a
+        >
       </li>
     </ul>
   </div>
@@ -24,10 +28,10 @@
     </button>
     <div class="dropdown-menu" [ngClass]="{ show: this.dropDown1 }" (mouseleave)="this.dropDown1 = false">
       <a class="dropdown-item" [routerLink]="['/all']">Read All Posts</a> -->
-      
-      <!--<div class="dropdown-divider"></div>
+
+  <!--<div class="dropdown-divider"></div>
        what would go here?-->
-    <!-- </div>
+  <!-- </div>
   </div> -->
 
   <!-- DROP DOWN NAV LIST FOR "CONTRIBUTORS" -->
@@ -35,12 +39,21 @@
     <button class="nav-link dropdown-toggle btn" (click)="toggle('dropDown2')">
       Contributors
     </button>
-    <div class="dropdown-menu" [ngClass]="{ show: this.dropDown2 }" (mouseleave)="this.dropDown2 = false">
-      <a class="dropdown-item" [routerLink]="['/contributor']">Meet the Contributors</a>
-      <a *ngFor="let contrib of contribs" class="dropdown-item" [routerLink]="['/contributor-profile', contrib.id]">Meet
-        {{ contrib.name }}</a>
+    <div
+      class="dropdown-menu"
+      [ngClass]="{ show: this.dropDown2 }"
+      (mouseleave)="this.dropDown2 = false"
+    >
+      <a class="dropdown-item" [routerLink]="['/contributor']"
+        >Meet the Contributors</a
+      >
+      <a
+        *ngFor="let contrib of contribs"
+        class="dropdown-item"
+        [routerLink]="['/contributor-profile', contrib.id]"
+        >Meet {{ contrib.firstName }}</a
+      >
       <div class="dropdown-divider"></div>
-      
 
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" [routerLink]="['/admin']">Admin Only</a>
@@ -48,25 +61,37 @@
   </div>
 
   <!-- DROP DOWN NAV LIST FOR "USERS" -->
-  <div class="nav-item dropdown">
+  <div *ngIf="user != null" class="nav-item dropdown">
     <button class="nav-link dropdown-toggle btn" (click)="toggle('dropDown3')">
-      Users
+      Hello {{ user.firstName }}
     </button>
-    <div class="dropdown-menu" [ngClass]="{ show: this.dropDown3 }" (mouseleave)="this.dropDown3 = false">
-      <a class="dropdown-item" [routerLink]="['/sign-in']">Log In</a>
+    <div
+      class="dropdown-menu"
+      [ngClass]="{ show: this.dropDown3 }"
+      (mouseleave)="this.dropDown3 = false"
+    >
       <!-- <a class="dropdown-item" [routerLink]='["/create-account"]'>Create Account</a> -->
-      <a class="dropdown-item" [routerLink]="['/user-profile']">User Profile</a>
-      <a class="dropdown-item" [routerLink]="['/contact-us']">Submit A Blog Request</a>
+      <a class="dropdown-item" [routerLink]="['/user-profile/', user.id]"
+        >User Profile</a
+      >
+      <a class="dropdown-item" [routerLink]="['/contact-us']"
+        >Submit A Blog Request</a
+      >
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" [routerLink]="['/sign-out']">Log Out</a>
+      <button (click)="logout()" class="dropdown-item" >Log Out</button>
     </div>
   </div>
 
-    <!-- SEARCH KEYWORD form -->
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search Keyword" aria-label="Search" />
-      <button class="btn btn-outline-accent my-2 my-sm-0" type="submit">
-        Search
-      </button>
-    </form>
+  <!-- SEARCH KEYWORD form -->
+  <form class="form-inline my-2 my-lg-0">
+    <input
+      class="form-control mr-sm-2"
+      type="search"
+      placeholder="Search Keyword"
+      aria-label="Search"
+    />
+    <button class="btn btn-outline-accent my-2 my-sm-0" type="submit">
+      Search
+    </button>
+  </form>
 </nav>

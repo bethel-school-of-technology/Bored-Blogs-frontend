@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Message } from "src/app/models/message";
-import { MessageService } from "src/app/services/message.service";
+import { AlertService } from "src/app/services/alert.service";
 import { Observable } from "rxjs";
 
 @Component({
@@ -9,18 +9,14 @@ import { Observable } from "rxjs";
   styleUrls: ["./alerts.component.scss"],
 })
 export class AlertsComponent implements OnInit {
-  messages: Message[];
-  constructor(private messageService: MessageService) {}
-  updateMySelf(messages: Message[]) {
-    this.messages = messages;
-  }
-  
+  messages: Message[] = [];
+  constructor(private messageService: AlertService) {}
+
   ngOnInit() {
-    this.messageService.setAlert(this);
-    this.messages = this.messageService.getMessages();
+    this.messageService.getMessages().subscribe((m) => (this.messages = m));
   }
 
-  deleteMe(index: number) {
+  deleteAlert(index: number) {
     this.messageService.deleteMessage(index);
   }
 }

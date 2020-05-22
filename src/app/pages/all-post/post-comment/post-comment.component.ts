@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { Comment } from "../../../models/comment";
 import { PostCommentService } from "../../../services/post-comment.service";
+import { UserService } from 'src/app/services/user.service';
+import { PostDataService } from 'src/app/services/post-data.service';
 
 @Component({
   selector: "post-comment",
@@ -9,19 +11,20 @@ import { PostCommentService } from "../../../services/post-comment.service";
   styleUrls: ["./post-comment.component.scss"],
 })
 export class PostCommentComponent implements OnInit {
-  @Input() newComment: Comment;
-  isAdmin = false;
+  // @Input() newComment: Comment;
 
-  addComment():void {
-    this.commentDataService
-      .addComment(this.newComment)
-      .subscribe((p) => this.router.navigate(["/post-detail"]));
+
+  constructor( 
+    private postDataService: PostDataService,
+    private postCommentService: PostCommentService, 
+    private userService: UserService, 
+    private router: Router,
+    private route: ActivatedRoute) { }
+
+    
+
+  ngOnInit() {
+    
   }
 
-  constructor(
-    private commentDataService: PostCommentService,
-    private router: Router
-  ) {}
-
-  ngOnInit() {}
 }

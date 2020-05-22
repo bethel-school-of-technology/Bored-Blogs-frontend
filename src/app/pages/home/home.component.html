@@ -54,7 +54,7 @@
         <!-- Display the most current Blog Post by id (SELECTED BY createdDate) -->
         <h1 class="blogTitle font-italic"><strong>{{ Post.title }}</strong></h1>
 
-        <strong>Contributed by: {{ Post.author }} </strong>
+        <strong>Contributed by: {{ Post.author.firstName }} {{ Post.author.lastName }} </strong>
         <br>
         <!-- <strong>Post Date: {{Post.createdAt }}</strong> HOW CAN WE ADD THIS TIMESTAMP TO SHOW WITH THE POSTS?? -->
         <br>
@@ -94,10 +94,10 @@
 
       <!-- CAN THE contributor.name & contributor.img BE ANCHOR LINKS TO EA CONTRIBUTOR PROFILE PG??? -->
       <div *ngFor="let contributor of contributors;">
-        <a [routerLink]='["/contributor-profile/:id"]'>
+        <a [routerLink]='["/contributor-profile/",contributor.id]'>
           <img src="{{contributor.url}}" class="rounded-circle" href="http://localhost:4200/contributor-profile">
         </a>
-        <a [routerLink]='["/contributor-profile/:id"]'>
+        <a [routerLink]='["/contributor-profile/",contributor.id]'>
           <h6 class="text-center p-4">{{contributor.name}}</h6>
         </a>
         <br>

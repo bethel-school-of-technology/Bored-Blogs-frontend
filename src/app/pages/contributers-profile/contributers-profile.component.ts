@@ -4,7 +4,9 @@ import { Contributor } from "src/app/models/contributor";
 import { ContributorService } from "src/app/services/contributor.service";
 import { PostDataService } from "src/app/services/post-data.service";
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
-import { Game, Games } from 'src/app/models/games';
+import { Game, Games } from "src/app/models/games";
+import { User } from "src/app/models/user";
+import { UserService } from "src/app/services/user.service";
 
 @Component({
   selector: "app-contributers-profile",
@@ -14,30 +16,23 @@ import { Game, Games } from 'src/app/models/games';
 export class ContributersProfileComponent implements OnInit {
   constructor(
     private contribtorService: ContributorService,
+    private userService: UserService,
     private postService: PostDataService,
     private route: ActivatedRoute
   ) {}
   //TODO: create a contributor service and move this to there
-  contributor: Contributor;
-  games:Game[] = [
-    new Game('game1'),
-    new Game('game2'),
-  ];
+  contributor: User;
+  games: Game[] = [new Game("game1"), new Game("game2")];
   posts: Post[] = [];
   ngOnInit() {
     this.route.params.subscribe((params) => {
       var id = params["id"];
-      console.log(id)
-      this.getContrib(id);
+      console.log(id);
+      this.userService
+        .getCurrentUser()
+        .subscribe((u) => (this.contributor = u));
+      //this.getContrib(id);
       this.getPostByAuthorID(id);
-    });
-  }
-
-  getContrib(authorId: number) {
-    this.contribtorService.getContributor(authorId).subscribe((contributor) => {
-      this.contributor = contributor;
-      //this.games = contributor.bio.favoriteGames
-      console.log(this.contributor);
     });
   }
 

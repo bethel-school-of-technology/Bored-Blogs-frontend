@@ -4,18 +4,60 @@ import { User } from "../models/user";
 import { Config } from "../config/config";
 import { CookieService } from "ngx-cookie-service";
 import { share } from "rxjs/operators";
+import { Observable, of, Subject } from "rxjs";
+import { Router } from '@angular/router';
 
-/**
- * This will comunicate to the backend
- * signing component uses this to talk to backend
- */
+var users: User[] = [
+  {
+    id: 0,
+    email: "penny@dollar.com",   
+    password: "123456",
+    firstName: "Penny",
+    lastName: "Coin",
+    bio: "I love games and learning new games online. There is such a fun online gaming community, even for board games", 
+    lastLoggedIn: "05/12/20",
+    createdAt: "02/02/19",
+    token: "test",
+    isAdmin: false,
+  },
+  {
+    id: 1,
+    email: "springer123@show.com",
+    password: "123456",
+    firstName: "Jerry",
+    lastName: "Springer",
+    bio: "I love to make game shows on TV out of peoples lives.",
+    lastLoggedIn: "02/12/20",
+    createdAt: "04/30/19",
+    token: "test",
+    isAdmin: false,
+  },
+  {
+    id: 2,
+    email: "kblack_67@email.com",
+    password: "123456",
+    firstName: "Karen",
+    lastName: "Black",
+    bio: "test test test bio for Karen Black",
+    lastLoggedIn: "05/18/20",
+    createdAt: "04/01/19",
+    token: "test",
+    isAdmin: false,
+  },
+];
+
+const weAreUsingCloud = Config.weAreUsingCloud;
 
 @Injectable({
   providedIn: "root",
 })
 export class UserService {
-  private currentUser: any;
-  constructor(private http: HttpClient, private cookieService: CookieService) {}
+  url: string = Config.apiUrl;
+
+  private currentUser: Subject<User> = new Subject();
+  constructor(private http: HttpClient, private cookieService: CookieService) {
+    this.currentUser.pipe(share());
+  }
 
   //this registers an account
   createAccount(user: User) {
@@ -29,7 +71,8 @@ export class UserService {
       .post(`${Config.apiUrl}/users/register`, user)
       .pipe(share());
     Observable.subscribe((user: User) => {
-      this.currentUser = user;
+      console.log(user);
+      this.currentUser.next(user); 
       //? is it safe to store cookie here?
       //the only other place i can put it is on the root app instance
       this.cookieService.set("token", user.token);
@@ -37,20 +80,29 @@ export class UserService {
     return Observable;
   }
 
-  logout(){
-    //the user is logged out
-    this.currentUser = null;
-  }
-
+  // Login in user
   login(user: User) {
     const Observable = this.http
       .post(`${Config.apiUrl}/users/login`, user)
       .pipe(share());
     Observable.subscribe((user: User) => {
-      this.currentUser = user;
+      console.log(user);
+      this.currentUser.next(user);
       this.cookieService.set("token", user.token);
     });
     return Observable;
+  }
+
+  isLoggedIn(): boolean {
+    return this.currentUser != null;
+  }
+
+  isAdmin() {
+    //TODO: run the is admin endpoint perhaps
+  }
+  // Log out user
+  logout() {
+    this.currentUser.next(null);    
   }
 
   //TODO: fix spelling and make it work
@@ -62,11 +114,16 @@ export class UserService {
     //TODO: eat the cookie
   }
 
-  isLoggedIn(): boolean {
-    return this.currentUser != null;
+  // Get user by id to display on User Profile page
+  getUser(id: number): Observable<User> {
+    if (Config.weAreUsingCloud) {
+      return this.http.get<User>(Config.apiUrl + "/users/profile/" + id);
+    } else {
+      return of({ ...users.find((u) => u.id == id) });
+    }
   }
-
-  isAdmin() {
-    //TODO: run the is admin endpoint perhaps
+  getCurrentUser(): Observable<User> {
+    //idk if this is secure or not
+    return (this.currentUser.asObservable());//is of() is the same as new Observable()
   }
 }

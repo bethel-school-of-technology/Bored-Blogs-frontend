@@ -3,8 +3,9 @@ import { Observable, of } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Comment } from "../models/comment";
 import { Config } from "../config/config";
+import { MyHeaders } from "./headers";
 
-var comments: Comment[] = [new Comment(1, "some user", "i like turtles")];
+const weAreUsingCloud = Config.weAreUsingCloud;
 
 @Injectable({
   providedIn: "root",
@@ -12,58 +13,34 @@ var comments: Comment[] = [new Comment(1, "some user", "i like turtles")];
 export class PostCommentService {
   url: string = Config.apiUrl;
 
-  getComments(): Observable<Comment[]> {
-    if (Config.weAreUsingCloud) {
-      return this.http.get<Comment[]>(this.url + "fixme"); //TODO:FIXME  the url needs to be updated and we need to add token to headers
-    } else {
-      return new Observable((observer) => {
-        var copy = [...comments];
-        observer.next(copy);
-      });
-    }
+  getComments(parentPostId: number): Observable<Comment[]> {
+    return this.http.get<Comment[]>(
+      this.url + "/comments/read/" + parentPostId
+    ); //TODO:FIXME  the url needs to be updated and we need to add token to headers
   }
 
-  addComment(comment: Comment): Observable<Comment[]> {
-    if (Config.weAreUsingCloud) {
-      return this.http.post<Comment[]>(this.url + "post-detail", comment);
-    } else {
-      return new Observable((observer) => {
-        comments.push(comment);
-        var copy = [...comments];
-        observer.next(copy);
-      });
-    }
+  // Get comment by id to display on the associated post-detail page
+  getComment(id: number): Observable<Comment> {
+    return this.http.get<Comment>(this.url + "/comments/read/" + id);
+  }
+
+  // Add a comment to a post (User or Admin only) on post-detail page (by id)
+  addComment(comment: any, token: string): Observable<Comment[]> {
+    MyHeaders.headers.set("auth", token);
+    return this.http.post<Comment[]>(this.url + "/comments/create/", comment, {
+      headers: MyHeaders.headers,
+    });
   }
 
   updateComment(comment: Comment): Observable<Comment[]> {
-    if (Config.weAreUsingCloud) {
-        //TODO: needs the http thingy
-    } else {
-      return new Observable((observer) => {
-        for (var i = 0; i < comments.length; i++) {
-          //      look through the array and replace the item
-          if (comment.id == i) {
-            comments[i] = comment;
-            i = comments.length; //we found what we wanted we can stop
-          }
-        }
-        var copy = [...comments];
-        observer.next(copy);
-      });
-    }
-    
+    return this.http.put<Comment[]>(
+      this.url + "/comments/update/" + comment.id,
+      comment
+    );
   }
 
   deleteComment(id: number): Observable<Comment[]> {
-    if (Config.weAreUsingCloud) {
-      return this.http.delete<Comment[]>(this.url + 'post-detail' + id);
-    } else {
-      return new Observable((observer) => {
-        comments = comments.filter((p) => p.id != id);
-        var copy = [...comments];
-        observer.next(copy);
-      });
-    }
+    return this.http.delete<Comment[]>(this.url + "/comments/delete/" + id);
   }
 
   constructor(private http: HttpClient) {}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "post-comment.component.scss"
+    ],
+    "names": [],
+    "file": "post-comment.component.css"
+}

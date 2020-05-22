@@ -1,33 +1,94 @@
+<!-- Display the selected post -->
 <section>
-    <div *ngIf="true" class="container">
-      <div class="Post" *ngFor="let Post of post">
-        <h3 class="postTitle">{{ this.Post.title }}</h3>
-        <p class="postBody">
-          <strong>Contributed by: {{ this.Post.author }}</strong>
+  <div *ngIf="post != null" class="container">
+    <div class="Post">
+      <h3 class="title">
+        {{ this.post.title }} also hello user
+        {{ user != null ? user.firstName : "not logged in" }}
+      </h3>
+      <p class="postBody">
+        <strong
+          >Contributed by: {{ post.author.firstName }}
+          {{ post.author.lastName }}
           <br />
-          <br />
-          {{ this.Post.body }}
-        </p>
+          Published on: {{ post.published }}</strong
+        >
+        <br />
+        <br />
+        {{ post.body }}
+      </p>
+      <h4 class="commentHeader">Comments</h4>
+    </div>
+    <!-- </div> -->
+
+    <!-- DISPLAY ALL THE COMMENTS ON THIS POST -->
+    <!-- <div *ngIf="true" class="container"> -->
+
+    <div class="comments" *ngFor="let comment of comments">
+      <strong>{{ comment.author.firstName }}</strong>
+      {{ comment.createdAt }}
+      <br />
+      {{ comment.body }}
+
+      <!-- if we were using post comment this is how we would do it -->
+      <!-- <post-comment [newComment]="comment"></post-comment>  -->
+    </div>
+    <div>
+      <br />
+      <button
+        class="tablinks btn btn-primary btn-sm"
+        (click)="isOpen = !isOpen"
+      >
+        Add Comment
+      </button>
+      <button [routerLink]="['/all']" class="btn btn-primary btn-sm">
+        Return to All Blog Posts
+      </button>
+    </div>
+    <!-- buttons -->
+
+    <div class="form-group">
+      <div id="commentInput" class="collapse" [ngClass]="{ show: isOpen }">
+        <form #f="ngForm" (ngSubmit)="addComment(f)">
+          <div>
+            <label class="text-white" for="body"
+              ><strong>Add A Comment</strong></label
+            >
+            <textarea
+              class="form-control"
+              id="commentBody"
+              cols="100"
+              rows="2"
+              type="text"
+              name="body"
+              #body="ngModel"
+              ngModel
+            >
+            </textarea
+            ><button class="btn btn-primary btn-sm submit" type="submit">
+              Submit
+            </button>
+          </div>
+        </form>
       </div>
     </div>
-    <button [routerLink]="['/all']" class="btn btn-accent">Return to All Blog Posts</button>
-  </section>
+  </div>
+</section>
 
+<!-- <post-comment></post-comment> -->
 
-
-
- <!-- ? Kamyla - trying to only pull one blog post at a time instead of all of them
- {{this.post.title}}
-    {{this.post.author}}
-    {{this.post.body}}
--->
-
-
-<!-- we need the emitter stuff -->
-
-
-<!--TODO I want the "Add a Comment" button to be collapsible, and
-  when clicked to show all comments already made on that post, and
-  to show the post-comment component so the user can add a new comment -->
-
-
+<!-- Textarea to enter a comment at the bottom of a specific post -->
+<!-- <div class="form-group">
+    <form (ngSubmit)="addComment()" >
+      <div>
+        <label class="text-white" for="body"><strong>Add Comment</strong></label>
+        <textarea class="form-control" id="body" cols="100" rows="2" type="text" name="body"
+          [(ngModel)]="this.newComment.body">
+        </textarea>
+      </div>
+      <br>
+      <!-- buttons -->
+<!-- <button class="btn btn-primary" (click)="addComment()">Submit</button>
+      <button [routerLink]="['/all']" class="btn btn-primary">Return to All Blog Posts</button> -->
+<!-- </form>
+  </div> -->

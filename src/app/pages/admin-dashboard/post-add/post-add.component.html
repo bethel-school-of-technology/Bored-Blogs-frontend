@@ -1,35 +1,32 @@
 <!--THIS COMPONENT IS WHERE ADMINS CAN ADD A NEW BLOG POST-->
 <div class="container">
-<h3>Create a New Blog Post</h3>
-<div class="form-group">
-  <form (ngSubmit)="addPost()">
-    <div>
-      <label for="title">
-        <strong>
-        Title
-      </strong>
-      </label>
-      <input class="form-control col-4" id="title" type="text" name="title" required [(ngModel)]="newPost.title">
-    </div>
-    <div>
-      <label for="author">
-        <strong>
-        Author
-      </strong>
-      </label>
-      <input class="form-control col-4" id="author" type="text" name="author" required [(ngModel)]="newPost.author">
-    </div>
-    <div>
-      <label for="body">
-        <strong>
-        Body
-      </strong>
-      </label>
-      <textarea class="form-control" id="body" cols="100" rows="10" type="text" name="body" [(ngModel)]="newPost.body">
+  <h3>Create a New Blog Post</h3>
+  <div class="form-group">
+    <form (ngSubmit)="addPost()">
+      <div>
+        <label for="title">
+          <strong>
+            Title
+          </strong>
+        </label>
+        <input class="form-control col-4" id="title" type="text" name="title" required [(ngModel)]="newPost.title">
+      </div>
+
+      <!-- <div>
+        <label for="author">
+          <strong>Author</strong>
+        </label>
+        <input class="form-control col-4" id="author" type="text" name="author" required [(ngModel)]="newPost.author">
+      </div> -->
+
+      <div>
+        <label for="body"><strong>Body</strong></label>
+        <textarea class="form-control" id="body" cols="100" rows="10" type="text" name="body"
+          [(ngModel)]="newPost.body">
       </textarea>
-    </div>
-    <br>
-    <button class="btn btn-primary" (click)="addPost()">Add Post</button>
-  </form>
-  <button [routerLink]="['/admin']" class="btn btn-accent">Return to Admin Dashboard</button>
-</div>
+      </div>
+      <br>
+      <button class="btn btn-primary" (click)="addPost()">Add Post</button>
+    </form>
+    <button [routerLink]="['/admin']" class="btn btn-accent">Return to Admin Dashboard</button>
+  </div>

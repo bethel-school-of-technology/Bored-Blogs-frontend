@@ -3,16 +3,18 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { Post } from "../models/post";
 import { Config } from "../config/config";
+import { UserService } from "./user.service";
+import { map } from "rxjs/operators";
 
 // POSTS SHOULD BE SORTED BY CREATED AT DATE -- NEWEST FIRST (Jackie)
 var posts: Post[] = [
+  /*
   {
     id: 0,
     authorId: 1,
     author: "Jacob Stanton",
     title: "Settlers of Catan",
-    // DO WE NEED TO ADD "createdAt" DATE FROM TABLE to = createdDate (Jackie)
-    // createdDate: "05/05/2020",
+    published: "04/01/2020",
     preview:
       "Test PREVIEW. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
     body:
@@ -25,6 +27,7 @@ var posts: Post[] = [
     authorId: 2,
     author: "Jackie Roberts",
     title: "Ticket to Ride",
+    published: "03/28/2020",
     preview:
       "PREVIEW. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
     body:
@@ -37,6 +40,7 @@ var posts: Post[] = [
     authorId: 3,
     author: "Kayla Miller",
     title: "Dixit",
+    published: "01/19/2020",
     preview:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
     body:
@@ -49,6 +53,7 @@ var posts: Post[] = [
     authorId: 4,
     author: "Kamyla Andrlik",
     title: "Jungle Speed",
+    published: "05/01/2020",
     preview:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
     body:
@@ -61,6 +66,7 @@ var posts: Post[] = [
     authorId: 5,
     author: "Jacob Stanton",
     title: "Spot It",
+    published: "94/01/2020",
     preview:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
     body:
@@ -73,6 +79,7 @@ var posts: Post[] = [
     authorId: 6,
     author: "Jackie Roberts",
     title: "Werewolf",
+    published: "02/11/2020",
     preview:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
     body:
@@ -80,6 +87,7 @@ var posts: Post[] = [
     relatedGames: [],
     tags: [],
   },
+  */
 ];
 
 const weAreUsingCloud = Config.weAreUsingCloud;
@@ -89,11 +97,19 @@ const weAreUsingCloud = Config.weAreUsingCloud;
 })
 export class PostDataService {
   url: string = Config.apiUrl;
-  // url: string = "http://localhost:3000/"; JACKIE WANTS TO USE THIS TO TEST!!!
 
   getPosts(): Observable<Post[]> {
     if (Config.weAreUsingCloud) {
-      return this.http.get<Post[]>(this.url + "/posts");
+      return this.http.get<Post[]>(this.url + "/posts").pipe(
+        map((foo) => {
+          foo = foo.map((f) => {
+            f.preview = f.body.substr(0, 2000) + "...";//creates a preview
+            //console.log(foo);
+            return f;
+          });
+          return foo;
+        })
+      );
     } else {
       return new Observable((observer) => {
         var copy = [...posts];
@@ -102,10 +118,21 @@ export class PostDataService {
     }
   }
   //todo make getPostByauthor :for jackie :)
+  getPostby(authorId: number): Observable<Post> {
+    if (Config.weAreUsingCloud) {
+      return this.http.get<Post>(this.url + "/posts/read" + authorId);
+    } else {
+      return new Observable((observer) => {
+        observer.next({ ...posts.find((p) => p.authorId == authorId) });
+      });
+    }
+  }
 
   getPost(id: number): Observable<Post> {
     if (Config.weAreUsingCloud) {
-      return this.http.get<Post>(this.url + "/posts/read" + id);
+      var earl = this.url + "/posts/read" + id;
+      console.log(earl);
+      return this.http.get<Post>(earl);
     } else {
       return new Observable((observer) => {
         observer.next({ ...posts.find((p) => p.id == id) });
@@ -115,7 +142,7 @@ export class PostDataService {
 
   addPost(post: Post): Observable<Post[]> {
     if (Config.weAreUsingCloud) {
-      return this.http.post<Post[]>(this.url + "posts", post);
+      return this.http.post<Post[]>(this.url + "/posts", post);
     } else {
       return new Observable((observer) => {
         posts.push(post);
@@ -155,5 +182,5 @@ export class PostDataService {
     }
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private user: UserService) {}
 }

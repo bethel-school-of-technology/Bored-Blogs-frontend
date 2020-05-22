@@ -7,16 +7,16 @@ section {
 
 h1 {
   color: white;
-  text-decoration: underline;
+  // text-decoration: underline;
   text-align: center;
-  padding-bottom: 20px;
+  padding: 10px;
 
 }
 
 h3 {
   font-style: italic;
   color: white;
-  padding-top: 20px;
+  padding-top: 15px;
 }
 
 .postTitle {
@@ -33,3 +33,6 @@ h3 {
   padding: 20px;
 }
 
+.show {
+  margin-top: 7px;
+}

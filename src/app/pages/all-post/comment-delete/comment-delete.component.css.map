@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "comment-delete.component.scss"
+    ],
+    "names": [],
+    "file": "comment-delete.component.css"
+}
