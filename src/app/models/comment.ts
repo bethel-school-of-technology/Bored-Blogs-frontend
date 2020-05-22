@@ -10,12 +10,12 @@ export class Comment {
   //children:Comment[];  
   CommentId: number;
   authorId: number;
-  user: User;
+  author: User;
 
-  constructor(user: User, body: string, CommentId: number|null) {
+  constructor(author: User, body: string, CommentId: number|null) {
     this.body = body;
     this.CommentId = CommentId;
-    this.authorId = user.id;
+    this.authorId = author.id;
   }
 
   emptyComment():Comment{

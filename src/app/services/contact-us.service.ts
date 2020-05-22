@@ -40,7 +40,7 @@ export class ContactUsService {
   submitContactForm(ContactUs: ContactUs): Observable<ContactUs[]> {
     if (Config.weAreUsingCloud) {
       return this.http.post<ContactUs[]>(
-        this.url + "ContactUs",
+        this.url + "/contactUs",
         contactUs
       );
     } else {

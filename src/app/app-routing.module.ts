@@ -48,7 +48,7 @@ export class R {
     // NAVBAR Titles & Order
     make("home", "Home", HomeComponent, true),
     make("boot", "Bootstrap Demo", BootDemoComponent, false),
-    make("all", "View All Posts", AllPostComponent, true),
+    make("posts", "View All Posts", AllPostComponent, true),
     make("contributor", "Meet the Contributors", ContributorsComponent, false), //JACKIE: In nav "Contributors" dropdown list
     make("contact-us", "Contact Us", ContactUsComponent, false), //JACKIE: In nav "Contributors" dropdown list
     make("sign-in", "Log In", SignInComponent, true), //JACKIE: In nav "Users" dropdown list

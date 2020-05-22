@@ -1,19 +1,25 @@
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+        </style>
+</head>
+
 <body>
-<!-- Header for the page -->
-<section id="header" class="d-flex justify-content-center">
-  <!--Display Name of contributor -->
-  <div class="contribName contribHeader">
-      <p class="" [ngStyle]="contributor.color">Hi! I'm {{ contributor.firstName }} {{ contributor.lastName }}!</p>
+  <div class="coverPage" [ngStyle]="contributor.color">
+    <h1 class="coverTitle">{{contributor.firstName}} {{contributor.lastName}}</h1>
   </div>
-</section>
+  <div>
+
 <section id="header" class="d-flex justify-content-center">
   <!-- Create profile Picture-->
   <div id="profilePicture">
     <img id="profPic" class="rounded-circle" src="{{contributor.url}}" />
   </div>
 </section>
+</div>
 
-<section id="body">
+<div>
+<section id="body" class=" justify-content-center">
   <!-- Tab Links-->
   <!-- TODO: think about animations and animating these changes for a better experience -->
   <div class="tab d-flex w-100 justify-content-center text-danger">
@@ -70,5 +76,9 @@
     </div>
   </div>
 </section>
+
+</div>
 </body>
+
+
 <!-- TODO: need contributor:id route for front and backend -->

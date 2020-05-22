@@ -25,12 +25,12 @@
     <!-- <div *ngIf="true" class="container"> -->
 
     <div class="comments" *ngFor="let comment of comments">
-      <strong>{{ comment.user }}</strong>
+      <strong>{{ comment.author.firstName }}</strong>
       {{ comment.createdAt }}
       <br />
       {{ comment.body }}
 
-      <!-- NOT SURE WHAT THIS IS FOR????? -->
+      <!-- if we were using post comment this is how we would do it -->
       <!-- <post-comment [newComment]="comment"></post-comment>  -->
     </div>
     <div>

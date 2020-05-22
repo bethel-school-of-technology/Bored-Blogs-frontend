@@ -53,7 +53,7 @@ export class PostDetailComponent implements OnInit {
   // Gets the list of comments at bottom of post
   getComments(parentPostId: number): void {
     this.postCommentService.getComments(parentPostId).subscribe((c) => {
-      //console.log(c);
+      console.log(c);
       this.comments = c;
     });
   }
