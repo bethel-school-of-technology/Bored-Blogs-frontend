@@ -11,11 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { SamePasswordValidatorDirective } from './validators/same-password-validator.directive';
 
-
 @NgModule({
   declarations: [
     AppComponent,
-    SamePasswordValidatorDirective
+    SamePasswordValidatorDirective,
   ],
   imports: [
     BrowserModule,

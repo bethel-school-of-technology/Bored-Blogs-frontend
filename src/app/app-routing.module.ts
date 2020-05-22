@@ -1,3 +1,4 @@
+import { UserSubmissionDetailsComponent } from './pages/admin-dashboard/user-submission-details/user-submission-details.component';
 import { UsersListComponent } from "./pages/users-list/users-list.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
@@ -66,6 +67,7 @@ export class R {
     make("users-list", "users-list", UsersListComponent, false),
     make("user-profile/:id", "User Profile", UserProfileComponent, false), //also for Change password //JACKIE: In nav "Users" dropdown list
     make("sign-out", "Log Out", SignOutComponent, false), //JACKIE: In nav "Users" dropdown list
+    make("user-submission-details", "User Submission Details", UserSubmissionDetailsComponent, false)
   ];
 
   static getRoutes(): Routes {
