@@ -37,7 +37,7 @@ export class PostDetailComponent implements OnInit {
       this.getComments(+param["id"]);
     });
     this.userService.getCurrentUser().subscribe((u) => (this.user = u));
-    this.userService.refreshSubject();
+    this.userService.refreshUser();
   }
 
   //opens and closes divs based on the selector
@@ -66,7 +66,7 @@ export class PostDetailComponent implements OnInit {
       .addComment(this.post.id, newComment.form.value, this.user.token)
       .subscribe(
         (c) => {
-          console.log(c);
+          //console.log(c);
           this.comments=(c);
         },
         (err) => {

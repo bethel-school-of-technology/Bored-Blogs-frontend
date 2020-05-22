@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { Post } from "src/app/models/post";
-import { Contributor } from "src/app/models/contributor";
 import { ContributorService } from "src/app/services/contributor.service";
 import { PostDataService } from "src/app/services/post-data.service";
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
@@ -34,7 +33,7 @@ export class ContributersProfileComponent implements OnInit {
     });
 
     this.userService.getCurrentUser().subscribe((u) => (this.contributor = u));
-    this.userService.refreshSubject();
+    this.userService.refreshUser();
   }
 
   getPostByAuthorID(authorId: number) {

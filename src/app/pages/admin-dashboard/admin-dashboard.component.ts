@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Contributor } from 'src/app/models/contributor';
 import { ContributorService } from 'src/app/services/contributor.service';
 import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
@@ -23,7 +22,7 @@ export class AdminDashboardComponent implements OnInit {
     this.userService
       .getCurrentUser()
       .subscribe((c) => (this.contributor = c));
-    this.userService.refreshSubject();
+    this.userService.refreshUser();
 
   }
 }

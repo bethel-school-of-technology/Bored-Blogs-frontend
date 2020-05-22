@@ -30,11 +30,12 @@ export class UserProfileComponent implements OnInit {
     this.route.params.subscribe(param => {
       console.log(param)
       this.userService
-        .getUser(+param['id'])
+        .getCurrentUser()
         .subscribe(u => {
-          console.log(u);
+          //console.log(u);
           this.user = u;
         });
+        this.userService.refreshUser();
     });
   }
 }
