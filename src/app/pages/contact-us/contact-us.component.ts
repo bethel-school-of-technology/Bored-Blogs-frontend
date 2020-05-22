@@ -1,7 +1,9 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ContactUs } from '../../models/contact-us';
 import { ContactUsService } from './../../services/contact-us.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-contact-us',
@@ -26,6 +28,8 @@ export class ContactUsComponent implements OnInit {
     The subject is ${f.value.subject}, and
     my message is ${f.value.message}.`;
     console.log(message);
+
+    this.dataService.getContactSubmissions().subscribe(contactUs => this.contactUs = contactUs);
   }
 
   log(x) { console.log(x); }

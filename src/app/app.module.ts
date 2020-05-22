@@ -1,3 +1,4 @@
+import { ContactUs } from './models/contact-us';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';

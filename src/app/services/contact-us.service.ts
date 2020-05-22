@@ -3,9 +3,9 @@ import { ContactUs } from '../models/contact-us';
 import { Injectable } from '@angular/core';
 import { Config } from "../config/config";
 import { Observable, of } from "rxjs";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpClientModule } from "@angular/common/http";
 
-var contactUs: ContactUs[] = [new ContactUs(1, "Kayla", "Miller", "kmiller69322@gmail.com", "Blog about Risk", "Risk is anawesome strategy game")];
+var contactUs: ContactUs[] = [];
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +18,7 @@ export class ContactUsService {
   getContactSubmissions(): Observable<ContactUs[]> {
   //console.log(contributors);
     if (Config.weAreUsingCloud) {
-      return this.http.get<ContactUs[]>(this.url + "ContactSubmissions");
+      return this.http.get<ContactUs[]>(this.url + "ContactSubmissions/");
     } else {
       return new Observable((observer) => {
         var copy = [...contactUs];
