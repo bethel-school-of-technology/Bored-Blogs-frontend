@@ -21,14 +21,6 @@ export class BootDemoComponent implements OnInit {
 
   ngOnInit() {}
   test() {
-    this.userService
-      .register(
-        new User(1, "test3", "password", "jake", "stanton", "my bio goes here", "05/16/20", "05/20/20")
-      )
-      .subscribe((user: User) => {
-        this.user = user;
-        console.log(this.user);
-      });
   }
 
   submitForm(f: NgForm) {

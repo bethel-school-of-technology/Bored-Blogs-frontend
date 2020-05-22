@@ -22,6 +22,7 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignOutComponent } from './sign-out/sign-out.component';
 import { ContribEditComponent } from './admin-dashboard/contrib-edit/contrib-edit.component';
+import { UserSubmissionDetailsComponent } from './admin-dashboard/user-submission-details/user-submission-details.component';
 
 
 // module is self explanatory
@@ -47,6 +48,7 @@ import { ContribEditComponent } from './admin-dashboard/contrib-edit/contrib-edi
     UserProfileComponent,
     SignOutComponent,
     ContribEditComponent,
+    UserSubmissionDetailsComponent,
   ],
   imports: [
     CommonModule,

@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 // Jackie imported Contributor & ContributorService
 import { ContributorService } from "src/app/services/contributor.service";
-import { Contributor } from "src/app/models/contributor";
 // Jackie imported Post & PostDataService
 import { PostDataService } from "src/app/services/post-data.service";
 import { Post } from "src/app/models/post";
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: "app-home",
@@ -14,7 +14,7 @@ import { Post } from "src/app/models/post";
 export class HomeComponent implements OnInit {
   //JACKIE:
   // Connect to backend to ge the contributors & all-posts
-  contributors: Contributor[];
+  contributors: User[];
   posts: Post[];
 
   constructor(
@@ -27,15 +27,6 @@ export class HomeComponent implements OnInit {
       //console.log(c);
       this.contributors = c;
     });
-
-    //JACKIE:
-    //Get the current blog post by ID or createdAt date --> FILTER TO JUST ONE POST!!!
     this.postDataService.getPosts().subscribe((p) => (this.posts = p));
-
-    //   this.params.subscribe(param => {
-    //     this.postDataService
-    //     .getPost(+param["id"])
-    //     .subscribe((p) => (this.Post = p));
-    // });
   }
 }
