@@ -20,20 +20,21 @@ export class ContributersProfileComponent implements OnInit {
     private postService: PostDataService,
     private route: ActivatedRoute
   ) {}
-  //TODO: create a contributor service and move this to there
+  
   contributor: User;
   games: Game[] = [new Game("game1"), new Game("game2")];
   posts: Post[] = [];
+
+
   ngOnInit() {
     this.route.params.subscribe((params) => {
       var id = params["id"];
       console.log(id);
-      this.userService
-        .getCurrentUser()
-        .subscribe((u) => (this.contributor = u));
-      //this.getContrib(id);
       this.getPostByAuthorID(id);
     });
+
+    this.userService.getCurrentUser().subscribe((u) => (this.contributor = u));
+    this.userService.refreshSubject();
   }
 
   getPostByAuthorID(authorId: number) {

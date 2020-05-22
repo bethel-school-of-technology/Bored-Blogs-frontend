@@ -10,6 +10,8 @@ export class User {
     isAdmin: boolean;
     lastLoggedIn: string;
     createdAt: string;
+
+    color:string;//todo jacob should update this and bring backend closer to frontend
     
     constructor(id: number, email: string, password: string, firstNam: string, lastName: string, bio: string, lastLoggedIn: string, createdAt: string) {
         this.id = id;
