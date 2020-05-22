@@ -8,21 +8,15 @@
   <div class="coverPage" [ngStyle]="contributor.color">
     <h1 class="coverTitle">{{contributor.firstName}} {{contributor.lastName}}</h1>
   </div>
-  <div>
-
-<section id="header" class="d-flex justify-content-center">
-  <!-- Create profile Picture-->
-  <div id="profilePicture">
-    <img id="profPic" class="rounded-circle" src="{{contributor.url}}" />
-  </div>
-</section>
-</div>
 
 <div>
-<section id="body" class=" justify-content-center">
+<section id="body" class="card justify-content-center">
+    <div id="profilePicture">
+        <img id="profPic" class="img-thumbnail d-block mx-auto" src="{{contributor.url}}" />
+      </div>
   <!-- Tab Links-->
   <!-- TODO: think about animations and animating these changes for a better experience -->
-  <div class="tab d-flex w-100 justify-content-center text-danger">
+  <div class="card tab d-flex w-100 justify-content-center text-danger">
     <button [ngStyle]="contributor.color" class="tabOptions" (click)="setSelector(1)">{{contributor.firstName}}'s Bio</button>
     <button [ngStyle]="contributor.color" class="tabOptions" (click)="setSelector(2)">{{contributor.firstName}}'s Recent Posts</button>
   </div>

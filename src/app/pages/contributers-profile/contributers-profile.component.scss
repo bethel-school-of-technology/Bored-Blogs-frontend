@@ -11,6 +11,7 @@ body {
 
 //background
 .coverPage{
+  background-color: blue;
   opacity: 0.75;
   color: white;
   padding-top: 25px;
@@ -19,29 +20,17 @@ body {
 //text
 .coverTitle{
   text-align: end;
-  font-size: 175px;
+  font-size: 125px;
   font-family: 'Notable', sans-serif;;
 }
 
 /* CONTRIBUTOR'S PROFILE PICTURE */
 
-//background
-#header {
-  border-radius: 10px 70px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin: 5px 250px;
-}
-
 // image itself
 #profilePicture {
-  position: relative;
-  bottom: -175px;
     img {
-        background-color: white;
         width: 250px;
         height: 250px;
-        margin-bottom: 50px;
         box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
         border-style: outset;
       }
@@ -51,12 +40,10 @@ body {
 
 //background
 #body {
-  position: relative;
-  background-color: whitesmoke;
+//  background-color: whitesmoke;
   opacity: 0.75;
-  border-radius: 10px 70px;
-  padding: 50px;
-  margin: 5px 250px;
+//  padding: 50px;
+  margin: 50px 250px;
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
@@ -64,7 +51,10 @@ body {
 // styles the tab that goes between bio and recent blogs
 
 button {
-  margin-top: 75px;
+  margin-top: 25px;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-bottom: 25px;
 }
 
 .tab {
