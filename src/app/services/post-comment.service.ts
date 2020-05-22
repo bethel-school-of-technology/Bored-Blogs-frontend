@@ -25,11 +25,18 @@ export class PostCommentService {
   }
 
   // Add a comment to a post (User or Admin only) on post-detail page (by id)
-  addComment(comment: any, token: string): Observable<Comment[]> {
-    MyHeaders.headers.set("auth", token);
-    return this.http.post<Comment[]>(this.url + "/comments/create/", comment, {
-      headers: MyHeaders.headers,
-    });
+  addComment(
+    postId: number,
+    comment: any,
+    token: string
+  ): Observable<Comment[]> {
+    return this.http.post<Comment[]>(
+      this.url + "/comments/create/" + postId,
+      comment,
+      {
+        headers: MyHeaders.createHeaders(token),
+      }
+    );
   }
 
   updateComment(comment: Comment): Observable<Comment[]> {

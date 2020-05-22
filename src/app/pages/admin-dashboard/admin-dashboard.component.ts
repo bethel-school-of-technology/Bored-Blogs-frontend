@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Contributor } from 'src/app/models/contributor';
 import { ContributorService } from 'src/app/services/contributor.service';
 import { NgForm } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'admin-dashboard',
@@ -9,20 +11,19 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./admin-dashboard.component.scss']
 })
 export class AdminDashboardComponent implements OnInit {
-  contributor: Contributor;
+  contributor: User;
 
-  constructor(private contributorService: ContributorService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.getContributor(1)//todo update with admin id
+    this.getContributor()//todo update with admin id
   }
 
-  getContributor(contributorId:number){
-    this.contributorService
-      .getContributor(contributorId)
+  getContributor(){
+    this.userService
+      .getCurrentUser()
       .subscribe((c) => (this.contributor = c));
-  }
-  cheatInAdminId(form:NgForm){
-    this.getContributor(form.value.id)
+    this.userService.refreshSubject();
+
   }
 }

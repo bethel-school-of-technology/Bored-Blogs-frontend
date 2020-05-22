@@ -37,6 +37,7 @@ export class PostDetailComponent implements OnInit {
       this.getComments(+param["id"]);
     });
     this.userService.getCurrentUser().subscribe((u) => (this.user = u));
+    this.userService.refreshSubject();
   }
 
   //opens and closes divs based on the selector
@@ -53,16 +54,24 @@ export class PostDetailComponent implements OnInit {
   // Gets the list of comments at bottom of post
   getComments(parentPostId: number): void {
     this.postCommentService.getComments(parentPostId).subscribe((c) => {
-      console.log(c);
+      //console.log(c);
       this.comments = c;
     });
   }
 
   addComment(newComment: NgForm) {
-    console.log(newComment, this.user);
-    console.log(this.user);
+    //console.log(newComment, this.user);
+    //console.log(this.user);
     this.postCommentService
-      .addComment(newComment, this.user.token)
-      .subscribe((c) => (this.comments = c)); // is this route correct to refresh pg + see comments
+      .addComment(this.post.id, newComment.form.value, this.user.token)
+      .subscribe(
+        (c) => {
+          console.log(c);
+          this.comments=(c);
+        },
+        (err) => {
+          console.log(err);
+        }
+      ); // is this route correct to refresh pg + see comments
   }
 }
