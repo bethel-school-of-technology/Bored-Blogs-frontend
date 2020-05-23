@@ -20,12 +20,9 @@ export class UserProfileComponent implements OnInit {
 
   user: User;
 
-  selector = -1;
-  setSelector(value: number) {
-    this.selector = value;
-  }
+ //Jackie to get one user to show on /user-detail/:id
 
-  //Jackie to get one user to show on /user-detail/:id
+ //To convert database date-time to readable date mm/dd/yyyy
   ngOnInit() {
     this.route.params.subscribe(param => {
       console.log(param)
@@ -33,9 +30,21 @@ export class UserProfileComponent implements OnInit {
         .getCurrentUser()
         .subscribe(u => {
           //console.log(u);
+          // for (var i = 0; i < u.length; i++) {
+            var tempDate = new Date(this.user.createdAt)
+            var day = '';
+            var month = '';
+            this.user.createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()} `;
+            this.user.lastLoggedIn = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()} `;
+          // } 
           this.user = u;
         });
-        this.userService.refreshUser();
+      this.userService.refreshUser();
     });
+  }
+
+  selector = -1;
+  setSelector(value: number) {
+    this.selector = value;
   }
 }
