@@ -6,12 +6,10 @@
         {{ this.post.title }}
       </h3>
       <p class="postBody">
-        <strong
-          >Contributed by: {{ post.author.firstName }}
+        <strong>Contributed by: {{ post.author.firstName }}
           {{ post.author.lastName }}
           <br />
-          Published on: {{ post.published }}</strong
-        >
+          Published on: {{ post.published }}</strong>
         <br />
         <br />
         {{ post.body }}
@@ -24,20 +22,15 @@
     <!-- <div *ngIf="true" class="container"> -->
 
     <div class="comments" *ngFor="let comment of comments">
-      <strong>{{ comment.author.firstName }}</strong>
+      <strong>{{ comment.author.firstName }}  {{ comment.author.lastName }}</strong>
       {{ comment.createdAt }}
       <br />
       {{ comment.body }}
 
-      <!-- if we were using post comment this is how we would do it -->
-      <!-- <post-comment [newComment]="comment"></post-comment>  -->
     </div>
     <div>
       <br />
-      <button
-        class="tablinks btn btn-primary btn-sm"
-        (click)="isOpen = !isOpen"
-      >
+      <button class="tablinks btn btn-primary btn-sm" (click)="isOpen = !isOpen">
         Add Comment
       </button>
       <button [routerLink]="['/all']" class="btn btn-primary btn-sm">
@@ -50,21 +43,10 @@
       <div id="commentInput" class="collapse" [ngClass]="{ show: isOpen }">
         <form #f="ngForm" (ngSubmit)="addComment(f)">
           <div>
-            <label class="text-white" for="body"
-              ><strong>Add A Comment</strong></label
-            >
-            <textarea
-              class="form-control"
-              id="commentBody"
-              cols="100"
-              rows="2"
-              type="text"
-              name="body"
-              #body="ngModel"
-              ngModel
-            >
-            </textarea
-            ><button class="btn btn-primary btn-sm submit" type="submit">
+            <label class="text-white" for="body"><strong>Add A Comment</strong></label>
+            <textarea class="form-control" id="commentBody" cols="100" rows="2" type="text" name="body" #body="ngModel"
+              ngModel>
+            </textarea><button class="btn btn-primary btn-sm submit" type="submit">
               Submit
             </button>
           </div>
