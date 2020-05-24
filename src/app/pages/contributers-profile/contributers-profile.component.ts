@@ -3,7 +3,7 @@ import { Post } from "src/app/models/post";
 import { ContributorService } from "src/app/services/contributor.service";
 import { PostDataService } from "src/app/services/post-data.service";
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
-import { Game, Games } from "src/app/models/games";
+import { Game } from "src/app/models/game";
 import { User } from "src/app/models/user";
 import { UserService } from "src/app/services/user.service";
 

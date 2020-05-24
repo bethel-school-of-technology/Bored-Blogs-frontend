@@ -12,7 +12,7 @@ export class User {
     isAdmin: boolean;
     lastLoggedIn: string;
     createdAt: string;
-    color:string;//todo jacob should update this and bring backend closer to frontend
+    style:string;//todo jacob should update this and bring backend closer to frontend
     url: String;
 
     name:string;//backend doesnt give a concated name but service can glue them together;

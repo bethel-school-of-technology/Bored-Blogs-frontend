@@ -1,5 +1,5 @@
 import { Timestamp } from 'rxjs/internal/operators/timestamp';
-import { Game } from './games';
+import { Game } from './game';
 import { User } from './user';
 
 export class Post {
