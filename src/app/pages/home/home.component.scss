@@ -1,3 +1,4 @@
+/* -- ENTIRE HOME PAGE BACKGROUND -- */
 .container {
   background-image: url('../../../assets/images/board-game-bg-image1-v2.jpg');
   background-repeat: no-repeat;
@@ -7,6 +8,8 @@
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
+
+/* -- BORED BLOG MAIN HEADER -- */
 .title {
   font-family: 'Indie Flower', cursive;
   font-size: 5em;
@@ -14,7 +17,7 @@
   background: linear-gradient(90deg, rgba(48,194,48,1) 0%, rgba(233,240,74,0.9587185215883228) 50%, rgba(0,110,255,1) 100%);
   // box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
-
+//PICTURE OF BORED GAME TO GO WITH HEADER
 img {
   display: block;
   margin-left: auto;
@@ -23,15 +26,20 @@ img {
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
+//GAME OF THE WEEK SECTION
 .gameOfWeek {
   background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(243, 243, 161));
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
+//CONTRIBUTORS SECTION
+//? HOW DO I MAKE THE "MEET THE CONTRIBUTORS" HEADER RESPONSIVE?
 .contributors {
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
+
+//ALL BUTTONS
 button.btn {
   display: block;
   margin-left: auto;
@@ -39,11 +47,13 @@ button.btn {
   box-shadow: 4px 5px 10px 2px rgba(66, 64, 64, 0.8);
 }
 
+//WHAT IS BORED BLOG PICTURE
 .gameImg1 {
   width: 100%;
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
+//GAME OF THE WEEK PICTURE
 .gameImg2 {
   width: 75%;
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
