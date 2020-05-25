@@ -1,32 +1,35 @@
+ <!-- Importing font style for contributor name-->
 <head>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
         </style>
 </head>
 
-<body>
+ <!-- Contributor name-->
+
+<body class="flex-grid-container">
   <div class="coverPage" [ngStyle]="contributor.color">
-    <h1 class="coverTitle">{{contributor.firstName}} {{contributor.lastName}}</h1>
+    <h1 class="coverTitle">Jacob Stanton{{contributor.firstName}} {{contributor.lastName}}</h1>
   </div>
-  <div>
 
-<section id="header" class="d-flex justify-content-center">
-  <!-- Create profile Picture-->
+  <!-- Contributor profile picture-->
+
   <div id="profilePicture">
-    <img id="profPic" class="rounded-circle" src="{{contributor.url}}" />
+    <img id="profPic" class="img-thumbnail d-block mx-auto" src="{{contributor.url}}" />
   </div>
-</section>
-</div>
 
-<div>
-<section id="body" class=" justify-content-center">
+
+<div class="justify-content-center d-block mx-auto">
+<section id="body" class="w-50 p-3">
+
   <!-- Tab Links-->
-  <!-- TODO: think about animations and animating these changes for a better experience -->
-  <div class="tab d-flex w-100 justify-content-center text-danger">
+
+  <div class="tab justify-content-center text-danger">
     <button [ngStyle]="contributor.color" class="tabOptions" (click)="setSelector(1)">{{contributor.firstName}}'s Bio</button>
     <button [ngStyle]="contributor.color" class="tabOptions" (click)="setSelector(2)">{{contributor.firstName}}'s Recent Posts</button>
   </div>
 <br />
+
   <!-- Tab Content (ABOUT)-->
   <div
     id="about"
@@ -51,21 +54,22 @@
   </div>
 
   <br />
+
   <!-- Tab Content (POSTS)-->
+
   <div
     id="recentPosts"
     [ngClass]="{ 'd-none': this.selector != 2 }"
     class="tabcontent"
   >
+
     <!-- Create the recent posts template-->
     <div id="postContainer">
       <div class="post" *ngFor="let Post of posts">
         <h2 class="postTitle">{{Post.title}}</h2>
         <div class="tagsGames">
           <img class="tagIcon" src="../../../assets/images/tag.png" />
-          <!-- THIS IS WHAT IS CAUSING "object object" TO SHOW IN THE CONTRIBUTOR PROFILE PAGES -->
-          <!-- Post.tags & Post.games -> need to be fixed in services -->
-          <!-- <p> Tags: {{Post.tags}}</p> -->
+
           <img class="tagIcon" src="../../../assets/images/dice & pieces.jpg" />
           <!-- <p class="relGames"> Related Game(s): {{Post.games}}</p> -->
         </div>
@@ -79,6 +83,3 @@
 
 </div>
 </body>
-
-
-<!-- TODO: need contributor:id route for front and backend -->
