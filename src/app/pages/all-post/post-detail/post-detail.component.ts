@@ -33,6 +33,13 @@ export class PostDetailComponent implements OnInit {
       this.postDataService.getPost(+param["id"]).subscribe((p) => {
         //console.log(p);
         this.post = p;
+
+        // this.comments = c;
+        // var tempDate = new Date(this.comments.createdAt)
+        // var day = '';
+        // var month = '';
+        // this.comments.createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()}`;
+
       });
       this.getComments(+param["id"]);
     });
@@ -56,6 +63,10 @@ export class PostDetailComponent implements OnInit {
     this.postCommentService.getComments(parentPostId).subscribe((c) => {
       //console.log(c);
       this.comments = c;
+      var tempDate = new Date(this.comments.createdAt)
+      var day = '';
+      var month = '';
+      this.comments.createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()}`;
     });
   }
 
@@ -68,6 +79,10 @@ export class PostDetailComponent implements OnInit {
         (c) => {
           //console.log(c);
           this.comments=(c);
+          var tempDate = new Date(this.comments.createdAt)
+          var day = '';
+          var month = '';
+          this.comments.createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()}`;
         },
         (err) => {
           console.log(err);
