@@ -1,4 +1,5 @@
 /* BACKGROUND IMAGE OF ENTIRE PAGE */
+
 body {
   background-image: url('../../../assets/images/game1.jpeg');
   background-repeat: no-repeat;
@@ -7,6 +8,7 @@ body {
   height: 100%;
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
+
 /* TOP OF PAGE WITH CONTRIBUTOR'S NAME */
 
 //background
@@ -20,19 +22,22 @@ body {
 //text
 .coverTitle{
   text-align: end;
-  font-size: 125px;
+  font-size: 10vw;
   font-family: 'Notable', sans-serif;;
+  text-align: end;
 }
 
 /* CONTRIBUTOR'S PROFILE PICTURE */
 
 // image itself
 #profilePicture {
+  padding: 25px;
     img {
         width: 250px;
         height: 250px;
         box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
         border-style: outset;
+        max-width: 100%;
       }
 }
 
@@ -40,30 +45,23 @@ body {
 
 //background
 #body {
-//  background-color: whitesmoke;
+  background-color: whitesmoke;
   opacity: 0.75;
-//  padding: 50px;
-  margin: 50px 250px;
+  margin: auto;
+  width: 50%;
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+  border-radius: 10px 70px;
 }
-
 
 // styles the tab that goes between bio and recent blogs
-
-button {
-  margin-top: 25px;
-  margin-left: 250px;
-  margin-right: 250px;
-  margin-bottom: 25px;
-}
-
 .tab {
     overflow: hidden;
     width: 190px;
     animation-timing-function: ease-in-out;
     animation-duration: 3s;
 }
-// Style the tabs
+
+// Style the button tabs
 .tabOptions {
     color: black;
     background-color: red;

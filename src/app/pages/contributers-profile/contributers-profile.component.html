@@ -9,20 +9,22 @@
 
 <body class="flex-grid-container">
   <div class="coverPage" [ngStyle]="contributor.color">
-    <h1 class="coverTitle">{{contributor.firstName}} {{contributor.lastName}}</h1>
+    <h1 class="coverTitle">Jacob Stanton{{contributor.firstName}} {{contributor.lastName}}</h1>
   </div>
 
- <!-- Contributor profile picture-->
+  <!-- Contributor profile picture-->
 
-<div>
-<section id="body" class="card d-flex col-md-6 col-sm-4 justify-content-center">
-    <div id="profilePicture">
-        <img id="profPic" class="img-thumbnail d-block mx-auto" src="{{contributor.url}}" />
-      </div>
+  <div id="profilePicture">
+    <img id="profPic" class="img-thumbnail d-block mx-auto" src="{{contributor.url}}" />
+  </div>
+
+
+<div class="justify-content-center d-block mx-auto">
+<section id="body" class="w-50 p-3">
 
   <!-- Tab Links-->
 
-  <div class="card tab d-flex w-100 justify-content-center text-danger">
+  <div class="tab justify-content-center text-danger">
     <button [ngStyle]="contributor.color" class="tabOptions" (click)="setSelector(1)">{{contributor.firstName}}'s Bio</button>
     <button [ngStyle]="contributor.color" class="tabOptions" (click)="setSelector(2)">{{contributor.firstName}}'s Recent Posts</button>
   </div>
@@ -81,6 +83,3 @@
 
 </div>
 </body>
-
-
-<!-- TODO: need contributor:id route for front and backend -->
