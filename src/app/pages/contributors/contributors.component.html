@@ -7,14 +7,14 @@
     >
       <div class="m-2" *ngFor="let contributor of contributors">
         <div class="card">
-          <h2 [ngStyle]="contributor.color" class="text-best-color">
+          <h2 [ngStyle]="contributor.style" class="text-best-color">
             {{ contributor.name }}
           </h2>
           <img class="w-25" src="{{ contributor.url }}" />
-          <p>{{ contributor.bio.body }}</p>
+          <p *ngIf="contributor.bio != null">{{ contributor.bio.body }}</p>
           <a [routerLink]="['/contributor-profile', contributor.id]"
             ><button
-              [ngStyle]="contributor.color"
+              [ngStyle]="contributor.style"
               class="btn btn-primary d-block mx-auto"
             >
               More about {{ contributor.firstName }}

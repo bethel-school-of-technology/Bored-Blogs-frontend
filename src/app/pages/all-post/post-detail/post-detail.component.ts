@@ -71,13 +71,13 @@ export class PostDetailComponent implements OnInit {
   }
 
   addComment(newComment: NgForm) {
-    //console.log(newComment, this.user);
+    console.log(newComment);
     //console.log(this.user);
     this.postCommentService
       .addComment(this.post.id, newComment.form.value, this.user.token)
       .subscribe(
         (c) => {
-          //console.log(c);
+          //console.log(c);          
           this.comments=(c);
           var tempDate = new Date(this.comments.createdAt)
           var day = '';

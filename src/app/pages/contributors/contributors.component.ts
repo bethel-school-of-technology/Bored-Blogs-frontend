@@ -19,6 +19,8 @@ export class ContributorsComponent implements OnInit {
   ngOnInit() {
     this.contributorService
       .getContributors()
-      .subscribe((c) => (this.contributors = c));
+      .subscribe((c) => {
+        console.log(c);
+        this.contributors = c});
   }
 }
