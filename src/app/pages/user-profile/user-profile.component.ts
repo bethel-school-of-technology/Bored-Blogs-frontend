@@ -29,14 +29,13 @@ export class UserProfileComponent implements OnInit {
 
   user: User;
 
-  //Jackie to get one user to show on /user-detail/:id
-
-  //To convert database date-time to readable date mm/dd/yyyy
+  //Jackie to get one user to show on /user-detail/:id 
   ngOnInit() {
     this.route.params.subscribe((param) => {
       console.log(param);
       this.userService.getCurrentUser().subscribe((u) => {
         this.user = u;
+         //To convert database date-time to readable date mm/dd/yyyy
         var tempDate = new Date(this.user.createdAt);
         var day = "";
         var month = "";
