@@ -1,22 +1,22 @@
 //Title of page
-h3 {
+h1 {
   text-align: center;
-  text-decoration: underline;
-  padding-bottom: 15px;
+  padding: 15px;
 }
 
 //Background styling
 .container {
-  background: rgb(48,194,48);
-  background: linear-gradient(90deg, rgba(48,194,48,1) 0%, rgba(233,240,74,0.9587185215883228) 50%, rgba(0,110,255,1) 100%);
-  padding-bottom: 100px;
+  background-image: url('../../../../assets/images/brush.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+  padding-bottom: 50px;
 }
 
-//Button to return to admin dashboard
-.btn-accent {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.btn-primary {
+  display: inline-block;
+  margin-right: 10px;
   box-shadow: 4px 5px 10px 2px rgba(66, 64, 64, 0.8);
 }

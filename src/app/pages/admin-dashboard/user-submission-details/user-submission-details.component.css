@@ -1,11 +1,12 @@
 .container {
-  background-image: url("../../../../assets/images/stack of games.jpg");
+  background-image: url("../../../../assets/images/brush.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: 100%;
   -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
           box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+  padding-bottom: 50px;
 }
 
 .card {
@@ -13,5 +14,6 @@
   opacity: 0.75;
   border-radius: 10px 70px;
   padding: 50px;
+  margin-bottom: 50px;
 }
 /*# sourceMappingURL=user-submission-details.component.css.map */

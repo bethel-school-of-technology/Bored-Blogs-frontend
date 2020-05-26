@@ -13,18 +13,17 @@ body {
 
 //background
 .coverPage{
-  background-color: blue;
-  opacity: 0.75;
-  color: white;
-  padding-top: 25px;
-  padding-bottom: 100px;
+  opacity: 0.8;
+  padding-bottom: 25px;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 //text
 .coverTitle{
   text-align: end;
-  font-size: 10vw;
+  font-size: 50px;
   font-family: 'Notable', sans-serif;;
   text-align: end;
+  margin-right: 20px;
 }
 
 /* CONTRIBUTOR'S PROFILE PICTURE */

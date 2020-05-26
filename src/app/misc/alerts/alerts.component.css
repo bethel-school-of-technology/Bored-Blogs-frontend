@@ -1,14 +1,20 @@
 #alert-container {
   position: fixed;
-  top: 80px;
+  top: 55px;
   z-index: 9001;
   overflow-y: auto;
   height: 25vh;
-  width: 100vw;
+  width: 90vw;
 }
 
 .alert {
-  background-color: whitesmoke;
-  opacity: .8;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 0, 0, 0)), to(yellow));
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0), yellow);
+  opacity: 0.8;
+  border-radius: 10px 70px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 /*# sourceMappingURL=alerts.component.css.map */
