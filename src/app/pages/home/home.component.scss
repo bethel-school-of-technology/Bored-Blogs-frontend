@@ -15,7 +15,7 @@
   font-size: 5em;
   background: rgb(48,194,48);
   background: linear-gradient(90deg, rgba(48,194,48,1) 0%, rgba(233,240,74,0.9587185215883228) 50%, rgba(0,110,255,1) 100%);
-  // box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 //PICTURE OF BORED GAME TO GO WITH HEADER
 img {
@@ -63,4 +63,23 @@ button.btn {
 .currentBlog {
   padding-top: 40px;
   padding-bottom: 15px;
+}
+
+.boredText {
+  font-family: 'Indie Flower', cursive;
+  font-size: 3em;
+}
+
+.tab {
+  background-image: url('../../../assets/images/brush.jpg');
+}
+
+.gameUr {
+  margin-top: 10px;
+  font-size: smaller;
+}
+
+.familyImg {
+  width: 110%;
+  border-radius: 60%;
 }

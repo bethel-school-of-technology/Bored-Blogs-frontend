@@ -5,11 +5,9 @@
         </style>
 </head>
 
- <!-- Contributor name-->
-
-<body class="flex-grid-container">
-  <div class="coverPage" [ngStyle]="contributor.color">
-    <h1 class="coverTitle">Jacob Stanton{{contributor.firstName}} {{contributor.lastName}}</h1>
+<body>
+  <div class="coverPage" [ngStyle]="contributor.style">
+    <p class="coverTitle">{{contributor.firstName}} {{contributor.lastName}}</p>
   </div>
 
   <!-- Contributor profile picture-->
@@ -25,8 +23,8 @@
   <!-- Tab Links-->
 
   <div class="tab justify-content-center text-danger">
-    <button [ngStyle]="contributor.color" class="tabOptions" (click)="setSelector(1)">{{contributor.firstName}}'s Bio</button>
-    <button [ngStyle]="contributor.color" class="tabOptions" (click)="setSelector(2)">{{contributor.firstName}}'s Recent Posts</button>
+    <button [ngStyle]="contributor.style" class="tabOptions" (click)="setSelector(1)">{{contributor.firstName}}'s Bio</button>
+    <button [ngStyle]="contributor.style" class="tabOptions" (click)="setSelector(2)">{{contributor.firstName}}'s Recent Posts</button>
   </div>
 <br />
 
@@ -36,21 +34,24 @@
     [ngClass]="{ 'd-none': this.selector != 1 }"
     class="tabcontent text-center"
   >
-    <p><span>Birthday:</span> {{ contributor.bio.birthday }}</p>
-    <ul>
+    <p *ngIf="contributor.bio != null && contributor.bio.birthday != null"><span>Birthday:</span> {{ contributor.bio.birthday }}</p>
+    <ul  *ngIf="contributor.bio != null && contributor.bio.favoriteGames != null">
       <span>Favorite Bored Games:</span>
       <!--TODO would love to have these as links to blogs on said games-->
-      <li *ngFor="let game of games">
+      <li  *ngFor="let game of games">
         <a href="#">{{ contributor.bio.favoriteGames }}</a>
       </li>
     </ul>
-    <p><strong>Fun Fact about Me: </strong>{{contributor.bio.other}} </p>
+    <p *ngIf="contributor.bio != null">
+      <strong>Fun Fact about Me: </strong>{{contributor.bio.other}} 
+    </p>
     <br>
-    <p>To see {{contributor.firstName}}'s other work, please use these links:
+    <p *ngIf="contributor.bio != null && contributor.bio.otherWorks != null">To see {{contributor.firstName}}'s other work, please use these links:
       <br />
       <a href={{contributor.bio.otherWorks.github}} target="blank">Github</a> |
       <a href={{contributor.bio.otherWorks.website}} target="blank">Personal Website</a> |
-      <a href={{contributor.bio.otherWorks.linkedIn}} target="blank">LinkedIn</a></p>
+      <a href={{contributor.bio.otherWorks.linkedIn}} target="blank">LinkedIn</a>
+    </p>
   </div>
 
   <br />

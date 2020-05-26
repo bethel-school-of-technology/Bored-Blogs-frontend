@@ -67,12 +67,17 @@ export class UserService {
     this.currentUserSubject.next(null);
   }
 
+  // Get list of users (Admin only)
+//   getUsers(): Observable<User[]> {
+//     return this.http.get<User[]>(this.url + "/users-list");
+// }
+
   //TODO: fix spelling and make it work
   getContributors() {
     return;
   }
 
-  getUserFromLoacl() {
+  getUserFromLoacl() {    //is this a mispelling? "local"?
     //TODO: eat the cookie
   }
 

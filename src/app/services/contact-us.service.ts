@@ -11,6 +11,9 @@ var contactUs: ContactUs[] = [];
   providedIn: 'root'
 })
 export class ContactUsService {
+  addMessage(id: any, value: any, token: any) {
+    throw new Error("Method not implemented.");
+  }
 
   url: string = Config.apiUrl;
   contactUs: ContactUs[];

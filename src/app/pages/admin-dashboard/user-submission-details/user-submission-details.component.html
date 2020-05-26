@@ -1,8 +1,15 @@
-
-<h1>Now you see me!</h1>
-
-<div *ngFor="let ContactUs of ContactUs; index as i">
-    <h1>{{ContactUs.author}}</h1>
-    <p>{{ContactUs.subject}}</p>
-    <p>{{ContactUs.body}}</p>
-</div>
+<section class="container">
+    <h1 class="header text-center p-3">Messages</h1>
+    <div class="card w-50 h-50 mx-auto"><h5><u>INCOMING MESSAGES:</u></h5>
+        <div *ngFor="let ContactUs of ContactUs; index as i">
+            
+            <p>{{ContactUs.author}} 
+               <!-- {{ContactUs.createdAt}} -->
+            </p>
+            <strong>
+                <p>{{ContactUs.subject}}</p>
+            </strong>
+            <p>{{ContactUs.body}}</p>
+        </div>
+    </div>
+</section>

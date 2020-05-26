@@ -1,9 +1,9 @@
 <div id="alert-container" class="w-100" [ngClass]="{'d-none':this.messages.length==0}">
   <div
-    class="alert-primary my-1 p-3"
+    class="alert my-1 p-3"
     *ngFor="let message of messages; index as i"
-  >
-    {{ message.body }}
+  ><span class="alertMessage"><strong>{{ message.body }}</strong></span>
+    
     <button class="btn btn-primary btn-md close" (click)="deleteAlert(i)">
       <span aria-hidden="true">&times;</span>
     </button>

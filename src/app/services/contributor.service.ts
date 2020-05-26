@@ -5,7 +5,7 @@ import { Observable, of } from "rxjs";
 import { Config } from "../config/config";
 import { linksIguess } from "../models/linksIgues";
 import { Bio } from "../models/bio";
-import { Games, Game } from "../models/games";
+import { Game } from "../models/game";
 import { map } from "rxjs/operators";
 import { User } from "../models/user";
 

@@ -1,4 +1,4 @@
-import { Games, Game } from "./games";
+import { Game } from "./game";
 import { linksIguess } from "./linksIgues";
 
 export class Bio {

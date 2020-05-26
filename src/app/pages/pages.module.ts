@@ -20,8 +20,6 @@ import { CommentDeleteComponent } from './all-post/comment-delete/comment-delete
 import { CommentEditComponent } from './all-post/comment-edit/comment-edit.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { SignOutComponent } from './sign-out/sign-out.component';
-import { ContribEditComponent } from './admin-dashboard/contrib-edit/contrib-edit.component';
 import { UserSubmissionDetailsComponent } from './admin-dashboard/user-submission-details/user-submission-details.component';
 
 
@@ -46,8 +44,6 @@ import { UserSubmissionDetailsComponent } from './admin-dashboard/user-submissio
     CommentEditComponent,
     UsersListComponent,
     UserProfileComponent,
-    SignOutComponent,
-    ContribEditComponent,
     UserSubmissionDetailsComponent,
   ],
   imports: [
@@ -67,7 +63,6 @@ import { UserSubmissionDetailsComponent } from './admin-dashboard/user-submissio
     PostAddComponent,
     PostListComponent,
     UserProfileComponent,
-    ContribEditComponent
   ]
 })
 export class PagesModule { }
