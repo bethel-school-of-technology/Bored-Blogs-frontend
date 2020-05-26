@@ -10,10 +10,7 @@
       <br />
 
       <!--BOOTSTRAP TEMPLATE-DRIVEN CONTACT FORM-->
-      <form
-        #contactUsForm="ngForm"
-        (ngSubmit)="submitContactForm(contactUsForm)"
-      >
+      <form #f="ngForm" (ngSubmit)="addMessage(f)">
         <!--SUBJECT-->
         <div class="form-group">
           <strong><label for="subject">Subject</label></strong>

@@ -14,6 +14,8 @@
   background: #30c230;
   background: -webkit-gradient(linear, left top, right top, from(#30c230), color-stop(50%, rgba(233, 240, 74, 0.958719)), to(#006eff));
   background: linear-gradient(90deg, #30c230 0%, rgba(233, 240, 74, 0.958719) 50%, #006eff 100%);
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
 img {
@@ -61,5 +63,24 @@ button.btn {
 .currentBlog {
   padding-top: 40px;
   padding-bottom: 15px;
+}
+
+.boredText {
+  font-family: 'Indie Flower', cursive;
+  font-size: 3em;
+}
+
+.tab {
+  background-image: url("../../../assets/images/brush.jpg");
+}
+
+.gameUr {
+  margin-top: 10px;
+  font-size: smaller;
+}
+
+.familyImg {
+  width: 110%;
+  border-radius: 60%;
 }
 /*# sourceMappingURL=home.component.css.map */

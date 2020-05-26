@@ -16,7 +16,7 @@
         <br />
         {{ post.body }}
       </p>
-      <h4 class="commentHeader">Comments</h4>
+      <h4 class="commentHeader">Comments:</h4>
     </div>
     <!-- </div> -->
 
@@ -25,9 +25,9 @@
 
     <div class="comments" *ngFor="let comment of comments">
       <strong
-        >{{ comment.author.firstName }} {{ comment.author.lastName }}</strong
+        >{{ comment.author.firstName }} {{ comment.author.lastName }} - {{ comment.createdAt }}</strong
       >
-      {{ comment.createdAt }}
+      
       <br />
       {{ comment.body }}
     </div>
@@ -39,7 +39,7 @@
       >
         Add Comment
       </button>
-      <button [routerLink]="['/all']" class="btn btn-primary btn-sm">
+      <button [routerLink]="['/posts']" class="btn btn-primary btn-sm">
         Return to All Blog Posts
       </button>
     </div>
@@ -61,35 +61,20 @@
               cols="100"
               rows="2"
               type="text"
-              name="body"
+              name="commentBody"
               #body="ngModel"
               ngModel
             >
-            </textarea
-            ><button class="btn btn-primary btn-sm submit" type="submit">
+            </textarea>
+            <div class="submitMsg">
+            <button class="btn btn-primary btn-sm submit" type="submit">
               Submit
-            </button>
+            </button><p class="text-white msg">(Won't submit?  You must be logged in to submit a comment)</p>
+            </div>
+            
           </div>
         </form>
       </div>
     </div>
   </div>
 </section>
-
-<!-- <post-comment></post-comment> -->
-
-<!-- Textarea to enter a comment at the bottom of a specific post -->
-<!-- <div class="form-group">
-    <form (ngSubmit)="addComment()" >
-      <div>
-        <label class="text-white" for="body"><strong>Add Comment</strong></label>
-        <textarea class="form-control" id="body" cols="100" rows="2" type="text" name="body"
-          [(ngModel)]="this.newComment.body">
-        </textarea>
-      </div>
-      <br>
-      <!-- buttons -->
-<!-- <button class="btn btn-primary" (click)="addComment()">Submit</button>
-      <button [routerLink]="['/all']" class="btn btn-primary">Return to All Blog Posts</button> -->
-<!-- </form>
-  </div> -->

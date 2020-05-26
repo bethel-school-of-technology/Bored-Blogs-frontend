@@ -13,21 +13,21 @@ export class AdminUserService {
       firstName: "John",
       lastName: "Smith",
       email: "jsmith@example.com",
-      lastActive: "2 Hours Ago"
+      lastLoggedIn: "03/20/20"
     },
     {
       id: 1,
       firstName: "Jane",
       lastName: "Doe",
       email: "jdoe@example.com",
-      lastActive: "1 Hour Ago"
+      lastLoggedIn: "04/22/20"
     },
     {
       id: 2,
       firstName: "Luke3",
       lastName: "Skywalker",
       email: "thedarkside@example.com",
-      lastActive: "10 Minutes Ago"
+      lastAlastLoggedIn: "05/19/20"
     }
   ];
 
@@ -35,7 +35,7 @@ export class AdminUserService {
 
   getUsers(): Observable<any[]> {
     if (Config.weAreUsingCloud) {
-      return this.http.get<any[]>(Config.apiUrl + "user-list");//go
+      return this.http.get<any[]>(Config.apiUrl + "/users-list");//go
     } else {
       return new Observable((observer) => {
         var copy = [...this.Users];
@@ -46,7 +46,7 @@ export class AdminUserService {
 
   deleteUser(id: number): Observable<any[]> {
     if (Config.weAreUsingCloud) {
-      return this.http.delete<any[]>(Config.apiUrl + "user/delete" + id);
+      return this.http.delete<any[]>(Config.apiUrl + "/users/delete" + id);
     } else {
       return new Observable(observer => {
         this.Users = this.Users.filter(p => p.id != id);

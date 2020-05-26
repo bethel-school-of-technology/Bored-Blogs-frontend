@@ -1,1 +1,6 @@
-/* No CSS *//*# sourceMappingURL=app.component.css.map */
+p {
+  text-align: center;
+  margin-top: 5px;
+  font-style: italic;
+}
+/*# sourceMappingURL=app.component.css.map */

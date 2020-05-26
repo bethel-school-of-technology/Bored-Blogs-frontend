@@ -5,20 +5,22 @@
 <div class="container">
 
   <!-- BORED BLOG TITLE -->
-  <div class="title text-center w-100">
+  <div class="title text-center w-100 blog">
     <p>Bored Blog</p>
   </div>
 
   <!-- WHAT IS BORED BLOG SECTION -->
+  <br>
   <div class="row h-100 justify-content-around">
     <div class="col-7 whatIs">
-      <h3 class="text-center">What is Bored Blog?</h3>
-      <p class="text-center">"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-        et dolore magna aliqua."</p>
+      <h1 class="text-center">What is Bored Blog?</h1>
+      <p class="text-center">Bored Blog is a site where you can glean more information about exciting bored games that
+        you can play when you're bored! We feature games old and new, suitable to many age ranges and skill levels.</p>
+      <p class="text-center">We have several contributors that share their interests in games of all sorts - family
+        games, strategy games, card games, trivia games, games with mystery and games of challenge. Each week we post a
+        "Game of the Week" which features a game that the contributors are currently learning or have found a great
+        interest in either its history, uniqueness or actual game play.</p>
+      <br>
       <div>
         <img class="gameImg1" src="assets/images/board-game-bg-image1.jpg">
       </div>
@@ -26,21 +28,25 @@
 
     <!-- GAME OF THE WEEK SECTION -->
     <div class="col-3 p-3 gameOfWeek">
-      <h1 class="text-center pt-4">Game of the Week</h1>
+      <h2 class="text-center pt-4">Game of the Week</h2>
       <div class="text-center">
-        <br>
-        <h5 class="font-italic">The Royal Game of Ur</h5>
+        <h5 class="font-italic pb-2">"The Royal Game of Ur"</h5>
         <div>
           <a href="https://en.wikipedia.org/wiki/Royal_Game_of_Ur" target="_blank">
-          <img class="gameImg2" src="assets/images/gameOfUr.jpg">
-        </a>
+            <img class="gameImg2" src="assets/images/gameOfUr.jpg">
+          </a>
         </div>
-        <p class="pt-4">Discovered to be the oldest game of all time!</p>
-
+        <strong>
+          <p class="pt-4">Discovered to be the oldest game of all time!</p>
+        </strong>
+        <p class="text-center gameUr">Also known as the Game of Twenty Squares, Ur is a two-player strategy race board
+          game that was first played during the early 3rd millennium BC. Like modern backgammon, the game combines
+          elements of both strategy and luck.</p>
       </div>
-      <button class="btn btn-primary"
+      <button class="btn btn-primary btn-sm"
         onclick="window.open('https://en.wikipedia.org/wiki/Royal_Game_of_Ur', '_blank')">Find Out More</button>
     </div>
+
   </div>
   <br>
   <div class="row h-100 justify-content-around align-content-center">
@@ -49,61 +55,51 @@
     <!-- FEATURED BLOG SECTION -->
     <div class="col-7">
 
-      <div class="text-center currentBlog" *ngFor="let Post of posts">
-
-        <!-- Display the most current Blog Post by id (SELECTED BY createdDate) -->
+      <!-- <div class="text-center currentBlog" *ngFor="let Post of posts">
         <h1 class="blogTitle font-italic"><strong>{{ Post.title }}</strong></h1>
-
         <strong>Contributed by: {{ Post.author.firstName }} {{ Post.author.lastName }} </strong>
         <br>
-        <!-- <strong>Post Date: {{Post.createdAt }}</strong> HOW CAN WE ADD THIS TIMESTAMP TO SHOW WITH THE POSTS?? -->
+        <strong>Post Date: {{Post.published }}</strong>
         <br>
         <p class="text-center">{{ Post.body }}</p>
-      </div>
+      </div> -->
+      <br>
+      <p class="text-center pt-4 boredText">Don't be bored ... play a board game! </p>
 
-      <!-- THIS HARD-CODED TEXT WILL BE REMOVED AFTER THE ngFor LOOP IS WORKING FOR THE {{Post.body}} -->
-
-      <!-- <p class="text-center">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-        quae ab illo inventore veritatis et quasi architecto beatae vitae
-        dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-        aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-        eos qui ratione voluptatem sequi nesciunt.
-        <br>
-        <br>
-        Neque porro quisquam est,
-        qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-        sed quia non numquam eius modi tempora incidunt ut labore et dolore
-        magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-        nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-        aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
-        qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
-        illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-        <br></p> -->
-
-      <div class="d-flex pb-4">
-        <button [routerLink]='["/contributor-profile"]' class="btn btn-primary">More posts by this Contributor</button>
-        <button [routerLink]='["/all"]' class="btn btn-primary">All Past Blog Posts</button>
+      <p class="text-center">Board games have been played, travelled and evolved in most cultures and societies
+        throughout history. A board game need not necessarily contain a physical board. Some games are based on pure
+        strategy, but many contain an element of chance; and some are purely chance, with no element of skill. </p>
+      <p class="text-center">
+        Games usually have a goal that a player aims to achieve. Early board games represented a battle between two
+        armies, and most modern board games are still based on defeating opponents in terms of counters, winning
+        position, or accrual of points. </p>
+      <br>
+      <div class="">
+        <!-- <button [routerLink]='["/contributor-profile"]' class="btn btn-primary">More posts by this Contributor</button> -->
+        <div>
+          <img class="familyImg" src="assets/images/familygame.jpg">
+        </div>
+        <button [routerLink]='["/posts"]' class="btn tab"><span><strong>Click here to read game blogs</strong></span></button>
       </div>
     </div>
 
     <!-- CONTRIBUTORS SECTION -->
     <!-- JACKIE:make this a for loop ----- DONE!!! -->
     <div class="col-3 contributors p-5">
-      <h3 class="text-center pb-4">Meet the Contributors</h3>
+      <h3 class="text-center pb-3">Meet the Contributors</h3>
 
       <!-- CAN THE contributor.name & contributor.img BE ANCHOR LINKS TO EA CONTRIBUTOR PROFILE PG??? -->
       <div *ngFor="let contributor of contributors;">
-        <a [routerLink]='["/contributor-profile/",contributor.id]'>
+        <a [routerLink]='["/contributor-profile/", contributor.id]'>
           <img src="{{contributor.url}}" class="rounded-circle" href="http://localhost:4200/contributor-profile">
         </a>
-        <a [routerLink]='["/contributor-profile/",contributor.id]'>
-          <h6 class="text-center p-4">{{contributor.name}}</h6>
+        <a [routerLink]='["/contributor-profile/", contributor.id]'>
+          <h6 class="text-center p-2">{{contributor.name}}</h6>
         </a>
         <br>
       </div>
       <button [routerLink]='["/contributor"]' class="btn btn-primary">Meet the Contributors</button>
     </div>
   </div>
-<!-- END OF PRIMARY CONTAINER -->
+  <!-- END OF PRIMARY CONTAINER -->
 </div>

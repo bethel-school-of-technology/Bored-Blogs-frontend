@@ -28,23 +28,24 @@ export class PostDetailComponent implements OnInit {
     private userService: UserService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.route.params.subscribe((param) => {
       this.postDataService.getPost(+param["id"]).subscribe((p) => {
         //console.log(p);
         this.post = p;
+        var tempDate = new Date(this.post.published);
+        var day = "";
+        var month = "";
+        this.post.published = `${
+          tempDate.getMonth() + 1
+          }/${tempDate.getDate()}/${tempDate.getFullYear()} `;
 
-        // this.comments = c;
-        // var tempDate = new Date(this.comments.createdAt)
-        // var day = '';
-        // var month = '';
-        // this.comments.createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()}`;
-
+        this.getComments(+param["id"]);
       });
-      this.getComments(+param["id"]);
     });
+
     this.userService.getCurrentUser().subscribe((u) => (this.user = u));
     this.userService.refreshUser();
   }
@@ -62,13 +63,18 @@ export class PostDetailComponent implements OnInit {
   //Jackie
   // Gets the list of comments at bottom of post
   getComments(parentPostId: number): void {
-    this.postCommentService.getComments(parentPostId).subscribe((c) => {
-      //console.log(c);
+    this.postCommentService
+    .getComments(parentPostId)
+    .subscribe((c) => {
+      console.log(c);
       this.comments = c;
-      var tempDate = new Date(this.comment.createdAt)
-      var day = '';
-      var month = '';
-      this.comment.createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()}`;
+        for (var i = 0; i < c.length; i++) {
+        var tempDate = new Date(c[i].createdAt)
+        var day = '';
+        var month = '';
+        c[i].createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()} `;
+      }
+      this.comments = c;
     });
   }
 
@@ -79,16 +85,18 @@ export class PostDetailComponent implements OnInit {
       .addComment(this.post.id, newComment.form.value, this.user.token)
       .subscribe(
         (c) => {
-          //console.log(c);          
+          console.log(c);          
           this.comments=(c);
           var tempDate = new Date(this.comment.createdAt)
           var day = '';
           var month = '';
           this.comment.createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()}`;
+
+          return this.comments = (c);
         },
         (err) => {
           console.log(err);
         }
-      ); // is this route correct to refresh pg + see comments
+      );
   }
 }

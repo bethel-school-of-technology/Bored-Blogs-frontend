@@ -2,8 +2,13 @@
   position: fixed;
   top: 80px;
   z-index: 9001;
+  overflow-y: auto;
   height: 25vh;
   width: 100vw;
-  overflow-y: auto;
+}
+
+.alert {
+  background-color: whitesmoke;
+  opacity: .8;
 }
 /*# sourceMappingURL=alerts.component.css.map */

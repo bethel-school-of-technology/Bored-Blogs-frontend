@@ -7,7 +7,7 @@
     >
       <div class="m-2" *ngFor="let contributor of contributors">
         <div class="card">
-          <h2 [ngStyle]="contributor.style" class="text-best-color">
+          <h2 [ngStyle]="contributor.style">
             {{ contributor.name }}
           </h2>
           <img class="w-25" src="{{ contributor.url }}" />

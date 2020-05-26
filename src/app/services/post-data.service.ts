@@ -18,7 +18,7 @@ export class PostDataService {
       return this.http.get<Post[]>(this.url + "/posts").pipe(
         map((foo) => {
           foo = foo.map((f) => {
-            f.preview = f.body.substr(0, 2000) + "...";//creates a preview
+            f.preview = f.body.substr(0, 150) + "...";//creates a preview of 300 characters
             //console.log(foo);
             return f;
           });
@@ -26,7 +26,7 @@ export class PostDataService {
         })
       );
   }
-  //todo make getPostByauthor :for jackie :)
+  //getPostByauthor :Jackie
   getPostby(authorId: number): Observable<Post> {
       return this.http.get<Post>(this.url + "/posts/read" + authorId);
   }

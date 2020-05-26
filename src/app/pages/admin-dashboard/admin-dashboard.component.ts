@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
 
+
 @Component({
   selector: 'admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -12,7 +13,7 @@ import { User } from 'src/app/models/user';
 export class AdminDashboardComponent implements OnInit {
   contributor: User;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private contributorService: ContributorService) { }
 
   ngOnInit() {
     this.getContributor()//todo update with admin id
