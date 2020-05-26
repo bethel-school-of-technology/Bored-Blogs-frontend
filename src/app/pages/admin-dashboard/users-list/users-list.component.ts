@@ -15,18 +15,20 @@ export class UsersListComponent implements OnInit {
     private adminUserService: AdminUserService,
     private userService: UserService
   ) { }
-
-  users: User[];
+  meTheUser:User;
+  usersList: User[];
 
   //Jackie to get list of users (Admin only) 
   ngOnInit() {
+    this.userService.getCurrentUser().subscribe(u => this.meTheUser = u);
+    this.userService.refreshUser();
     this.getUsers();
   }
 
   getUsers(): void {
-    this.adminUserService.getUsers().subscribe((u) => {
+    this.adminUserService.getUsers(this.meTheUser.token).subscribe((u) => {
       console.log(u);
-      for (var i = 0; i < u.length; i++) {
+      for (var i = 0; i < u.length; i++) {//think about moving this to the service folder
         var tempDate = new Date(u[i].lastLoggedIn)
         var day = '';
         var month = '';
@@ -36,7 +38,7 @@ export class UsersListComponent implements OnInit {
         var month = '';
         u[i].createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()} `;
       }
-      this.users = u;
+      this.usersList = u;
     });
   }
 

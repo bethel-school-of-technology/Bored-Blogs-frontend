@@ -13,5 +13,7 @@ export class Post {
 
   relatedGames:Game[];//not true
   tags: string[];//not true
+  
   published: string;//not true
+  publishedDate:Date;
 }

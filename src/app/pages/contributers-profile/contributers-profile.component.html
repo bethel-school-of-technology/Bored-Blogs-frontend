@@ -34,6 +34,9 @@
     [ngClass]="{ 'd-none': this.selector != 1 }"
     class="tabcontent text-center"
   >
+  <p *ngIf="contributor.bio != null && contributor.bio.body != null">
+      <strong>Body: </strong>{{contributor.bio.body}} 
+    </p>
     <p *ngIf="contributor.bio != null && contributor.bio.birthday != null"><span>Birthday:</span> {{ contributor.bio.birthday }}</p>
     <ul  *ngIf="contributor.bio != null && contributor.bio.favoriteGames != null">
       <span>Favorite Bored Games:</span>

@@ -33,15 +33,8 @@ export class PostDetailComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((param) => {
       this.postDataService.getPost(+param["id"]).subscribe((p) => {
-        //console.log(p);
         this.post = p;
-        var tempDate = new Date(this.post.published);
-        var day = "";
-        var month = "";
-        this.post.published = `${
-          tempDate.getMonth() + 1
-          }/${tempDate.getDate()}/${tempDate.getFullYear()} `;
-
+        //console.log(t)
         this.getComments(+param["id"]);
       });
     });
@@ -68,31 +61,18 @@ export class PostDetailComponent implements OnInit {
     .subscribe((c) => {
       console.log(c);
       this.comments = c;
-        for (var i = 0; i < c.length; i++) {
-        var tempDate = new Date(c[i].createdAt)
-        var day = '';
-        var month = '';
-        c[i].createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()} `;
-      }
-      this.comments = c;
     });
   }
 
   addComment(newComment: NgForm) {
-    console.log(newComment);
+    console.log(newComment.form.value);
     //console.log(this.user);
     this.postCommentService
       .addComment(this.post.id, newComment.form.value, this.user.token)
       .subscribe(
         (c) => {
-          console.log(c);          
+          //console.log(c);       
           this.comments=(c);
-          var tempDate = new Date(this.comment.createdAt)
-          var day = '';
-          var month = '';
-          this.comment.createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()}`;
-
-          return this.comments = (c);
         },
         (err) => {
           console.log(err);

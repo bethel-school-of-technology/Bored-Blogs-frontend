@@ -1,7 +1,7 @@
 <section>
     <h1>List of Registered Users</h1>
     <div *ngIf="true" class="container row h-100 justify-content-center">
-        <div class="Users" *ngFor="let User of users; index as i">
+        <div class="Users" *ngFor="let User of usersList; index as i">
           <h5 class="userName">{{ User.firstName }} {{ User.lastName }}</h5>
           <div class="d-flex justify-content-center">
             <p class="email"><strong> Email: </strong>{{ User.email }} </p>

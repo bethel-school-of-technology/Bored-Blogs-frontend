@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 
 import { Observable, of } from "rxjs";
 import { Config } from "../config/config";
-import { linksIguess } from "../models/linksIgues";
+import { linksIguess } from "../models/linksIguess";
 import { Bio } from "../models/bio";
 import { Game } from "../models/game";
 import { map } from "rxjs/operators";

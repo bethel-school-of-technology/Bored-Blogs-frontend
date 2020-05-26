@@ -23,25 +23,27 @@ export class AllPostComponent implements OnInit {
       console.log(p);
       // to filter and sort the posts by published date we need to add code below && Jacob needs to convert something
       // this.posts = p.filter ....
-      for(var i = 0; i < p.length; i++) {
-        var tempDate = new Date(p[i].published)
-        var day = '';
-        var month = '';  
-        p[i].published = `${tempDate.getMonth()+1}/${tempDate.getDate()}/${tempDate.getFullYear()} `;
-      }
+      if (false)
+        for (var i = 0; i < p.length; i++) {
+          var tempDate = new Date(p[i].published);
+          var day = "";
+          var month = "";
+          p[i].published = `${
+            tempDate.getMonth() + 1
+          }/${tempDate.getDate()}/${tempDate.getFullYear()} `;
+        }
       this.posts = p;
     });
   }
 
-
   // TO JACOB: would this sample of code work to sort the Posts by published date? (most recent date to latest date)
-  
+
   // function(){
   //   if (typeof Object.defineProperty === 'function'){
   //     try{Object.defineProperty(Array.prototype,'sortBy',{value:sb}); }catch(e){}
   //   }
   //   if (!Array.prototype.sortBy) Array.prototype.sortBy = sb;
-  
+
   //   function sb(f){
   //     for (var i=this.length;i;){
   //       var o = this[--i];
