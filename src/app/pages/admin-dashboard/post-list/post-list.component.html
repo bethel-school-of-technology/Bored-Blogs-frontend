@@ -1,18 +1,23 @@
 <!--THIS COMPONENT HOLDS ALL OF THE CREATED BLOG POSTS-->
 <div class="container">
-<h3>Edit or Delete a Blog Post</h3>
+  <h1 class="text-center pt-3">Edit or Delete a Blog Post</h1>
 
-<ul>
-  <li *ngFor="let post of posts">
-    <strong>
-    {{post.title}}
-    </strong>
-    <br>
-    {{post.body}}
-    <br>
-    <button class="btn-danger" (click)="deletePost(post.id)">Delete</button> <!--DELETES POST IMMEDIATELY-->
-    <a [routerLink]="['/post-edit', post.id]"><button class="btn-secondary">Edit</button></a>
-  </li>
-</ul>
-<button [routerLink]="['/admin']" class="btn btn-accent">Return to Admin Dashboard</button>
+  <ul>
+    <li *ngFor="let post of posts">
+      <strong>
+        {{post.title}} - {{post.author.firstName}} {{post.author.lastName}}</strong> <span>{{post.published}}</span>
+      <br>
+      {{post.body}}
+      <br>
+      <div class="d-flex">
+        <button class="btn btn-primary btn-sm" (click)="deletePost(post.id)">Delete</button>
+        <!--DELETES POST IMMEDIATELY-->
+        <a [routerLink]="['/post-edit', post.id]"><button class="btn btn-primary btn-sm">Edit</button></a>
+      </div>
+    </li>
+  </ul>
+  <div class="d-flex justify-content-center">
+    <button [routerLink]="['/admin']" class="btn btn-primary btn-sm return">Return to Admin Dashboard</button>
+    <button [routerLink]="['/post-add']" class="btn btn-primary btn-sm return">Add Post</button>
+  </div>
 </div>

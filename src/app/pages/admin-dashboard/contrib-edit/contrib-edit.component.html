@@ -2,7 +2,11 @@
 <!--TODO change input form ngModels to match contrib ts file once ts file has been completed-->
 <div class="container">
   <h3>Update My Profile</h3>
-  <form #f="ngForm" (ngSubmit)="saveContrib(f)">
+  <!-- <form #f="ngForm" (ngSubmit)="saveContrib(f)"> -->
+
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!     Note      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <!-- Jackie commented out code just so this page was not throwing errors until it can be worked on -->
 
     <!--FIRST NAME-->
     <div>
@@ -11,7 +15,7 @@
           First Name
         </strong>
       </label>
-      <input class="form-control col-md-4 col-sm-12" id="firstName" type="text" name="firstName" required [(ngModel)]="editPost.title">
+      <!-- <input class="form-control col-md-4 col-sm-12" id="firstName" type="text" name="firstName" required [(ngModel)]="editPost.title"> -->
     </div>
 
     <!--LAST NAME-->
@@ -22,7 +26,7 @@
             Last Name
           </strong>
         </label>
-        <input class="form-control col-md-4 col-sm-12" id="lastName" type="text" name="lastName" required [(ngModel)]="editPost.title">
+        <!-- <input class="form-control col-md-4 col-sm-12" id="lastName" type="text" name="lastName" required [(ngModel)]="editPost.title"> -->
       </div>
 
       <!--FAVORITE GAMES-->
@@ -33,7 +37,7 @@
             Favorite Games
           </strong>
         </label>
-        <input class="form-control col-md-4 col-sm-12" id="favoriteGames" type="text" name="favoriteGames" required [(ngModel)]="editPost.title">
+        <!-- <input class="form-control col-md-4 col-sm-12" id="favoriteGames" type="text" name="favoriteGames" required [(ngModel)]="editPost.title"> -->
       </div>
 
       <!--BIRTHDAY-->
@@ -44,7 +48,7 @@
             Birthday
           </strong>
         </label>
-        <input class="form-control col-md-4 col-sm-12" id="birthday" type="text" name="birthday" required [(ngModel)]="editPost.title">
+        <!-- <input class="form-control col-md-4 col-sm-12" id="birthday" type="text" name="birthday" required [(ngModel)]="editPost.title"> -->
       </div>
 
       <!--BIO-->
@@ -54,9 +58,9 @@
             Bio
           </strong>
         </label>
-        <textarea class="form-control col-md-4 col-sm-12" cols="20" rows="5" id="bio" type="text" name="bio"
-          [(ngModel)]="editPost.body">{{editPost.body}}</textarea>
-      </div>
+        <!-- <textarea class="form-control col-md-4 col-sm-12" cols="20" rows="5" id="bio" type="text" name="bio"
+           [(ngModel)]="editPost.body">{{editPost.body}}</textarea>
+      </div> -->
 <br>
       <!--UPLOAD PROFILE PICTURE-->
     <div>

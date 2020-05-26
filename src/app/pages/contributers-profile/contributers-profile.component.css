@@ -1,5 +1,6 @@
+/* BACKGROUND IMAGE OF ENTIRE PAGE */
 body {
-  background-image: url("../../../assets/images/board-game-bg-image1-v2.jpg");
+  background-image: url("../../../assets/images/game1.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -8,43 +9,45 @@ body {
           box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 
-.contribHeader {
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 64% 100%, 50% 75%, 0% 75%);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 64% 100%, 50% 75%, 0% 75%);
+/* TOP OF PAGE WITH CONTRIBUTOR'S NAME */
+.coverPage {
+  opacity: 0.8;
   padding-bottom: 25px;
-  margin-right: 25px;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+}
+
+.coverTitle {
+  text-align: end;
   font-size: 50px;
-  color: white;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Notable', sans-serif;
+  text-align: end;
+  margin-right: 20px;
 }
 
-#header {
-  opacity: 0.75;
-  border-radius: 10px 70px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin: 5px 250px;
-}
-
-#body {
-  background-color: whitesmoke;
-  opacity: 0.75;
-  border-radius: 10px 70px;
-  padding: 50px;
-  margin: 5px 250px;
-}
-
+/* CONTRIBUTOR'S PROFILE PICTURE */
 #profilePicture {
-  margin-top: 25px;
+  padding: 25px;
 }
 
 #profilePicture img {
   width: 250px;
   height: 250px;
-  margin-bottom: 50px;
   -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
           box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
   border-style: outset;
+  max-width: 100%;
+}
+
+/* CONTRIBUTOR'S BIO AND RECENT BLOG POSTS */
+#body {
+  background-color: whitesmoke;
+  opacity: 0.75;
+  margin: auto;
+  width: 50%;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+  border-radius: 10px 70px;
 }
 
 .tab {
@@ -60,21 +63,6 @@ body {
   color: black;
   background-color: red;
   border-radius: 20px;
-}
-
-.tagsGames {
-  float: right;
-  padding-left: 10px;
-}
-
-.tagIcon {
-  width: 20px;
-  height: 20px;
-  float: left;
-}
-
-#header {
-  text-align: center;
 }
 
 .postTitle .postBody {

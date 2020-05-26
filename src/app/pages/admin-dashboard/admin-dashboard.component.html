@@ -1,6 +1,6 @@
 <div class="wrapper">
   <header class="d-flex justify-content-center">
-    <h2>Welcome {{ this.contributor.firstName }}!</h2>
+    <h2>Welcome {{ contributor.firstName }}!</h2>
   </header>
 
   <div class="row">
@@ -8,14 +8,14 @@
       <div class="my-2">
         <h6 class="text-">Blog Post Settings</h6>
         <button
-          [ngStyle]="this.contributor.style"
+          [ngStyle]="contributor.style"
           [routerLink]="['/posts']"
           class="btn m-2"
         >
           View All Blog Posts
         </button>
         <button
-          [ngStyle]="this.contributor.style"
+          [ngStyle]="contributor.style"
           [routerLink]="['/post-list']"
           class="btn m-2"
         >
