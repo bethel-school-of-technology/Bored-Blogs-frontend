@@ -9,12 +9,10 @@ import { MiscModule } from './misc/misc.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import { SamePasswordValidatorDirective } from './validators/same-password-validator.directive';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SamePasswordValidatorDirective,
+    AppComponent
   ],
   imports: [
     BrowserModule,
