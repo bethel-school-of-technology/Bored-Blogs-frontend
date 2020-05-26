@@ -46,7 +46,7 @@ export class AdminUserService {
 
   deleteUser(id: number): Observable<any[]> {
     if (Config.weAreUsingCloud) {
-      return this.http.delete<any[]>(Config.apiUrl + "/users/delete" + id);
+      return this.http.delete<any[]>(Config.apiUrl + "/users/delete/" + id);
     } else {
       return new Observable(observer => {
         this.Users = this.Users.filter(p => p.id != id);
