@@ -61,6 +61,11 @@ body {
 }
 
 // Style the button tabs
+
+button {
+  //TODO Center the buttons - but how??
+}
+
 .tabOptions {
     color: black;
     background-color: red;
@@ -81,5 +86,16 @@ li {
 //makes text bold
 span {
     font-weight: bold;
+}
+
+//tag icon
+.tagIcon{
+  width: 10%;
+  height: 20%;
+}
+
+.tagIcon2{
+  width: 50%;
+  height: 50%;
 }
 
