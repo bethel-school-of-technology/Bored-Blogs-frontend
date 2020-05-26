@@ -1,15 +1,16 @@
 <section class="container">
-    <h1 class="header text-center p-3">Messages</h1>
-    <div class="card w-50 h-50 mx-auto"><h5><u>INCOMING MESSAGES:</u></h5>
-        <div *ngFor="let ContactUs of ContactUs; index as i">
-            
-            <p>{{ContactUs.author}} 
-               <!-- {{ContactUs.createdAt}} -->
-            </p>
-            <strong>
-                <p>{{ContactUs.subject}}</p>
-            </strong>
-            <p>{{ContactUs.body}}</p>
-        </div>
+  <h1 class="header text-center p-3">Messages</h1>
+  <div class="card w-50 h-50 mx-auto">
+    <h5><u>INCOMING MESSAGES:</u></h5>
+    <div *ngFor="let ContactUs of ContactUs; index as i">
+      <strong>
+        <p>{{ ContactUs.subject }}</p>
+      </strong>
+      <p>
+        {{ ContactUs.author.firstName }} {{ ContactUs.author.lastName }}
+        {{ ContactUs.createdAt }}
+      </p>
+      <p>{{ ContactUs.body }}</p>
     </div>
+  </div>
 </section>

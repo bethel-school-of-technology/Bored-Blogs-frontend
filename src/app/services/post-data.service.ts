@@ -44,7 +44,15 @@ export class PostDataService {
           return foo;
         })
       )
-      ;
+      .pipe(
+        map((posts) => {
+          return posts.sort((p1, p2) => {//pipe the convertManyPublishedDates before doing this otherwise bad time are ahead
+            if (p1.publishedDate < p2.publishedDate) return 1;
+            if (p1.publishedDate > p2.publishedDate) return -1;
+            return 0;
+          });
+        })
+      );
   }
   //getPostByauthor :Jackie
   getPostby(authorId: number): Observable<Post> {
