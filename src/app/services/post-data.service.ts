@@ -45,7 +45,7 @@ export class PostDataService {
   }
 
   deletePost(id: number,token): Observable<Post[]> {
-      return this.http.delete<Post[]>(this.url + "posts/delete/" + id,
+      return this.http.delete<Post[]>(this.url + "/posts/delete/" + id,
         {
           headers: MyHeaders.createHeaders(token),
         });

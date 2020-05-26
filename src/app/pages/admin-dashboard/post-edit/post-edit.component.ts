@@ -21,7 +21,7 @@ export class PostEditComponent implements OnInit {
   savePost(f: NgForm) {
     var values = f.form.value;
     values["id"] = this.postId;
-    //console.log(values);
+    console.log(values);
     //console.log(this.editPost);
 
     this.postDataService
