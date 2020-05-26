@@ -10,10 +10,7 @@
       <br />
 
       <!--BOOTSTRAP TEMPLATE-DRIVEN CONTACT FORM-->
-      <form
-        #contactUsForm="ngForm"
-        (ngSubmit)="submitContactForm(contactUsForm)"
-      >
+      <form #f="ngForm" (ngSubmit)="addMessage(f)">
         <!--SUBJECT-->
         <div class="form-group">
           <strong><label for="subject">Subject</label></strong>
@@ -37,16 +34,16 @@
         <!--MESSAGE-->
         <div class="form-group">
           <strong><label for="message">Your Message</label></strong>
-          <input
-            id="message"
+          <textarea
+            id="body"
             cols="20"
             rows="10"
             placeholder="Enter text here"
             class="form-control"
-            #message="ngModel"
-            name="message"
+            #body="ngModel"
+            name="body"
             ngModel
-          />
+          ></textarea>
         </div>
 
         <!--SUBMIT BUTTON-->

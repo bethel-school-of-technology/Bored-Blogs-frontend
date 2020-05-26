@@ -6,6 +6,10 @@ export class ContactUs {
   body: string;
   authorId: number;
   author: User;
+  
+  createdAt:string;
+  createdAtDate:Date;
+
   constructor(
     id: number,
     firstName: string,

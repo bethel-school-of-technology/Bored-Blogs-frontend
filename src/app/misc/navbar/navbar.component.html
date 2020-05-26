@@ -20,20 +20,6 @@
     </ul>
   </div>
 
-  <!-- DROP DOWN NAV LIST FOR "POSTS" -->
-  <!-- -->
-  <!-- <div class="nav-item dropdown">
-    <button class="nav-link dropdown-toggle btn" (click)="toggle('dropDown1')">
-      Posts
-    </button>
-    <div class="dropdown-menu" [ngClass]="{ show: this.dropDown1 }" (mouseleave)="this.dropDown1 = false">
-      <a class="dropdown-item" [routerLink]="['/all']">Read All Posts</a> -->
-
-  <!--<div class="dropdown-divider"></div>
-       what would go here?-->
-  <!-- </div>
-  </div> -->
-
   <!-- DROP DOWN NAV LIST FOR "CONTRIBUTORS" -->
   <div class="nav-item dropdown">
     <button class="nav-link dropdown-toggle btn" (click)="toggle('dropDown2')">
@@ -56,8 +42,23 @@
       <div class="dropdown-divider"></div>
 
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" [routerLink]="['/admin']">Admin Only</a>
+      <a
+        *ngIf="user != null && user.isAdmin"
+        class="dropdown-item"
+        [routerLink]="['/admin']"
+        >Admin Only</a
+      >
     </div>
+  </div>
+
+  <!-- CREATE-ACCOUNT & LOG-IN NAV TURNS OFF WHEN USER IS LOGGED IN -->
+  <div *ngIf="user == null" class="createAccount">
+    <a class="btn" [routerLink]="['/create-account']">
+      Create Account
+    </a>
+    <a class="btn" [routerLink]="['/sign-in']">
+      Log In
+    </a>
   </div>
 
   <!-- DROP DOWN NAV LIST FOR "USERS" -->
@@ -70,7 +71,6 @@
       [ngClass]="{ show: this.dropDown3 }"
       (mouseleave)="this.dropDown3 = false"
     >
-      <!-- <a class="dropdown-item" [routerLink]='["/create-account"]'>Create Account</a> -->
       <a class="dropdown-item" [routerLink]="['/user-profile/', user.id]"
         >User Profile</a
       >
@@ -78,7 +78,7 @@
         >Submit A Blog Request</a
       >
       <div class="dropdown-divider"></div>
-      <button (click)="logout()" class="dropdown-item" >Log Out</button>
+      <button (click)="logout()" class="dropdown-item">Log Out</button>
     </div>
   </div>
 

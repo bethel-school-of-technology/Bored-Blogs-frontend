@@ -1,15 +1,28 @@
 //TODO Need to change color to anchor tag to match theme colors
 
-//Title of the page
-h3 {
-  text-align: center;
-  padding-top: 20px;
-  text-decoration: underline;
+//Background styling
+.container {
+  // background: rgb(48,194,48);
+  // background: linear-gradient(90deg, rgba(48,194,48,1) 0%, rgba(233,240,74,0.9587185215883228) 50%, rgba(0,110,255,1) 100%);
+  background-image: url('../../../../assets/images/green-yellow-smoke.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+  padding-bottom: 50px;
 }
+
+//Title of the page
+// h3 {
+//   text-align: center;
+//   padding-top: 15px;
+// }
 
 //Delete button
 button {
-  margin-right: 5px;
+  margin-top: 7px;
+  margin-right: 7px;
 }
 
 //List of all the blog posts
@@ -17,18 +30,13 @@ li {
   margin: 50px 150px;
 }
 
-//Background styling
-.container {
-  background: rgb(48,194,48);
-  background: linear-gradient(90deg, rgba(48,194,48,1) 0%, rgba(233,240,74,0.9587185215883228) 50%, rgba(0,110,255,1) 100%);
-  padding-bottom: 100px;
-  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
-}
+
 
 //Return to Admin Dashboard button
-.btn-accent {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.return {
+  // display: inline-block;
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-left: 50px;
   box-shadow: 4px 5px 10px 2px rgba(66, 64, 64, 0.8);
 }

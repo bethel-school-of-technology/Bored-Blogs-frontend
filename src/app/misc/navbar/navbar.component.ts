@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { R } from "src/app/app-routing.module";
 import { ContributorService } from "src/app/services/contributor.service";
-import { Contributor } from "src/app/models/contributor";
 import { Router, NavigationEnd } from "@angular/router";
 import { UserService } from "src/app/services/user.service";
 import { User } from "src/app/models/user";
@@ -29,7 +28,7 @@ export class NavbarComponent implements OnInit {
   dropDown3: boolean;
 
   links: any[] = R.getRoutesForNavigation();
-  contribs: Contributor[];
+  contribs: User[];
   user: User;
   constructor(
     private contribService: ContributorService,

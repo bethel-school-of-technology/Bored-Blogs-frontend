@@ -1,5 +1,5 @@
-import { Games, Game } from "./games";
-import { linksIguess } from "./linksIgues";
+import { Game } from "./game";
+import { linksIguess } from "./linksIguess";
 
 export class Bio {
   favoriteGames: Game[];

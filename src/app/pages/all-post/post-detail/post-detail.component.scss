@@ -27,8 +27,8 @@ h3 {
 
 .form-group {
   margin-top: 30px;
-  margin-right: 20px;
-  margin-left: 20px;
+  margin-right: 40px;
+  margin-left: 40px;
 }
 
 .comments {
@@ -40,4 +40,12 @@ h3 {
 
 .submit {
   margin-top: 7px;
+}
+
+.submitMsg {
+  display: inline-flex;
+}
+
+.msg {
+  margin-top: 15px;
 }

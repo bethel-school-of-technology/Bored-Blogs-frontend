@@ -1,7 +1,7 @@
 import { AppRoutingModule } from "./../../app-routing.module";
 import { Component, OnInit } from "@angular/core";
 import { ContributorService } from "src/app/services/contributor.service";
-import { Contributor } from "src/app/models/contributor";
+import { User } from 'src/app/models/user';
 /*
 
 */
@@ -12,13 +12,15 @@ import { Contributor } from "src/app/models/contributor";
   styleUrls: ["./contributors.component.scss"],
 })
 export class ContributorsComponent implements OnInit {
-  contributors: Contributor[];
+  contributors: User[];
 
   constructor(private contributorService: ContributorService) {}
 
   ngOnInit() {
     this.contributorService
       .getContributors()
-      .subscribe((c) => (this.contributors = c));
+      .subscribe((c) => {
+        console.log(c);
+        this.contributors = c});
   }
 }

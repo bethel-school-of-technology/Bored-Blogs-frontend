@@ -1,12 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { Post } from "src/app/models/post";
-import { Contributor } from "src/app/models/contributor";
 import { ContributorService } from "src/app/services/contributor.service";
 import { PostDataService } from "src/app/services/post-data.service";
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
-import { Game, Games } from "src/app/models/games";
+import { Game } from "src/app/models/game";
 import { User } from "src/app/models/user";
-import { UserService } from "src/app/services/user.service";
 
 @Component({
   selector: "app-contributers-profile",
@@ -16,25 +14,25 @@ import { UserService } from "src/app/services/user.service";
 export class ContributersProfileComponent implements OnInit {
   constructor(
     private contribtorService: ContributorService,
-    private userService: UserService,
     private postService: PostDataService,
     private route: ActivatedRoute
   ) {}
-  
-  contributor: User;
+
+  contributor: User = new User();
   games: Game[] = [new Game("game1"), new Game("game2")];
   posts: Post[] = [];
-
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
       var id = params["id"];
       console.log(id);
       this.getPostByAuthorID(id);
+      this.contribtorService.getContributor(id).subscribe((contrib) => {
+        console.log("contributors profile page ");
+        console.log(contrib);
+        this.contributor = contrib;
+      });
     });
-
-    this.userService.getCurrentUser().subscribe((u) => (this.contributor = u));
-    this.userService.refreshSubject();
   }
 
   getPostByAuthorID(authorId: number) {

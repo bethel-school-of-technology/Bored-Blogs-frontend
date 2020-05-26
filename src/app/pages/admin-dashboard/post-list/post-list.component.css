@@ -1,30 +1,24 @@
-h3 {
-  text-align: center;
-  padding-top: 20px;
-  text-decoration: underline;
+.container {
+  background-image: url("../../../../assets/images/green-yellow-smoke.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+  padding-bottom: 50px;
 }
 
 button {
-  margin-right: 5px;
+  margin-top: 7px;
+  margin-right: 7px;
 }
 
 li {
   margin: 50px 150px;
 }
 
-.container {
-  background: #30c230;
-  background: -webkit-gradient(linear, left top, right top, from(#30c230), color-stop(50%, rgba(233, 240, 74, 0.958719)), to(#006eff));
-  background: linear-gradient(90deg, #30c230 0%, rgba(233, 240, 74, 0.958719) 50%, #006eff 100%);
-  padding-bottom: 100px;
-  -webkit-box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
-          box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
-}
-
-.btn-accent {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.return {
   -webkit-box-shadow: 4px 5px 10px 2px rgba(66, 64, 64, 0.8);
           box-shadow: 4px 5px 10px 2px rgba(66, 64, 64, 0.8);
 }

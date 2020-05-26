@@ -1,8 +1,17 @@
 #alert-container {
   position: fixed;
-  top: 80px;
+  top: 55px;
   z-index: 9001;
   overflow-y: auto;
-  height: 25vh;
-  width: 100vw;
+  height: 25vh;  //height of entire msg container
+  width: 90vw;
+}
+
+.alert {
+  background-image: linear-gradient(to right, rgba(255,0,0,0), yellow);
+  opacity: 0.8;
+  border-radius: 10px 70px;
+  background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }

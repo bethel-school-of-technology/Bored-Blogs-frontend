@@ -1,4 +1,5 @@
 /* BACKGROUND IMAGE OF ENTIRE PAGE */
+
 body {
   background-image: url('../../../assets/images/game1.jpeg');
   background-repeat: no-repeat;
@@ -7,43 +8,35 @@ body {
   height: 100%;
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
+
 /* TOP OF PAGE WITH CONTRIBUTOR'S NAME */
 
 //background
 .coverPage{
-  opacity: 0.75;
-  color: white;
-  padding-top: 25px;
-  padding-bottom: 100px;
+  opacity: 0.8;
+  padding-bottom: 25px;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 //text
 .coverTitle{
   text-align: end;
-  font-size: 175px;
+  font-size: 50px;
   font-family: 'Notable', sans-serif;;
+  text-align: end;
+  margin-right: 20px;
 }
 
 /* CONTRIBUTOR'S PROFILE PICTURE */
 
-//background
-#header {
-  border-radius: 10px 70px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin: 5px 250px;
-}
-
 // image itself
 #profilePicture {
-  position: relative;
-  bottom: -175px;
+  padding: 25px;
     img {
-        background-color: white;
         width: 250px;
         height: 250px;
-        margin-bottom: 50px;
         box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
         border-style: outset;
+        max-width: 100%;
       }
 }
 
@@ -51,29 +44,23 @@ body {
 
 //background
 #body {
-  position: relative;
   background-color: whitesmoke;
   opacity: 0.75;
-  border-radius: 10px 70px;
-  padding: 50px;
-  margin: 5px 250px;
+  margin: auto;
+  width: 50%;
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+  border-radius: 10px 70px;
 }
-
 
 // styles the tab that goes between bio and recent blogs
-
-button {
-  margin-top: 75px;
-}
-
 .tab {
     overflow: hidden;
     width: 190px;
     animation-timing-function: ease-in-out;
     animation-duration: 3s;
 }
-// Style the tabs
+
+// Style the button tabs
 .tabOptions {
     color: black;
     background-color: red;

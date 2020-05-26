@@ -1,5 +1,5 @@
 import { UserSubmissionDetailsComponent } from './pages/admin-dashboard/user-submission-details/user-submission-details.component';
-import { UsersListComponent } from "./pages/users-list/users-list.component";
+import { UsersListComponent } from "./pages/admin-dashboard/users-list/users-list.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
@@ -15,8 +15,8 @@ import { AdminDashboardComponent } from "./pages/admin-dashboard/admin-dashboard
 import { PostListComponent } from "./pages/admin-dashboard/post-list/post-list.component";
 import { PostAddComponent } from "./pages/admin-dashboard/post-add/post-add.component";
 import { UserProfileComponent } from "./pages/user-profile/user-profile.component";
-import { SignOutComponent } from "./pages/sign-out/sign-out.component";
 import { ContributersProfileComponent } from "./pages/contributers-profile/contributers-profile.component";
+import { PostEditComponent } from './pages/admin-dashboard/post-edit/post-edit.component';
 
 const make = (
   url: string,
@@ -52,21 +52,16 @@ export class R {
     make("posts", "View All Posts", AllPostComponent, true),
     make("contributor", "Meet the Contributors", ContributorsComponent, false), //JACKIE: In nav "Contributors" dropdown list
     make("contact-us", "Contact Us", ContactUsComponent, false), //JACKIE: In nav "Contributors" dropdown list
-    make("sign-in", "Log In", SignInComponent, true), //JACKIE: In nav "Users" dropdown list
-    make(
-      "contributor-profile/:id",
-      "Contributor Profile",
-      ContributersProfileComponent,
-      false
-    ),
-    make("create-account", "Create account", CreateAccountComponent, true),
+    make("sign-in", "Log In", SignInComponent, false), //JACKIE: In nav "Users" dropdown list
+    make("contributor-profile/:id","Contributor Profile", ContributersProfileComponent,false),
+    make("create-account", "Create account", CreateAccountComponent, false),
     make("post-add", "post add", PostAddComponent, false),
+    make("post-edit/:id", "Post Detail", PostEditComponent, false),
     make("post-detail/:id", "Post Detail", PostDetailComponent, false),
     make("post-list", "Post List", PostListComponent, false),
     make("admin", "Admin", AdminDashboardComponent, false), // need to turn this back to false once admins have ability to sign in
     make("users-list", "users-list", UsersListComponent, false),
     make("user-profile/:id", "User Profile", UserProfileComponent, false), //also for Change password //JACKIE: In nav "Users" dropdown list
-    make("sign-out", "Log Out", SignOutComponent, false), //JACKIE: In nav "Users" dropdown list
     make("user-submission-details", "User Submission Details", UserSubmissionDetailsComponent, false)
   ];
 

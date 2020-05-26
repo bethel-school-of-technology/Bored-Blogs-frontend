@@ -1,46 +1,48 @@
-<div class="wrapper vh-100">
+<div class="wrapper">
   <header class="d-flex justify-content-center">
-    <h2>Welcome {{ this.contributor.firstName }}!</h2>
+    <h2>Welcome {{ contributor.firstName }}!</h2>
   </header>
+
   <div class="row">
     <div class="col-lg-4">
       <div class="my-2">
         <h6 class="text-">Blog Post Settings</h6>
         <button
-          [ngStyle]="contributor.color"
+          [ngStyle]="contributor.style"
           [routerLink]="['/posts']"
-          class="btn m-2 primary"
+          class="btn m-2"
         >
           View All Blog Posts
         </button>
         <button
-          [ngStyle]="contributor.color"
+          [ngStyle]="contributor.style"
           [routerLink]="['/post-list']"
           class="btn m-2"
         >
           Update or Delete a Blog Post
         </button>
         <button
-          [ngStyle]="contributor.color"
+          [ngStyle]="contributor.style"
           [routerLink]="['/post-add']"
-          class="btn m-2"
+          class="btn m-2 text-best-color"
         >
           Create a Blog Post
         </button>
       </div>
     </div>
+
     <div class="col-lg-4">
       <div class="my-2">
         <h6>Contributor Profile Settings</h6>
         <button
-          [ngStyle]="contributor.color"
+          [ngStyle]="contributor.style"
           [routerLink]="['/contributor-profile', contributor.id]"
           class="btn m-2"
         >
           View My Profile
         </button>
         <button
-          [ngStyle]="contributor.color"
+          [ngStyle]="contributor.style"
           [routerLink]="['/contrib-edit']"
           class="btn m-2"
         >
@@ -52,7 +54,7 @@
       <div class="my-2">
         <h6>View and Manage Users</h6>
         <button
-          [ngStyle]="contributor.color"
+          [ngStyle]="contributor.style"
           [routerLink]="['/users-list']"
           class="btn m-2"
         >
@@ -64,7 +66,7 @@
       <div class="my-2">
         <h6>Incoming Contact Form Submissions</h6>
         <button
-          [ngStyle]="contributor.color"
+          [ngStyle]="contributor.style"
           [routerLink]="['/user-submission-details']"
           class="btn m-2"
         >

@@ -1,7 +1,7 @@
 <!--THIS COMPONENT IS WHERE ADMINS CAN ADD A NEW BLOG POST-->
 <div class="container">
-  <h3>Create a New Blog Post</h3>
-  <div class="form-group">
+  <h1 text-center p-20>Create a New Blog Post</h1>
+  <div class="form-group w-50 mx-auto">
     <form (ngSubmit)="addPost()">
       <div>
         <label for="title">
@@ -9,7 +9,7 @@
             Title
           </strong>
         </label>
-        <input class="form-control col-4" id="title" type="text" name="title" required [(ngModel)]="newPost.title">
+        <input class="form-control" id="title" type="text" name="title" required [(ngModel)]="newPost.title">
       </div>
 
       <!-- <div>
@@ -25,8 +25,10 @@
           [(ngModel)]="newPost.body">
       </textarea>
       </div>
-      <br>
-      <button class="btn btn-primary" (click)="addPost()">Add Post</button>
-    </form>
-    <button [routerLink]="['/admin']" class="btn btn-accent">Return to Admin Dashboard</button>
+      <br></form>
+      <div d-flex>
+        <button class="btn btn-primary btn-sm" (click)="addPost()">Add Post</button>
+    
+    <button [routerLink]="['/admin']" class="btn btn-primary btn-sm">Return to Admin Dashboard</button>
   </div>
+</div>

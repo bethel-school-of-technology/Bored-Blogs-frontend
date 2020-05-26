@@ -7,47 +7,6 @@ import { share, multicast } from "rxjs/operators";
 import { Observable, of, Subject, ReplaySubject } from "rxjs";
 import { Router } from "@angular/router";
 
-var users: User[] = [
-  {
-    id: 0,
-    email: "penny@dollar.com",
-    password: "123456",
-    firstName: "Penny",
-    lastName: "Coin",
-    bio:
-      "I love games and learning new games online. There is such a fun online gaming community, even for board games",
-    lastLoggedIn: "05/12/20",
-    createdAt: "02/02/19",
-    token: "test",
-    isAdmin: false,
-  },
-  {
-    id: 1,
-    email: "springer123@show.com",
-    password: "123456",
-    firstName: "Jerry",
-    lastName: "Springer",
-    bio: "I love to make game shows on TV out of peoples lives.",
-    lastLoggedIn: "02/12/20",
-    createdAt: "04/30/19",
-    token: "test",
-    isAdmin: false,
-  },
-  {
-    id: 2,
-    email: "kblack_67@email.com",
-    password: "123456",
-    firstName: "Karen",
-    lastName: "Black",
-    bio: "test test test bio for Karen Black",
-    lastLoggedIn: "05/18/20",
-    createdAt: "04/01/19",
-    token: "test",
-    isAdmin: false,
-  },
-];
-
-const weAreUsingCloud = Config.weAreUsingCloud;
 
 @Injectable({
   providedIn: "root",
@@ -108,22 +67,18 @@ export class UserService {
     this.currentUserSubject.next(null);
   }
 
+  // Get list of users (Admin only)
+//   getUsers(): Observable<User[]> {
+//     return this.http.get<User[]>(this.url + "/users-list");
+// }
+
   //TODO: fix spelling and make it work
   getContributors() {
     return;
   }
 
-  getUserFromLoacl() {
+  getUserFromLoacl() {    //is this a mispelling? "local"?
     //TODO: eat the cookie
-  }
-
-  // Get user by id to display on User Profile page
-  getUser(id: number): Observable<User> {
-    if (Config.weAreUsingCloud) {
-      return this.http.get<User>(Config.apiUrl + "/users/profile/" + id);
-    } else {
-      return of({ ...users.find((u) => u.id == id) });
-    }
   }
 
   getCurrentUser(): Observable<User> {
@@ -132,7 +87,7 @@ export class UserService {
 
   //sleeping always help fix every problem
   //sometimes subscribe is being called after next so just refrehs after looking at it
-  refreshSubject(): void {
+  refreshUser(): void {
     this.currentUserSubject.next(this.currentUser);
   }
 }
