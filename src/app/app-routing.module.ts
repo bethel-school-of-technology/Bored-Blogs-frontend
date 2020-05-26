@@ -17,6 +17,7 @@ import { PostAddComponent } from "./pages/admin-dashboard/post-add/post-add.comp
 import { UserProfileComponent } from "./pages/user-profile/user-profile.component";
 import { SignOutComponent } from "./pages/sign-out/sign-out.component";
 import { ContributersProfileComponent } from "./pages/contributers-profile/contributers-profile.component";
+import { PostEditComponent } from './pages/admin-dashboard/post-edit/post-edit.component';
 
 const make = (
   url: string,
@@ -61,6 +62,7 @@ export class R {
     ),
     make("create-account", "Create account", CreateAccountComponent, false),
     make("post-add", "post add", PostAddComponent, false),
+    make("post-edit/:id", "Post Detail", PostEditComponent, false),
     make("post-detail/:id", "Post Detail", PostDetailComponent, false),
     make("post-list", "Post List", PostListComponent, false),
     make("admin", "Admin", AdminDashboardComponent, false), // need to turn this back to false once admins have ability to sign in

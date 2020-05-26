@@ -28,7 +28,7 @@ export class PostDataService {
   }
   //getPostByauthor :Jackie
   getPostby(authorId: number): Observable<Post> {
-      return this.http.get<Post>(this.url + "/posts/read" + authorId);
+      return this.http.get<Post>(this.url + "/posts/read/" + authorId);
   }
 
   getPost(id: number): Observable<Post> {
@@ -45,14 +45,14 @@ export class PostDataService {
   }
 
   deletePost(id: number,token): Observable<Post[]> {
-      return this.http.delete<Post[]>(this.url + "posts/delete" + id,
+      return this.http.delete<Post[]>(this.url + "posts/delete/" + id,
         {
           headers: MyHeaders.createHeaders(token),
         });
   }
 
   editPost(post: Post,token): Observable<Post[]> {
-      return this.http.put<null>(this.url + "/posts/update" + post.id, post,
+      return this.http.put<null>(this.url + "/posts/update/" + post.id, post,
         {
           headers: MyHeaders.createHeaders(token),
         });    

@@ -18,7 +18,7 @@ export class ContributersProfileComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  contributor: User;
+  contributor: User = new User();
   games: Game[] = [new Game("game1"), new Game("game2")];
   posts: Post[] = [];
 

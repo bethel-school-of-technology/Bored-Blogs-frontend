@@ -10,12 +10,15 @@
         <input class="form-control col-4" id="Title" type="text" name="Title" required [(ngModel)]="editPost.title">
     </div>
     <div>
-      <label for="Author">
+      <label for="authorId">
         <strong>
           Author
         </strong>
       </label>
-      <input class="form-control col-4" id="Author" type="text" name="Author" required [(ngModel)]="editPost.author">
+      <select class="form-control col-4" id="authorId" #authorId="ngModel" name="authorId" required [(ngModel)]="editPost.authorId">
+        <option *ngFor="let contrib of contributors" [value]="contrib.id">{{contrib.firstName}} {{contrib.lastName}}</option>
+      </select>
+      
   </div>
     <div>
         <label for="Body">

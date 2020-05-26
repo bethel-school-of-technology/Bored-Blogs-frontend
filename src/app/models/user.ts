@@ -17,14 +17,7 @@ export class User {
 
     name:string;//backend doesnt give a concated name but service can glue them together;
 
-    constructor(id: number, email: string, password: string, firstNam: string, lastName: string, bio: Bio, lastLoggedIn: string, createdAt: string) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.firstName = firstNam;
-        this.lastName = lastName;
-        this.bio = bio;
-        this.lastLoggedIn = lastLoggedIn;
-        this.createdAt = createdAt;
+    constructor() {
+
     }
 }

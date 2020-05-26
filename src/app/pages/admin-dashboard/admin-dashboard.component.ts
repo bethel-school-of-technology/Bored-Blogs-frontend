@@ -11,7 +11,7 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./admin-dashboard.component.scss']
 })
 export class AdminDashboardComponent implements OnInit {
-  contributor: User;
+  contributor: User = new User();
 
   constructor(private userService: UserService, private contributorService: ContributorService) { }
 
