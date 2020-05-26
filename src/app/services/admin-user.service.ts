@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Config } from "../config/config";
 import { Observable } from "rxjs";
+import { MyHeaders } from './headers';
 
 @Injectable({
   providedIn: "root"
@@ -33,11 +34,15 @@ export class AdminUserService {
 
   constructor(private http: HttpClient) {}
 
-  getUsers(): Observable<any[]> {
-      return this.http.get<any[]>(Config.apiUrl + "/users/list");//go
+  getUsers(token:string): Observable<any[]> {
+    return this.http.get<any[]>(Config.apiUrl + "/users/list", {
+      headers: MyHeaders.createHeaders(token),
+    });//go
   }
 
-  deleteUser(id: number): Observable<any[]> {
-      return this.http.delete<any[]>(Config.apiUrl + "/users/delete/" + id);
+  deleteUser(id: number,token:string): Observable<any[]> {
+    return this.http.delete<any[]>(Config.apiUrl + "/users/delete/" + id, {
+      headers: MyHeaders.createHeaders(token),
+    });
   }
 }

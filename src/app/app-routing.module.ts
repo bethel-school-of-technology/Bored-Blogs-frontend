@@ -1,5 +1,5 @@
 import { UserSubmissionDetailsComponent } from './pages/admin-dashboard/user-submission-details/user-submission-details.component';
-import { UsersListComponent } from "./pages/users-list/users-list.component";
+import { UsersListComponent } from "./pages/admin-dashboard/users-list/users-list.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
