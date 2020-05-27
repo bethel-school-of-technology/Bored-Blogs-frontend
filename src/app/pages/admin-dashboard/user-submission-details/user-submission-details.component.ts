@@ -12,19 +12,28 @@ import { User } from "src/app/models/user";
 export class UserSubmissionDetailsComponent implements OnInit {
   user: User;
   ContactUs: ContactUs[];
+
+
+
+  deleteMessage(id: number): void {
+    this.contactUsService.deleteContactSubmission(id, this.user.token)
+    .subscribe((m) => this.ContactUs = m);
+  }
+
   constructor(
-    private contactService: ContactUsService,
+    private contactUsService: ContactUsService,
     private userService: UserService
   ) {}
 
   ngOnInit() {
     this.userService.getCurrentUser().subscribe((u) => {
       this.user = u;
-      this.contactService.getContactSubmissions(u.token).subscribe((e) => {
+      this.contactUsService.getContactSubmissions(u.token).subscribe((e) => {
         console.log(e);
         this.ContactUs = e;
       });
     });
     this.userService.refreshUser();
+
   }
 }

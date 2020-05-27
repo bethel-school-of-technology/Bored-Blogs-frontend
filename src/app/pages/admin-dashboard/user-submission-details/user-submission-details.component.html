@@ -1,16 +1,31 @@
 <section class="container">
+
   <h1 class="header text-center p-3">Messages</h1>
-  <div class="card w-50 h-50 mx-auto">
-    <h5><u>INCOMING MESSAGES:</u></h5>
-    <div *ngFor="let ContactUs of ContactUs; index as i">
-      <strong>
-        <p>{{ ContactUs.subject }}</p>
-      </strong>
-      <p>
-        {{ ContactUs.author.firstName }} {{ ContactUs.author.lastName }}
-        {{ ContactUs.createdAt }}
-      </p>
-      <p>{{ ContactUs.body }}</p>
+
+  <!-- Message Cards -->
+  <div>
+    <div *ngFor="let oneContactUs of ContactUs; index as i">
+
+      <!-- Header -->
+      <div class="card-header border-primary bg-grey"> {{ oneContactUs.createdAt }}
+        <span><br>{{ oneContactUs.author.firstName }} {{ oneContactUs.author.lastName }}</span>
+        <span><br>{{ oneContactUs.author.email }}</span>
+
+        <!-- Body -->
+        <div class="card-body">
+          <strong>
+            <h5 class="card-title">{{ oneContactUs.subject }}</h5>
+            <p class="card-text border-primary">{{ oneContactUs.body }}</p>
+          </strong>
+          <div class="delete">
+            <button class="btn btn-primary btn-sm" (click)="deleteMessage(oneContactUs.id)">Delete</button>
+          </div>
+        </div>
+      </div>
     </div>
+    <br>
   </div>
+
+
+
 </section>

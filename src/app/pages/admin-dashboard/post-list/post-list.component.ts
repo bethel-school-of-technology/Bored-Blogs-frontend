@@ -13,12 +13,13 @@ export class PostListComponent implements OnInit {
   user: User;
 
   getPosts(): void {
-    this.postDataService.getPosts().subscribe((p) => (this.posts = p));
+    this.postDataService.getPosts()
+    .subscribe((p) => (this.posts = p));
   }
 
   deletePost(id: number): void {
-    // this.postDataService.deletePost(id).subscribe((p) => {(this.posts = p)});
-    this.postDataService.deletePost(id, this.user.token).subscribe((p) => this.getPosts());
+    this.postDataService.deletePost(id, this.user.token)
+    .subscribe((p) => this.getPosts());
   }
 
   constructor(

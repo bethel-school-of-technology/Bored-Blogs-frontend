@@ -11,7 +11,7 @@
       <br>
       <div class="d-flex">
         <button class="btn btn-primary btn-sm" (click)="deletePost(post.id)">Delete</button>
-        <!--DELETES POST IMMEDIATELY-->
+        <!--SOFT DELETES POST IMMEDIATELY-->
         <a [routerLink]="['/post-edit', post.id]"><button class="btn btn-primary btn-sm">Edit</button></a>
       </div>
     </li>

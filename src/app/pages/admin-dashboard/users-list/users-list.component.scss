@@ -1,10 +1,11 @@
 section {
-    background-image: url('../../../../assets/images/board-game-bg-image1-v2.jpg');
+    background-image: url('../../../../assets/images/blue-red-yellow-abstract.jpg');
     background-repeat: no-repeat;
     background-size: cover;
   width: 100%;
   height: 100%;
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+  padding-bottom: 50px;
   }
 
   h1 {
@@ -12,6 +13,7 @@ section {
     // text-decoration: underline;
     text-align: center;
     padding-bottom: 20px;
+    padding-top: 20px;
   }
 
   h5 {
@@ -23,7 +25,7 @@ section {
     background-color: whitesmoke;
     opacity: 0.75;
     border-radius: 10px 70px;
-    padding: 50px;
+    padding: 20px;
     margin: 5px;
   }
   .user {

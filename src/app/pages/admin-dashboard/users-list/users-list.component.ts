@@ -43,10 +43,9 @@ export class UsersListComponent implements OnInit {
   }
 
 
-  // deleteUser(id: number): void {
-  //   this.adminUserService.deleteUser(id).subscribe(u => this.Users = u);
-  //   this.Users = u;
-  // }
+  deleteUser(id: number): void {
+    this.adminUserService.deleteUser(id,this.meTheUser.token).subscribe(fooFromService => this.usersList = fooFromService);
+  }
 
   selector = -1;
   setSelector(value: number) {

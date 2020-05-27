@@ -28,8 +28,6 @@ export class ContactUsComponent implements OnInit {
     this.userService.refreshUser();
   }
 
-  //TODO: connect this to a service --> JACKIE TRIED :)
-  // there is not a Name or Email in the contact us form --> need to bring in from the user service as currentUser info
   addMessage(f: NgForm) {
     const message = `
     Name: ${f.value.firstName} / 
@@ -40,20 +38,21 @@ export class ContactUsComponent implements OnInit {
 
     // Jacob please help fix the code below --> error says cannot subscribe on void
 
-    this.ContactUsService.addMessage(f.form.value, this.user.token).subscribe(
+    this.ContactUsService.addContactSubmission(f.form.value, this.user.token).subscribe(
       (m) => {
         this.message = m;
         var tempDate = new Date(this.message.createdAt);
         var day = "";
         var month = "";
-        this.message.createdAt = `${
-          tempDate.getMonth() + 1
-        }/${tempDate.getDate()}/${tempDate.getFullYear()}`;
+        this.message.createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()}`;
+      
+        this.router.navigateByUrl("/");
       },
+        
       (err) => {
         console.log(err);
       }
-    );
+    )
   }
 
   log(x) {
