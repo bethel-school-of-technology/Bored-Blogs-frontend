@@ -17,15 +17,20 @@
             <h5 class="card-title">{{ oneContactUs.subject }}</h5>
             <p class="card-text border-primary">{{ oneContactUs.body }}</p>
           </strong>
+
+          <!-- Delete button -->
           <div class="delete">
             <button class="btn btn-primary btn-sm" (click)="deleteMessage(oneContactUs.id)">Delete</button>
           </div>
+
         </div>
       </div>
     </div>
     <br>
+    <div class="d-flex justify-content-center">
+      <button [routerLink]="['/admin']" class="btn btn-primary btn-sm">Return to Admin Dashboard</button>
+    </div>
   </div>
-
 
 
 </section>

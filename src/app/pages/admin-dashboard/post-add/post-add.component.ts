@@ -1,9 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { Post } from "../../../models/post";
 import { PostDataService } from "../../../services/post-data.service";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { UserService } from "src/app/services/user.service";
 import { User } from "src/app/models/user";
+import { NgForm } from "@angular/forms";
+import { ContributorService } from "src/app/services/contributor.service";
 
 @Component({
   selector: "app-post-add",
@@ -12,6 +14,7 @@ import { User } from "src/app/models/user";
 })
 export class PostAddComponent implements OnInit {
   newPost: Post = new Post();
+  contributors: User[] = [];
   user: User;
 
   addPost() {
@@ -22,11 +25,20 @@ export class PostAddComponent implements OnInit {
 
   constructor(
     private userService: UserService,
+    private contribService: ContributorService,
     private postDataService: PostDataService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
+    this.userService.getCurrentUser().subscribe((user) => (this.user = user));
+    this.userService.refreshUser();
+
+    this.contribService
+      .getContributors()
+      .subscribe((cs) => (this.contributors = cs));
+
     this.userService.getCurrentUser().subscribe((user) => (this.user = user));
     this.userService.refreshUser();
   }

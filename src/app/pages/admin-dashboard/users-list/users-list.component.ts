@@ -9,13 +9,12 @@ import { UserService } from "src/app/services/user.service";
   styleUrls: ['./users-list.component.scss']
 })
 export class UsersListComponent implements OnInit {
-  [x: string]: any;
-
+  
   constructor(
     private adminUserService: AdminUserService,
     private userService: UserService
   ) { }
-  meTheUser:User;
+  meTheUser: User;
   usersList: User[];
 
   //Jackie to get list of users (Admin only) 
@@ -44,7 +43,8 @@ export class UsersListComponent implements OnInit {
 
 
   deleteUser(id: number): void {
-    this.adminUserService.deleteUser(id,this.meTheUser.token).subscribe(fooFromService => this.usersList = fooFromService);
+    this.adminUserService.deleteUser(id, this.meTheUser.token)
+      .subscribe(u => this.usersList = u);
   }
 
   selector = -1;

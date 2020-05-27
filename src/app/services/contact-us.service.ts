@@ -43,7 +43,7 @@ export class ContactUsService {
 
   //delete a contact submission
   deleteContactSubmission(id: number, token): Observable<ContactUs[]> {
-    return this.http.delete<ContactUs[]>(this.url + "/ContactUs/delete/" + id, {
+    return this.http.delete<ContactUs[]>(this.url + "/contactSubmissions/delete/" + id, {
       headers: MyHeaders.createHeaders(token),
     });
   }

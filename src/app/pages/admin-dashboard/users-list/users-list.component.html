@@ -13,9 +13,12 @@
         <p class="lastActive"><strong> Last Active: </strong>{{ User.lastLoggedIn }}</p>
       
       <div class="d-flex justify-content-end">
-        <button (click)="deleteUser(User.id)" class="btn btn-danger btn-sm"> Delete</button>
+        <button (click)="deleteUser(User.id)" class="btn btn-accent btn-sm"> Delete</button>
       </div>
-
+</div>
     </div>
-  </div>
+    <div class="d-flex justify-content-center">
+      <button [routerLink]="['/admin']" class="btn btn-primary btn-sm">Return to Admin Dashboard</button>
+    </div>
+  
 </section>

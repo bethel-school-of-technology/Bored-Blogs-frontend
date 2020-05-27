@@ -17,7 +17,7 @@ export class UserSubmissionDetailsComponent implements OnInit {
 
   deleteMessage(id: number): void {
     this.contactUsService.deleteContactSubmission(id, this.user.token)
-    .subscribe((m) => this.ContactUs = m);
+    .subscribe(m => this.ContactUs = m);
   }
 
   constructor(
