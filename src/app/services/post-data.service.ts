@@ -37,7 +37,7 @@ export class PostDataService {
       .pipe(
         map((foo) => {
           foo = foo.map((f) => {
-            f.preview = f.body.substr(0, 150) + "..."; //creates a preview of 300 characters
+            f.preview = f.body.substr(0, 150) + "..."; //creates a preview of 150 characters
             //console.log(foo);
             return f;
           });
@@ -47,6 +47,7 @@ export class PostDataService {
       .pipe(
         map((posts) => {
           return posts.sort((p1, p2) => {//pipe the convertManyPublishedDates before doing this otherwise bad time are ahead
+            //this is a date comparator
             if (p1.publishedDate < p2.publishedDate) return 1;
             if (p1.publishedDate > p2.publishedDate) return -1;
             return 0;
