@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <div class="coverPage" [ngStyle]="contributor.style">
+  <div class="coverPage" [ngStyle]="contributor.style" *ngFor="let contributor of contributors">
     <p class="coverTitle">{{contributor.firstName}} {{contributor.lastName}}</p>
   </div>
 
@@ -40,7 +40,6 @@
     <p *ngIf="contributor.bio != null && contributor.bio.birthday != null"><span>Birthday:</span> {{ contributor.bio.birthday }}</p>
     <ul  *ngIf="contributor.bio != null && contributor.bio.favoriteGames != null">
       <span>Favorite Bored Games:</span>
-      <!--TODO would love to have these as links to blogs on said games-->
       <li  *ngFor="let game of games">
         <a href="#">{{ contributor.bio.favoriteGames }}</a>
       </li>
