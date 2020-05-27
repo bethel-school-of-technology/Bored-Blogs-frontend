@@ -9,11 +9,22 @@
   padding-bottom: 50px;
 }
 
-.card {
+.card-header {
   background-color: whitesmoke;
   opacity: 0.75;
   border-radius: 10px 70px;
-  padding: 50px;
-  margin-bottom: 50px;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+.delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 /*# sourceMappingURL=user-submission-details.component.css.map */

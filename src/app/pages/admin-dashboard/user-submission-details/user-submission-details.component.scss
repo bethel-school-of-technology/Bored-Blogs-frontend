@@ -8,11 +8,18 @@
     padding-bottom: 50px;
 }
 
-.card {
+.card-header {
     background-color: whitesmoke;
     opacity: 0.75;
     border-radius: 10px 70px;
-    padding: 50px;
-    margin-bottom: 50px;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.delete {
+    display: flex;
+    justify-content: flex-end;
 }
 
