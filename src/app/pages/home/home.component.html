@@ -1,28 +1,37 @@
 <!-- LINK TO FONT FOR BORED BLOG TITLE -->
-<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+  rel="stylesheet"
+/>
 
 <!-- PRIMARY CONTAINER -->
 <div class="container">
-
   <!-- BORED BLOG TITLE -->
   <div class="title text-center w-100 blog">
     <p>Bored Blog</p>
   </div>
 
   <!-- WHAT IS BORED BLOG SECTION -->
-  <br>
+  <br />
   <div class="row h-100 justify-content-around">
     <div class="col-7 whatIs">
       <h1 class="text-center">What is Bored Blog?</h1>
-      <p class="text-center">Bored Blog is a site where you can glean more information about exciting bored games that
-        you can play when you're bored! We feature games old and new, suitable to many age ranges and skill levels.</p>
-      <p class="text-center">We have several contributors that share their interests in games of all sorts - family
-        games, strategy games, card games, trivia games, games with mystery and games of challenge. Each week we post a
-        "Game of the Week" which features a game that the contributors are currently learning or have found a great
-        interest in either its history, uniqueness or actual game play.</p>
-      <br>
+      <p class="text-center">
+        Bored Blog is a site where you can glean more information about exciting
+        bored games that you can play when you're bored! We feature games old
+        and new, suitable to many age ranges and skill levels.
+      </p>
+      <p class="text-center">
+        We have several contributors that share their interests in games of all
+        sorts - family games, strategy games, card games, trivia games, games
+        with mystery and games of challenge. Each week we post a "Game of the
+        Week" which features a game that the contributors are currently learning
+        or have found a great interest in either its history, uniqueness or
+        actual game play.
+      </p>
+      <br />
       <div>
-        <img class="gameImg1" src="assets/images/board-game-bg-image1.jpg">
+        <img class="gameImg1" src="assets/images/board-game-bg-image1.jpg" />
       </div>
     </div>
 
@@ -33,29 +42,35 @@
       <div class="text-center">
         <h5 class="font-italic pb-2">"The Royal Game of Ur"</h5>
         <div>
-          <a href="https://en.wikipedia.org/wiki/Royal_Game_of_Ur" target="_blank">
-            <img class="gameImg2" src="assets/images/gameOfUr.jpg">
+          <a
+            href="https://en.wikipedia.org/wiki/Royal_Game_of_Ur"
+            target="_blank"
+          >
+            <img class="gameImg2" src="assets/images/gameOfUr.jpg" />
           </a>
         </div>
         <strong>
           <p class="pt-4">Discovered to be the oldest game of all time!</p>
         </strong>
-        <p class="text-center gameUr">Also known as the Game of Twenty Squares, Ur is a two-player strategy race board
-          game that was first played during the early 3rd millennium BC. Like modern backgammon, the game combines
-          elements of both strategy and luck.</p>
+        <p class="text-center gameUr">
+          Also known as the Game of Twenty Squares, Ur is a two-player strategy
+          race board game that was first played during the early 3rd millennium
+          BC. Like modern backgammon, the game combines elements of both
+          strategy and luck.
+        </p>
       </div>
-      <button class="btn btn-primary btn-sm"
-        onclick="window.open('https://en.wikipedia.org/wiki/Royal_Game_of_Ur', '_blank')">Find Out More</button>
+      <button
+        class="btn btn-primary btn-sm"
+        onclick="window.open('https://en.wikipedia.org/wiki/Royal_Game_of_Ur', '_blank')"
+      >
+        Find Out More
+      </button>
     </div>
-
   </div>
-  <br>
+  <br />
   <div class="row h-100 justify-content-around align-content-center">
-
-
     <!-- FEATURED BLOG SECTION -->
     <div class="col-7">
-
       <!-- <div class="text-center currentBlog" *ngFor="let Post of posts">
         <h1 class="blogTitle font-italic"><strong>{{ Post.title }}</strong></h1>
         <strong>Contributed by: {{ Post.author.firstName }} {{ Post.author.lastName }} </strong>
@@ -64,23 +79,33 @@
         <br>
         <p class="text-center">{{ Post.body }}</p>
       </div> -->
-      <br>
-      <p class="text-center pt-4 boredText">Don't be bored ... play a board game! </p>
+      <br />
+      <p class="text-center pt-4 boredText">
+        Don't be bored ... play a board game!
+      </p>
 
-      <p class="text-center">Board games have been played, travelled and evolved in most cultures and societies
-        throughout history. A board game need not necessarily contain a physical board. Some games are based on pure
-        strategy, but many contain an element of chance; and some are purely chance, with no element of skill. </p>
       <p class="text-center">
-        Games usually have a goal that a player aims to achieve. Early board games represented a battle between two
-        armies, and most modern board games are still based on defeating opponents in terms of counters, winning
-        position, or accrual of points. </p>
-      <br>
+        Board games have been played, travelled and evolved in most cultures and
+        societies throughout history. A board game need not necessarily contain
+        a physical board. Some games are based on pure strategy, but many
+        contain an element of chance; and some are purely chance, with no
+        element of skill.
+      </p>
+      <p class="text-center">
+        Games usually have a goal that a player aims to achieve. Early board
+        games represented a battle between two armies, and most modern board
+        games are still based on defeating opponents in terms of counters,
+        winning position, or accrual of points.
+      </p>
+      <br />
       <div class="">
         <!-- <button [routerLink]='["/contributor-profile"]' class="btn btn-primary">More posts by this Contributor</button> -->
         <div>
-          <img class="familyImg" src="assets/images/familygame.jpg">
+          <img class="familyImg" src="assets/images/familygame.jpg" />
         </div>
-        <button [routerLink]='["/posts"]' class="btn tab"><span><strong>Click here to read game blogs</strong></span></button>
+        <button [routerLink]="['/posts']" class="btn tab">
+          <span><strong>Click here to read game blogs</strong></span>
+        </button>
       </div>
     </div>
 
@@ -88,23 +113,24 @@
     <!-- JACKIE:make this a for loop ----- DONE!!! -->
     <div class="col-3 p-3 contributors">
       <h3 class="text-center pt-4">Meet the Contributors</h3>
-      <div *ngFor="let contributor of contributors;">
-        <a [routerLink]='["/contributor-profile/", contributor.id]'>
-          <img src="{{contributor.url}}" class="rounded-circle" href="http://localhost:4200/contributor-profile">
+      <div *ngFor="let contributor of contributors">
+        <a [routerLink]="['/contributor-profile/', contributor.id]">
+          <img
+            src="{{ contributor.url }}"
+            class="rounded-circle"
+            href="http://localhost:4200/contributor-profile"
+          />
         </a>
-        <a [routerLink]='["/contributor-profile/", contributor.id]'>
-          <h6 class="text-center p-2">{{contributor.name}}</h6>
+        <a [routerLink]="['/contributor-profile/', contributor.id]">
+          <h6 class="text-center p-2">{{ contributor.name }}</h6>
         </a>
-        <br>
+        <br />
       </div>
-      <button [routerLink]='["/contributor"]' class="btn btn-primary">Meet the Contributors</button>
+      <button [routerLink]="['/contributor']" class="btn btn-primary">
+        Meet the Contributors
+      </button>
     </div>
   </div>
-<<<<<<< HEAD
 
-<!-- END OF PRIMARY CONTAINER -->
-</div>
-=======
   <!-- END OF PRIMARY CONTAINER -->
 </div>
->>>>>>> master

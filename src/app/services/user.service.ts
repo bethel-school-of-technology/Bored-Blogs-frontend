@@ -3,10 +3,9 @@ import { HttpClient } from "@angular/common/http";
 import { User } from "../models/user";
 import { Config } from "../config/config";
 import { CookieService } from "ngx-cookie-service";
-import { share, multicast } from "rxjs/operators";
+import { share, multicast, map } from "rxjs/operators";
 import { Observable, of, Subject, ReplaySubject } from "rxjs";
 import { Router } from "@angular/router";
-
 
 @Injectable({
   providedIn: "root",
@@ -27,18 +26,17 @@ export class UserService {
   //this creates an account
   register(user: User) {
     //we are using pip share so that we can subscribe twice
-    const Observable = this.http
-      .post(`${Config.apiUrl}/users/register`, user)
-      .pipe(share());
-    Observable.subscribe((user: User) => {
-      console.log(user);
-      this.currentUser = user;
-      this.currentUserSubject.next(user);
-      //? is it safe to store cookie here?
-      //the only other place i can put it is on the root app instance
-      this.cookieService.set("token", user.token);
-    });
-    return Observable;
+    return this.http.post(`${Config.apiUrl}/users/register`, user).pipe(
+      map((user: User) => {
+        console.log(user);
+        this.currentUser = user;
+        this.currentUserSubject.next(user);
+        //? is it safe to store cookie here?
+        //the only other place i can put it is on the root app instance
+        this.cookieService.set("token", user.token);
+        return user;
+      })
+    );
   }
 
   // Login in user
@@ -68,16 +66,17 @@ export class UserService {
   }
 
   // Get list of users (Admin only)
-//   getUsers(): Observable<User[]> {
-//     return this.http.get<User[]>(this.url + "/users-list");
-// }
+  //   getUsers(): Observable<User[]> {
+  //     return this.http.get<User[]>(this.url + "/users-list");
+  // }
 
   //TODO: fix spelling and make it work
   getContributors() {
     return;
   }
 
-  getUserFromLoacl() {    //is this a mispelling? "local"?
+  getUserFromLoacl() {
+    //is this a mispelling? "local"?
     //TODO: eat the cookie
   }
 
