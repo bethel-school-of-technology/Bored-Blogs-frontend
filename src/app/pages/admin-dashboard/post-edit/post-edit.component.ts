@@ -26,7 +26,7 @@ export class PostEditComponent implements OnInit {
 
     this.postDataService
       .editPost(values, this.user.token)
-      .subscribe((p) => this.router.navigate(["post-list"]));
+      .subscribe((p) => this.router.navigate(["/post-list"]));
   }
 
   constructor(

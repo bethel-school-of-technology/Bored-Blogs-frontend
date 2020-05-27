@@ -26,12 +26,12 @@ export class ContactUsService {
     });
   }
   // get a submissiom
-  getAContactSubmission(id: number): Observable<ContactUs[]> {
-    return this.http.get<ContactUs[]>(this.url + "/ContactSubmissions/" + id);
+  getAContactSubmission(id: number): Observable<ContactUs> {
+    return this.http.get<ContactUs>(this.url + "/ContactSubmissions/" + id);
   }
 
   //submit a contactsubmission
-  addMessage(contactUs: any, token: string): Observable<ContactUs[]> {
+  addContactSubmission(contactUs: any, token: string): Observable<ContactUs[]> {
     return this.http.post<ContactUs[]>(
       this.url + "/contactSubmissions",
       contactUs,
@@ -43,7 +43,7 @@ export class ContactUsService {
 
   //delete a contact submission
   deleteContactSubmission(id: number, token): Observable<ContactUs[]> {
-    return this.http.delete<ContactUs[]>(this.url + "/ContactUs/delete/" + id, {
+    return this.http.delete<ContactUs[]>(this.url + "/contactSubmissions/delete/" + id, {
       headers: MyHeaders.createHeaders(token),
     });
   }
