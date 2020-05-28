@@ -9,21 +9,7 @@ import {
   HttpClientModule,
 } from "@angular/common/http";
 import { Utilities } from "./Utilities";
-import { map } from 'rxjs/operators';
-
-var contactUs: ContactUs[] = [];
-
-function convertManyCreatedAtDates(contactUs: ContactUs[]) {
-  return contactUs.map((p) => convertCreatedAtDates(p));
-}
-function convertCreatedAtDates(contactUs: ContactUs) {
-  contactUs.createdAtDate = new Date(contactUs.createdAt);
-  var tempDate = new Date(contactUs.createdAtDate);
-  contactUs.createdAt = `${
-    tempDate.getMonth() + 1
-    }/${tempDate.getDate()}/${tempDate.getFullYear()} `;
-  return contactUs;
-}
+import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root",
@@ -35,32 +21,39 @@ export class ContactUsService {
   // get all submissions
   getContactSubmissions(token: string): Observable<ContactUs[]> {
     //console.log(contributors);
-    return this.http.get<ContactUs[]>(this.url + "/ContactSubmissions/", {
-      headers: Utilities.createHeaders(token),
-    }).pipe(map(convertManyCreatedAtDates));
+    return this.http
+      .get<ContactUs[]>(this.url + "/ContactSubmissions/", {
+        headers: Utilities.createHeaders(token),
+      })
+      .pipe(Utilities.mapManyDatesWithKey("createdAt"));
   }
+
   // get a submissiom
   getAContactSubmission(id: number): Observable<ContactUs[]> {
-    return this.http.get<ContactUs[]>(this.url + "/ContactSubmissions/" + id)
-    .pipe(map(convertManyCreatedAtDates)); 
+    return this.http
+      .get<ContactUs[]>(this.url + "/ContactSubmissions/" + id)
+      .pipe(Utilities.mapDateWithKey("createdAt"));
   }
 
   //submit a contactsubmission
-  addMessage(contactUs: any, token: string): Observable<ContactUs[]> {
-    return this.http.post<ContactUs[]>(
+  addMessage(contactUs: any, token: string): Observable<ContactUs> {
+    return this.http.post<ContactUs>(
       this.url + "/contactSubmissions",
       contactUs,
       {
         headers: Utilities.createHeaders(token),
       }
-    ).pipe(map(convertManyCreatedAtDates)); 
+    );
   }
 
   //delete a contact submission
-  deleteContactSubmission(id: number, token): Observable<ContactUs[]> {
-    return this.http.delete<ContactUs[]>(this.url + "/contactSubmissions/" + id, {
-      headers: Utilities.createHeaders(token),
-    }).pipe(map(convertManyCreatedAtDates));
+  deleteContactSubmission(id: number, token): Observable<any> {
+    return this.http.delete<any>(
+      this.url + "/contactSubmissions/" + id,
+      {
+        headers: Utilities.createHeaders(token),
+      }
+    );
   }
 
   constructor(private http: HttpClient) {}
