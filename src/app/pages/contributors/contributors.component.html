@@ -11,7 +11,7 @@
             {{ contributor.name }}
           </h2>
           <img class="w-25" src="{{ contributor.url }}" />
-          <p *ngIf="contributor.bio != null">{{ contributor.bio.body }}</p>
+          <p *ngIf="contributor.bio != null">{{ contributor.bio.other }}</p>
           <a [routerLink]="['/contributor-profile', contributor.id]"
             ><button
               [ngStyle]="contributor.style"
