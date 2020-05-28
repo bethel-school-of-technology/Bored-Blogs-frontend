@@ -26,8 +26,7 @@ export class SignInComponent implements OnInit {
     console.log(signinForm);
     console.log(signinForm.value);
     //JackieRoberts:
-    //Determine if sign in email & password = success       
-    //TODO:JACOB THIS IS NOT CHECKING FOR VALID LOGIN :(
+    //Determine if sign in email & password = success     
     if (signinForm.status == "VALID") {
       this.userService.login(signinForm.value).subscribe(
         (user: User) => {
@@ -38,12 +37,9 @@ export class SignInComponent implements OnInit {
             this.router.navigateByUrl("/admin");
           } else {
             console.log("you have logged in");
-            //JackieRoberts:
             //If successful, navigate to home page
             this.router.navigateByUrl("/");
             console.log("successfully logged in");
-
-            //JackieRoberts:
             //If successful, create login message
             this.messageService.addMessage({
               body: "You have logged in",
@@ -57,13 +53,13 @@ export class SignInComponent implements OnInit {
           console.log(error);
           this.messageService.addMessage({
             body:
-              "There was a problem logging in - check your email address & password",
+              "Incorrect email address or password",
           });
         }
       );
     }
   }
-  //uses the userService to connect to database
+  //uses the userService to connect to users & message service to connect to messages
   constructor(
     private userService: UserService,
     private messageService: AlertService,

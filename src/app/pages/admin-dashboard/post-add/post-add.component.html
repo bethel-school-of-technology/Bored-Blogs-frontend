@@ -22,7 +22,7 @@
         </strong>
       </label>
       <select class="form-control col-4" id="authorId" #authorId="ngModel" name="authorId" required
-        [(ngModel)]="addPost.authorId">
+        [(ngModel)]="newPost.authorId">
         <option *ngFor="let contrib of contributors" [value]="contrib.id">{{contrib.firstName}} {{contrib.lastName}}
         </option>
       </select>

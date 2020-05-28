@@ -6,15 +6,46 @@ import { CookieService } from "ngx-cookie-service";
 import { share, multicast, map } from "rxjs/operators";
 import { Observable, of, Subject, ReplaySubject } from "rxjs";
 import { Router } from "@angular/router";
+import { MyHeaders } from "./headers";
+
+var user: User[] = [];
+
+function convertManyCreatedAtDates(users: User[]) {
+  return users.map((u) => convertCreatedAtDates(u));
+}
+function convertCreatedAtDates(user: User) {
+  user.createdAtDate = new Date(user.createdAt);
+  var tempDate = new Date(user.createdAtDate);
+  user.createdAt = `${
+    tempDate.getMonth() + 1
+    }/${tempDate.getDate()}/${tempDate.getFullYear()} `;
+  return user;
+}
+
+function convertManyLastLoggedInDates(users: User[]) {
+  return users.map((u) => convertLastLoggedInDates(u));
+}
+function convertLastLoggedInDates(users: User) {
+  user.LastLoggedInDate = new Date(user.LastLoggedIn);
+  var tempDate = new Date(user.lastLoggedInDate);
+  user.lastLoggedInDate = `${
+    tempDate.getMonth() + 1
+    }/${tempDate.getDate()}/${tempDate.getFullYear()} `;
+  return user;
+}
 
 @Injectable({
   providedIn: "root",
 })
+
 export class UserService {
   url: string = Config.apiUrl;
   private currentUser: User;
   private currentUserSubject: Subject<User> = new Subject();
-  constructor(private http: HttpClient, private cookieService: CookieService) {
+
+  constructor(
+    private http: HttpClient, 
+    private cookieService: CookieService) {
     this.currentUserSubject.pipe(share());
   }
 
@@ -65,9 +96,11 @@ export class UserService {
     this.currentUserSubject.next(null);
   }
 
-  // Get list of users (Admin only)
+  // Get list of users (Admin only)  --> replaced by currentUserSubject below
   //   getUsers(): Observable<User[]> {
-  //     return this.http.get<User[]>(this.url + "/users-list");
+  //     return this.http.get<User[]>(
+  //     this.url + "/users-list"
+  //     ).pipe(map(convertManyCreatedAtDates, convertManyLastLoggedInDates));
   // }
 
   //TODO: fix spelling and make it work
@@ -82,11 +115,12 @@ export class UserService {
 
   getCurrentUser(): Observable<User> {
     return this.currentUserSubject; //is of() is the same as new Observable()
+    // .pipe(map(convertManyCreatedAtDates, convertManyLastLoggedInDates));
   }
 
-  //sleeping always help fix every problem
-  //sometimes subscribe is being called after next so just refrehs after looking at it
+  //sometimes subscribe is being called after next so just refresh after looking at it
   refreshUser(): void {
-    this.currentUserSubject.next(this.currentUser);
-  }
+    this.currentUserSubject.next(this.currentUser)
+    // .pipe(map(convertManyCreatedAtDates, convertManyLastLoggedInDates));
+    }
 }

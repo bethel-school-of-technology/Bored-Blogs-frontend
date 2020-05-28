@@ -48,20 +48,20 @@ export class R {
     },
     // NAVBAR Titles & Order
     make("home", "Home", HomeComponent, true),
-    make("boot", "Bootstrap Demo", BootDemoComponent, false),
+    make("boot", "Bootstrap Demo", BootDemoComponent, false), //for testing
     make("posts", "View All Posts", AllPostComponent, true),
-    make("contributor", "Meet the Contributors", ContributorsComponent, false), //JACKIE: In nav "Contributors" dropdown list
-    make("contact-us", "Contact Us", ContactUsComponent, false), //JACKIE: In nav "Contributors" dropdown list
-    make("sign-in", "Log In", SignInComponent, false), //JACKIE: In nav "Users" dropdown list
-    make("contributor-profile/:id","Contributor Profile", ContributersProfileComponent,false),
-    make("create-account", "Create account", CreateAccountComponent, false),
+    make("contributor", "Meet the Contributors", ContributorsComponent, false), //In nav "Contributors" dropdown list
+    make("contact-us", "Contact Us", ContactUsComponent, false), //In nav "Users" dropdown list as Submit a Blog Request
+    make("sign-in", "Log In", SignInComponent, false), //hard-coded in navbar.html
+    make("contributor-profile/:id","Contributor Profile", ContributersProfileComponent,false), //In nav "Contributors" dropdown list
+    make("create-account", "Create account", CreateAccountComponent, false), //hard-coded in navbar.html
     make("post-add", "post add", PostAddComponent, false),
     make("post-edit/:id", "Post Detail", PostEditComponent, false),
     make("post-detail/:id", "Post Detail", PostDetailComponent, false),
     make("post-list", "Post List", PostListComponent, false),
-    make("admin", "Admin", AdminDashboardComponent, false), // need to turn this back to false once admins have ability to sign in
+    make("admin", "Admin", AdminDashboardComponent, false),
     make("users-list", "users-list", UsersListComponent, false),
-    make("user-profile/:id", "User Profile", UserProfileComponent, false), //also for Change password //JACKIE: In nav "Users" dropdown list
+    make("user-profile/:id", "User Profile", UserProfileComponent, false), //In nav "Users" dropdown list
     make("user-submission-details", "User Submission Details", UserSubmissionDetailsComponent, false)
   ];
 

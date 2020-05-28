@@ -7,22 +7,19 @@ import { MyHeaders } from "./headers";
 import { map } from 'rxjs/operators';
 
 const weAreUsingCloud = Config.weAreUsingCloud;
+
 function convertManyCreatedAtDates(comments: Comment[]) {
-  //console.log(posts);
   return comments.map((p) => convertCreatedAtDates(p));
 }
-
-//it was hard to write it should be hard to read -Jacob
 function convertCreatedAtDates(comment: Comment) {
-  //console.log(post);
   comment.createdAtDate = new Date(comment.createdAt);
   var tempDate = new Date(comment.createdAtDate);
   comment.createdAt = `${
     tempDate.getMonth() + 1
     }/${tempDate.getDate()}/${tempDate.getFullYear()} `;
-  //console.log(post);
   return comment;
 }
+
 @Injectable({
   providedIn: "root",
 })
@@ -37,7 +34,9 @@ export class PostCommentService {
 
   // Get comment by id to display on the associated post-detail page
   getComment(id: number): Observable<Comment> {
-    return this.http.get<Comment>(this.url + "/comments/read/" + id).pipe(map(convertCreatedAtDates));
+    return this.http.get<Comment>(
+      this.url + "/comments/read/" + id
+      ).pipe(map(convertCreatedAtDates));
   }
 
   // Add a comment to a post (User or Admin only) on post-detail page (by id)

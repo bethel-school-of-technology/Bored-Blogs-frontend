@@ -3,11 +3,13 @@ import { PostDataService } from "../../../services/post-data.service";
 import { Post } from "../../../models/post";
 import { User } from "src/app/models/user";
 import { UserService } from "src/app/services/user.service";
+
 @Component({
   selector: "post-list",
   templateUrl: "./post-list.component.html",
   styleUrls: ["./post-list.component.scss"],
 })
+
 export class PostListComponent implements OnInit {
   posts: Post[];
   user: User;

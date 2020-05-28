@@ -15,9 +15,6 @@ import { PostListComponent } from './admin-dashboard/post-list/post-list.compone
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { PostAddComponent } from './admin-dashboard/post-add/post-add.component';
 import { PostEditComponent } from './admin-dashboard/post-edit/post-edit.component';
-import { PostCommentComponent } from './all-post/post-comment/post-comment.component';
-import { CommentDeleteComponent } from './all-post/comment-delete/comment-delete.component';
-import { CommentEditComponent } from './all-post/comment-edit/comment-edit.component';
 import { UsersListComponent } from './admin-dashboard/users-list/users-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserSubmissionDetailsComponent } from './admin-dashboard/user-submission-details/user-submission-details.component';
@@ -39,9 +36,6 @@ import { UserSubmissionDetailsComponent } from './admin-dashboard/user-submissio
     AdminDashboardComponent,
     PostAddComponent,
     PostEditComponent,
-    PostCommentComponent,
-    CommentDeleteComponent,
-    CommentEditComponent,
     UsersListComponent,
     UserProfileComponent,
     UserSubmissionDetailsComponent,
