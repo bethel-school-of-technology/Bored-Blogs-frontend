@@ -11,19 +11,21 @@ import {
 import { Utilities } from "./Utilities";
 import { map } from 'rxjs/operators';
 
-var contactUs: ContactUs[] = [];
 
-function convertManyCreatedAtDates(contactUs: ContactUs[]) {
-  return contactUs.map((p) => convertCreatedAtDates(p));
-}
-function convertCreatedAtDates(contactUs: ContactUs) {
-  contactUs.createdAtDate = new Date(contactUs.createdAt);
-  var tempDate = new Date(contactUs.createdAtDate);
-  contactUs.createdAt = `${
-    tempDate.getMonth() + 1
-    }/${tempDate.getDate()}/${tempDate.getFullYear()} `;
-  return contactUs;
-}
+
+// function convertManyCreatedAtDates(contactUs: ContactUs[]) {
+//   return contactUs.map((p) => convertCreatedAtDates(p));
+// }
+// function convertCreatedAtDates(contactUs: ContactUs) {
+//   contactUs.createdAtDate = new Date(contactUs.createdAt);
+//   var tempDate = new Date(contactUs.createdAtDate);
+//   contactUs.createdAt = `${
+//     tempDate.getMonth() + 1
+//     }/${tempDate.getDate()}/${tempDate.getFullYear()} `;
+//   return contactUs;
+// }
+
+var contactUs: ContactUs[] = [];
 
 @Injectable({
   providedIn: "root",
@@ -37,12 +39,13 @@ export class ContactUsService {
     //console.log(contributors);
     return this.http.get<ContactUs[]>(this.url + "/ContactSubmissions/", {
       headers: Utilities.createHeaders(token),
-    }).pipe(map(convertManyCreatedAtDates));
+    })
+    // .pipe(map(convertManyCreatedAtDates));
   }
   // get a submissiom
   getAContactSubmission(id: number): Observable<ContactUs[]> {
     return this.http.get<ContactUs[]>(this.url + "/ContactSubmissions/" + id)
-    .pipe(map(convertManyCreatedAtDates)); 
+    // .pipe(map(convertManyCreatedAtDates)); 
   }
 
   //submit a contactsubmission
@@ -53,14 +56,16 @@ export class ContactUsService {
       {
         headers: Utilities.createHeaders(token),
       }
-    ).pipe(map(convertManyCreatedAtDates)); 
+    )
+    // .pipe(map(convertManyCreatedAtDates)); 
   }
 
   //delete a contact submission
   deleteContactSubmission(id: number, token): Observable<ContactUs[]> {
     return this.http.delete<ContactUs[]>(this.url + "/contactSubmissions/" + id, {
       headers: Utilities.createHeaders(token),
-    }).pipe(map(convertManyCreatedAtDates));
+    })
+    // .pipe(map(convertManyCreatedAtDates));
   }
 
   constructor(private http: HttpClient) {}

@@ -3,10 +3,9 @@ import { HttpClient } from "@angular/common/http";
 import { User } from "../models/user";
 import { Config } from "../config/config";
 import { CookieService } from "ngx-cookie-service";
-import {  map } from "rxjs/operators";
+import { map } from "rxjs/operators";
 import { Observable, of, Subject } from "rxjs";
-
-
+import { Utilities } from "./Utilities";
 
 @Injectable({
   providedIn: "root",
@@ -17,7 +16,7 @@ export class UserService {
   private currentUser: User;
   private currentUserSubject: Subject<User> = new Subject();
 
-  constructor(private http: HttpClient, private cookieService: CookieService) {}
+  constructor(private http: HttpClient, private cookieService: CookieService) { }
 
   //this registers an account
   createAccount(user: User) {
@@ -56,26 +55,23 @@ export class UserService {
   isLoggedIn(): boolean {
     return this.currentUserSubject != null;
   }
- 
+
   // Log out user
   logout() {
     this.currentUserSubject.next(null);
   }
 
 
-  getUserFromLoacl() {
-    //is this a mispelling? "local"?
+  getUserFromLocal() {
     //TODO: eat the cookie
   }
 
   getCurrentUser(): Observable<User> {
     return this.currentUserSubject; //is of() is the same as new Observable()
-    // .pipe(map(convertManyCreatedAtDates, convertManyLastLoggedInDates));
   }
 
   //sometimes subscribe is being called after next so just refresh after looking at it
   refreshUser(): void {
     this.currentUserSubject.next(this.currentUser)
-    // .pipe(map(convertManyCreatedAtDates, convertManyLastLoggedInDates));
-    }
+  }
 }
