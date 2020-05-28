@@ -13,10 +13,21 @@
 .title {
   font-family: 'Indie Flower', cursive;
   font-size: 5em;
-  background: rgb(48,194,48);
-  background: linear-gradient(90deg, rgba(48,194,48,1) 0%, rgba(233,240,74,0.9587185215883228) 50%, rgba(0,110,255,1) 100%);
-  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
+  background: rgb(48, 194, 48);
+  background: linear-gradient(90deg, rgba(48, 194, 48, 1) 0%, rgba(233, 240, 74, 0.9587185215883228) 50%, rgba(0, 110, 255, 1) 100%);
+  // box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
+
+.gameIcon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  // height: 20%;
+  width: 50%;
+  border-radius: 50%;
+  box-shadow: 4px 5px 10px 2px rgba(66, 64, 64, 0.8);
+}
+
 //PICTURE OF BORED GAME TO GO WITH HEADER
 img {
   display: block;
@@ -28,7 +39,7 @@ img {
 
 //GAME OF THE WEEK SECTION
 .gameOfWeek {
-  background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(243, 243, 161));
+  background-image: linear-gradient(to left, rgba(255, 0, 0, 0), rgb(243, 243, 161));
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.8);
 }
 

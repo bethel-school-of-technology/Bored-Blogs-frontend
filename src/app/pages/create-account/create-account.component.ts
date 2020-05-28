@@ -62,7 +62,7 @@ export class CreateAccountComponent implements OnInit {
     }
   }
 
-  //uses the userService to connect to dabase
+  //uses the userService to connect to database
   constructor(
     private userService: UserService,
     private messageService: AlertService,

@@ -18,9 +18,7 @@ import { AlertService } from "src/app/services/alert.service";
   styleUrls: ["./user-profile.component.scss"],
 })
 export class UserProfileComponent implements OnInit {
-  // Jackie
-  // to get one user to show on /user-detail/:id
-
+ 
   constructor(
     private userService: UserService,
     private router: Router,

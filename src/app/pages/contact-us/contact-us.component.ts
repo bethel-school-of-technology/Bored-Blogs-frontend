@@ -36,7 +36,7 @@ export class ContactUsComponent implements OnInit {
     Message: ${f.value.body}`;
     console.log(message);
 
-    this.ContactUsService.addContactSubmission(f.form.value, this.user.token).subscribe(
+    this.ContactUsService.addMessage(f.form.value, this.user.token).subscribe(
       (m) => {
         this.message = m;
         var tempDate = new Date(this.message.createdAt);

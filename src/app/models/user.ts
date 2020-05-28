@@ -11,7 +11,9 @@ export class User {
     token: string;
     isAdmin: boolean;
     lastLoggedIn: string;
+    lastLoggedInDate: Date;
     createdAt: string;
+    createdAtDate: Date;
     style:string;//todo jacob should update this and bring backend closer to frontend
     url: String;
 

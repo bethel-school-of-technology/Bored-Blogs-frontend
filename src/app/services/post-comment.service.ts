@@ -8,13 +8,9 @@ import { map } from "rxjs/operators";
 
 
 function convertManyCreatedAtDates(comments: Comment[]) {
-  //console.log(posts);
   return comments.map((p) => convertCreatedAtDates(p));
 }
-
-//it was hard to write it should be hard to read -Jacob
 function convertCreatedAtDates(comment: Comment) {
-  //console.log(post);
   comment.createdAtDate = new Date(comment.createdAt);
   var tempDate = new Date(comment.createdAtDate);
   comment.createdAt = `${
@@ -23,6 +19,7 @@ function convertCreatedAtDates(comment: Comment) {
   //console.log(post);
   return comment;
 }
+
 @Injectable({
   providedIn: "root",
 })

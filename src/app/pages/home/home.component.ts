@@ -13,7 +13,7 @@ import { User } from 'src/app/models/user';
 })
 export class HomeComponent implements OnInit {
   //JACKIE:
-  // Connect to backend to ge the contributors & all-posts
+  // Connect to backend to get the contributors & all-posts
   contributors: User[];
   posts: Post[];
 

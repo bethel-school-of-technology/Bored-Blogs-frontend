@@ -17,10 +17,7 @@ h3 {
 }
 
 .btn-primary {
-  display: inline-block;
   margin-right: 10px;
-  -webkit-box-shadow: 4px 5px 10px 2px rgba(66, 64, 64, 0.8);
-          box-shadow: 4px 5px 10px 2px rgba(66, 64, 64, 0.8);
 }
 
 .form-group {
