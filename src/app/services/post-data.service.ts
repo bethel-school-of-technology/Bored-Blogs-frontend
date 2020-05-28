@@ -7,23 +7,6 @@ import { UserService } from "./user.service";
 import { map } from "rxjs/operators";
 import { Utilities } from "./Utilities";
 
-//it was hard to write it should be hard to read -Jacob
-function convertManyPublishedDates(posts: Post[]) {
-  //console.log(posts);
-  return posts.map((p) => convertPublishedDates(p));
-}
-
-//it was hard to write it should be hard to read -Jacob
-function convertPublishedDates(post: Post) {
-  //console.log(post);
-  post.publishedDate = new Date(post.published);
-  var tempDate = new Date(post.published);
-  post.published = `${
-    tempDate.getMonth() + 1
-  }/${tempDate.getDate()}/${tempDate.getFullYear()} `;
-  //console.log(post);
-  return post;
-}
 @Injectable({
   providedIn: "root",
 })
@@ -33,7 +16,7 @@ export class PostDataService {
   getPosts(): Observable<Post[]> {
     return this.http
       .get<Post[]>(this.url + "/posts")
-      .pipe(map(convertManyPublishedDates))
+      .pipe(Utilities.mapManyWithKey("published"))
       .pipe(
         map((foo) => {
           foo = foo.map((f) => {
@@ -68,14 +51,14 @@ export class PostDataService {
   getPost(postId: number): Observable<Post> {
     var earl = this.url + "/posts/" + postId;
     console.log(earl);
-    return this.http.get<Post>(earl).pipe(map(convertPublishedDates));
+    return this.http.get<Post>(earl)
+    .pipe(Utilities.mapWithKey("published"))
   }
 
   addPost(post: Post, token: string): Observable<Post> {
-    return this.http
-      .post<Post>(this.url + "/posts", post, {
-        headers: Utilities.createHeaders(token),
-      })
+    return this.http.post<Post>(this.url + "/posts", post, {
+      headers: Utilities.createHeaders(token),
+    });
   }
 
   deletePost(postId: number, token): Observable<Post> {
@@ -85,7 +68,7 @@ export class PostDataService {
   }
 
   editPost(postId: number, post: Post, token): Observable<Post> {
-    console.log('edit post is being called 88')
+    console.log("edit post is being called 88");
     return this.http.put<Post>(this.url + "/posts/" + postId, post, {
       headers: Utilities.createHeaders(token),
     });

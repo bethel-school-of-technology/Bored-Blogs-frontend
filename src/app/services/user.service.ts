@@ -3,35 +3,10 @@ import { HttpClient } from "@angular/common/http";
 import { User } from "../models/user";
 import { Config } from "../config/config";
 import { CookieService } from "ngx-cookie-service";
-import { share, multicast, map } from "rxjs/operators";
-import { Observable, of, Subject, ReplaySubject } from "rxjs";
-import { Router } from "@angular/router";
+import {  map } from "rxjs/operators";
+import { Observable, of, Subject } from "rxjs";
 
-var user: User[] = [];
 
-function convertManyCreatedAtDates(users: User[]) {
-  return users.map((u) => convertCreatedAtDates(u));
-}
-function convertCreatedAtDates(user: User) {
-  user.createdAtDate = new Date(user.createdAt);
-  var tempDate = new Date(user.createdAtDate);
-  user.createdAt = `${
-    tempDate.getMonth() + 1
-    }/${tempDate.getDate()}/${tempDate.getFullYear()} `;
-  return user;
-}
-
-function convertManyLastLoggedInDates(users: User[]) {
-  return users.map((u) => convertLastLoggedInDates(u));
-}
-function convertLastLoggedInDates(user: User) {
-  user.lastLoggedInDate = new Date(user.lastLoggedIn);
-  var tempDate = new Date(user.lastLoggedInDate);
-  user.lastLoggedIn = `${
-    tempDate.getMonth() + 1
-    }/${tempDate.getDate()}/${tempDate.getFullYear()} `;
-  return user;
-}
 
 @Injectable({
   providedIn: "root",
