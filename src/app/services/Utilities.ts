@@ -1,5 +1,5 @@
 import { HttpHeaders } from "@angular/common/http";
-export class MyHeaders {
+export class Utilities {
   //the set doesnt seem to work as intended
   static headers: HttpHeaders = new HttpHeaders({
     "Content-Type": "application/json",

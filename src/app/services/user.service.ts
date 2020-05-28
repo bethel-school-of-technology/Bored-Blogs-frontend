@@ -14,9 +14,8 @@ export class UserService {
   url: string = Config.apiUrl;
   private currentUser: User;
   private currentUserSubject: Subject<User> = new Subject();
-  constructor(private http: HttpClient, private cookieService: CookieService) {
-    this.currentUserSubject.pipe(share());
-  }
+
+  constructor(private http: HttpClient, private cookieService: CookieService) {}
 
   //this registers an account
   createAccount(user: User) {
@@ -41,39 +40,26 @@ export class UserService {
 
   // Login in user
   login(user: User) {
-    const Observable = this.http
-      .post(`${Config.apiUrl}/users/login`, user)
-      .pipe(share());
-    Observable.subscribe((user: User) => {
-      console.log(user);
-      this.currentUser = user;
-      this.currentUserSubject.next(user);
-      this.cookieService.set("token", user.token);
-    });
-    return Observable;
+    return this.http.post(`${Config.apiUrl}/users/login`, user).pipe(
+      map((user: User) => {
+        console.log(user);
+        this.currentUser = user;
+        this.currentUserSubject.next(user);
+        this.cookieService.set("token", user.token);
+        return user;
+      })
+    );
   }
 
   isLoggedIn(): boolean {
     return this.currentUserSubject != null;
   }
-
-  isAdmin() {
-    //TODO: run the is admin endpoint perhaps
-  }
+ 
   // Log out user
   logout() {
     this.currentUserSubject.next(null);
   }
 
-  // Get list of users (Admin only)
-  //   getUsers(): Observable<User[]> {
-  //     return this.http.get<User[]>(this.url + "/users-list");
-  // }
-
-  //TODO: fix spelling and make it work
-  getContributors() {
-    return;
-  }
 
   getUserFromLoacl() {
     //is this a mispelling? "local"?

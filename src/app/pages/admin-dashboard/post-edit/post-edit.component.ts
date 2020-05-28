@@ -20,13 +20,10 @@ export class PostEditComponent implements OnInit {
 
   savePost(f: NgForm) {
     var values = f.form.value;
-    values["id"] = this.postId;
-    console.log(values);
-    //console.log(this.editPost);
 
     this.postDataService
-      .editPost(values, this.user.token)
-      .subscribe((p) => this.router.navigate(["/post-list"]));
+      .editPost(this.postId, values, this.user.token)
+      .subscribe(() => this.router.navigate(["/post-list"]));
   }
 
   constructor(

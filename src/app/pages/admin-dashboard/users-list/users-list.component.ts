@@ -44,7 +44,7 @@ export class UsersListComponent implements OnInit {
 
   deleteUser(id: number): void {
     this.adminUserService.deleteUser(id, this.meTheUser.token)
-      .subscribe(u => this.usersList = u);
+      .subscribe(() => this.getUsers());//i just called this again
   }
 
   selector = -1;

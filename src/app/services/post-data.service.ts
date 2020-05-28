@@ -5,7 +5,7 @@ import { Post } from "../models/post";
 import { Config } from "../config/config";
 import { UserService } from "./user.service";
 import { map } from "rxjs/operators";
-import { MyHeaders } from "./headers";
+import { Utilities } from "./Utilities";
 
 //it was hard to write it should be hard to read -Jacob
 function convertManyPublishedDates(posts: Post[]) {
@@ -46,7 +46,8 @@ export class PostDataService {
       )
       .pipe(
         map((posts) => {
-          return posts.sort((p1, p2) => {//pipe the convertManyPublishedDates before doing this otherwise bad time are ahead
+          return posts.sort((p1, p2) => {
+            //pipe the convertManyPublishedDates before doing this otherwise bad time are ahead
             //this is a date comparator
             if (p1.publishedDate < p2.publishedDate) return 1;
             if (p1.publishedDate > p2.publishedDate) return -1;
@@ -55,41 +56,39 @@ export class PostDataService {
         })
       );
   }
-  //getPostByauthor :Jackie
-  getPostby(authorId: number): Observable<Post> {
-    return this.http
-      .get<Post>(this.url + "/posts/read/" + authorId)
-      .pipe(map(convertPublishedDates));
-  }
 
-  getPost(id: number): Observable<Post> {
-    var earl = this.url + "/posts/read/" + id;
+  //not implemented in backend -jacob
+  // //getPostByauthor :Jackie
+  // getPostby(authorId: number): Observable<Post> {
+  //   return this.http
+  //     .get<Post>(this.url + "/posts/" + authorId)
+  //     .pipe(map(convertPublishedDates));
+  // }
+
+  getPost(postId: number): Observable<Post> {
+    var earl = this.url + "/posts/" + postId;
     console.log(earl);
     return this.http.get<Post>(earl).pipe(map(convertPublishedDates));
   }
 
-  addPost(post: Post, token: string): Observable<Post[]> {
+  addPost(post: Post, token: string): Observable<Post> {
     return this.http
-      .post<Post[]>(this.url + "/posts", post, {
-        headers: MyHeaders.createHeaders(token),
+      .post<Post>(this.url + "/posts", post, {
+        headers: Utilities.createHeaders(token),
       })
-      .pipe(map(convertManyPublishedDates));
   }
 
-  deletePost(id: number, token): Observable<Post[]> {
-    return this.http
-      .delete<Post[]>(this.url + "/posts/delete/" + id, {
-        headers: MyHeaders.createHeaders(token),
-      })
-      .pipe(map(convertManyPublishedDates));
+  deletePost(postId: number, token): Observable<Post> {
+    return this.http.delete<Post>(this.url + "/posts/" + postId, {
+      headers: Utilities.createHeaders(token),
+    });
   }
 
-  editPost(post: Post, token): Observable<Post[]> {
-    return this.http
-      .put<Post[]>(this.url + "/posts/update/" + post.id, post, {
-        headers: MyHeaders.createHeaders(token),
-      })
-      .pipe(map(convertManyPublishedDates));
+  editPost(postId: number, post: Post, token): Observable<Post> {
+    console.log('edit post is being called 88')
+    return this.http.put<Post>(this.url + "/posts/" + postId, post, {
+      headers: Utilities.createHeaders(token),
+    });
   }
 
   constructor(private http: HttpClient, private user: UserService) {}

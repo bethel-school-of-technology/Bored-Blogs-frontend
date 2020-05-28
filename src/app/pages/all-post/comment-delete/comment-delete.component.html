@@ -1,2 +1,2 @@
 <!--this allows admins to delete comments on blog posts-->
-<button *ngIf='this.isAdmin' class="btn-danger" (click)="deleteComment(comment.id)">Delete</button>
+<button *ngIf='this.user.isAdmin' class="btn-danger" (click)="deleteComment(comment.id)">Delete</button>

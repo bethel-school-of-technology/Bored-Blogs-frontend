@@ -8,7 +8,7 @@ import {
   HttpHeaders,
   HttpClientModule,
 } from "@angular/common/http";
-import { MyHeaders } from "./headers";
+import { Utilities } from "./Utilities";
 
 var contactUs: ContactUs[] = [];
 @Injectable({
@@ -22,7 +22,7 @@ export class ContactUsService {
   getContactSubmissions(token: string): Observable<ContactUs[]> {
     //console.log(contributors);
     return this.http.get<ContactUs[]>(this.url + "/ContactSubmissions/", {
-      headers: MyHeaders.createHeaders(token),
+      headers: Utilities.createHeaders(token),
     });
   }
   // get a submissiom
@@ -36,15 +36,15 @@ export class ContactUsService {
       this.url + "/contactSubmissions",
       contactUs,
       {
-        headers: MyHeaders.createHeaders(token),
+        headers: Utilities.createHeaders(token),
       }
     );
   }
 
   //delete a contact submission
   deleteContactSubmission(id: number, token): Observable<ContactUs[]> {
-    return this.http.delete<ContactUs[]>(this.url + "/contactSubmissions/delete/" + id, {
-      headers: MyHeaders.createHeaders(token),
+    return this.http.delete<ContactUs[]>(this.url + "/contactSubmissions/" + id, {
+      headers: Utilities.createHeaders(token),
     });
   }
 

@@ -18,6 +18,7 @@ export class PostDetailComponent implements OnInit {
   // to get one post to show on /post-detail/:id
 
   post: Post;
+  postId:number;
   user: User;
   comment: Comment;
   isOpen: boolean;
@@ -34,6 +35,7 @@ export class PostDetailComponent implements OnInit {
     this.route.params.subscribe((param) => {
       this.postDataService.getPost(+param["id"]).subscribe((p) => {
         this.post = p;
+        this.postId = +param["id"];
         //console.log(t)
         this.getComments(+param["id"]);
       });
@@ -72,7 +74,7 @@ export class PostDetailComponent implements OnInit {
       .subscribe(
         (c) => {
           //console.log(c);       
-          this.comments=(c);
+          this.getComments(this.postId);
         },
         (err) => {
           console.log(err);
