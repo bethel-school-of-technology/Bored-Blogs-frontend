@@ -7,19 +7,19 @@ export class Utilities {
     auth: "",
   });  
 
-  static mapManyWithKey(key: string) {
+  static mapManyDatesWithKey(key: string) {
     return map((foo: any) => {
-      return foo.map((u) => Utilities.convertKey(u, key));
+      return foo.map((u) => Utilities.convertDateWithKey(u, key));
     });    
   }
 
-  static mapWithKey(key: string) {
+  static mapDateWithKey(key: string) {
     return map((foo: any) => {
-      return Utilities.convertKey(foo, key);
+      return Utilities.convertDateWithKey(foo, key);
     });
   }
 
-  static convertKey(foo: any, key: string) {
+  static convertDateWithKey(foo: any, key: string) {
     foo[key + "Date"] = new Date(foo[key]);
     var tempDate = new Date(foo[key + "Date"]);
     foo[key] = `${

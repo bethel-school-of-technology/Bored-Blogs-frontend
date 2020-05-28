@@ -16,7 +16,7 @@ export class PostDataService {
   getPosts(): Observable<Post[]> {
     return this.http
       .get<Post[]>(this.url + "/posts")
-      .pipe(Utilities.mapManyWithKey("published"))
+      .pipe(Utilities.mapManyDatesWithKey("published"))
       .pipe(
         map((foo) => {
           foo = foo.map((f) => {
@@ -52,7 +52,7 @@ export class PostDataService {
     var earl = this.url + "/posts/" + postId;
     console.log(earl);
     return this.http.get<Post>(earl)
-    .pipe(Utilities.mapWithKey("published"))
+    .pipe(Utilities.mapDateWithKey("published"))
   }
 
   addPost(post: Post, token: string): Observable<Post> {
