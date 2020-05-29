@@ -21,18 +21,7 @@ export class UsersListComponent implements OnInit {
 
   getUsers(): void {
     this.adminUserService.getUsers(this.user.token)
-      .subscribe((u) => {
-        console.log(u);
-        for (var i = 0; i < u.length; i++) {//think about moving this to the service folder
-          var tempDate = new Date(u[i].lastLoggedIn)
-          var day = '';
-          var month = '';
-          u[i].lastLoggedIn = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()} `;
-          var tempDate = new Date(u[i].createdAt)
-          var day = '';
-          var month = '';
-          u[i].createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()} `;
-        }
+      .subscribe((u) => {        
         this.usersList = u;
       });
   }

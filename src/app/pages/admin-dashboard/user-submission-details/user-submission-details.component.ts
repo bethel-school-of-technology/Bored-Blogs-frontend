@@ -26,7 +26,7 @@ export class UserSubmissionDetailsComponent implements OnInit {
   deleteMessage(id: number): void {
     this.contactUsService.deleteContactSubmission(id, this.user.token)
     // .subscribe(() => this.ContactUs());  
-    .subscribe(m => this.ContactUs = m);
+      .subscribe(m => this.getMessages());
   }
 
   selector = -1;
@@ -38,19 +38,14 @@ export class UserSubmissionDetailsComponent implements OnInit {
     this.userService.getCurrentUser().subscribe((u) => {
       this.user = u;
       // Get list of messages (Admin dashboard)
-      this.contactUsService.getContactSubmissions(u.token).subscribe(
-        (m) => {
-          this.message = m;
-          var tempDate = new Date(this.message.createdAt);
-          var day = "";
-          var month = "";
-          this.message.createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()}`;
-
-          console.log(m);
-          this.ContactUs = m;
-        });
+      this.getMessages();
     });
     this.userService.refreshUser();
   }
-
+  getMessages(){
+    this.contactUsService.getContactSubmissions(this.user.token).subscribe(
+      (m) => {   
+        this.ContactUs = m;
+      });
+  }
 }
