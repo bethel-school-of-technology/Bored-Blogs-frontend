@@ -15,7 +15,7 @@ export class PostCommentService {
   getComments(parentPostId: number): Observable<Comment[]> {
     return this.http
       .get<Comment[]>(this.url + "/comments/" + parentPostId)
-      .pipe(Utilities.mapWithKey("createdAt"));
+      .pipe(Utilities.mapDateWithKey("createdAt"));
   }
 
   //not implemented in backend -jacob

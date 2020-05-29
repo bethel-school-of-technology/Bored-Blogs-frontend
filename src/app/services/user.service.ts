@@ -10,7 +10,6 @@ import { Utilities } from "./Utilities";
 @Injectable({
   providedIn: "root",
 })
-
 export class UserService {
   url: string = Config.apiUrl;
   private currentUser: User;
@@ -41,15 +40,19 @@ export class UserService {
 
   // Login in user
   login(user: User) {
-    return this.http.post(`${Config.apiUrl}/users/login`, user).pipe(
-      map((user: User) => {
-        console.log(user);
-        this.currentUser = user;
-        this.currentUserSubject.next(user);
-        this.cookieService.set("token", user.token);
-        return user;
-      })
-    );
+    return this.http
+      .post(`${Config.apiUrl}/users/login`, user)
+      .pipe(Utilities.mapDateWithKey("lastLoggedIn"))
+      .pipe(Utilities.mapDateWithKey("createdAt"))
+      .pipe(
+        map((user: User) => {
+          console.log(user);
+          this.currentUser = user;
+          this.currentUserSubject.next(user);
+          this.cookieService.set("token", user.token);
+          return user;
+        })
+      );
   }
 
   isLoggedIn(): boolean {
@@ -61,7 +64,6 @@ export class UserService {
     this.currentUserSubject.next(null);
   }
 
-
   getUserFromLocal() {
     //TODO: eat the cookie
   }
@@ -72,6 +74,6 @@ export class UserService {
 
   //sometimes subscribe is being called after next so just refresh after looking at it
   refreshUser(): void {
-    this.currentUserSubject.next(this.currentUser)
+    this.currentUserSubject.next(this.currentUser);
   }
 }
