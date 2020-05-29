@@ -1,6 +1,5 @@
 import { SearchBarService } from './services/search-bar.service';
 import { ContactUs } from './models/contact-us';
-import { MatButtonModule, MatChipsModule, MatIconModukle, MatInputModule} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +9,10 @@ import { MiscModule } from './misc/misc.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-
+import { MatChipsModule } from "@angular/material/chips";
+import { MatButtonModule } from "@angular/material/Button";
+import { MatIconModule } from "@angular/material/Icon";
+import { MatInputModule } from "@angular/material/Input";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,7 @@ import { CookieService } from 'ngx-cookie-service';
     FormsModule,
     MatChipsModule,
     MatButtonModule,
-    MatIconModukle,
+    MatIconModule,
     MatInputModule
   ],
   //? what are providers again?
