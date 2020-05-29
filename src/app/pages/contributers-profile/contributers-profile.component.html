@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <div class="coverPage" [ngStyle]="contributor.style">
+  <div class="coverPage" [ngStyle]="contributor.style" *ngFor="let contributor of contributors">
     <p class="coverTitle">{{contributor.firstName}} {{contributor.lastName}}</p>
   </div>
 
@@ -22,12 +22,13 @@
 
   <!-- Tab Links-->
 
+
   <div class="tab1 d-flex justify-content-center">
     <button [ngStyle]="contributor.style" class="tabOptions" (click)="setSelector(1)">{{contributor.firstName}}'s Bio</button>
   </div>
   <div class="tab2 d-flex justify-content-center">
     <button [ngStyle]="contributor.style" class="tabOptions" (click)="setSelector(2)">{{contributor.firstName}}'s Recent Posts</button>
-  </div>
+</div>
 <br />
 
   <!-- Tab Content (ABOUT)-->
