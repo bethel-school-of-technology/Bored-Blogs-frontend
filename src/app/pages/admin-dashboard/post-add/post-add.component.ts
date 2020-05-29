@@ -18,9 +18,13 @@ export class PostAddComponent implements OnInit {
   user: User;
 
   addPost() {
+    console.log('adPostcliked');
     this.postDataService
       .addPost(this.newPost, this.user.token)
-      .subscribe((p) => this.router.navigate(["/post-list"]));
+      .subscribe((p) => {
+        console.log('i should navigate now');
+        this.router.navigate(["/post-list"]);
+    });
   }
 
   constructor(

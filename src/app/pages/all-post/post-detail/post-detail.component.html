@@ -6,12 +6,10 @@
         {{ this.post.title }}
       </h3>
       <p class="postBody">
-        <strong
-          >Contributed by: {{ post.author.firstName }}
+        <strong>Contributed by: {{ post.author.firstName }}
           {{ post.author.lastName }}
           <br />
-          Published on: {{ post.published }}</strong
-        >
+          Published on: {{ post.published }}</strong>
         <br />
         <br />
         {{ post.body }}
@@ -24,26 +22,32 @@
     <!-- <div *ngIf="true" class="container"> -->
 
     <div class="comments" *ngFor="let comment of comments">
-      <strong
-        >{{ comment.author.firstName }} {{ comment.author.lastName }} - {{ comment.createdAt }}</strong
-      >
-      
+      <strong>{{ comment.author.firstName }} {{ comment.author.lastName }} - {{ comment.createdAt }}</strong>
       <br />
       {{ comment.body }}
     </div>
-    <div>
-      <br />
-      <button
-        class="tablinks btn btn-primary btn-sm"
-        (click)="isOpen = !isOpen"
-      >
-        Add Comment
-      </button>
-      <button [routerLink]="['/posts']" class="btn btn-primary btn-sm">
-        Return to All Blog Posts
-      </button>
+
+    <div class="d-flex helpBtn">
+      <!-- Add comment button only shows if user is logged in -->
+      <div *ngIf="user != null">
+        <button class="btn btn-primary btn-sm" (click)="isOpen = !isOpen">
+          Add Comment
+        </button>
+      </div>
+
+      <div>
+        <button class="btn btn-primary btn-sm" [routerLink]="['/posts']">
+          Return to All Blog Posts
+        </button>
+      </div>
     </div>
-    <!-- buttons -->
+
+    <!-- Message to log in to comment only shows if user is NOT logged in -->
+    <div *ngIf="user == null">
+      <p class="text-white msg d-flex justify-content-start">If you'd like to leave a comment, please log in</p>
+    </div>
+
+    <!-- Collapsable ADD COMMENT button -->
 
     <div class="form-group">
       <div id="commentInput" class="collapse" [ngClass]="{ show: isOpen }">
@@ -52,26 +56,17 @@
         </button>
         <form #f="ngForm" (ngSubmit)="addComment(f)">
           <div>
-            <label class="text-white" for="body"
-              ><strong>Add A Comment</strong></label
-            >
-            <textarea
-              class="form-control"
-              id="commentBody"
-              cols="100"
-              rows="2"
-              type="text"
-              name="body"
-              #body="ngModel"
-              ngModel
-            >
+            <label class="text-white" for="body"><strong>Add A Comment</strong></label>
+            <textarea class="form-control" id="commentBody" cols="100" rows="2" type="text" name="body" #body="ngModel"
+              ngModel>
             </textarea>
             <div class="submitMsg">
-            <button class="btn btn-primary btn-sm submit" type="submit">
-              Submit
-            </button><p class="text-white msg">(Won't submit?  You must be logged in to submit a comment)</p>
+              <button class="btn btn-primary btn-sm submit" type="submit">
+                Submit
+              </button>
+
             </div>
-            
+
           </div>
         </form>
       </div>

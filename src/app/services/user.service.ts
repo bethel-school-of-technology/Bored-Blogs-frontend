@@ -3,20 +3,20 @@ import { HttpClient } from "@angular/common/http";
 import { User } from "../models/user";
 import { Config } from "../config/config";
 import { CookieService } from "ngx-cookie-service";
-import { share, multicast, map } from "rxjs/operators";
-import { Observable, of, Subject, ReplaySubject } from "rxjs";
-import { Router } from "@angular/router";
+import { map } from "rxjs/operators";
+import { Observable, of, Subject } from "rxjs";
+import { Utilities } from "./Utilities";
 
 @Injectable({
   providedIn: "root",
 })
+
 export class UserService {
   url: string = Config.apiUrl;
   private currentUser: User;
   private currentUserSubject: Subject<User> = new Subject();
-  constructor(private http: HttpClient, private cookieService: CookieService) {
-    this.currentUserSubject.pipe(share());
-  }
+
+  constructor(private http: HttpClient, private cookieService: CookieService) { }
 
   //this registers an account
   createAccount(user: User) {
@@ -41,42 +41,28 @@ export class UserService {
 
   // Login in user
   login(user: User) {
-    const Observable = this.http
-      .post(`${Config.apiUrl}/users/login`, user)
-      .pipe(share());
-    Observable.subscribe((user: User) => {
-      console.log(user);
-      this.currentUser = user;
-      this.currentUserSubject.next(user);
-      this.cookieService.set("token", user.token);
-    });
-    return Observable;
+    return this.http.post(`${Config.apiUrl}/users/login`, user).pipe(
+      map((user: User) => {
+        console.log(user);
+        this.currentUser = user;
+        this.currentUserSubject.next(user);
+        this.cookieService.set("token", user.token);
+        return user;
+      })
+    );
   }
 
   isLoggedIn(): boolean {
     return this.currentUserSubject != null;
   }
 
-  isAdmin() {
-    //TODO: run the is admin endpoint perhaps
-  }
   // Log out user
   logout() {
     this.currentUserSubject.next(null);
   }
 
-  // Get list of users (Admin only)
-  //   getUsers(): Observable<User[]> {
-  //     return this.http.get<User[]>(this.url + "/users-list");
-  // }
 
-  //TODO: fix spelling and make it work
-  getContributors() {
-    return;
-  }
-
-  getUserFromLoacl() {
-    //is this a mispelling? "local"?
+  getUserFromLocal() {
     //TODO: eat the cookie
   }
 
@@ -84,9 +70,8 @@ export class UserService {
     return this.currentUserSubject; //is of() is the same as new Observable()
   }
 
-  //sleeping always help fix every problem
-  //sometimes subscribe is being called after next so just refrehs after looking at it
+  //sometimes subscribe is being called after next so just refresh after looking at it
   refreshUser(): void {
-    this.currentUserSubject.next(this.currentUser);
+    this.currentUserSubject.next(this.currentUser)
   }
 }

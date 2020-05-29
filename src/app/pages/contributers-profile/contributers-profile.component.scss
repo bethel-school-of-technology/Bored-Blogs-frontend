@@ -53,11 +53,16 @@ body {
 }
 
 // styles the tab that goes between bio and recent blogs
-.tab {
+.tab1 {
     overflow: hidden;
-    width: 190px;
     animation-timing-function: ease-in-out;
     animation-duration: 3s;
+    margin-bottom: 5px;
+}
+.tab2 {
+  overflow: hidden;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
 }
 
 // Style the button tabs
@@ -88,14 +93,13 @@ span {
     font-weight: bold;
 }
 
-//tag icon
-.tagIcon{
-  width: 10%;
-  height: 20%;
-}
+.tagIcon1{
 
-.tagIcon2{
   width: 50%;
   height: 50%;
 }
 
+.tagIcon2{
+  width: 25px;
+  height: 25px;
+}

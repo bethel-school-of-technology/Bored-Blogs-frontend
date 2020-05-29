@@ -5,7 +5,7 @@
   <ul>
     <li *ngFor="let post of posts">
       <strong>
-        {{post.title}} - {{post.author.firstName}} {{post.author.lastName}}</strong> <span>{{post.published}}</span>
+        {{post.title}} | {{post.author.firstName}} {{post.author.lastName}} | <span>{{post.published}}</span></strong>
       <br>
       {{post.body}}
       <br>

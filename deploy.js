@@ -5,6 +5,8 @@ let privateKey = '../bethel_final.pem';
 // TODO: ADD YOUR IP ADDRESS BELOW (e.g. '12.34.5.67')
 //http://54.159.120.199
 let host = '54.159.120.199';
+//TODO: add this command somewhere in the pipe
+//sudo systemctl restart nginx
 
 
 //npm install node-cmd node-ssh

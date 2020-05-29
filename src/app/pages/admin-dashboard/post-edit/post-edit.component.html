@@ -40,7 +40,8 @@
 
   <!-- Buttons -->
   <div class="d-flex buttons">
-    <button class="btn btn-primary btn-sm" type="submit">Save Changes</button>
+    <!-- if not in form the click but must connected -->
+    <button class="btn btn-primary btn-sm" type="submit" (click)="savePost(f)">Save Changes</button>
     <button [routerLink]="['/post-list']" class="btn btn-sm btn-primary">Cancel Changes</button>
   </div>
 

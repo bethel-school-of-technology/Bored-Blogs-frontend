@@ -10,7 +10,7 @@
         #createAccountForm="ngForm"
         (ngSubmit)="createAccount(createAccountForm)"
       >
-        <!-- FIRST NAME -->
+        <!-- FIRST NAME with validators  -->
         <div class="form-group">
           <strong><label for="firstName">First Name</label></strong>
           <input
@@ -41,7 +41,7 @@
             </div>
           </div>
         </div>
-        <!-- LAST NAME -->
+        <!-- LAST NAME with validators -->
         <div class="form-group">
           <strong><label for="lastName">Last Name</label></strong>
           <input
@@ -73,8 +73,7 @@
           </div>
         </div>
 
-        <!-- EMAIL -->
-        <!-- EMAIL PATTERN IS WORKING CORRECTLY -->
+        <!-- EMAIL with validators  -->
         <div class="form-group">
           <strong><label for="email">Email</label></strong>
           <input
@@ -95,10 +94,10 @@
           </div>
         </div>
 
-        <!-- PASSWORD -->
+        <!-- PASSWORD with validators  -->
+         <!-- PASSWORD CAN CONTAIN ANY CHARACTER(S) EXCEPT WHITE SPACES -->
         <div class="form-group">
           <strong><label for="password">Password</label></strong>
-          <!-- PASSWORD CAN CONTAIN ANY CHARACTER(S) EXCEPT WHITE SPACES -->
           <input
             required
             minlength="6"
@@ -128,7 +127,7 @@
           </div>
         </div>
 
-        <!-- PASSWORD CONFIRM -->
+        <!-- PASSWORD CONFIRM - if passwords don't match an alert will display from message service -->
         <div class="form-group">
           <strong><label>Confirm Password</label></strong>
           <input
