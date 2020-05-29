@@ -11,38 +11,46 @@ import { User } from "src/app/models/user";
 })
 
 export class UserSubmissionDetailsComponent implements OnInit {
-  user: User;
-  ContactUs: ContactUs[];
-  message: any;
-  comments: any;
-
-  deleteMessage(id: number): void {
-    this.contactUsService.deleteContactSubmission(id, this.user.token)
-    .subscribe(m => this.ContactUs = m);
-  }
 
   constructor(
     private contactUsService: ContactUsService,
     private userService: UserService
-  ) {}
+  ) { }
+
+  user: User;
+  ContactUs: ContactUs[];
+  message: any;
+  comments: any;
+  // messagesList: Message[];
+
+  deleteMessage(id: number): void {
+    this.contactUsService.deleteContactSubmission(id, this.user.token)
+    // .subscribe(() => this.ContactUs());  
+    .subscribe(m => this.ContactUs = m);
+  }
+
+  selector = -1;
+  setSelector(value: number) {
+    this.selector = value;
+  }
 
   ngOnInit() {
     this.userService.getCurrentUser().subscribe((u) => {
       this.user = u;
-      // this.contactUsService.getContactSubmissions(u.token).subscribe((e) => {
-        this.contactUsService.getContactSubmissions(u.token).subscribe(
-        (e) => {
-          this.message = e;
+      // Get list of messages (Admin dashboard)
+      this.contactUsService.getContactSubmissions(u.token).subscribe(
+        (m) => {
+          this.message = m;
           var tempDate = new Date(this.message.createdAt);
           var day = "";
           var month = "";
           this.message.createdAt = `${tempDate.getMonth() + 1}/${tempDate.getDate()}/${tempDate.getFullYear()}`;
-          
-        console.log(e);
-        this.ContactUs = e;
-      });
+
+          console.log(m);
+          this.ContactUs = m;
+        });
     });
     this.userService.refreshUser();
   }
-  
+
 }

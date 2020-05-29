@@ -15,7 +15,7 @@ export class UserService {
   private currentUser: User;
   private currentUserSubject: Subject<User> = new Subject();
 
-  constructor(private http: HttpClient, private cookieService: CookieService) {}
+  constructor(private http: HttpClient, private cookieService: CookieService) { }
 
   //this registers an account
   createAccount(user: User) {
@@ -64,8 +64,7 @@ export class UserService {
     this.currentUserSubject.next(null);
   }
 
-  getUserFromLoacl() {
-    //is this a mispelling? "local"?
+  getUserFromLocal() {
     //TODO: eat the cookie
   }
 

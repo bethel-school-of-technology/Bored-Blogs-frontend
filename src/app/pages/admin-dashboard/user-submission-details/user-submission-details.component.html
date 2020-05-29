@@ -3,7 +3,7 @@
   <h1 class="header text-center p-3">Messages</h1>
 
   <!-- Message Cards -->
-  <div>
+  <div *ngIf="true">
     <div *ngFor="let oneContactUs of ContactUs; index as i">
 
       <!-- Header -->
@@ -20,7 +20,7 @@
 
           <!-- Delete button -->
           <div class="delete">
-            <button class="btn btn-primary btn-sm" (click)="deleteMessage(oneContactUs.id)">Delete</button>
+            <button (click)="deleteMessage(oneContactUs.id)" class="btn btn-primary btn-sm">Delete</button>
           </div>
 
         </div>

@@ -16,8 +16,9 @@ h3 {
   text-align: center;
 }
 
-.btn-primary {
+.helpBtn {
   margin-right: 10px;
+  margin-top: 7px;
 }
 
 .form-group {
