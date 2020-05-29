@@ -1,4 +1,4 @@
-import { FormControl } from '@angular/forms';
+import { FormControl, NgForm } from "@angular/forms";
 import { Observable } from 'rxjs';
 import { SearchBarService } from './../../services/search-bar.service';
 import { Post } from 'src/app/models/post';
@@ -155,5 +155,9 @@ focusOnPlaceInput() {
   logout(){
     this.userService.logout();
     this.router.navigate(['/home']);
+  }
+
+  search(f:NgForm){
+    
   }
 }

@@ -9,10 +9,7 @@ import { MiscModule } from './misc/misc.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import { MatChipsModule } from "@angular/material/chips";
-import { MatButtonModule } from "@angular/material/Button";
-import { MatIconModule } from "@angular/material/Icon";
-import { MatInputModule } from "@angular/material/Input";
+
 
 @NgModule({
   declarations: [
@@ -25,10 +22,6 @@ import { MatInputModule } from "@angular/material/Input";
     MiscModule,
     PagesModule,
     FormsModule,
-    MatChipsModule,
-    MatButtonModule,
-    MatIconModule,
-    MatInputModule
   ],
   //? what are providers again?
   providers: [

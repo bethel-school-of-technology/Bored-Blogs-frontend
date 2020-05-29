@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { PostDataService } from "src/app/services/post-data.service";
 import { Post } from "src/app/models/post";
-
+import { NgForm } from "@angular/forms";
 @Component({
   selector: "app-all-post",
   templateUrl: "./all-post.component.html",
@@ -13,6 +13,7 @@ export class AllPostComponent implements OnInit {
   constructor(private postDataService: PostDataService) {}
 
   posts: Post[];
+  unfilteredPosts: Post[];
 
   ngOnInit() {
     this.getPosts();
@@ -33,6 +34,7 @@ export class AllPostComponent implements OnInit {
           }/${tempDate.getDate()}/${tempDate.getFullYear()} `;
         }
       this.posts = p;
+      this.unfilteredPosts = p;
     });
   }
 
@@ -61,6 +63,16 @@ export class AllPostComponent implements OnInit {
   //     return this;
   //   }
   // };
+
+  search(f: NgForm) {
+    let formValues = f.form.value;
+    console.log(f);
+    this.posts =this.unfilteredPosts;
+    this.posts = this.posts.filter((p) => {
+      var regex = new RegExp(`.*${formValues.title}.*`,'i');
+      return regex.test(p.title);      
+    });
+  }
 
   selector = -1;
   setSelector(value: number) {
