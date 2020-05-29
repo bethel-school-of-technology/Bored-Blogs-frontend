@@ -113,9 +113,8 @@
     </div>
 
     <!-- CONTRIBUTORS SECTION -->
-    <!-- JACKIE:make this a for loop ----- DONE!!! -->
     <div class="col-3 p-3 contributors">
-      <h3 class="text-center pt-4">Meet the Contributors</h3>
+      <h3 class="text-center pt-4">Meet the Team</h3>
       <div *ngFor="let contributor of contributors">
         <a [routerLink]="['/contributor-profile/', contributor.id]">
           <img src="{{ contributor.url }}" class="rounded-circle" href="http://localhost:4200/contributor-profile" />
@@ -126,7 +125,7 @@
         <br />
       </div>
       <button [routerLink]="['/contributor']" class="btn btn-primary">
-        Meet the Contributors
+        More About Us
       </button>
     </div>
   </div>
