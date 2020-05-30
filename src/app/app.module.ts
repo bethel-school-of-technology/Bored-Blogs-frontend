@@ -1,5 +1,5 @@
+import { SearchBarService } from './services/search-bar.service';
 import { ContactUs } from './models/contact-us';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +9,7 @@ import { MiscModule } from './misc/misc.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+
 
 @NgModule({
   declarations: [
@@ -20,11 +21,12 @@ import { CookieService } from 'ngx-cookie-service';
     AppRoutingModule,
     MiscModule,
     PagesModule,
-    FormsModule
+    FormsModule,
   ],
   //? what are providers again?
   providers: [
-    CookieService
+    CookieService,
+    SearchBarService
   ],
   //not our bootstrap nothing to do witho css
   bootstrap: [AppComponent]
