@@ -19,7 +19,7 @@ export class ContributersProfileComponent implements OnInit {
   ) {}
 
   contributor: User = new User();
-  games: Game[] = [new Game("game1"), new Game("game2")];
+  games: Game[] = [];
   posts: Post[] = [];
 
   ngOnInit() {

@@ -1,12 +1,5 @@
  <!-- Importing font style for contributor name-->
-<head>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
-        </style>
-</head>
-
-<body>
-  <div class="coverPage" [ngStyle]="contributor.style" *ngFor="let contributor of contributors">
+  <div class="coverPage" [ngStyle]="contributor.style">
     <p class="coverTitle">{{contributor.firstName}} {{contributor.lastName}}</p>
   </div>
 
@@ -87,4 +80,3 @@
 </section>
 
 </div>
-</body>
