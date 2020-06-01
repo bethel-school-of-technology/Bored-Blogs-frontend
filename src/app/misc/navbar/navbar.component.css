@@ -1,3 +1,8 @@
+@import "~bootstrap/dist/css/bootstrap.css"; /*bootstrap stylesheet*/
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons); /*to use material icons fonts in MatIcon component*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"; /* Default Angular Material theme.*/
+
+
 .createAccount {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;

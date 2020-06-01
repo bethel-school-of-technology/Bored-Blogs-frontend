@@ -1,6 +1,19 @@
 <section>
   <h1>All Blog Posts</h1>
-
+<!-- SEARCH KEYWORD form  KAYLA TESTING-->
+  <form #f="ngForm" (ngSubmit)="search(f)" class="form-inline my-2 my-lg-0" >
+    <input
+      class="form-control mr-sm-2"
+      placeholder="Search Keyword"
+      aria-label="Search"      
+      #title='ngModel'
+      name="title"
+      ngModel
+    />
+    <button class="btn btn-outline-accent my-2 my-sm-0" type="submit">
+      Search
+    </button>
+  </form>
 
   <div *ngIf="true" class="container w-50">
     <div class="Posts" *ngFor="let Post of posts; index as i">
