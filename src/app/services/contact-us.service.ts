@@ -16,17 +16,18 @@ import { map } from "rxjs/operators";
 })
 export class ContactUsService {
   url: string = Config.apiUrl;
-  contactUs: ContactUs[];
 
   // get all submissions
   getContactSubmissions(token: string): Observable<ContactUs[]> {
-    //console.log(contributors);
+    // send header(s) to the back end (gets stuck on the request)
     return this.http
       .get<ContactUs[]>(this.url + "/ContactSubmissions/", {
         headers: Utilities.createHeaders(token),
       })
+      // using the utilities file to convert the createdAt date to readable format
       .pipe(Utilities.mapManyDatesWithKey("createdAt"))
       .pipe(
+        // sorting the date
         map((ContactUs) => {
           return ContactUs.sort((m1, m2) => {
             //pipe the convertManycreatedAtDates before doing this otherwise bad time are ahead
@@ -69,5 +70,3 @@ export class ContactUsService {
 
   constructor(private http: HttpClient) {}
 }
-
-// TODO pass parameters to the contributor service in the url

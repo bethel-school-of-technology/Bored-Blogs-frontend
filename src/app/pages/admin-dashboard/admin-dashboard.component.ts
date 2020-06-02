@@ -25,7 +25,7 @@ export class AdminDashboardComponent implements OnInit {
     this.userService.getCurrentUser().subscribe((user) => {
       this.user = user;
       this.contributorService
-        .getContributor(user.id)//TODO: change out this hot fix i guess
+        .getContributor(user.id)
         .subscribe((c) => (this.contributor = c));
     });
     this.userService.refreshUser();
