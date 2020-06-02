@@ -19,12 +19,7 @@ export class AllPostComponent implements OnInit {
   }
 
   getPosts(): void {
-    this.postDataService.getPosts()
-    .subscribe((p) => {
-      console.log(p);
-        if (false)
-        for (var i = 0; i < p.length; i++) {
-        }
+    this.postDataService.getPosts().subscribe((p) => {
       this.posts = p;
       this.unfilteredPosts = p;
     });

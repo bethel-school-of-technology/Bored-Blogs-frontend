@@ -11,6 +11,6 @@ export class Config {
   static STORAGE_KEY = "storage_key";
   static weAreUsingCloud = !false; //set to true if you want to use the cloud affects services
   static apiUrl = !Config.weAreUsingCloud
-    ? "http://54.159.120.199:3001"
+    ? "http://54.159.120.199/api"//jacob setup
     : "http://localhost:3001"; //:3001
 }
