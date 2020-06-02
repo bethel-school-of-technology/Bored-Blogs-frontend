@@ -25,7 +25,18 @@ export class ContactUsService {
       .get<ContactUs[]>(this.url + "/ContactSubmissions/", {
         headers: Utilities.createHeaders(token),
       })
-      .pipe(Utilities.mapManyDatesWithKey("createdAt"));
+      .pipe(Utilities.mapManyDatesWithKey("createdAt"))
+      .pipe(
+        map((ContactUs) => {
+          return ContactUs.sort((m1, m2) => {
+            //pipe the convertManycreatedAtDates before doing this otherwise bad time are ahead
+            //this is a date comparator
+            if (m1.createdAtDate < m2.createdAtDate) return 1;
+            if (m1.createdAtDate > m2.createdAtDate) return -1;
+            return 0;
+          });
+        })
+      );
   }
 
   // get a submissiom
