@@ -49,7 +49,7 @@ export class R {
     // NAVBAR Titles & Order
     make("home", "Home", HomeComponent, true),
     make("boot", "Bootstrap Demo", BootDemoComponent, false), //for testing
-    make("posts", "View All Posts", AllPostComponent, true),
+    make("posts", "View All Posts", AllPostComponent, false), //hard-coded in navbar.html
     make("contributor", "Meet the Contributors", ContributorsComponent, false), //In nav "Contributors" dropdown list
     make("contact-us", "Contact Us", ContactUsComponent, false), //In nav "Users" dropdown list as Submit a Blog Request
     make("sign-in", "Log In", SignInComponent, false), //hard-coded in navbar.html

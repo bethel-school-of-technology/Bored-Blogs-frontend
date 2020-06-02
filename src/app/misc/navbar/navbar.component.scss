@@ -2,3 +2,14 @@
     display: inline-flex;
     background-color: primary;
 }
+
+nav {
+    display: flex;
+    justify-content: start;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.viewAll {
+    margin-right: 15px;
+}
