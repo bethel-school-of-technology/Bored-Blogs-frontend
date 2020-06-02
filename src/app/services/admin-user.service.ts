@@ -19,7 +19,8 @@ export class AdminUserService {//this class is to manage other users
   getUsers(token: string): Observable<User[]> {
     return this.http.get<User[]>(Config.apiUrl + "/users/list", {
       headers: Utilities.createHeaders(token),
-    }).pipe(Utilities.mapManyDatesWithKey('createdAt'));//go
+    }).pipe(Utilities.mapManyDatesWithKey('createdAt'))
+    .pipe(Utilities.mapManyDatesWithKey('lastLoggedIn'));//go
   }
 
   deleteUser(id: number, token: string): Observable<User[]> {
