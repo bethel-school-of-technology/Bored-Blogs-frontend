@@ -1,82 +1,118 @@
- <!-- Importing font style for contributor name-->
+<div class="container">
+  <!-- Importing font style for contributor name-->
   <div class="coverPage" [ngStyle]="contributor.style">
-    <p class="coverTitle">{{contributor.firstName}} {{contributor.lastName}}</p>
+    <p class="coverTitle">
+      {{ contributor.firstName }} {{ contributor.lastName }}
+    </p>
   </div>
 
   <!-- Contributor profile picture-->
 
   <div id="profilePicture">
-    <img id="profPic" class="img-thumbnail d-block mx-auto" src="{{contributor.url}}" />
+    <img
+      id="profPic"
+      class="img-thumbnail d-block mx-auto"
+      src="{{ contributor.url }}"
+    />
   </div>
 
+  <div class="justify-content-center d-block mx-auto">
+    <section id="body" class="w-50 p-3">
+      <!-- Tab Links-->
 
-<div class="justify-content-center d-block mx-auto">
-<section id="body" class="w-50 p-3">
-
-  <!-- Tab Links-->
-
-
-  <div class="tab1 d-flex justify-content-center">
-    <button [ngStyle]="contributor.style" class="tabOptions" (click)="setSelector(1)">{{contributor.firstName}}'s Bio</button>
-  </div>
-  <div class="tab2 d-flex justify-content-center">
-    <button [ngStyle]="contributor.style" class="tabOptions" (click)="setSelector(2)">{{contributor.firstName}}'s Recent Posts</button>
-</div>
-<br />
-
-  <!-- Tab Content (ABOUT)-->
-  <div
-    id="about"
-    [ngClass]="{ 'd-none': this.selector != 1 }"
-    class="tabcontent text-center"
-  >
-  <p *ngIf="contributor.bio != null && contributor.bio.body != null">
-      <strong>Bio: </strong>{{contributor.bio.body}}
-    </p>
-    <p *ngIf="contributor.bio != null && contributor.bio.birthday != null"><span>Birthday:</span> {{ contributor.bio.birthday }}</p>
-    <ul  *ngIf="contributor.bio != null && contributor.bio.favoriteGames != null">
-      <span>Favorite Bored Games:</span>
-      <li  *ngFor="let game of games">
-        <a href="#">{{ contributor.bio.favoriteGames }}</a>
-      </li>
-    </ul>
-    <p *ngIf="contributor.bio != null">
-      <strong>Fun Fact about Me: </strong>{{contributor.bio.other}}
-    </p>
-    <br>
-    <p *ngIf="contributor.bio != null && contributor.bio.otherWorks != null">To see {{contributor.firstName}}'s other work, please use these links:
-      <br />
-      <a href={{contributor.bio.otherWorks.github}} target="blank">Github</a> |
-      <a href={{contributor.bio.otherWorks.website}} target="blank">Personal Website</a> |
-      <a href={{contributor.bio.otherWorks.linkedIn}} target="blank">LinkedIn</a>
-    </p>
-  </div>
-
-  <br />
-
-  <!-- Tab Content (POSTS)-->
-
-  <div
-    id="recentPosts"
-    [ngClass]="{ 'd-none': this.selector != 2 }"
-    class="tabcontent"
-  >
-
-    <!-- Create the recent posts template-->
-    <div id="postContainer">
-      <div class="post" *ngFor="let Post of posts">
-        <h2 class="postTitle">{{Post.title}}</h2>
-        <div class="tagsGames">
-          <img class="tagIcon1" src="../../../assets/images/dice & pieces.jpg" />
-          <img class="tagIcon2" src="../../../assets/images/tag.png" />
-
-          <!-- <p class="relGames"> Related Game(s): {{Post.games}}</p> -->
-        </div>
-        <p class="postBody">{{Post.body}}</p>
-        <hr>
+      <div class="tab1 d-flex justify-content-center">
+        <button
+          [ngStyle]="contributor.style"
+          class="tabOptions"
+          (click)="setSelector(1)"
+        >
+          {{ contributor.firstName }}'s Bio
+        </button>
       </div>
-    </div>
-  </div>
-</section>
+      <div class="tab2 d-flex justify-content-center">
+        <button
+          [ngStyle]="contributor.style"
+          class="tabOptions"
+          (click)="setSelector(2)"
+        >
+          {{ contributor.firstName }}'s Recent Posts
+        </button>
+      </div>
+      <br />
 
+      <!-- Tab Content (ABOUT)-->
+      <div
+        id="about"
+        [ngClass]="{ 'd-none': this.selector != 1 }"
+        class="tabcontent text-center"
+      >
+        <p *ngIf="contributor.bio != null && contributor.bio.body != null">
+          <strong>Bio: </strong>{{ contributor.bio.body }}
+        </p>
+        <p *ngIf="contributor.bio != null && contributor.bio.birthday != null">
+          <span>Birthday:</span> {{ contributor.bio.birthday }}
+        </p>
+        <ul
+          *ngIf="
+            contributor.bio != null && contributor.bio.favoriteGames != null
+          "
+        >
+          <span>Favorite Bored Games:</span>
+          <li *ngFor="let game of games">
+            <a href="#">{{ contributor.bio.favoriteGames }}</a>
+          </li>
+        </ul>
+        <p *ngIf="contributor.bio != null">
+          <strong>Fun Fact about Me: </strong>{{ contributor.bio.other }}
+        </p>
+        <br />
+        <p
+          *ngIf="contributor.bio != null && contributor.bio.otherWorks != null"
+        >
+          To see {{ contributor.firstName }}'s other work, please use these
+          links:
+          <br />
+          <a href="{{ contributor.bio.otherWorks.github }}" target="blank"
+            >Github</a
+          >
+          |
+          <a href="{{ contributor.bio.otherWorks.website }}" target="blank"
+            >Personal Website</a
+          >
+          |
+          <a href="{{ contributor.bio.otherWorks.linkedIn }}" target="blank"
+            >LinkedIn</a
+          >
+        </p>
+      </div>
+
+      <br />
+
+      <!-- Tab Content (POSTS)-->
+
+      <div
+        id="recentPosts"
+        [ngClass]="{ 'd-none': this.selector != 2 }"
+        class="tabcontent"
+      >
+        <!-- Create the recent posts template-->
+        <div id="postContainer">
+          <div class="post" *ngFor="let Post of posts">
+            <h2 class="postTitle">{{ Post.title }}</h2>
+            <div class="tagsGames">
+              <img
+                class="tagIcon1"
+                src="../../../assets/images/dice & pieces.jpg"
+              />
+              <img class="tagIcon2" src="../../../assets/images/tag.png" />
+
+              <!-- <p class="relGames"> Related Game(s): {{Post.games}}</p> -->
+            </div>
+            <p class="postBody">{{ Post.body }}</p>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
