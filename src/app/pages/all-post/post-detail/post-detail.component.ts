@@ -15,12 +15,9 @@ import { NgForm } from "@angular/forms";
 })
 export class PostDetailComponent implements OnInit {
   // Jackie
-  // to get one post to show on /post-detail/:id
-
   post: Post;
-  postId:number;
+  postId: number;
   user: User;
-  comment: Comment;
   isOpen: boolean;
 
   constructor(
@@ -29,7 +26,7 @@ export class PostDetailComponent implements OnInit {
     private userService: UserService,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe((param) => {
@@ -54,15 +51,33 @@ export class PostDetailComponent implements OnInit {
   // Jackie
   // to add a comment to a post in post-detail/:id
   comments: Comment[] = []; //those empty brackets are important
+  flatComments: Comment[] = [];
 
   //Jackie
   // Gets the list of comments at bottom of post
   getComments(parentPostId: number): void {
-    this.postCommentService
-    .getComments(parentPostId)
-    .subscribe((c) => {
-      console.log(c);
-      this.comments = c;
+    this.postCommentService.getComments(parentPostId).subscribe((c) => {
+      // console.log(c);
+      this.comments = [];
+      this.flatComments = c;
+      var temp = {};
+      //set a dictonary to make some magic
+      c.forEach((c) => {
+        c["children"] = [];
+        temp[c.id] = c;
+      });
+
+      c.forEach((c) => {
+        if (c.CommentId != c.id && c.CommentId != null) {
+          temp[c.CommentId].children.push(c);
+        }
+      });
+
+      Object.keys(temp).forEach((key) => {
+        if (temp[key].CommentId == null) this.comments.push(temp[key]);
+      });
+
+      // console.log(this.supperComments);
     });
   }
 
@@ -73,7 +88,7 @@ export class PostDetailComponent implements OnInit {
       .addComment(this.post.id, newComment.form.value, this.user.token)
       .subscribe(
         (c) => {
-          //console.log(c);       
+          //console.log(c);
           this.getComments(this.postId);
         },
         (err) => {

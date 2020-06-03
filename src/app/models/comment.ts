@@ -7,7 +7,7 @@ export class Comment {
   parentPostId: number;
   body: string;  
   //TODO: jacob do the stuff with this if jacob has time
-  //children:Comment[];  
+  children:Comment[];  
   CommentId: number;
   authorId: number;
   author: User;

@@ -6,10 +6,12 @@
         {{ this.post.title }}
       </h3>
       <p class="postBody">
-        <strong>Contributed by: {{ post.author.firstName }}
+        <strong
+          >Contributed by: {{ post.author.firstName }}
           {{ post.author.lastName }}
           <br />
-          Published on: {{ post.published }}</strong>
+          Published on: {{ post.published }}</strong
+        >
         <br />
         <br />
         {{ post.body }}
@@ -19,12 +21,12 @@
     <!-- </div> -->
 
     <!-- DISPLAY ALL THE COMMENTS ON THIS POST -->
-    <!-- <div *ngIf="true" class="container"> -->
-
-    <div class="comments" *ngFor="let comment of comments">
-      <strong>{{ comment.author.firstName }} {{ comment.author.lastName }} - {{ comment.createdAt }}</strong>
-      <br />
-      {{ comment.body }}
+    <div class="bg-white">
+      <supper-comment
+        class="bg-white"
+        *ngFor="let supperComment of comments"
+        [comment]="supperComment"
+      ></supper-comment>
     </div>
 
     <div class="d-flex helpBtn">
@@ -44,29 +46,55 @@
 
     <!-- Message to log in to comment only shows if user is NOT logged in -->
     <div *ngIf="user == null">
-      <p class="text-white msg d-flex justify-content-start">If you'd like to leave a comment, please log in</p>
+      <p class="text-white msg d-flex justify-content-start">
+        If you'd like to leave a comment, please log in
+      </p>
     </div>
 
     <!-- Collapsable ADD COMMENT button -->
 
     <div class="form-group">
       <div id="commentInput" class="collapse" [ngClass]="{ show: isOpen }">
-        <button class="btn btn-primary btn-md close" (click)="isOpen = 1==0">
+        <button class="btn btn-primary btn-md close" (click)="isOpen = 1 == 0">
           <span aria-hidden="true">&times;</span>
         </button>
         <form #f="ngForm" (ngSubmit)="addComment(f)">
           <div>
-            <label class="text-white" for="body"><strong>Add A Comment</strong></label>
-            <textarea class="form-control" id="commentBody" cols="100" rows="2" type="text" name="body" #body="ngModel"
-              ngModel>
+            <label class="text-white" for="body"
+              ><strong>Add A Comment</strong></label
+            >
+            <label class="text-white" for="body"
+              ><strong>Select Comment to reply to</strong></label
+            >
+            <select
+              class="form-control col-4"
+              id="commentId"
+              
+              #commentId="ngModel"
+              name="commentId"
+              required
+              ngModel
+            >
+              <option *ngFor="let comment of flatComments" [value]="comment.id"
+                >{{ comment.id }}::{{ comment.author.firstName }}
+              </option>
+            </select>
+            <textarea
+              class="form-control"
+              id="commentBody"
+              cols="100"
+              rows="2"
+              type="text"
+              name="body"
+              #body="ngModel"
+              ngModel
+            >
             </textarea>
             <div class="submitMsg">
               <button class="btn btn-primary btn-sm submit" type="submit">
                 Submit
               </button>
-
             </div>
-
           </div>
         </form>
       </div>

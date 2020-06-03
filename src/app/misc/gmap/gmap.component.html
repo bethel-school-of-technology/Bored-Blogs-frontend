@@ -1,0 +1,11 @@
+<google-map
+  height="500px"
+  width="100%"
+  [zoom]="zoom"
+  [center]="center"
+  [options]="options"
+></google-map>
+
+<!-- Use custom zoom buttons -->
+<button (click)="zoomIn()">Zoom in</button>
+<button (click)="zoomOut()">Zoom out</button>

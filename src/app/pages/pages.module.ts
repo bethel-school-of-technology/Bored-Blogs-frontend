@@ -18,6 +18,8 @@ import { PostEditComponent } from './admin-dashboard/post-edit/post-edit.compone
 import { UsersListComponent } from './admin-dashboard/users-list/users-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserSubmissionDetailsComponent } from './admin-dashboard/user-submission-details/user-submission-details.component';
+import { SupperCommentComponent } from './all-post/post-detail/supper-comment/supper-comment.component';
+import { MiscModule } from '../misc/misc.module';
 
 
 // module is self explanatory
@@ -39,11 +41,13 @@ import { UserSubmissionDetailsComponent } from './admin-dashboard/user-submissio
     UsersListComponent,
     UserProfileComponent,
     UserSubmissionDetailsComponent,
+    SupperCommentComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MiscModule
   ],
   exports: [
     BootDemoComponent,

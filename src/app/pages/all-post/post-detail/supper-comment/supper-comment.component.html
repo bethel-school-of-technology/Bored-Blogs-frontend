@@ -1,0 +1,20 @@
+<div class="comments">
+  <strong
+    >{{ comment.id }}::{{ comment.author.firstName }} {{ comment.author.lastName }} -
+    {{ comment.createdAt }}</strong
+  >
+  <br />
+  {{ comment.body }}
+  <div
+    *ngIf="comment.children.length"
+    class="d-flex flex-row align-content-stretch"
+  >
+    <div class="bar w-0 m-1"></div>
+    <div class="d-flex flex-column">
+      <supper-comment
+        *ngFor="let c of comment.children"
+        [comment]="c"
+      ></supper-comment>
+    </div>
+  </div>
+</div>

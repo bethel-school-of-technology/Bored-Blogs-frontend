@@ -72,6 +72,7 @@ export class NavbarComponent implements OnInit {
       }
     });
     this.userService.getCurrentUser().subscribe((u) => (this.user = u));
+    this.userService.refreshUser();
     //end of jacobs code to handle dropdowns
     //Get all the posts 
     this.searchBarService.getPosts().subscribe(posts => {
