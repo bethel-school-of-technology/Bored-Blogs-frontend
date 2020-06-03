@@ -17,6 +17,7 @@ import { PostAddComponent } from "./pages/admin-dashboard/post-add/post-add.comp
 import { UserProfileComponent } from "./pages/user-profile/user-profile.component";
 import { ContributersProfileComponent } from "./pages/contributers-profile/contributers-profile.component";
 import { PostEditComponent } from './pages/admin-dashboard/post-edit/post-edit.component';
+import { StoreSearchComponent } from './pages/store-search/store-search.component';
 
 const make = (
   url: string,
@@ -40,51 +41,77 @@ use R.getRoutes() to get routes
 */
 
 export class R {
-  private static outes: Routes = [
-    {
-      path: "",
-      redirectTo: "/home",
-      pathMatch: "full",
-    },
-    // NAVBAR Titles & Order
-    make("home", "Home", HomeComponent, true),
-    make("boot", "Bootstrap Demo", BootDemoComponent, false), //for testing
-    make("posts", "View All Posts", AllPostComponent, false), //hard-coded in navbar.html
-    make("contributor", "Meet the Contributors", ContributorsComponent, false), //In nav "Contributors" dropdown list
-    make("contact-us", "Contact Us", ContactUsComponent, false), //In nav "Users" dropdown list as Submit a Blog Request
-    make("sign-in", "Log In", SignInComponent, false), //hard-coded in navbar.html
-    make("contributor-profile/:id","Contributor Profile", ContributersProfileComponent,false), //In nav "Contributors" dropdown list
-    make("create-account", "Create account", CreateAccountComponent, false), //hard-coded in navbar.html
-    make("post-add", "post add", PostAddComponent, false),
-    make("post-edit/:id", "Post Detail", PostEditComponent, false),
-    make("post-detail/:id", "Post Detail", PostDetailComponent, false),
-    make("post-list", "Post List", PostListComponent, false),
-    make("admin", "Admin", AdminDashboardComponent, false),
-    make("users-list", "users-list", UsersListComponent, false),
-    make("user-profile/:id", "User Profile", UserProfileComponent, false), //In nav "Users" dropdown list
-    make("user-submission-details", "User Submission Details", UserSubmissionDetailsComponent, false)
-  ];
+         private static outes: Routes = [
+           {
+             path: "",
+             redirectTo: "/home",
+             pathMatch: "full",
+           },
+           // NAVBAR Titles & Order
+           make("home", "Home", HomeComponent, true),
+           make("store", "Find a place to play", StoreSearchComponent, true),
+           make("boot", "Bootstrap Demo", BootDemoComponent, false), //for testing
+           make("posts", "View All Posts", AllPostComponent, false), //hard-coded in navbar.html
+           make(
+             "contributor",
+             "Meet the Contributors",
+             ContributorsComponent,
+             false
+           ), //In nav "Contributors" dropdown list
+           make("contact-us", "Contact Us", ContactUsComponent, false), //In nav "Users" dropdown list as Submit a Blog Request
+           make("sign-in", "Log In", SignInComponent, false), //hard-coded in navbar.html
+           make(
+             "contributor-profile/:id",
+             "Contributor Profile",
+             ContributersProfileComponent,
+             false
+           ), //In nav "Contributors" dropdown list
+           make(
+             "create-account",
+             "Create account",
+             CreateAccountComponent,
+             false
+           ), //hard-coded in navbar.html
+           make("post-add", "post add", PostAddComponent, false),
+           make("post-edit/:id", "Post Detail", PostEditComponent, false),
+           make("post-detail/:id", "Post Detail", PostDetailComponent, false),
+           make("post-list", "Post List", PostListComponent, false),
+           make("admin", "Admin", AdminDashboardComponent, false),
+           make("users-list", "users-list", UsersListComponent, false),
+           make(
+             "user-profile/:id",
+             "User Profile",
+             UserProfileComponent,
+             false
+           ), //In nav "Users" dropdown list
+           make(
+             "user-submission-details",
+             "User Submission Details",
+             UserSubmissionDetailsComponent,
+             false
+           ),
+         ];
 
-  static getRoutes(): Routes {
-    return R.outes;
-  }
+         static getRoutes(): Routes {
+           return R.outes;
+         }
 
-  static getRoutesForNavigation(): Routes {
-    return R.outes.filter((e: any) => e.isPartOfNav);
-  }
+         static getRoutesForNavigation(): Routes {
+           return R.outes.filter((e: any) => e.isPartOfNav);
+         }
 
-  static getPaths(): string[] {
-    return R.outes
-      .filter((e) => e["redirectTo"] !== undefined)
-      .map((e) => e.path);
-  }
+         static getPaths(): string[] {
+           return R.outes
+             .filter((e) => e["redirectTo"] !== undefined)
+             .map((e) => e.path);
+         }
 
-  static getComponent(): any[] {
-    return R.outes
-      .filter((e) => e["component"] !== undefined)
-      .map((e) => e.component);
-  }
-}
+         static getComponent(): any[] {
+           return R.outes
+             .filter((e) => e["component"] !== undefined)
+             .map((e) => e.component);
+         }
+       }
 
 @NgModule({
   imports: [CommonModule, RouterModule.forRoot(R.getRoutes())],

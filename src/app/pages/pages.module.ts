@@ -20,6 +20,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserSubmissionDetailsComponent } from './admin-dashboard/user-submission-details/user-submission-details.component';
 import { SupperCommentComponent } from './all-post/post-detail/supper-comment/supper-comment.component';
 import { MiscModule } from '../misc/misc.module';
+import { StoreSearchComponent } from './store-search/store-search.component';
 
 
 // module is self explanatory
@@ -42,6 +43,7 @@ import { MiscModule } from '../misc/misc.module';
     UserProfileComponent,
     UserSubmissionDetailsComponent,
     SupperCommentComponent,
+    StoreSearchComponent,
   ],
   imports: [
     CommonModule,
