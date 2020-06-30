@@ -55,7 +55,7 @@
 
     <div class="form-group">
       <div id="commentInput" class="collapse" [ngClass]="{ show: isOpen }">
-        <button class="btn btn-primary btn-md close" (click)="isOpen = 1 == 0">
+        <button class="btn btn-primary btn-md close" (click)="isOpen = false">
           <span aria-hidden="true">&times;</span>
         </button>
         <form #f="ngForm" (ngSubmit)="addComment(f)">

@@ -15,7 +15,7 @@ export class UserService {
   private currentUser: User;
   private currentUserSubject: Subject<User> = new Subject();
 
-  constructor(private http: HttpClient, private cookieService: CookieService) { }
+  constructor(private http: HttpClient, private cookieService: CookieService) {}
 
   //this registers an account
   createAccount(user: User) {
@@ -74,6 +74,7 @@ export class UserService {
 
   //sometimes subscribe is being called after next so just refresh after looking at it
   refreshUser(): void {
+    console.log(this.currentUser);
     this.currentUserSubject.next(this.currentUser);
   }
 }

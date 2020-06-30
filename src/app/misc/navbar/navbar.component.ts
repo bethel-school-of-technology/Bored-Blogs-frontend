@@ -26,6 +26,7 @@ import { User } from "src/app/models/user";
   styleUrls: ["./navbar.component.scss"],
 })
 export class NavbarComponent implements OnInit {
+
    //jacobs code to replace jquery
   //jquery is bad idea to use in angular
   main: boolean = false;
@@ -33,16 +34,18 @@ export class NavbarComponent implements OnInit {
   dropDown1: boolean;
   dropDown2: boolean;
   dropDown3: boolean;
+  //end of jacobs code
 
   links: any[] = R.getRoutesForNavigation();
+  
+
   contribs: User[];
   user: User;
 
   // SEARCH BAR THINGS BY KAYLA
-  myControl = new FormControl();
-  filteredOptions: Observable<string[]>;
+
+
   allPosts: Post[];
-  autoCompleteList: any[];
 
   @ViewChild('autocompleteInput', {static: false}) autocompleteInput: ElementRef;
   @Output() onSelectedOption = new EventEmitter();
@@ -54,7 +57,7 @@ export class NavbarComponent implements OnInit {
     private userService: UserService,
     // include searchBarService in the constructor
     private searchBarService: SearchBarService
-  ) {}
+  ) {}  
 
   ngOnInit() {
      //jacobs code to handle dropdowns
@@ -73,68 +76,10 @@ export class NavbarComponent implements OnInit {
     });
     this.userService.getCurrentUser().subscribe((u) => (this.user = u));
     this.userService.refreshUser();
-    //end of jacobs code to handle dropdowns
-    //Get all the posts 
-    this.searchBarService.getPosts().subscribe(posts => {
-      this.allPosts = posts;
-    });
+    //end of jacobs code to handle dropdowns 
 
-    // when user types in something in input, the value changes will come through this
-    this.myControl.valueChanges.subscribe(userInput => {
-      this.autoCompleteExpenseList(userInput);
-    });
+
   }
-    private autoCompleteExpenseList(input) {
-      let categoryList = this.filterCategoryList(input)
-      this.autoCompleteList = categoryList;
-    }
-
-    filterCategoryList(val) {
-      var categoryList = []
-      if( typeof val != "string"){
-        return [];
-      }
-      if( val === '' || val === null){
-        return [];
-      }
-      return val ? this.allPosts.filter(s => s.title.toLowerCase().indexOf(val.toLowerCase()) != -1)
-      : this.allPosts;
-    }
-    // after you clicked an autosuggest option, this function will show the field you want to show in input
-    displayFn(post: Post) {
-      let k = post ? post.title : post;
-      return k;
-  }
-
-filterPostList(event) {
-    var posts = event.source.value;
-    if (!posts) {
-        this.searchBarService.searchOption = []
-    }
-    else {
-        console.log("not");
-
-        this.searchBarService.searchOption.push(posts);
-        this.onSelectedOption.emit(this.searchBarService.searchOption)
-    }
-    this.focusOnPlaceInput();
-}
-
-removeOption(option) {
-
-    let index = this.searchBarService.searchOption.indexOf(option);
-    if (index >= 0)
-        this.searchBarService.searchOption.splice(index, 1);
-    this.focusOnPlaceInput();
-
-    this.onSelectedOption.emit(this.searchBarService.searchOption)
-}
-
-// focus the input field and remove any unwanted text.
-focusOnPlaceInput() {
-    this.autocompleteInput.nativeElement.focus();
-    this.autocompleteInput.nativeElement.value = '';
-}
 
    
   
@@ -158,7 +103,4 @@ focusOnPlaceInput() {
     this.router.navigate(['/home']);
   }
 
-  search(f:NgForm){
-    
-  }
 }

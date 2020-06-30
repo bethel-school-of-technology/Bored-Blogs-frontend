@@ -51,7 +51,7 @@ export class PostDetailComponent implements OnInit {
   // Jackie
   // to add a comment to a post in post-detail/:id
   comments: Comment[] = []; //those empty brackets are important
-  flatComments: Comment[] = [];
+  flatComments = [];
 
   //Jackie
   // Gets the list of comments at bottom of post
@@ -60,6 +60,7 @@ export class PostDetailComponent implements OnInit {
       // console.log(c);
       this.comments = [];
       this.flatComments = c;
+      this.flatComments.push({ id: null, author: { firstName: "nobody" } });
       var temp = {};
       //set a dictonary to make some magic
       c.forEach((c) => {
@@ -69,11 +70,13 @@ export class PostDetailComponent implements OnInit {
 
       c.forEach((c) => {
         if (c.CommentId != c.id && c.CommentId != null) {
+          //push the children onto their parents
           temp[c.CommentId].children.push(c);
         }
       });
 
-      Object.keys(temp).forEach((key) => {
+      //take temp convert it into a list of trees
+      Object.keys(temp).forEach((key) => {        
         if (temp[key].CommentId == null) this.comments.push(temp[key]);
       });
 

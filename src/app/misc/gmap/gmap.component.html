@@ -4,7 +4,14 @@
   [zoom]="zoom"
   [center]="center"
   [options]="options"
-></google-map>
+>
+  <!-- <map-marker #marker
+              *ngFor="let markerPosition of markerPositions"
+              [position]="markerPosition"
+              [options]="markerOptions"
+              (mapClick)="openInfoWindow(marker)"></map-marker>
+<map-info-window></map-info-window> -->
+</google-map>
 
 <!-- Use custom zoom buttons -->
 <button (click)="zoomIn()">Zoom in</button>

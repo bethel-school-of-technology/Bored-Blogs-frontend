@@ -18,7 +18,7 @@ export class GmapComponent implements OnInit {
     scrollwheel: true,
     disableDoubleClickZoom: true,
     maxZoom: 15,
-    minZoom: 8,
+    minZoom: 1,
     mapTypeControl: true,
     mapTypeControlOptions: {
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
@@ -29,6 +29,7 @@ export class GmapComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    //angular global thingy
     navigator.geolocation.getCurrentPosition((position) => {
       this.center = {
         lat: position.coords.latitude,
