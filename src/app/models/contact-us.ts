@@ -1,25 +1,19 @@
 import { User } from './user';
 
 export class ContactUs {
-  id: number;
-  subject: string;
-  body: string;
   authorId: number;
   author: User;
   
   createdAt:string;
   createdAtDate:Date;
 
-  constructor(
-    id: number,
-    firstName: string,
-    lastName: string,
-    email: string,
-    subject: string,
-    body: string
+  constructor(//sometimes i want somethings on the constructors other times i dont
+    public id: number,
+    public firstName: string,
+    public lastName: string,
+    public email: string,
+    public subject: string,
+    public body: string
   ) {
-    this.id = id;
-    this.subject = subject;
-    this.body = body;
   }
 }

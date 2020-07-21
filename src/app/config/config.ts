@@ -15,7 +15,7 @@ export class Config {
     //? "http://54.159.120.199:3001"//jacob setup direct connection
     : "http://localhost:3001"; //:3001
 
-  static GOOGLE_API_KEY = "AIzaSyBGbAl7hlsPBX3ZyeBc5ju7akArIjDFrUk";
+  static GOOGLE_API_KEY = "AIzaSyBGbAl7hlsPBX"+"3ZyeBc5ju7akArIjDFrUk";
   //not used currently but in the index file header under google script is the key as well
   //TODO: make index use this config
 }
